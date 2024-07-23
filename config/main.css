@@ -17,7 +17,7 @@ section {
 }
 /* General styles */
     nav {
-      background-color: #a5a2a2;
+      background-image: url('../content/backrounds/backround.png');
       overflow: hidden;
     }
 
