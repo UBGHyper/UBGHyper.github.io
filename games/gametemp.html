@@ -1,1 +1,55 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <title>UBGHyper - Home</title> <link rel="stylesheet" href="config/main.css" /> <script src="config/main.js" type="module"></script> </head> <body> <div class="center"> <h1 id="title">UBG Hyper</h1> <p id="subtitle">Games</p> </div> <div class="center"> <input type="text" id="searchInput" placeholder="Search games" /> </div> <div id="gamesContainer"></div> <div class="footer"> <a style="font-weight: 700">a site by </a><a style="font-weight: 700" class="link" href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap">Fibble & Pizza</a> <div class="game-container"> <div class="game-square"> <!-- Game content here --> </div> <div class="game-info"> <h2>Game Name</h2> <p>Developed by: Game Developer</p> <button class="fullscreen-button">Fullscreen</button> </div> </div> </div> </body> </html>
+<!DOCTYPE html>
+
+<html lang="en">
+  
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"
+    />
+    <title>
+      UBGHyper - Home
+    </title>
+    <link rel="stylesheet" href="config/main.css" />
+    <script src="config/main.js" type="module">
+    </script>
+  </head>
+ <iframe id="game-iframe" src="https://cbgamesdev.github.io/chilibowlflash/sm64/index.html"
+width="800px" height="600px" frameborder="0" style=" display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; backround-repeat: no-repeat; background-position: 50%; "
+<iframe>
+</iframe>
+<div class="game-title">
+  <div>
+    <span class="game-title-text" style="font-family: 'arcade1', sans-serif; color: #0d0c0c;">
+      PLACEHOLDER
+    </span>
+    <span class="game-title-subtext">
+      By NAME
+    </span>
+  </div>
+  <button onclick="toggleFullscreen()">
+    <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"
+    />
+  </button>
+</div>
+</div>
+<script>
+  function toggleFullscreen() {
+    var iframe = document.getElementById("game-iframe");
+    if (!document.fullscreenElement) {
+      iframe.requestFullscreen().
+      catch((err) = >{
+        console.log(`Error attempting to enable full - screen mode: $ {
+          err.message
+        } ($ {
+          err.name
+        })`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
+</script>
+</div>
+</html>
