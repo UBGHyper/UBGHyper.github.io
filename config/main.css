@@ -14,6 +14,84 @@
   transition: all 0.3s ease;
 }
 /* General styles */
+    nav {
+      background-color: #a5a2a2;
+      overflow: hidden;
+    }
+
+    nav a {
+      float: left;
+      display: block;
+      color: #0d0c0c;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
+    }
+
+    nav a:hover {
+  background-color: #dd2020;
+  color: #0d0c0c;
+  border-radius: 5px;
+}
+
+    .container {
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    .game-title {
+        color: #3c3c3c;
+        background-color: #a5a2a2;
+        width: 820px;
+        padding: 10px;
+        margin-top: -25px;
+        font-family: "sans-serif";
+        font-weight: 800;
+        font-size: xx-large;
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Align vertically at the center */
+      }
+
+      .game-title button {
+        background: none;
+        border: none;
+        padding: 0;
+        margin-left: 0px; /* Adjust margin as needed */
+        padding-right: 15px;
+      }
+
+      .game-title button img {
+        width: 32px;
+        height: 32px;
+        vertical-align: middle; /* Vertically align the image */
+      }
+
+      .game-title > div {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding-left: 20px;
+      }
+
+      .game-title-text {
+        font-size: xx-large;
+        padding-bottom: 5px; /* Add a small bottom padding */
+      }
+
+      .game-title-subtext {
+        margin-top: -5px;
+        font-size: large;
+        font-weight: 600;
+        text-align: left;
+        padding-left: 0; /* Remove the left padding */
+        white-space: nowrap; /* Prevent subtext from wrapping */
+      }
+
+
 body {
   background-color: var(--background-color);
   color: var(--text-color);
