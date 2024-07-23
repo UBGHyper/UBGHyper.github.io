@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CHANGE HERE at UBG Hyper</title>
+  <link rel="shortcut icon" type="image/x-icon" href="../content/icons/tab.ico">
+  <link rel="stylesheet" href="../config/main.css">
+  <script src="../config/main.js"></script>
+</head>
+<body>
+  <!-- Navigation menu -->
+<nav>
+    <a href="../index.html" style="font-family: 'arcade1', sans-serif;">Home</a></li>
+</nav>
+
+
+  <!-- Content -->
+  <div class="container">
+   <h1 style="font-family: 'arcade3', sans-serif; color: #6b6868;">Super Mario 64</h1>
+    <!-- Your game content can be added here -->
+<div
+      style="
+        margin-top: 30px;
+        margin-bottom: 0px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: hidden;
+      "
+    >
+      <iframe
+        id="game-iframe"
+        src="https://cbgamesdev.github.io/chilibowlflash/sm64/index.html"
+        width="800px"
+        height="600px"
+        frameborder="0"
+        style="
+          display: block;
+          border: 20px solid #706f6f;
+          background-image: url('../Icons/boot.gif');
+          background-size: auto;
+          backround-repeat: no-repeat;
+          background-position: 50%;
+        "
+    <iframe></iframe>
+<div class="game-title">
+  <div>
+    <span class="game-title-text" style="font-family: 'arcade1', sans-serif; color: #0d0c0c;">Super Mario 64</span>
+    <span class="game-title-subtext">By Nintendo</span>
+  </div>
+  <button onclick="toggleFullscreen()">
+    <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32" />
+  </button>
+</div>
+      </div>
+<script>
+  function toggleFullscreen() {
+    var iframe = document.getElementById("game-iframe");
+
+    if (!document.fullscreenElement) {
+      iframe.requestFullscreen().catch((err) => {
+        console.log(
+          `Error attempting to enable full-screen mode: ${err.message} (${err.name})`
+        );
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
+</script>
+</div>
+          
+</div>
+</body>
+</html>
