@@ -74,7 +74,7 @@
     } else {
       const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`; // remove trailing slash
       document.getElementById("gameFrame").src = embedUrl;
-      const title = gameUrl.replace(/[-\/]/g, '').replace(/\b\w/g, (m) => m.toUpperCase()).replace(/\w/g, (m) => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()); // replace dashes and forward slashes with spaces, autocapitalize first letters, and capitalize the first letter of each word
+      const title = gameUrl.replace(/[--_\/]/g, '').replace(/\b\w/g, (m) => m.toUpperCase()).replace(/\w/g, (m) => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()); // replace dashes and forward slashes with spaces, autocapitalize first letters, and capitalize the first letter of each word
       document.getElementById("gameTitle").textContent = title;
     }
 
