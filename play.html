@@ -34,6 +34,25 @@
       const embedUrl = `${serverUrl}/${gameUrl}`;
       document.getElementById("gameFrame").src = embedUrl;
     }
+
+//spacer//
+      function toggleFullscreen() {
+    var iframe = document.getElementById("gameurl");
+    if (!document.fullscreenElement) {
+      iframe.requestFullscreen().
+      catch((err) = >{
+        console.log(`Error attempting to enable full - screen mode: $ {
+          err.message
+        } ($ {
+          err.name
+        })`);
+      });
+    } else {
+      if (document.exitFullscreen) {
+        document.exitFullscreen();
+      }
+    }
+  }
   </script>
 </body>
 </html>
