@@ -1,15 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta name="google-adsense-account" content="ca-pub-8895667704497452">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBGHyper - Home</title>
-    <link rel="stylesheet" href="config/main.css" />
+    <link rel="stylesheet" href="config/main.css">
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
     <style>
-              .switch-container {
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.light-mode {
+            background-color: white;
+            color: black;
+        }
+
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
+
+        body::-webkit-scrollbar-track {
+            background: black;
+        }
+
+        body.light-mode::-webkit-scrollbar-track {
+            background: #ccc;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: black;
+            border-radius: 20px;
+            border: 3px solid orange;
+        }
+
+        .center {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .center h1 {
+            margin: 10px 0;
+            font-family: 'Apple-font', sans-serif;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid orange;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #gamesContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .footer.light-mode {
+            background-color: #ccc;
+            color: black;
+        }
+
+        .footer h1 {
+            margin: 5px 0;
+            font-family: 'Apple-font', sans-serif;
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .game-square {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 10px;
+            border-radius: 10px;
+        }
+
+        .switch-container {
             position: fixed;
             bottom: 0;
             left: 0;
@@ -30,7 +119,33 @@
         }
 
         .switch input {
-	@@ -136,12 +149,21 @@
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
         }
 
         input:checked + .slider {
@@ -49,72 +164,23 @@
         .mode-text.light-mode {
             color: black;
         }
-      
-      body::-webkit-scrollbar {
-        width: 12px;               /* width of the entire scrollbar */
-      }
-
-      body::-webkit-scrollbar-track {
-        background: black;        /* color of the tracking area */
-      }
-
-      body::-webkit-scrollbar-thumb {
-        background-color: black;    /* color of the scroll thumb */
-        border-radius: 20px;       /* roundness of the scroll thumb */
-        border: 3px solid orange;  /* creates padding around scroll thumb */
-      }
-
-      /* Add styles for the bottom bar */
-      .bottom-bar {
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background-color: #333;
-        padding: 10px;
-        display: flex;
-        justify-content: space-between;
-      }
-
-      .toggle-button {
-        background-color: #444;
-        border: none;
-        padding: 10px 20px;
-        font-size: 16px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-      }
-
-      .toggle-button:hover {
-        background-color: #555;
-      }
-
-      .toggle-button.active {
-        background-color: #666;
-      }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="center">
-      <h1 class="Apple-font">UBG Hyper</h1>
-      <h1 class="Apple-font">↓ Games ↓</h1>
+        <h1 class="Apple-font">UBG Hyper</h1>
+        <h1 class="Apple-font">↓ Games ↓</h1>
     </div>
     <div class="center">
-      <input type="text" id="searchInput" placeholder="Search games" />
+        <input type="text" id="searchInput" placeholder="Search games">
     </div>
     <div id="gamesContainer"></div>
     <div class="footer">
-      <a style="font-weight: 700">a site by
-      </a><a style="font-weight: 700" class="link" href="https://dsc.gg/parcoil">Fibble</a>
+        <h1 class="Apple-font">A Website By</h1>
+        <h1 class="Apple-font">Fibble</h1>
     </div>
-    <!-- Add the bottom bar -->
-    <div class="bottom-bar">
-    <div class="switch-container">
-        <label class="switch">
-            <input type="checkbox" id="lightModeToggle">
-            <span class="slider"></span>
-        </label>
-        <span class="mode-text">Dark Mode On</span>
+    <div class="game-container">
+        <div class="game-square"></div>
     </div>
     <div class="switch-container">
         <label class="switch">
@@ -123,23 +189,13 @@
         </label>
         <span class="mode-text">Dark Mode On</span>
     </div>
-    </div>
-
     <script>
-              document.getElementById('lightModeToggle').addEventListener('change', function() {
+        document.getElementById('lightModeToggle').addEventListener('change', function() {
             document.body.classList.toggle('light-mode');
             document.querySelector('.footer').classList.toggle('light-mode');
             document.querySelector('.mode-text').classList.toggle('light-mode');
             document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
         });
-      // Add event listeners to the toggle buttons
-      const toggleButtons = document.querySelectorAll('.toggle-button');
-
-      toggleButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-          button.classList.toggle('active');
-        });
-      });
     </script>
-  </body>
+</body>
 </html>
