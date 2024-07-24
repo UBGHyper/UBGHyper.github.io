@@ -13,6 +13,10 @@
   font-weight: normal;
   font-style: normal;
 }
+.Apple-font {
+  font-family: 'Apple', sans-serif; /* Use the font family name */
+  color: #ffffff; /* Set the text color to white */
+}
 .scrollbar-wrapper {
   overflow-y: auto;
   padding-right: 10px; /* add space for the scrollbar */
