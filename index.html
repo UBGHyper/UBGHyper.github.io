@@ -9,6 +9,47 @@
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
     <style>
+              .switch-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            background-color: orange;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-right: 10px;
+        }
+
+        .switch input {
+	@@ -136,12 +149,21 @@
+        }
+
+        input:checked + .slider {
+            background-color: #333;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .mode-text {
+            font-family: 'Apple-font', sans-serif;
+            color: #333;
+        }
+
+        .mode-text.light-mode {
+            color: black;
+        }
+      
       body::-webkit-scrollbar {
         width: 12px;               /* width of the entire scrollbar */
       }
@@ -69,12 +110,22 @@
     </div>
     <!-- Add the bottom bar -->
     <div class="bottom-bar">
-      <button class="toggle-button" id="toggle-button-1">Toggle 1</button>
-      <button class="toggle-button" id="toggle-button-2">Toggle 2</button>
-      <button class="toggle-button" id="toggle-button-3">Toggle 3</button>
+        <label class="switch">
+            <input type="checkbox" id="lightModeToggle">
+            <span class="slider"></span>
+        </label>
+        <label class="switch">
+            <input type="checkbox" id="classroomtoggle">
+            <span class="slider"></span>
     </div>
 
     <script>
+              document.getElementById('lightModeToggle').addEventListener('change', function() {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('.footer').classList.toggle('light-mode');
+            document.querySelector('.mode-text').classList.toggle('light-mode');
+            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
+        });
       // Add event listeners to the toggle buttons
       const toggleButtons = document.querySelectorAll('.toggle-button');
 
