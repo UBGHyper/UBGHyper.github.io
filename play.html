@@ -30,6 +30,8 @@
    .game-title {
       text-align: center;
       margin-bottom: 20px;
+      width: 800px; /* match the width of the iframe */
+      margin: 0 auto; /* horizontally center the title */
     }
 
     /* Style the fullscreen button */
@@ -83,14 +85,14 @@
     function toggleFullscreen() {
       if (!isFullscreen) {
         document.getElementById("gameFrame").requestFullscreen()
-      .catch((err) => {
+     .catch((err) => {
           console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });
         isFullscreen = true;
       } else {
         if (document.exitFullscreen) {
           document.exitFullscreen()
-        .catch((err) => {
+       .catch((err) => {
             console.log(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
           });
           isFullscreen = false;
