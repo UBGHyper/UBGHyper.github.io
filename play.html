@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="icon" type="image/png" href="content/favicons/tab.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UBGHyper - Home</title>
@@ -71,9 +70,10 @@
       alert("Game URL not provided!");
       window.location.href = "/"; // Redirect to homepage if game URL is missing
     } else {
-      const embedUrl = `${serverUrl}/${gameUrl}`;
+      const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`; // remove trailing slash
       document.getElementById("gameFrame").src = embedUrl;
-      document.getElementById("gameTitle").textContent = gameUrl.replace(/-/g, ' ');
+      const title = gameUrl.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase()); // replace dashes with spaces and autocapitalize first letters
+      document.getElementById("gameTitle").textContent = title;
     }
 
     let isFullscreen = false;
