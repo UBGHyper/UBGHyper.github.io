@@ -35,15 +35,6 @@ h1 {
   transition: all 0.3s ease;
 }
 
-section {
-  background-image: url('content/backrounds/backround.png'); /* Fix the URL */
-}
-
-nav {
-  background-image: url('content/backrounds/backround.png'); /* Fix the URL */
-  overflow: hidden;
-}
-
 nav a {
   float: left;
   display: block;
