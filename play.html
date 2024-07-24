@@ -5,24 +5,33 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UBGHyper - Home</title>
   <link rel="stylesheet" href="config/main.css">
+  <style>
+    /* Add some basic styling for the back button */
+    .back-button {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      z-index: 1; /* make sure it's on top of the iframe */
+    }
+  </style>
 </head>
 <body>
-<iframe>
-</iframe>
-<div class="game-title">
-  <div>
-    </span>
-    </span>
-  </div>
-</div>
+  <!-- Add the back button -->
+  <a href="index.html" class="back-button">
+    <img src="../Icons/back-arrow.svg" alt="Back" width="32" height="32"/>
+  </a>
   <iframe id="gameFrame"
-    width="800px" height="600px" frameborder="0" style=" display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; backround-repeat: no-repeat; background-position: 50%; "
-</iframe>
-    <button onclick="toggleFullscreen()">
+    width="800px" height="600px" frameborder="0" style="display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; background-repeat: no-repeat; background-position: 50%;">
+  </iframe>
+  <div class="game-title">
+    <div>
+      <!-- game title content here -->
+    </div>
+  </div>
+  <button onclick="toggleFullscreen()">
     <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"/>
   </button>
   <script type="module">
-    // Removed duplicate script tag and moved JavaScript code to the bottom of the body
     const serverUrl = "https://parcoil-assets.onrender.com";
     const urlParams = new URLSearchParams(window.location.search);
     const gameUrl = urlParams.get("gameurl");
@@ -35,24 +44,19 @@
       document.getElementById("gameFrame").src = embedUrl;
     }
 
-//spacer//
-      function toggleFullscreen() {
-    var iframe = document.getElementById("gameurl");
-    if (!document.fullscreenElement) {
-      iframe.requestFullscreen().
-      catch((err) = >{
-        console.log(`Error attempting to enable full - screen mode: $ {
-          err.message
-        } ($ {
-          err.name
-        })`);
-      });
-    } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
+    function toggleFullscreen() {
+      var iframe = document.getElementById("gameFrame"); // fix the id here
+      if (!document.fullscreenElement) {
+        iframe.requestFullscreen()
+        .catch((err) => {
+          console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
       }
     }
-  }
   </script>
 </body>
 </html>
