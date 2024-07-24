@@ -7,6 +7,72 @@
   <link rel="stylesheet" href="config/main.css">
   <link rel="icon" type="image/png" href="content/favicons/tab.png">
   <style>
+            .switch-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 2000px;
+            background-color: orange;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            margin-right: 10px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #333;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
+
+        .mode-text {
+            font-family: 'Apple-font', sans-serif;
+            color: #333;
+        }
+
+        .mode-text.light-mode {
+            color: black;
+        }
     body {
       margin: 0;
       font-family: 'Apple', sans-serif;
@@ -101,6 +167,13 @@
   <!-- Change tab button -->
   <button id="changeTabButton">Change Tab Icon and Name</button>
 
+  <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" id="lightModeToggle">
+            <span class="slider"></span>
+        </label>
+        <span class="mode-text">Dark Mode On</span>
+
   <!-- Script to handle game loading and fullscreen functionality -->
   <script type="module">
     const serverUrl = "https://parcoil-assets.onrender.com";
@@ -140,6 +213,12 @@
       favicon.href = "content/favicons/classroom.png";
       document.title = "Classroom";
     });
+            document.getElementById('lightModeToggle').addEventListener('change', function() {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('.footer').classList.toggle('light-mode');
+            document.querySelector('.mode-text').classList.toggle('light-mode');
+            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
+        });
   </script>
 </body>
 </html>
