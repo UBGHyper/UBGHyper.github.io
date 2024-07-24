@@ -13,6 +13,42 @@
   font-weight: normal;
   font-style: normal;
 }
+.scrollbar-wrapper {
+  overflow-y: auto;
+  padding-right: 10px; /* add space for the scrollbar */
+}
+
+.scrollbar-content {
+  padding: 20px;
+}
+
+.scrollbar-wrapper::-webkit-scrollbar {
+  /* WebKit-based browsers */
+  width: 10px;
+  height: 10px;
+  background-color: #f0f0f0;
+}
+
+.scrollbar-wrapper::-webkit-scrollbar-thumb {
+  background-color: #aaa;
+  border-radius: 10px;
+}
+
+.scrollbar-wrapper::-webkit-scrollbar-track {
+  background-color: #f0f0f0;
+}
+
+/* Firefox */
+.scrollbar-wrapper {
+  scrollbar-width: thin;
+  scrollbar-color: #aaa #f0f0f0;
+}
+
+/* Internet Explorer */
+.scrollbar-wrapper {
+  overflow-y: scroll;
+  -ms-overflow-style: none;
+}
 ::-webkit-scrollbar {
   width: 10px; /* width of the scrollbar */
   height: 10px; /* height of the scrollbar */
