@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="config/main.css">
   <style>
     /* Add some basic styling for the back button */
-    .back-button {
+   .back-button {
       position: absolute;
       top: 10px;
       left: 10px;
@@ -24,10 +24,12 @@
       background-repeat: no-repeat;
       background-position: 50%;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+      width: 800px;
+      height: 600px;
     }
 
     /* Style the game title */
-    .game-title {
+   .game-title {
       text-align: center;
       margin-bottom: 20px;
     }
@@ -47,6 +49,29 @@
       width: 32px;
       height: 32px;
     }
+
+    #gameFrame {
+      width: 100%;
+      height: 100%;
+      border: none;
+      overflow: hidden;
+    }
+
+    #gameFrame html {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #gameFrame body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
   </style>
 </head>
 <body>
@@ -54,13 +79,13 @@
   <a href="index.html" class="back-button">
     <img src="../content/favicons/back.svg" alt="Back" width="32" height="32"/>
   </a>
-  <iframe id="gameFrame" width="800px" height="600px" frameborder="0"></iframe>
+  <iframe id="gameFrame" frameborder="0"></iframe>
   <div class="game-title">
     <div>
       <!-- game title content here -->
     </div>
   </div>
-  <button onclick="toggleFullscreen()">
+  <button id="fullscreenButton">
     <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"/>
   </button>
   <script type="module">
@@ -76,19 +101,12 @@
       document.getElementById("gameFrame").src = embedUrl;
     }
 
+    let isFullscreen = false;
+
+    document.getElementById("fullscreenButton").addEventListener("click", toggleFullscreen);
+
     function toggleFullscreen() {
-      var iframe = document.getElementById("gameFrame"); // fix the id here
-      if (!document.fullscreenElement) {
-        iframe.requestFullscreen()
-        .catch((err) => {
-          console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen();
-        }
-      }
-    }
-  </script>
-</body>
-</html>
+      if (!isFullscreen) {
+        document.getElementById("gameFrame").requestFullscreen()
+      .catch((err) => {
+          console.log(`Error attempting to enable full-screen mode: ${err.message}
