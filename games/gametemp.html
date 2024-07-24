@@ -1,49 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>UBGHyper - Home</title>
-    <script src="config/main.js" type="module"></script>
-  </head>
-  <body>
- <iframe id="game-iframe" src="https://cbgamesdev.github.io/chilibowlflash/sm64/index.html"
-width="800px" height="600px" frameborder="0" style=" display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; backround-repeat: no-repeat; background-position: 50%; "
-<iframe>
-</iframe>
-<div class="game-title">
-  <div>
-    <span class="game-title-text" style="font-family: 'arcade1', sans-serif; color: #0d0c0c;">
-      PLACEHOLDER
-    </span>
-    <span class="game-title-subtext">
-      By NAME
-    </span>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBGHyper - Home</title>
+  <link rel="stylesheet" href="config/main.css">
+</head>
+<body>
+  <iframe id="gameFrame"
+    width="800px" height="600px" frameborder="0" style="display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; background-repeat: no-repeat; background-position: 50%;">
+  </iframe>
+  <div class="game-title">
+    <div>
+      <!-- game title content here -->
+    </div>
   </div>
   <button onclick="toggleFullscreen()">
-    <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"
-    />
+    <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"/>
   </button>
-</div>
-</div>
-<script>
-  function toggleFullscreen() {
-    var iframe = document.getElementById("game-iframe");
-    if (!document.fullscreenElement) {
-      iframe.requestFullscreen().
-      catch((err) = >{
-        console.log(`Error attempting to enable full - screen mode: $ {
-          err.message
-        } ($ {
-          err.name
-        })`);
-      });
+  <script type="module">
+    const serverUrl = "https://parcoil-assets.onrender.com";
+    const urlParams = new URLSearchParams(window.location.search);
+    const gameUrl = urlParams.get("gameurl");
+
+    if (!gameUrl) {
+      alert("Game URL not provided!");
+      window.location.href = "/"; // Redirect to homepage if game URL is missing
     } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
+      const embedUrl = `${serverUrl}/${gameUrl}`;
+      document.getElementById("gameFrame").src = embedUrl;
+    }
+
+    function toggleFullscreen() {
+      var iframe = document.getElementById("gameFrame"); // fix the id here
+      if (!document.fullscreenElement) {
+        iframe.requestFullscreen()
+        .catch((err) => {
+          console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+      } else {
+        if (document.exitFullscreen) {
+          document.exitFullscreen();
+        }
       }
     }
-  }
-</script>
-</div>
+  </script>
+</body>
 </html>
