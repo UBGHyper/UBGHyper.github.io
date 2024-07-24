@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="config/main.css">
   <style>
     /* Add some basic styling for the back button */
-    .back-button {
+   .back-button {
       position: absolute;
       top: 10px;
       left: 10px;
@@ -27,9 +27,13 @@
     }
 
     /* Style the game title */
-    .game-title {
+   .game-title {
       text-align: center;
       margin-bottom: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
     }
 
     /* Style the fullscreen button */
@@ -72,7 +76,7 @@
     } else {
       const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`; // remove trailing slash
       document.getElementById("gameFrame").src = embedUrl;
-      const title = gameUrl.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase()); // replace dashes with spaces and autocapitalize first letters
+      const title = gameUrl.replace(/[-\/]/g, '').replace(/\b\w/g, (m) => m.toUpperCase()).replace(/\w/g, (m) => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()); // replace dashes and forward slashes with spaces, autocapitalize first letters, and capitalize the first letter of each word
       document.getElementById("gameTitle").textContent = title;
     }
 
@@ -83,7 +87,7 @@
     function toggleFullscreen() {
       if (!isFullscreen) {
         document.getElementById("gameFrame").requestFullscreen()
-        .catch((err) => {
+       .catch((err) => {
           console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });
         isFullscreen = true;
