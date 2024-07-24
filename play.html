@@ -55,6 +55,7 @@
   </style>
 </head>
 <body>
+   <button id="change-tab-button">Change Tab Icon and Name</button>
   <!-- Add the back button -->
   <a href="index.html" class="back-button">
     <img src="../content/favicons/back.png" alt="Back" width="32" height="32"/>
@@ -99,6 +100,17 @@
         isFullscreen = false;
       }
     }
+     document.getElementById("change-tab-button").addEventListener("click", function() {
+      // Change the tab icon
+      var link = document.querySelector("link[rel*='icon']") || document.createElement('link');
+      link.type = 'image/png';
+      link.rel = 'icon';
+      link.href = 'new_icon.png';
+      document.getElementsByTagName('head')[0].appendChild(link);
+
+      // Change the tab name
+      document.title = "New Title";
+    });
   </script>
 </body>
 </html>
