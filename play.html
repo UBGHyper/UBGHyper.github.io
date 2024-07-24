@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="config/main.css">
   <style>
     /* Add some basic styling for the back button */
-   .back-button {
+    .back-button {
       position: absolute;
       top: 10px;
       left: 10px;
@@ -27,7 +27,7 @@
     }
 
     /* Style the game title */
-   .game-title {
+    .game-title {
       text-align: center;
       margin-bottom: 20px;
     }
@@ -56,9 +56,7 @@
   </a>
   <iframe id="gameFrame" width="800px" height="600px" frameborder="0"></iframe>
   <div class="game-title">
-    <div>
-      <!-- game title content here -->
-    </div>
+    <h2 id="gameTitle"></h2>
   </div>
   <button id="fullscreenButton">
     <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"/>
@@ -74,6 +72,7 @@
     } else {
       const embedUrl = `${serverUrl}/${gameUrl}`;
       document.getElementById("gameFrame").src = embedUrl;
+      document.getElementById("gameTitle").textContent = gameUrl.replace(/-/g, ' ');
     }
 
     let isFullscreen = false;
@@ -83,7 +82,7 @@
     function toggleFullscreen() {
       if (!isFullscreen) {
         document.getElementById("gameFrame").requestFullscreen()
-       .catch((err) => {
+        .catch((err) => {
           console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });
         isFullscreen = true;
