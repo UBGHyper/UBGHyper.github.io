@@ -5,19 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UBGHyper - Home</title>
   <link rel="stylesheet" href="config/main.css">
-  <style>
-    /* Move styles to a separate CSS file or keep them here, but avoid mixing with JavaScript */
-    body {
-      margin: 0;
-      padding: 0;
-    }
-
-    iframe {
-      width: 100%;
-      height: 100vh;
-      border: none;
-    }
-  </style>
 </head>
 <body>
 <iframe>
@@ -27,14 +14,13 @@
     </span>
     </span>
   </div>
-  <button onclick="toggleFullscreen()">
-    <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"
-    />
-  </button>
 </div>
   <iframe id="gameFrame"
     width="800px" height="600px" frameborder="0" style=" display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; backround-repeat: no-repeat; background-position: 50%; "
 </iframe>
+    <button onclick="toggleFullscreen()">
+    <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"/>
+  </button>
   <script type="module">
     // Removed duplicate script tag and moved JavaScript code to the bottom of the body
     const serverUrl = "https://parcoil-assets.onrender.com";
