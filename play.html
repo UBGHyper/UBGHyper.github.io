@@ -20,7 +20,21 @@
   </style>
 </head>
 <body>
-  <iframe id="gameFrame"></iframe>
+<iframe>
+</iframe>
+<div class="game-title">
+  <div>
+    </span>
+    </span>
+  </div>
+  <button onclick="toggleFullscreen()">
+    <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"
+    />
+  </button>
+</div>
+  <iframe id="gameFrame"
+    width="800px" height="600px" frameborder="0" style=" display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; backround-repeat: no-repeat; background-position: 50%; "
+</iframe>
   <script type="module">
     // Removed duplicate script tag and moved JavaScript code to the bottom of the body
     const serverUrl = "https://parcoil-assets.onrender.com";
