@@ -8,21 +8,50 @@
     <link rel="stylesheet" href="config/main.css" />
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
-<style>
-body::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
-}
+    <style>
+      body::-webkit-scrollbar {
+        width: 12px;               /* width of the entire scrollbar */
+      }
 
-body::-webkit-scrollbar-track {
-  background: black;        /* color of the tracking area */
-}
+      body::-webkit-scrollbar-track {
+        background: black;        /* color of the tracking area */
+      }
 
-body::-webkit-scrollbar-thumb {
-  background-color: black;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid orange;  /* creates padding around scroll thumb */
-}
-</style>
+      body::-webkit-scrollbar-thumb {
+        background-color: black;    /* color of the scroll thumb */
+        border-radius: 20px;       /* roundness of the scroll thumb */
+        border: 3px solid orange;  /* creates padding around scroll thumb */
+      }
+
+      /* Add styles for the bottom bar */
+      .bottom-bar {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        padding: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .toggle-button {
+        background-color: #444;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+
+      .toggle-button:hover {
+        background-color: #555;
+      }
+
+      .toggle-button.active {
+        background-color: #666;
+      }
+    </style>
   </head>
   <body>
     <div class="center">
@@ -38,5 +67,22 @@ body::-webkit-scrollbar-thumb {
       <a style="font-weight: 700">a site by
       </a><a style="font-weight: 700" class="link" href="https://dsc.gg/parcoil">Fibble</a>
     </div>
+    <!-- Add the bottom bar -->
+    <div class="bottom-bar">
+      <button class="toggle-button" id="toggle-button-1">Toggle 1</button>
+      <button class="toggle-button" id="toggle-button-2">Toggle 2</button>
+      <button class="toggle-button" id="toggle-button-3">Toggle 3</button>
+    </div>
+
+    <script>
+      // Add event listeners to the toggle buttons
+      const toggleButtons = document.querySelectorAll('.toggle-button');
+
+      toggleButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+          button.classList.toggle('active');
+        });
+      });
+    </script>
   </body>
 </html>
