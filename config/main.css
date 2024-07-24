@@ -13,6 +13,13 @@
 section {
     background-image: url('content/backrounds/backround.png');
 }
+
+body {
+  background-image: url('../content/backrounds/backround.png'); /* replace with your image URL */
+  background-size: cover; /* scale the image to cover the entire background */
+  background-repeat: no-repeat; /* prevent the image from repeating */
+}
+
 h1 {
   font-family: 'Apple', sans-serif;
 }
