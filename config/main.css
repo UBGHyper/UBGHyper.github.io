@@ -13,7 +13,9 @@
 section {
     background-image: url('content/backrounds/backround.png');
 }
-
+h1 {
+  font-family: 'Apple', sans-serif;
+}
 * {
   font-family: ubuntu;
   transition: all 0.3s ease;
