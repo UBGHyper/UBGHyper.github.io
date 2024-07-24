@@ -77,6 +77,29 @@ body::-webkit-scrollbar-thumb {
   <button id="fullscreenButton">
     <img src="../content/favicons/fullscreen.png" alt="Fullscreen" width="32" height="32"/>
   </button>
+  <!-- Add a new button to change the tab icon and name -->
+<button id="changeTabButton">Change Tab Icon and Name</button>
+
+<!-- Add the following script to handle the button click event -->
+<script type="module">
+  // ...
+
+  // Get the button element
+  const changeTabButton = document.getElementById("changeTabButton");
+
+  // Add an event listener to the button
+  changeTabButton.addEventListener("click", changeTabIconAndName);
+
+  // Function to change the tab icon and name
+  function changeTabIconAndName() {
+    // Change the tab icon
+    const favicon = document.querySelector("link[rel='icon']");
+    favicon.href = "content/favicons/classroom.png";
+
+    // Change the tab name
+    document.title = "Classroom";
+  }
+</script>
   <script type="module">
     const serverUrl = "https://parcoil-assets.onrender.com";
     const urlParams = new URLSearchParams(window.location.search);
