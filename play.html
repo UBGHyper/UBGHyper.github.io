@@ -13,6 +13,40 @@
       left: 10px;
       z-index: 1; /* make sure it's on top of the iframe */
     }
+
+    /* Center the iframe */
+    #gameFrame {
+      display: block;
+      margin: 40px auto;
+      border: 20px solid #706f6f;
+      background-image: url('../Icons/boot.gif');
+      background-size: auto;
+      background-repeat: no-repeat;
+      background-position: 50%;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Style the game title */
+    .game-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    /* Style the fullscreen button */
+    button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #706f6f;
+      border: none;
+      padding: 10px;
+      cursor: pointer;
+    }
+
+    button img {
+      width: 32px;
+      height: 32px;
+    }
   </style>
 </head>
 <body>
@@ -20,9 +54,7 @@
   <a href="index.html" class="back-button">
     <img src="../content/favicons/back.svg" alt="Back" width="32" height="32"/>
   </a>
-  <iframe id="gameFrame"
-    width="800px" height="600px" frameborder="0" style="display: block; border: 20px solid #706f6f; background-image: url('../Icons/boot.gif'); background-size: auto; background-repeat: no-repeat; background-position: 50%;">
-  </iframe>
+  <iframe id="gameFrame" width="800px" height="600px" frameborder="0"></iframe>
   <div class="game-title">
     <div>
       <!-- game title content here -->
