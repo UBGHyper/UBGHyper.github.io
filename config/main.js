@@ -1,7 +1,7 @@
 // This changes the title of your site
 
-var sitename = "v.1"; // Change this to change the name of your website.
-var subtext = "v.1"; // set the subtext
+var sitename = "v1.0"; // Change this to change the name of your website.
+var subtext = "v1.0"; // set the subtext
 
 // more settings in main.css
 
@@ -69,4 +69,3 @@ document
 document.getElementById("title").innerHTML = `${sitename}`;
 
 document.getElementById("subtitle").innerHTML = `${subtext}`
-
