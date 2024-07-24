@@ -188,8 +188,56 @@
             <span class="slider"></span>
         </label>
         <span class="mode-text">Dark Mode On</span>
+            <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" id="lightModeToggle">
+            <span class="slider"></span>
+        </label>
+        <span class="mode-text">Dark Mode On</span>
+        <button id="changeTabButton" class="toggle-button">
+  <i class="fas fa-toggle-on"></i> Toggle Tab
+</button>
     </div>
     <script>
+class ToggleButton {
+  constructor(buttonId, defaultFavicon, toggledFavicon, defaultTitle, toggledTitle) {
+    this.button = document.getElementById(buttonId);
+    this.favicon = document.querySelector("link[rel='icon']");
+    this.defaultFavicon = defaultFavicon;
+    this.toggledFavicon = toggledFavicon;
+    this.defaultTitle = defaultTitle;
+    this.toggledTitle = toggledTitle;
+    this.isToggled = false;
+
+    this.button.addEventListener("click", () => this.toggle());
+  }
+
+  toggle() {
+    if (!this.isToggled) {
+      this.favicon.href = this.toggledFavicon;
+      document.title = this.toggledTitle;
+    } else {
+      this.favicon.href = this.defaultFavicon;
+      document.title = this.defaultTitle;
+    }
+
+    this.isToggled = !this.isToggled;
+  }
+}
+
+const toggleButton = new ToggleButton(
+  "changeTabButton",
+  "content/favicons/tab.png",
+  "content/favicons/classroom.png",
+  "UBGHyper - Home",
+  "Classroom"
+);
+            document.getElementById('lightModeToggle').addEventListener('change', function() {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('.footer').classList.toggle('light-mode');
+            document.querySelector('.mode-text').classList.toggle('light-mode');
+            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
+        });
         document.getElementById('lightModeToggle').addEventListener('change', function() {
             document.body.classList.toggle('light-mode');
             document.querySelector('.footer').classList.toggle('light-mode');
