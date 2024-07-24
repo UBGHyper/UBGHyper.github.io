@@ -1,46 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta name="google-adsense-account" content="ca-pub-8895667704497452">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBGHyper - Home</title>
-    <link rel="stylesheet" href="config/main.css" />
+    <link rel="stylesheet" href="config/main.css">
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
-<style>
-body::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
-}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+        }
 
-body::-webkit-scrollbar-track {
-  background: black;        /* color of the tracking area */
-}
+        body::-webkit-scrollbar {
+            width: 12px;
+        }
 
-body::-webkit-scrollbar-thumb {
-  background-color: black;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid orange;  /* creates padding around scroll thumb */
-}
-</style>
-  </head>
-  <body>
+        body::-webkit-scrollbar-track {
+            background: black;
+        }
+
+        body::-webkit-scrollbar-thumb {
+            background-color: black;
+            border-radius: 20px;
+            border: 3px solid orange;
+        }
+
+        .center {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .center h1 {
+            margin: 10px 0;
+            font-family: 'Apple-font', sans-serif;
+            color: #333;
+        }
+
+        #searchInput {
+            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            border: 2px solid orange;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #gamesContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #333;
+            color: white;
+        }
+
+        .footer h1 {
+            margin: 5px 0;
+            font-family: 'Apple-font', sans-serif;
+        }
+
+        .game-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .game-square {
+            width: 100px;
+            height: 100px;
+            background-color: orange;
+            margin: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
     <div class="center">
-      
-      <h1 class="Apple-font">UBG Hyper</h1>
-      <h1 class="Apple-font">↓ Games ↓</h1>
+        <h1 class="Apple-font">UBG Hyper</h1>
+        <h1 class="Apple-font">↓ Games ↓</h1>
     </div>
     <div class="center">
-      <input type="text" id="searchInput" placeholder="Search games" />
+        <input type="text" id="searchInput" placeholder="Search games">
     </div>
     <div id="gamesContainer"></div>
     <div class="footer">
-      <h1 class="Apple-font">A Website By</h1>
-      <h1 class="Apple-font">Fibble</h1>
-      <div class="game-container">
-  <div class="game-square">
-  </div>
+        <h1 class="Apple-font">A Website By</h1>
+        <h1 class="Apple-font">Fibble</h1>
     </div>
-  </body>
+    <div class="game-container">
+        <div class="game-square"></div>
+    </div>
+</body>
 </html>
-
