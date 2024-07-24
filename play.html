@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="config/main.css">
   <style>
     /* Add some basic styling for the back button */
-   .back-button {
+    .back-button {
       position: absolute;
       top: 10px;
       left: 10px;
@@ -27,7 +27,7 @@
     }
 
     /* Style the game title */
-   .game-title {
+    .game-title {
       text-align: center;
       margin-bottom: 20px;
     }
@@ -61,9 +61,6 @@
   <button id="fullscreenButton">
     <img src="../Icons/fullscreen.svg" alt="Fullscreen" width="32" height="32"/>
   </button>
-  <button id="changeTabButton">
-    <img src="../Icons/edit.svg" alt="Edit" width="32" height="32"/>
-  </button>
   <script type="module">
     const serverUrl = "https://parcoil-assets.onrender.com";
     const urlParams = new URLSearchParams(window.location.search);
@@ -75,7 +72,7 @@
     } else {
       const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`; // remove trailing slash
       document.getElementById("gameFrame").src = embedUrl;
-      const title = gameUrl.replace(/-/g, ').replace(/\b\w/g, (m) => m.toUpperCase()); // replace dashes with spaces and autocapitalize first letters
+      const title = gameUrl.replace(/-/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase()); // replace dashes with spaces and autocapitalize first letters
       document.getElementById("gameTitle").textContent = title;
     }
 
@@ -86,7 +83,7 @@
     function toggleFullscreen() {
       if (!isFullscreen) {
         document.getElementById("gameFrame").requestFullscreen()
-       .catch((err) => {
+        .catch((err) => {
           console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });
         isFullscreen = true;
@@ -96,19 +93,6 @@
         }
         isFullscreen = false;
       }
-    }
-
-    document.getElementById("changeTabButton").addEventListener("click", changeTab);
-
-    function changeTab() {
-      const newIcon = "../Icons/star.svg";
-      const newTitle = "New Tab Title";
-      document.title = newTitle;
-      const link = document.querySelector("link[rel*='icon']") || document.createElement("link");
-      link.type = "image/x-icon";
-      link.rel = "shortcut icon";
-      link.href = newIcon;
-      document.getElementsByTagName("head")[0].appendChild(link);
     }
   </script>
 </body>
