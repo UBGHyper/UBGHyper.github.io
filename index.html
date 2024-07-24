@@ -98,11 +98,24 @@
             border-radius: 10px;
         }
 
+        .switch-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 200px;
+            background-color: orange;
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
         .switch {
             position: relative;
             display: inline-block;
             width: 60px;
             height: 34px;
+            margin-right: 10px;
         }
 
         .switch input {
@@ -136,11 +149,20 @@
         }
 
         input:checked + .slider {
-            background-color: orange;
+            background-color: #333;
         }
 
         input:checked + .slider:before {
             transform: translateX(26px);
+        }
+
+        .mode-text {
+            font-family: 'Apple-font', sans-serif;
+            color: #333;
+        }
+
+        .mode-text.light-mode {
+            color: black;
         }
     </style>
 </head>
@@ -152,12 +174,6 @@
     <div class="center">
         <input type="text" id="searchInput" placeholder="Search games">
     </div>
-    <div class="center">
-        <label class="switch">
-            <input type="checkbox" id="lightModeToggle">
-            <span class="slider"></span>
-        </label>
-    </div>
     <div id="gamesContainer"></div>
     <div class="footer">
         <h1 class="Apple-font">A Website By</h1>
@@ -166,10 +182,19 @@
     <div class="game-container">
         <div class="game-square"></div>
     </div>
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" id="lightModeToggle">
+            <span class="slider"></span>
+        </label>
+        <span class="mode-text">Dark Mode On</span>
+    </div>
     <script>
         document.getElementById('lightModeToggle').addEventListener('change', function() {
             document.body.classList.toggle('light-mode');
             document.querySelector('.footer').classList.toggle('light-mode');
+            document.querySelector('.mode-text').classList.toggle('light-mode');
+            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
         });
     </script>
 </body>
