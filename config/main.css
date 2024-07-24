@@ -13,7 +13,20 @@
   font-weight: normal;
   font-style: normal;
 }
+::-webkit-scrollbar {
+  width: 10px; /* width of the scrollbar */
+  height: 10px; /* height of the scrollbar */
+  background-color: #f0f0f0; /* background color of the scrollbar */
+}
 
+::-webkit-scrollbar-thumb {
+  background-color: #aaa; /* color of the scrollbar thumb */
+  border-radius: 10px; /* rounded corners for the thumb */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f0f0f0; /* background color of the scrollbar track */
+}
 body {
   background-image: url('../content/backrounds/backround.png'); /* Fix the URL */
   background-size: cover;
