@@ -7,49 +7,54 @@
   <link rel="stylesheet" href="config/main.css">
   <link rel="icon" type="image/png" href="content/favicons/tab.png">
   <style>
+    body {
+      margin: 0;
+      font-family: 'Apple', sans-serif;
+      background-color: #f0f0f0;
+    }
+
     body::-webkit-scrollbar {
-  width: 12px;               /* width of the entire scrollbar */
-}
+      width: 12px;
+    }
 
-body::-webkit-scrollbar-track {
-  background: black;        /* color of the tracking area */
-}
+    body::-webkit-scrollbar-track {
+      background: #f0f0f0;
+    }
 
-body::-webkit-scrollbar-thumb {
-  background-color: black;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
-  border: 3px solid orange;  /* creates padding around scroll thumb */
-}
-    /* Add some basic styling for the back button */
-   .back-button {
+    body::-webkit-scrollbar-thumb {
+      background-color: #333;
+      border-radius: 20px;
+      border: 3px solid #f0f0f0;
+    }
+
+    .back-button {
       position: absolute;
       top: 10px;
       left: 10px;
-      z-index: 1; /* make sure it's on top of the iframe */
+      z-index: 1;
+      background: transparent;
+      border: none;
+      cursor: pointer;
     }
 
-    /* Center the iframe */
     #gameFrame {
       display: block;
       margin: 40px auto;
       border: 20px solid #706f6f;
-      background-image: url('../content/favicons/loading.gif'); /* add a background image */
-      background-size: cover; /* scale the image to cover the entire iframe */
-      background-position: center; /* center the image */
+      background-image: url('../content/favicons/loading.gif');
+      background-size: cover;
+      background-position: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
-    /* Style the game title */
-   .game-title {
+    .game-title {
       text-align: center;
-      margin: 20px auto; /* add some margin to separate from iframe */
-      font-family: 'Apple', sans-serif; /* specify font family */
-      font-size: 18px; /* make title smaller */
-      width: 800px; /* match the width of the iframe */
+      margin: 20px auto;
+      font-size: 18px;
+      width: 800px;
     }
 
-    /* Style the fullscreen button */
-    button {
+    #fullscreenButton, #changeTabButton {
       position: absolute;
       top: 10px;
       right: 10px;
@@ -59,47 +64,44 @@ body::-webkit-scrollbar-thumb {
       cursor: pointer;
     }
 
-    button img {
+    #fullscreenButton img, .back-button img {
       width: 32px;
       height: 32px;
+    }
+
+    #changeTabButton {
+      top: 50px;
+      background: #333;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <!-- Add the back button -->
-  <a href="index.html" class="back-button">
-    <img src="../content/favicons/back.png" alt="Back" width="32" height="32"/>
-  </a>
+  <!-- Back button -->
+  <button class="back-button" onclick="window.location.href='index.html'">
+    <img src="../content/favicons/back.png" alt="Back">
+  </button>
+
+  <!-- Game iframe -->
   <iframe id="gameFrame" width="900px" height="700px" frameborder="0"></iframe>
+
+  <!-- Game title -->
   <div class="game-title">
     <h2 id="gameTitle"></h2>
   </div>
+
+  <!-- Fullscreen button -->
   <button id="fullscreenButton">
-    <img src="../content/favicons/fullscreen.png" alt="Fullscreen" width="32" height="32"/>
+    <img src="../content/favicons/fullscreen.png" alt="Fullscreen">
   </button>
-  <!-- Add a new button to change the tab icon and name -->
-<button id="changeTabButton">Change Tab Icon and Name</button>
 
-<!-- Add the following script to handle the button click event -->
-<script type="module">
-  // ...
+  <!-- Change tab button -->
+  <button id="changeTabButton">Change Tab Icon and Name</button>
 
-  // Get the button element
-  const changeTabButton = document.getElementById("changeTabButton");
-
-  // Add an event listener to the button
-  changeTabButton.addEventListener("click", changeTabIconAndName);
-
-  // Function to change the tab icon and name
-  function changeTabIconAndName() {
-    // Change the tab icon
-    const favicon = document.querySelector("link[rel='icon']");
-    favicon.href = "content/favicons/classroom.png";
-
-    // Change the tab name
-    document.title = "Classroom";
-  }
-</script>
+  <!-- Script to handle game loading and fullscreen functionality -->
   <script type="module">
     const serverUrl = "https://parcoil-assets.onrender.com";
     const urlParams = new URLSearchParams(window.location.search);
@@ -109,33 +111,35 @@ body::-webkit-scrollbar-thumb {
       alert("Game URL not provided!");
       window.location.href = "/"; // Redirect to homepage if game URL is missing
     } else {
-      const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`; // remove trailing slash
+      const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`;
       document.getElementById("gameFrame").src = embedUrl;
-      const title = gameUrl.replace(/[-\/]/g, '').replace(/\b\w/g, (m) => m.toUpperCase()).replace(/\w/g, (m) => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()); // replace dashes and forward slashes with spaces, autocapitalize first letters, and capitalize the first letter of each word
+      const title = gameUrl.replace(/[-\/]/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
       document.getElementById("gameTitle").textContent = title;
     }
 
     let isFullscreen = false;
 
-    document.getElementById("fullscreenButton").addEventListener("click", toggleFullscreen);
-
-    function toggleFullscreen() {
+    document.getElementById("fullscreenButton").addEventListener("click", () => {
       if (!isFullscreen) {
-        document.getElementById("gameFrame").requestFullscreen()
-     .catch((err) => {
+        document.getElementById("gameFrame").requestFullscreen().catch((err) => {
           console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
         });
         isFullscreen = true;
       } else {
         if (document.exitFullscreen) {
-          document.exitFullscreen()
-       .catch((err) => {
+          document.exitFullscreen().catch((err) => {
             console.log(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
           });
           isFullscreen = false;
         }
       }
-    }
+    });
+
+    document.getElementById("changeTabButton").addEventListener("click", () => {
+      const favicon = document.querySelector("link[rel='icon']");
+      favicon.href = "content/favicons/classroom.png";
+      document.title = "Classroom";
+    });
   </script>
 </body>
 </html>
