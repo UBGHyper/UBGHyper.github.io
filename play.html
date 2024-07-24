@@ -19,19 +19,19 @@
       display: block;
       margin: 40px auto;
       border: 20px solid #706f6f;
-      background-image: url('../Icons/boot.gif');
-      background-size: auto;
-      background-repeat: no-repeat;
-      background-position: 50%;
+      background-image: url('../content/favicons/loading.gif'); /* add a background image */
+      background-size: cover; /* scale the image to cover the entire iframe */
+      background-position: center; /* center the image */
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     }
 
     /* Style the game title */
    .game-title {
       text-align: center;
-      margin-bottom: 20px;
+      margin: 20px auto; /* add some margin to separate from iframe */
+      font-family: 'Arial', sans-serif; /* specify font family */
+      font-size: 18px; /* make title smaller */
       width: 800px; /* match the width of the iframe */
-      margin: 0 auto; /* horizontally center the title */
     }
 
     /* Style the fullscreen button */
@@ -74,7 +74,7 @@
     } else {
       const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`; // remove trailing slash
       document.getElementById("gameFrame").src = embedUrl;
-      const title = gameUrl.replace(/[--_\/]/g, '').replace(/\b\w/g, (m) => m.toUpperCase()).replace(/\w/g, (m) => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()); // replace dashes and forward slashes with spaces, autocapitalize first letters, and capitalize the first letter of each word
+      const title = gameUrl.replace(/[-\/]/g, '').replace(/\b\w/g, (m) => m.toUpperCase()).replace(/\w/g, (m) => m.charAt(0).toUpperCase() + m.slice(1).toLowerCase()); // replace dashes and forward slashes with spaces, autocapitalize first letters, and capitalize the first letter of each word
       document.getElementById("gameTitle").textContent = title;
     }
 
