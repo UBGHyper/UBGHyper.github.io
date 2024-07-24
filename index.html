@@ -15,6 +15,12 @@
             padding: 0;
             background-color: #f0f0f0;
             color: #333;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        body.light-mode {
+            background-color: white;
+            color: black;
         }
 
         body::-webkit-scrollbar {
@@ -23,6 +29,10 @@
 
         body::-webkit-scrollbar-track {
             background: black;
+        }
+
+        body.light-mode::-webkit-scrollbar-track {
+            background: #ccc;
         }
 
         body::-webkit-scrollbar-thumb {
@@ -39,7 +49,6 @@
         .center h1 {
             margin: 10px 0;
             font-family: 'Apple-font', sans-serif;
-            color: #333;
         }
 
         #searchInput {
@@ -65,6 +74,11 @@
             color: white;
         }
 
+        .footer.light-mode {
+            background-color: #ccc;
+            color: black;
+        }
+
         .footer h1 {
             margin: 5px 0;
             font-family: 'Apple-font', sans-serif;
@@ -83,6 +97,51 @@
             margin: 10px;
             border-radius: 10px;
         }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: orange;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(26px);
+        }
     </style>
 </head>
 <body>
@@ -93,6 +152,12 @@
     <div class="center">
         <input type="text" id="searchInput" placeholder="Search games">
     </div>
+    <div class="center">
+        <label class="switch">
+            <input type="checkbox" id="lightModeToggle">
+            <span class="slider"></span>
+        </label>
+    </div>
     <div id="gamesContainer"></div>
     <div class="footer">
         <h1 class="Apple-font">A Website By</h1>
@@ -101,5 +166,11 @@
     <div class="game-container">
         <div class="game-square"></div>
     </div>
+    <script>
+        document.getElementById('lightModeToggle').addEventListener('change', function() {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('.footer').classList.toggle('light-mode');
+        });
+    </script>
 </body>
 </html>
