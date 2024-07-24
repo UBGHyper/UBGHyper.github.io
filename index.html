@@ -9,54 +9,49 @@
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
     <style>
-        .toggle-button {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            margin-right: 10px;
-        }
+        .toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+}
 
-        .toggle-button input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+.toggle-switch input[type="checkbox"] {
+  display: none;
+}
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
+.toggle-slider {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #ccc;
+  border-radius: 30px;
+  transition: background-color 0.2s, transform 0.2s;
+  cursor: pointer;
+}
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 5px;
+  left: 5px;
+  transition: transform 0.2s;
+}
 
-        input:checked + .slider {
-            background-color: #333;
-        }
+.toggle-switch input[type="checkbox"]:checked + label .toggle-slider {
+  background-color: #66d9ef;
+  transform: translateX(30px);
+}
 
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
-
-//seperator//
+.toggle-switch input[type="checkbox"]:checked + label .toggle-slider:before {
+  transform: translateX(30px);
+}
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -242,44 +237,31 @@
             <span class="slider"></span>
         </label>
         <span class="mode-text">Dark Mode On</span>
-        <button id="changeTabButton" class="toggle-button">
-  <i class="fas fa-toggle-on"></i> Toggle Tab
+<div class="toggle-switch">
+  <input type="checkbox" id="toggle-switch" />
+  <label for="toggle-switch">
+    <span class="toggle-slider"></span>
+  </label>
+</div>
 </button>
     </div>
     <script>
-class ToggleButton {
-  constructor(buttonId, defaultFavicon, toggledFavicon, defaultTitle, toggledTitle) {
-    this.button = document.getElementById(buttonId);
-    this.favicon = document.querySelector("link[rel='icon']");
-    this.defaultFavicon = defaultFavicon;
-    this.toggledFavicon = toggledFavicon;
-    this.defaultTitle = defaultTitle;
-    this.toggledTitle = toggledTitle;
-    this.isToggled = false;
+const toggleSwitch = document.getElementById("toggle-switch");
+const favicon = document.querySelector("link[rel='icon']");
+const defaultFavicon = "content/favicons/tab.png";
+const toggledFavicon = "content/favicons/classroom.png";
+const defaultTitle = "UBGHyper - Home";
+const toggledTitle = "Classroom";
 
-    this.button.addEventListener("click", () => this.toggle());
+toggleSwitch.addEventListener("change", () => {
+  if (toggleSwitch.checked) {
+    favicon.href = toggledFavicon;
+    document.title = toggledTitle;
+  } else {
+    favicon.href = defaultFavicon;
+    document.title = defaultTitle;
   }
-
-  toggle() {
-    if (!this.isToggled) {
-      this.favicon.href = this.toggledFavicon;
-      document.title = this.toggledTitle;
-    } else {
-      this.favicon.href = this.defaultFavicon;
-      document.title = this.defaultTitle;
-    }
-
-    this.isToggled = !this.isToggled;
-  }
-}
-
-const toggleButton = new ToggleButton(
-  "changeTabButton",
-  "content/favicons/tab.png",
-  "content/favicons/classroom.png",
-  "UBGHyper - Home",
-  "Classroom"
-);
+});
             document.getElementById('lightModeToggle').addEventListener('change', function() {
             document.body.classList.toggle('light-mode');
             document.querySelector('.footer').classList.toggle('light-mode');
