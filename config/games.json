@@ -19,7 +19,7 @@
   },
   {
     "name": "BitLife",
-    "image": "splash.png",
+    "image": "logo.png",
     "url": "Bitlife",
     "new": false
   },
@@ -50,7 +50,7 @@
   {
     "name": "Eggy Car",
     "image": "logo.jpg",
-    "url": "Eggy-Car",
+    "url": "loading-logo.png",
     "new": false
   },
   {
@@ -86,7 +86,7 @@
   {
     "name": "Snow Rider 3D",
     "image": "logo.jpg",
-    "url": "Snow-Rider-3D",
+    "url": "snow-rider-3d.png",
     "new": false
   },
   {
