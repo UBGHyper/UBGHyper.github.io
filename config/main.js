@@ -12,7 +12,7 @@ var subtext = "v1.0"; // set the subtext
 
 import "/config/custom.js";
 
-var serverUrl1 = "https://parcoil-assets.onrender.com";
+var serverUrl1 = "https://ubghypergames.github.io/";
 var currentPageTitle = document.title;
 document.title = `${currentPageTitle} | ${sitename}`;
 let gamesData = []; 
