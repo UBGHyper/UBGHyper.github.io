@@ -6,12 +6,6 @@
     "new": false
   },
   {
-    "name": "A Dance of Fire and Ice (dont work)",
-    "image": "splash.jpg",
-    "url": "a-dance-of-fire-and-ice",
-    "new": false
-  },
-  {
     "name": "Awesome Tanks 2",
     "image": "awesometanks2.jpg",
     "url": "Awesome-Tanks-2",
@@ -25,7 +19,7 @@
   },
   {
     "name": "Cookie Clicker",
-    "image": "cookie1.jpg",
+    "image": "cookieclicker.jpg",
     "url": "Cookie-Clicker",
     "new": false
   },
@@ -37,49 +31,43 @@
   },
   {
     "name": "Awsome Tanks",
-    "image": "logo.jpg",
+    "image": "awesometanks.jpg",
     "url": "Awesome-Tanks",
     "new": false
   },
   {
-    "name": "DOOM",
-    "image": "logo.jpg",
-    "url": "Doom",
-    "new": false
-  },
-  {
     "name": "Eggy Car",
-    "image": "loading-logo.png",
+    "image": "Eggy-Car.jpg",
     "url": "Eggy-Car",
     "new": false
   },
   {
     "name": "Slope",
-    "image": "slope4.jpg",
+    "image": "slope.jpg",
     "url": "Slope",
     "new": false
   },
   {
     "name": "Jelly Truck",
-    "image": "logo.jpg",
+    "image": "jellytruck.jpg",
     "url": "Jelly-Truck",
     "new": false
   },
   {
     "name": "Polytrack",
-    "image": "logo.jpg",
+    "image": "polytrack.jpg",
     "url": "Polytrack",
     "new": false
   },
   {
     "name": "Retro-Bowl",
-    "image": "logo.jpg",
+    "image": "retrobowl.jpg",
     "url": "Retro-Bowl",
     "new": false
   },
   {
     "name": "Run 3",
-    "image": "logo.jpg",
+    "image": "run3.jpg",
     "url": "Run-3",
     "new": false
   },
@@ -91,19 +79,19 @@
   },
   {
     "name": "Tanuki Sunset",
-    "image": "logo.jpg",
+    "image": "tanukisunset.jpg",
     "url": "Tanuki-Sunset",
     "new": false
   },
   {
     "name": "There is No Game",
-    "image": "logo.jpg",
+    "image": "thereisnogame.jpg",
     "url": "There-Is-No-Game",
     "new": false
   },
   {
     "name": "Impossible Quiz",
-    "image": "impossiblequiz.png",
+    "image": "impossiblequiz.jpg",
     "url": "Impossible-Quiz",
     "new": false
   }
