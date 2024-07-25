@@ -128,20 +128,22 @@
             bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: #fff;
+            background-color: white;
             padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             border-radius: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 2px solid orange;
         }
 
         .toggle-switch {
+            position: relative;
             display: inline-block;
             width: 60px;
             height: 34px;
-            position: relative;
+            margin-right: 10px;
         }
 
         .toggle-switch input[type="checkbox"] {
@@ -172,18 +174,31 @@
             border-radius: 50%;
         }
 
-        .toggle-switch input[type="checkbox"]:checked + .toggle-slider {
+        .toggle-switch input[type="checkbox"]:checked + label .toggle-slider {
             background-color: #333;
         }
 
-        .toggle-switch input[type="checkbox"]:checked + .toggle-slider:before {
+        .toggle-switch input[type="checkbox"]:checked + label .toggle-slider:before {
             transform: translateX(26px);
+        }
+
+        .theme-select {
+            font-size: 16px;
+            padding: 5px 10px;
+            border: 2px solid orange;
+            border-radius: 5px;
+            background-color: white;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .theme-select:focus {
+            outline: none;
         }
 
         .mode-text {
             font-family: 'Apple-font', sans-serif;
             color: #333;
-            margin-right: 10px;
         }
 
         .mode-text.light-mode {
@@ -196,14 +211,6 @@
 
         .mode-text.blue-mode {
             color: #003366;
-        }
-
-        .theme-select {
-            margin-left: 10px;
-            font-size: 16px;
-            padding: 5px;
-            border: 2px solid #333;
-            border-radius: 5px;
         }
     </style>
 </head>
@@ -224,10 +231,11 @@
         <div class="game-square"></div>
     </div>
     <div class="switch-container">
-        <span class="mode-text">Theme:</span>
         <div class="toggle-switch">
             <input type="checkbox" id="toggle-switch" />
-            <span class="toggle-slider"></span>
+            <label for="toggle-switch">
+                <span class="toggle-slider"></span>
+            </label>
         </div>
         <select id="themeSelect" class="theme-select">
             <option value="default">Select Theme</option>
