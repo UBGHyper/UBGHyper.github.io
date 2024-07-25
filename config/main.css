@@ -38,7 +38,7 @@ body {
 }
 
 body.light-mode {
-    background-image: url('content/backrounds/backroundlight.png');
+    background-image: url('../content/backrounds/backroundlight.png');
     color: black;
     background-size: cover;
     background-position: center;
@@ -46,7 +46,7 @@ body.light-mode {
 }
 
 body.dark-mode {
-    background-image: url('content/backrounds/backround.png');
+    background-image: url('../content/backrounds/backround.png');
     color: white;
     background-size: cover;
     background-position: center;
@@ -54,7 +54,7 @@ body.dark-mode {
 }
 
 body.blue-mode {
-    background-image: url('content/backrounds/backroundblue.png');
+    background-image: url('../content/backrounds/backroundblue.png');
     color: black;
     background-size: cover;
     background-position: center;
@@ -212,9 +212,9 @@ body::-webkit-scrollbar-thumb {
 .theme-select {
     font-size: 16px;
     padding: 5px 10px;
-    border: 2px solid orange;
+    border: 2px solid black;
     border-radius: 5px;
-    background-color: black;
+    background-color: orange;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
