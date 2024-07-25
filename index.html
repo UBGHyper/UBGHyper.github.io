@@ -175,8 +175,8 @@
         .switch-container {
             position: fixed;
             bottom: 0;
-            left: 0;
-            width: 325px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: orange;
             padding: 10px;
             display: flex;
@@ -211,66 +211,4 @@
 <body>
     <div class="center">
         <h1 class="Apple-font">UBG Hyper</h1>
-        <h1 class="Apple-font">↓ Games ↓</h1>
-    </div>
-    <div class="center">
-        <input type="text" id="searchInput" placeholder="Search games">
-    </div>
-    <div id="gamesContainer"></div>
-    <div class="footer">
-        <h1 class="Apple-font">A Website By</h1>
-        <h1 class="Apple-font">Fibble</h1>
-    </div>
-    <div class="game-container">
-        <div class="game-square"></div>
-    </div>
-    <div class="switch-container">
-        </label>
-        <span class="mode-text">Dark Mode On</span>
-        <div class="toggle-switch">
-            <input type="checkbox" id="toggle-switch" />
-            <label for="toggle-switch">
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-        <select id="themeSelect" class="theme-select">
-            <option value="default">Select Theme</option>
-            <option value="light-mode">Light</option>
-            <option value="dark-mode">Dark</option>
-            <option value="blue-mode">Blue</option>
-        </select>
-    </div>
-    <script>
-        const toggleSwitch = document.getElementById("toggle-switch");
-        const favicon = document.querySelector("link[rel='icon']");
-        const defaultFavicon = "content/favicons/tab.png";
-        const toggledFavicon = "content/favicons/classroom.png";
-        const defaultTitle = "UBGHyper - Home";
-        const toggledTitle = "Classroom";
-
-        toggleSwitch.addEventListener("change", () => {
-            if (toggleSwitch.checked) {
-                favicon.href = toggledFavicon;
-                document.title = toggledTitle;
-            } else {
-                favicon.href = defaultFavicon;
-                document.title = defaultTitle;
-            }
-        });
-
-        document.getElementById('lightModeToggle').addEventListener('change', function() {
-            document.body.classList.toggle('light-mode');
-            document.querySelector('.footer').classList.toggle('light-mode');
-            document.querySelector('.mode-text').classList.toggle('light-mode');
-            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
-        });
-
-        document.getElementById('themeSelect').addEventListener('change', function() {
-            const theme = this.value;
-            document.body.className = theme;
-            document.querySelector('.footer').className = `footer ${theme}`;
-            document.querySelector('.mode-text').className = `mode-text ${theme}`;
-        });
-    </script>
-</body>
-</html>
+        <h1 class
