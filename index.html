@@ -19,29 +19,29 @@
             transition: background-color 0.5s, color 0.5s;
         }
 
-body.light-mode {
-    background-image: url('content/backrounds/backroundlight.png');
-    color: black;
-    background-size: cover; /* Adjusts the size of the background image to cover the whole area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
-}
+        body.light-mode {
+            background-image: url('content/backrounds/backroundlight.png');
+            color: black;
+            background-size: cover; /* Adjusts the size of the background image to cover the whole area */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+        }
 
-body.dark-mode {
-    background-image: url('content/backrounds/backround.png');
-    color: black;
-    background-size: cover; /* Adjusts the size of the background image to cover the whole area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
-}
+        body.dark-mode {
+            background-image: url('content/backrounds/backround.png');
+            color: black;
+            background-size: cover; /* Adjusts the size of the background image to cover the whole area */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+        }
 
-body.blue-mode {
-    background-image: url('content/backrounds/backroundblue.png');
-    color: black;
-    background-size: cover; /* Adjusts the size of the background image to cover the whole area */
-    background-position: center; /* Centers the image */
-    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
-}
+        body.blue-mode {
+            background-image: url('content/backrounds/backroundblue.png');
+            color: black;
+            background-size: cover; /* Adjusts the size of the background image to cover the whole area */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+        }
 
         body::-webkit-scrollbar {
             width: 12px;
@@ -196,13 +196,25 @@ body.blue-mode {
             padding: 5px 10px;
             border: 2px solid orange;
             border-radius: 5px;
-            background-color: black;
+            background-color: white; /* Default background */
+            color: black;
             cursor: pointer;
             transition: background-color 0.3s, color 0.3s;
         }
 
-        .theme-select:focus {
-            outline: none;
+        body.light-mode .theme-select {
+            background-color: white;
+            color: black;
+        }
+
+        body.dark-mode .theme-select {
+            background-color: black;
+            color: white;
+        }
+
+        body.blue-mode .theme-select {
+            background-color: #87cefa;
+            color: #003366;
         }
 
         .mode-text {
@@ -274,8 +286,8 @@ body.blue-mode {
         document.getElementById('themeSelect').addEventListener('change', function() {
             const theme = this.value;
             document.body.className = theme;
-            document.querySelector('.footer').className = footer ${theme};
-            document.querySelector('.mode-text').className = mode-text ${theme};
+            document.querySelector('.footer').className = `footer ${theme}`;
+            document.querySelector('.mode-text').className = `mode-text ${theme}`;
         });
     </script>
 </body>
