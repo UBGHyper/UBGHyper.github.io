@@ -73,6 +73,16 @@
             color: black;
         }
 
+        body.dark-mode {
+            background-color: black;
+            color: white;
+        }
+
+        body.blue-mode {
+            background-color: #add8e6;
+            color: #003366;
+        }
+
         body::-webkit-scrollbar {
             width: 12px;
         }
@@ -83,6 +93,10 @@
 
         body.light-mode::-webkit-scrollbar-track {
             background: #ccc;
+        }
+
+        body.blue-mode::-webkit-scrollbar-track {
+            background: #87cefa;
         }
 
         body::-webkit-scrollbar-thumb {
@@ -129,6 +143,16 @@
             color: black;
         }
 
+        .footer.dark-mode {
+            background-color: #333;
+            color: white;
+        }
+
+        .footer.blue-mode {
+            background-color: #87cefa;
+            color: #003366;
+        }
+
         .footer h1 {
             margin: 5px 0;
             font-family: 'Apple-font', sans-serif;
@@ -169,6 +193,19 @@
         .mode-text.light-mode {
             color: black;
         }
+
+        .mode-text.dark-mode {
+            color: white;
+        }
+
+        .mode-text.blue-mode {
+            color: #003366;
+        }
+
+        .theme-select {
+            margin-left: 10px;
+            font-size: 16px;
+        }
     </style>
 </head>
 <body>
@@ -199,6 +236,12 @@
                 <span class="toggle-slider"></span>
             </label>
         </div>
+        <select id="themeSelect" class="theme-select">
+            <option value="default">Select Theme</option>
+            <option value="light-mode">Light</option>
+            <option value="dark-mode">Dark</option>
+            <option value="blue-mode">Blue</option>
+        </select>
     </div>
     <script>
         const toggleSwitch = document.getElementById("toggle-switch");
@@ -223,6 +266,13 @@
             document.querySelector('.footer').classList.toggle('light-mode');
             document.querySelector('.mode-text').classList.toggle('light-mode');
             document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
+        });
+
+        document.getElementById('themeSelect').addEventListener('change', function() {
+            const theme = this.value;
+            document.body.className = theme;
+            document.querySelector('.footer').className = `footer ${theme}`;
+            document.querySelector('.mode-text').className = `mode-text ${theme}`;
         });
     </script>
 </body>
