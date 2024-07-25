@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="config/main.css">
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
-    <style>body {
+    <style>
+body {
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -72,6 +73,10 @@ body::-webkit-scrollbar-thumb {
 .center h1 {
     margin: 10px 0;
     font-family: 'Apple-font', sans-serif;
+}
+
+body.light-mode .center h1 {
+    color: black; /* Set h1 text color to black in light mode */
 }
 
 #searchInput {
