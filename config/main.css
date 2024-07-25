@@ -1,22 +1,28 @@
 /* Import custom styles */
 @import url('/config/custom.css');
 
+/* Global Variables */
 :root {
   --text-color: #ffffff; /* Use hex code for white */
   --accent-color: #000000; /* Use hex code for black */
   --background-color: #f0f0f0; /* Add a default background color */
 }
 
+/* Font Face */
 @font-face {
   font-family: 'Apple'; /* Choose a name for your font */
   src: url('content/fonts/Yantramanav-Black.ttf'); /* Replace with the actual file path */
   font-weight: normal;
   font-style: normal;
 }
+
+/* Apple Font Class */
 .Apple-font {
   font-family: 'Apple', sans-serif; /* Use the font family name */
   color: #ffffff; /* Set the text color to white */
 }
+
+/* Scrollbar Styles */
 .scrollbar-wrapper {
   overflow-y: auto;
   padding-right: 10px; /* add space for the scrollbar */
@@ -53,6 +59,7 @@
   overflow-y: scroll;
   -ms-overflow-style: none;
 }
+
 ::-webkit-scrollbar {
   width: 10px; /* width of the scrollbar */
   height: 10px; /* height of the scrollbar */
@@ -67,6 +74,8 @@
 ::-webkit-scrollbar-track {
   background-color: #f0f0f0; /* background color of the scrollbar track */
 }
+
+/* Body Styles */
 body {
   background-image: url('../content/backrounds/backround.png'); /* Fix the URL */
   background-size: cover;
@@ -80,14 +89,17 @@ body {
   user-select: none;
 }
 
+/* Heading Styles */
 h1 {
   font-family: 'Apple', sans-serif; /* Use single quotes for font family */
 }
 
+/* Global Transition */
 * {
   transition: all 0.3s ease;
 }
 
+/* Navigation Styles */
 nav a {
   float: left;
   display: block;
@@ -103,10 +115,12 @@ nav a:hover {
   border-radius: 5px;
 }
 
+/* Container Styles */
 .container {
   padding: 20px;
 }
 
+/* Game Title Styles */
 .game-title {
   color: #3c3c3c;
   background-color: #a5a2a2;
@@ -156,6 +170,7 @@ nav a:hover {
   white-space: nowrap;
 }
 
+/* Search Input Styles */
 #searchInput {
   padding: 17px;
   box-sizing: border-box;
@@ -163,6 +178,7 @@ nav a:hover {
   width: 100%;
   max-width: 400px;
   margin: 20px auto;
+ 
   border-radius: 10px;
   border: none;
   font-size: 24px;
