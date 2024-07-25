@@ -20,7 +20,7 @@
   {
     "name": "BitLife",
     "image": "splash.png",
-    "url": "bitlife",
+    "url": "Bitlife",
     "new": false
   },
   {
@@ -33,6 +33,72 @@
     "name": "Drive Mad",
     "image": "logo.jpg",
     "url": "drive-mad",
+    "new": false
+  },
+    {
+    "name": "Awsome Tanks",
+    "image": "logo.jpg",
+    "url": "Awesome-Tanks",
+    "new": false
+  },
+    {
+    "name": "DOOM",
+    "image": "logo.jpg",
+    "url": "Doom",
+    "new": false
+  },
+    {
+    "name": "Eggy Car",
+    "image": "logo.jpg",
+    "url": "Eggy-Car",
+    "new": false
+  },
+    {
+    "name": "Slope",
+    "image": "logo.jpg",
+    "url": "Slope",
+    "new": false
+  },
+    {
+    "name": "Jelly Truck",
+    "image": "logo.jpg",
+    "url": "Jelly-Truck",
+    "new": false
+  },
+    {
+    "name": "Polytrack",
+    "image": "logo.jpg",
+    "url": "Polytrack",
+    "new": false
+  },
+    {
+    "name": "Retro-Bowl",
+    "image": "logo.jpg",
+    "url": "Retro-Bowl",
+    "new": false
+  },
+    {
+    "name": "Run 3",
+    "image": "logo.jpg",
+    "url": "Run-3",
+    "new": false
+  },
+      {
+    "name": "Snow Rider 3D",
+    "image": "logo.jpg",
+    "url": "Snow-Rider-3D",
+    "new": false
+  },
+      {
+    "name": "Tanuki Sunset",
+    "image": "logo.jpg",
+    "url": "Tanuki-Sunset",
+    "new": false
+  },
+      {
+    "name": "There is No Game",
+    "image": "logo.jpg",
+    "url": "There-Is-No-Game",
     "new": false
   },
   {
