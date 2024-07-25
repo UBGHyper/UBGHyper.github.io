@@ -66,6 +66,11 @@ document
   .getElementById("searchInput")
   .addEventListener("input", handleSearchInput);
 
-document.getElementById("title").innerHTML = `${sitename}`;
+const subtitleElement = document.getElementById("subtitle");
+if (subtitleElement) {
+  subtitleElement.innerHTML = `${subtext}`;
+} else {
+  console.error("Element with id 'subtitle' not found.");
+}
 
 document.getElementById("subtitle").innerHTML = `${subtext}`
