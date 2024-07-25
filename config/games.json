@@ -1,13 +1,13 @@
 [
   {
     "name": "2048",
-    "image": "2048.png",
+    "image": "2048.jpg",
     "url": "2048",
     "new": false
   },
   {
     "name": "A Dance of Fire and Ice (dont work)",
-    "image": "splash.png",
+    "image": "splash.jpg",
     "url": "a-dance-of-fire-and-ice",
     "new": false
   },
@@ -19,13 +19,13 @@
   },
   {
     "name": "BitLife",
-    "image": "logo.png",
+    "image": "logo.jpg",
     "url": "Bitlife",
     "new": false
   },
   {
     "name": "Cookie Clicker",
-    "image": "cookie1.jpeg",
+    "image": "cookie1.jpg",
     "url": "Cookie-Clicker",
     "new": false
   },
@@ -49,8 +49,8 @@
   },
   {
     "name": "Eggy Car",
-    "image": "logo.jpg",
-    "url": "loading-logo.png",
+    "image": "loading-logo.png",
+    "url": "Eggy-Car",
     "new": false
   },
   {
@@ -85,8 +85,8 @@
   },
   {
     "name": "Snow Rider 3D",
-    "image": "logo.jpg",
-    "url": "snow-rider-3d.png",
+    "image": "snow-rider-3d.jpg",
+    "url": "Snow-Rider-3D",
     "new": false
   },
   {
