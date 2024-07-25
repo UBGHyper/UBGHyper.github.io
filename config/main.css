@@ -424,9 +424,9 @@ body::-webkit-scrollbar-thumb {
 .theme-select {
     font-size: 16px;
     padding: 5px 10px;
-    border: 2px solid orange;
+    border: 2px solid pink;
     border-radius: 5px;
-    background-color: black;
+    background-color: orange;
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
