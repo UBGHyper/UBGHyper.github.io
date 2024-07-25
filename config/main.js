@@ -12,7 +12,7 @@ var subtext = "v1.0"; // set the subtext
 
 import "/config/custom.js";
 
-var serverUrl1 = "https://GameList.github.io";
+var serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
 var currentPageTitle = document.title;
 document.title = `${currentPageTitle} | ${sitename}`;
 let gamesData = []; 
