@@ -10,7 +10,7 @@ var subtext = "v1.0"; // set the subtext
 // END CONFIG
 // DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOUR DOING!
 
-import "/./config/custom.js";
+import "/config/custom.js";
 
 var serverUrl1 = "https://parcoil-assets.onrender.com";
 var currentPageTitle = document.title;
