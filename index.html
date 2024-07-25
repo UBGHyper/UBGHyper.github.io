@@ -19,20 +19,29 @@
             transition: background-color 0.5s, color 0.5s;
         }
 
-        body.light-mode {
-            background-color: white;
-            color: black;
-        }
+body.light-mode {
+    background-image: url('content/backrounds/backroundlight.png');
+    color: black;
+    background-size: cover; /* Adjusts the size of the background image to cover the whole area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+}
 
-        body.dark-mode {
-            background-color: black;
-            color: white;
-        }
+body.dark-mode {
+    background-image: url('content/backrounds/backround.png');
+    color: black;
+    background-size: cover; /* Adjusts the size of the background image to cover the whole area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+}
 
-        body.blue-mode {
-            background-color: #add8e6;
-            color: #003366;
-        }
+body.blue-mode {
+    background-image: url('content/backrounds/backroundblue.png');
+    color: black;
+    background-size: cover; /* Adjusts the size of the background image to cover the whole area */
+    background-position: center; /* Centers the image */
+    background-repeat: no-repeat; /* Ensures the image doesn't repeat */
+}
 
         body::-webkit-scrollbar {
             width: 12px;
