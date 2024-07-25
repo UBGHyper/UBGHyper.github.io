@@ -7,76 +7,85 @@
   <link rel="stylesheet" href="config/main.css">
   <link rel="icon" type="image/png" href="content/favicons/tab.png">
   <style>
-            .switch-container {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 2000px;
-            background-color: orange;
-            padding: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .switch-container {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: orange;
+      padding: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    }
 
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-            margin-right: 10px;
-        }
+    .switch {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 34px;
+      margin-right: 10px;
+    }
 
-        .switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+    .switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
+    .slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 34px;
+    }
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
+    .slider:before {
+      position: absolute;
+      content: "";
+      height: 26px;
+      width: 26px;
+      left: 4px;
+      bottom: 4px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
 
-        input:checked + .slider {
-            background-color: #333;
-        }
+    input:checked + .slider {
+      background-color: #333;
+    }
 
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
+    input:checked + .slider:before {
+      transform: translateX(26px);
+    }
 
-        .mode-text {
-            font-family: 'Apple-font', sans-serif;
-            color: #333;
-        }
+    .mode-text {
+      font-family: 'Apple-font', sans-serif;
+      color: #333;
+      transition: color 0.4s;
+    }
 
-        .mode-text.light-mode {
-            color: black;
-        }
+    .mode-text.light-mode {
+      color: black;
+    }
+
     body {
       margin: 0;
       font-family: 'Apple', sans-serif;
       background-color: #f0f0f0;
+      transition: background-color 0.4s;
+    }
+
+    body.light-mode {
+      background-color: #fff;
     }
 
     body::-webkit-scrollbar {
@@ -107,7 +116,7 @@
       display: block;
       margin: 40px auto;
       border: 20px solid #706f6f;
-      background-image: url('../content/favicons/loading.gig');
+      background-image: url('../content/favicons/loading.gif');
       background-size: cover;
       background-position: center;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -116,8 +125,10 @@
     .game-title {
       text-align: center;
       margin: 20px auto;
-      font-size: 18px;
+      font-size: 24px;
+      font-weight: bold;
       width: 800px;
+      color: #333;
     }
 
     #fullscreenButton, #changeTabButton {
@@ -142,6 +153,12 @@
       border-radius: 5px;
       padding: 10px 15px;
       cursor: pointer;
+      transition: background-color 0.4s, transform 0.4s;
+    }
+
+    #changeTabButton:hover {
+      background-color: #555;
+      transform: scale(1.05);
     }
   </style>
 </head>
@@ -168,11 +185,12 @@
   <button id="changeTabButton">Change Tab Icon and Name</button>
 
   <div class="switch-container">
-        <label class="switch">
-            <input type="checkbox" id="lightModeToggle">
-            <span class="slider"></span>
-        </label>
-        <span class="mode-text">Dark Mode On</span>
+    <label class="switch">
+      <input type="checkbox" id="lightModeToggle">
+      <span class="slider"></span>
+    </label>
+    <span class="mode-text">Dark Mode On</span>
+  </div>
 
   <!-- Script to handle game loading and fullscreen functionality -->
   <script type="module">
@@ -213,12 +231,12 @@
       favicon.href = "content/favicons/classroom.png";
       document.title = "Classroom";
     });
-            document.getElementById('lightModeToggle').addEventListener('change', function() {
-            document.body.classList.toggle('light-mode');
-            document.querySelector('.footer').classList.toggle('light-mode');
-            document.querySelector('.mode-text').classList.toggle('light-mode');
-            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
-        });
+
+    document.getElementById('lightModeToggle').addEventListener('change', function() {
+      document.body.classList.toggle('light-mode');
+      document.querySelector('.mode-text').classList.toggle('light-mode');
+      document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
+    });
   </script>
 </body>
 </html>
