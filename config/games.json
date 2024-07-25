@@ -1,12 +1,12 @@
 [
   {
     "name": "2048",
-    "image": "2048/2048.png",
+    "image": "2048.png",
     "url": "2048",
     "new": false
   },
   {
-    "name": "A Dance of Fire and Ice",
+    "name": "A Dance of Fire and Ice (dont work)",
     "image": "splash.png",
     "url": "a-dance-of-fire-and-ice",
     "new": false
@@ -14,7 +14,7 @@
   {
     "name": "Awesome Tanks 2",
     "image": "awesometanks2.jpg",
-    "url": "awesometanks2",
+    "url": "Awesome-Tanks-2",
     "new": false
   },
   {
@@ -26,13 +26,13 @@
   {
     "name": "Cookie Clicker",
     "image": "cookie1.jpeg",
-    "url": "cookie-clicker",
+    "url": "Cookie-Clicker",
     "new": false
   },
   {
     "name": "Drive Mad",
     "image": "logo.jpg",
-    "url": "drive-mad",
+    "url": "Drive-Mad",
     "new": false
   },
   {
@@ -104,7 +104,7 @@
   {
     "name": "Impossible Quiz",
     "image": "impossiblequiz.png",
-    "url": "impossiblequiz",
+    "url": "Impossible-Quiz",
     "new": false
   }
 ]
