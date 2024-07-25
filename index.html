@@ -10,55 +10,6 @@
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
     <style>
-        .toggle-switch,
-        .switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-
-        .toggle-switch input[type="checkbox"],
-        .switch input[type="checkbox"] {
-            display: none;
-        }
-
-        .toggle-slider,
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-
-        .toggle-slider:before,
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        .toggle-switch input[type="checkbox"]:checked + label .toggle-slider,
-        .switch input[type="checkbox"]:checked + .slider {
-            background-color: #333;
-        }
-
-        .toggle-switch input[type="checkbox"]:checked + label .toggle-slider:before,
-        .switch input[type="checkbox"]:checked + .slider:before {
-            transform: translateX(26px);
-        }
-
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -174,20 +125,65 @@
 
         .switch-container {
             position: fixed;
-            bottom: 0;
+            bottom: 10px;
             left: 50%;
             transform: translateX(-50%);
-            background-color: orange;
-            padding: 10px;
+            background-color: #fff;
+            padding: 10px 20px;
             display: flex;
             align-items: center;
-            justify-content: center;
+            justify-content: space-between;
             border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .toggle-switch {
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+            position: relative;
+        }
+
+        .toggle-switch input[type="checkbox"] {
+            display: none;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        .toggle-switch input[type="checkbox"]:checked + .toggle-slider {
+            background-color: #333;
+        }
+
+        .toggle-switch input[type="checkbox"]:checked + .toggle-slider:before {
+            transform: translateX(26px);
         }
 
         .mode-text {
             font-family: 'Apple-font', sans-serif;
             color: #333;
+            margin-right: 10px;
         }
 
         .mode-text.light-mode {
@@ -205,6 +201,9 @@
         .theme-select {
             margin-left: 10px;
             font-size: 16px;
+            padding: 5px;
+            border: 2px solid #333;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -225,11 +224,10 @@
         <div class="game-square"></div>
     </div>
     <div class="switch-container">
+        <span class="mode-text">Theme:</span>
         <div class="toggle-switch">
             <input type="checkbox" id="toggle-switch" />
-            <label for="toggle-switch">
-                <span class="toggle-slider"></span>
-            </label>
+            <span class="toggle-slider"></span>
         </div>
         <select id="themeSelect" class="theme-select">
             <option value="default">Select Theme</option>
@@ -254,13 +252,6 @@
                 favicon.href = defaultFavicon;
                 document.title = defaultTitle;
             }
-        });
-
-        document.getElementById('lightModeToggle').addEventListener('change', function() {
-            document.body.classList.toggle('light-mode');
-            document.querySelector('.footer').classList.toggle('light-mode');
-            document.querySelector('.mode-text').classList.toggle('light-mode');
-            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
         });
 
         document.getElementById('themeSelect').addEventListener('change', function() {
