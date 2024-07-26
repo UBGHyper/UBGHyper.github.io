@@ -90,6 +90,42 @@
     "new": false
   },
   {
+    "name": "Learn To Fly 2",
+    "image": "thereisnogame.jpg",
+    "url": "Learn-To-Fly-2",
+    "new": false
+  },
+  {
+    "name": "Super Smash Flash",
+    "image": "thereisnogame.jpg",
+    "url": "Super-Smash-Flash",
+    "new": false
+  },
+  {
+    "name": "Duck Life 4",
+    "image": "thereisnogame.jpg",
+    "url": "Duck-Life-4",
+    "new": false
+  },
+  {
+    "name": "Blackjack",
+    "image": "thereisnogame.jpg",
+    "url": "Blackjack",
+    "new": false
+  },
+  {
+    "name": "Moto3XM",
+    "image": "thereisnogame.jpg",
+    "url": "Moto3XM",
+    "new": false
+  },
+  {
+    "name": "Moto3XM 2",
+    "image": "thereisnogame.jpg",
+    "url": "Moto3XM-2",
+    "new": false
+  },
+  {
     "name": "Impossible Quiz",
     "image": "impossiblequiz.jpg",
     "url": "Impossible-Quiz",
