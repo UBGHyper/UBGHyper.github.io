@@ -13,7 +13,7 @@
   },
   {
     "name": "BitLife",
-    "image": "logo.jpg",
+    "image": "bitlife.jpg",
     "url": "Bitlife",
     "new": false
   },
@@ -25,7 +25,7 @@
   },
   {
     "name": "Drive Mad",
-    "image": "logo.jpg",
+    "image": "drivemad.jpg",
     "url": "Drive-Mad",
     "new": false
   },
@@ -37,7 +37,7 @@
   },
   {
     "name": "Eggy Car",
-    "image": "Eggy-Car.jpg",
+    "image": "eggy-car.jpg",
     "url": "Eggy-Car",
     "new": false
   },
@@ -91,37 +91,37 @@
   },
   {
     "name": "Learn To Fly 2",
-    "image": "thereisnogame.jpg",
+    "image": "learntofly2.jpg",
     "url": "Learn-To-Fly-2",
     "new": false
   },
   {
     "name": "Super Smash Flash",
-    "image": "thereisnogame.jpg",
+    "image": "supersmashflash.jpg",
     "url": "Super-Smash-Flash",
     "new": false
   },
   {
     "name": "Duck Life 4",
-    "image": "thereisnogame.jpg",
+    "image": "ducklife4.jpg",
     "url": "Duck-Life-4",
     "new": false
   },
   {
     "name": "Blackjack",
-    "image": "thereisnogame.jpg",
+    "image": "blackjack.jpg",
     "url": "Blackjack",
     "new": false
   },
   {
     "name": "Moto3XM",
-    "image": "thereisnogame.jpg",
+    "image": "moto3xm.jpg",
     "url": "Moto3XM",
     "new": false
   },
   {
     "name": "Moto3XM 2",
-    "image": "thereisnogame.jpg",
+    "image": "moto3xm2.jpg",
     "url": "Moto3XM-2",
     "new": false
   },
