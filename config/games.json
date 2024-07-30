@@ -126,9 +126,21 @@
     "new": false
   },
   {
+    "name": "Moto3XM 3",
+    "image": "moto3xm2.jpg",
+    "url": "Moto3XM-3",
+    "new": false
+  },
+  {
     "name": "Click The Wawas",
     "image": "moto3xm2.jpg",
-    "url": "Click-The-Wawas/Click-The-Wawas.html",
+    "url": "Click-The-Wawas",
+    "new": false
+  },
+  {
+    "name": "Iron Snout",
+    "image": "IronSnout.jpg",
+    "url": "Iron-Snout",
     "new": false
   },
   {
