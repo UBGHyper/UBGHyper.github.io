@@ -132,6 +132,21 @@
     "new": false
   },
   {
-    "name": "Click The Wawas",
-    "image": "clickthewawas.jpg",
-    "url": "Click-The-Waw
+    "name": "Click The Wawas",   
+    "image": "moto3xm2.jpg",
+    "url": "Click-The-Wawas",
+    "new": false
+  },
+  {
+    "name": "Iron Snout",
+    "image": "IronSnout.jpg",
+    "url": "Iron-Snout",
+    "new": false
+  },
+  {
+    "name": "Impossible Quiz",
+    "image": "impossiblequiz.jpg",
+    "url": "Impossible-Quiz",
+    "new": false
+  }
+]
