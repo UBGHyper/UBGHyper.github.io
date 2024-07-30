@@ -30,14 +30,14 @@
     "new": false
   },
   {
-    "name": "Awsome Tanks",
+    "name": "Awesome Tanks",
     "image": "awesometanks.jpg",
     "url": "Awesome-Tanks",
     "new": false
   },
   {
     "name": "Eggy Car",
-    "image": "eggy-car.jpg",
+    "image": "eggycar.jpg",
     "url": "Eggy-Car",
     "new": false
   },
@@ -60,7 +60,7 @@
     "new": false
   },
   {
-    "name": "Retro-Bowl",
+    "name": "Retro Bowl",
     "image": "retrobowl.jpg",
     "url": "Retro-Bowl",
     "new": false
@@ -73,7 +73,7 @@
   },
   {
     "name": "Snow Rider 3D",
-    "image": "snow-rider-3d.jpg",
+    "image": "snowrider3d.jpg",
     "url": "Snow-Rider-3D",
     "new": false
   },
@@ -127,26 +127,11 @@
   },
   {
     "name": "Moto3XM 3",
-    "image": "moto3xm2.jpg",
+    "image": "moto3xm3.jpg",
     "url": "Moto3XM-3",
     "new": false
   },
   {
     "name": "Click The Wawas",
-    "image": "moto3xm2.jpg",
-    "url": "Click-The-Wawas",
-    "new": false
-  },
-  {
-    "name": "Iron Snout",
-    "image": "IronSnout.jpg",
-    "url": "Iron-Snout",
-    "new": false
-  },
-  {
-    "name": "Impossible Quiz",
-    "image": "impossiblequiz.jpg",
-    "url": "Impossible-Quiz",
-    "new": false
-  }
-]
+    "image": "clickthewawas.jpg",
+    "url": "Click-The-Waw
