@@ -19,19 +19,19 @@
   },
   {
     "name": "Bloons TD5",
-    "image": "bitlife.jpg",
+    "image": "btd5.jpg",
     "url": "Bloons-TD-5",
     "new": false
   },
   {
     "name": "DOOM",
-    "image": "bitlife.jpg",
+    "image": "doom.jpg",
     "url": "Doom",
     "new": false
   },
   {
     "name": "Kingdom Rush",
-    "image": "bitlife.jpg",
+    "image": "kingdomrush.jpg",
     "url": "Kingdom-Rush",
     "new": false
   },
@@ -43,25 +43,25 @@
   },
   {
     "name": "Minecraft",
-    "image": "bitlife.jpg",
+    "image": "minecraft.jpg",
     "url": "Minecraft",
     "new": false
   },
   {
     "name": "Motherload",
-    "image": "bitlife.jpg",
+    "image": "motherload.jpg",
     "url": "Motherload",
     "new": false
   },
   {
     "name": "Moto3XM 3",
-    "image": "bitlife.jpg",
+    "image": "moto3xm3.jpg",
     "url": "Moto3XM-3",
     "new": false
   },
   {
     "name": "Portal Flash",
-    "image": "bitlife.jpg",
+    "image": "portalflash.jpg",
     "url": "Portal-Flash",
     "new": false
   },
