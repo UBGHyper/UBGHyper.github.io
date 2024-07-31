@@ -18,6 +18,54 @@
     "new": false
   },
   {
+    "name": "Bloons TD5",
+    "image": "bitlife.jpg",
+    "url": "Bloons-TD-5",
+    "new": false
+  },
+  {
+    "name": "DOOM",
+    "image": "bitlife.jpg",
+    "url": "Doom",
+    "new": false
+  },
+  {
+    "name": "Kingdom Rush",
+    "image": "bitlife.jpg",
+    "url": "Kingdom-Rush",
+    "new": false
+  },
+  {
+    "name": "Learn to Fly 3",
+    "image": "bitlife.jpg",
+    "url": "Learn-To-Fly-3",
+    "new": false
+  },
+  {
+    "name": "Minecraft",
+    "image": "bitlife.jpg",
+    "url": "Minecraft",
+    "new": false
+  },
+  {
+    "name": "Motherload",
+    "image": "bitlife.jpg",
+    "url": "Motherload",
+    "new": false
+  },
+  {
+    "name": "Moto3XM 3",
+    "image": "bitlife.jpg",
+    "url": "Moto3XM-3",
+    "new": false
+  },
+  {
+    "name": "Portal Flash",
+    "image": "bitlife.jpg",
+    "url": "Portal-Flash",
+    "new": false
+  },
+  {
     "name": "Cookie Clicker",
     "image": "cookieclicker.jpg",
     "url": "Cookie-Clicker",
