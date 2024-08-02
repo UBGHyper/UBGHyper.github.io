@@ -12,6 +12,66 @@
     "new": false
   },
   {
+    "name": "Awesome Planes",
+    "image": "awesometanks2.jpg",
+    "url": "Awesome-Planes",
+    "new": false
+  },
+  {
+    "name": "Bloons TD 4",
+    "image": "awesometanks2.jpg",
+    "url": "BTD-4",
+    "new": false
+  },
+  {
+    "name": "Bob The Robber",
+    "image": "awesometanks2.jpg",
+    "url": "Bob-The-Robber",
+    "new": false
+  },
+  {
+    "name": "Gun Mayham 2",
+    "image": "awesometanks2.jpg",
+    "url": "Gun-Mayham-2",
+    "new": false
+  },
+  {
+    "name": "Happy Wheels",
+    "image": "awesometanks2.jpg",
+    "url": "Happy-Wheels",
+    "new": false
+  },
+  {
+    "name": "Raft Wars",
+    "image": "awesometanks2.jpg",
+    "url": "Raft-Wars",
+    "new": false
+  },
+  {
+    "name": "Raft Wars 2",
+    "image": "awesometanks2.jpg",
+    "url": "Raft-Wars-2",
+    "new": false
+  },
+  {
+    "name": "Super Smash Flash",
+    "image": "bitlife.jpg",
+    "url": "Super-Smash-Flash",
+    "new": false
+  },
+  {
+    "name": "Swords and Souls",
+    "image": "bitlife.jpg",
+    "url": "Swords-And-Souls",
+    "new": false
+  },
+  {
+    "name": "Ninja VS Evil Corporation",
+    "image": "bitlife.jpg",
+    "url": "ninjavsevil",
+    "new": false
+  },
+  {
     "name": "BitLife",
     "image": "bitlife.jpg",
     "url": "Bitlife",
