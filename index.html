@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
-     crossorigin="anonymous"></script>
-    <meta name="google-site-verification" content="21YhGY4My3yQLoryE7UachSeo4rYTdep6Db3qq27PG8" />
-    <meta name="google-adsense-account" content="ca-pub-8895667704497452">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBGHyper - Home</title>
     <link rel="stylesheet" href="config/main.css">
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
-    <style>
-    </style>
 </head>
 <body>
     <div class="center">
@@ -31,16 +25,7 @@
         <div class="game-square"></div>
     </div>
     <div class="switch-container">
-        <button style="
-            background-color: #4CAF50;
-            color: #fff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: bold;
-        " onclick="window.location.href='https://soggycat0.github.io';">SoggyCat0</button>
+        <button class="button" onclick="window.location.href='https://soggycat0.github.io';">SoggyCat0</button>
         <div class="toggle-switch">
             <input type="checkbox" id="toggle-switch" />
             <label for="toggle-switch">
@@ -54,6 +39,7 @@
             <option value="blue-mode">Blue</option>
         </select>
     </div>
+
     <script>
         let konamiCode = [];
 
@@ -63,7 +49,16 @@
             } else if (event.key === "ArrowDown") {
                 konamiCode.push("Down");
             } else if (event.key === "ArrowLeft") {
-                konamiCode"Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
+                konamiCode.push("Left");
+            } else if (event.key === "ArrowRight") {
+                konamiCode.push("Right");
+            } else if (event.key === "b") {
+                konamiCode.push("B");
+            } else if (event.key === "a") {
+                konamiCode.push("A");
+            }
+
+            if (konamiCode.join(",") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
                 konamiCode = [];
                 document.body.style.background = getRandomColor();
             }
@@ -99,8 +94,20 @@
             const theme = this.value;
             document.body.className = theme;
             document.querySelector('.footer').className = `footer ${theme}`;
-            document.querySelector('.mode-text').className = `mode-text ${theme}`;
         });
     </script>
+
+    <style>
+        .button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
 </body>
 </html>
