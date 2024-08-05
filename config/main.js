@@ -1,31 +1,39 @@
+// Settings
 var sitename = "UBG Hyper"; // Change this to change the name of your website.
 var subtext = "v1.0"; // set the subtext
 
-// more settings in main.css
+// More settings in main.css
+
+// Get elements
 const toggleSwitch = document.getElementById("toggle-switch");
 const favicon = document.querySelector("link[rel='icon']");
+
+// Favicon settings
 const defaultFavicon = "content/favicons/tab.png";
 const toggledFavicon = "content/favicons/classroom.png";
+
+// Title settings
 const defaultTitle = "UBGHyper - Home";
 const toggledTitle = "Classroom";
 
+// Add event listener to toggle switch
 toggleSwitch.addEventListener("change", () => {
-    if (toggleSwitch.checked) {
-        favicon.href = toggledFavicon;
-        document.title = toggledTitle;
-    } else {
-        favicon.href = defaultFavicon;
-        document.title = defaultTitle;
-    }
+  if (toggleSwitch.checked) {
+    favicon.href = toggledFavicon;
+    document.title = toggledTitle;
+  } else {
+    favicon.href = defaultFavicon;
+    document.title = defaultTitle;
+  }
 });
 
+// Add event listener to theme select
 document.getElementById('themeSelect').addEventListener('change', function() {
-    const theme = this.value;
-    document.body.className = theme;
-    document.querySelector('.footer').className = `footer ${theme}`;
-    document.querySelector('.mode-text').className = `mode-text ${theme}`;
+  const theme = this.value;
+  document.body.className = theme;
+  document.querySelector('.footer').className = `footer ${theme}`;
+  document.querySelector('.mode-text').className = `mode-text ${theme}`;
 });
-
 
 
 // END CONFIG
