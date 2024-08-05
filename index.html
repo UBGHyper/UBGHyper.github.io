@@ -38,8 +38,13 @@
                 <span class="toggle-slider"></span>
             </label>
         </div>
-<button style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://forms.gle/fEKyBwT683ABdtkz6';">Suggestions</button>
+        <button style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://forms.gle/fEKyBwT683ABdtkz6';">Suggestions</button>
     </div>
+    <select id="themeSelect">
+        <option value="">Default</option>
+        <option value="dark-theme">Dark</option>
+        <option value="light-theme">Light</option>
+    </select>
     <script>
         let konamiCode = [];
 
@@ -58,7 +63,7 @@
                 konamiCode.push(keyMap[event.key]);
             }
 
-            if (konamiCode.join("") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
+            if (konamiCode.join(",") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
                 konamiCode = [];
                 document.body.style.background = getRandomColor();
             }
@@ -89,7 +94,7 @@
             const theme = this.value;
             document.body.className = theme;
             document.querySelector('.footer').className = `footer ${theme}`;
-            document.querySelector('.mode-text').className = `mode-text ${theme}`;
+            document.querySelector('.mode-text')?.classList.add(theme);
         });
 
     </script>
