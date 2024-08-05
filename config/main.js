@@ -72,7 +72,6 @@ function handleSearchInput() {
   displayFilteredGames(filteredGames);
 }
 
-
 fetch("./config/games.json") 
   .then((response) => response.json())
   .then((data) => {
