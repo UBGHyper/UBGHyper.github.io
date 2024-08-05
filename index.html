@@ -11,9 +11,9 @@
     <link rel="stylesheet" href="config/main.css">
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
-   <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <style>
-
+        /* Add your styles here */
     </style>
 </head>
 <body>
@@ -56,39 +56,51 @@
             <option value="blue-mode">Blue</option>
         </select>
     </div>
+    <div class="center">
+        <button id="suggestionsButton" style="
+  background-color: #008CBA;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+">Suggestions</button>
+    </div>
     <script>
-        
-let konamiCode = [];
+        let konamiCode = [];
 
-document.addEventListener("keydown", function(event) {
-  if (event.key === "ArrowUp") {
-    konamiCode.push("Up");
-  } else if (event.key === "ArrowDown") {
-    konamiCode.push("Down");
-  } else if (event.key === "ArrowLeft") {
-    konamiCode.push("Left");
-  } else if (event.key === "ArrowRight") {
-    konamiCode.push("Right");
-  } else if (event.key === "b" || event.key === "B") {
-    konamiCode.push("B");
-  } else if (event.key === "a" || event.key === "A") {
-    konamiCode.push("A");
-  }
+        document.addEventListener("keydown", function(event) {
+            if (event.key === "ArrowUp") {
+                konamiCode.push("Up");
+            } else if (event.key === "ArrowDown") {
+                konamiCode.push("Down");
+            } else if (event.key === "ArrowLeft") {
+                konamiCode.push("Left");
+            } else if (event.key === "ArrowRight") {
+                konamiCode.push("Right");
+            } else if (event.key === "b" || event.key === "B") {
+                konamiCode.push("B");
+            } else if (event.key === "a" || event.key === "A") {
+                konamiCode.push("A");
+            }
 
-  if (konamiCode.join("") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
-    konamiCode = [];
-    document.body.style.background = getRandomColor();
-  }
-});
+            if (konamiCode.join("") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
+                konamiCode = [];
+                document.body.style.background = getRandomColor();
+            }
+        });
 
-function getRandomColor() {
-  const letters = "0123456789ABCDEF";
-  let color = "#";
-  for (let i = 0; i < 6; i++) {
-    color += letters[Math.floor(Math.random() * 16)];
-  }
-  return color;
-}
+        function getRandomColor() {
+            const letters = "0123456789ABCDEF";
+            let color = "#";
+            for (let i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+            }
+            return color;
+        }
+
         const toggleSwitch = document.getElementById("toggle-switch");
         const favicon = document.querySelector("link[rel='icon']");
         const defaultFavicon = "content/favicons/tab.png";
@@ -111,6 +123,10 @@ function getRandomColor() {
             document.body.className = theme;
             document.querySelector('.footer').className = `footer ${theme}`;
             document.querySelector('.mode-text').className = `mode-text ${theme}`;
+        });
+
+        document.getElementById('suggestionsButton').addEventListener('click', function() {
+            alert('Suggestions button clicked!');
         });
     </script>
 </body>
