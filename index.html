@@ -12,6 +12,36 @@
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
     <style>
+        .footer h1:hover::after {
+  content: "You found me!";
+  position: absolute;
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+        .game-square:hover {
+  animation: rotate 2s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+    background-color: orange;
+  }
+  50% {
+    transform: rotate(180deg);
+    background-color: blue;
+  }
+  100% {
+    transform: rotate(360deg);
+    background-color: orange;
+  }
+}
 body {
     font-family: 'Arial', sans-serif;
     margin: 0;
@@ -283,6 +313,38 @@ body.blue-mode .theme-select {
         </select>
     </div>
     <script>
+        
+        document.addEventListener("keydown", function(event) {
+  if (event.key === "ArrowUp") {
+    konamiCode.push("Up");
+  } else if (event.key === "ArrowDown") {
+    konamiCode.push("Down");
+  } else if (event.key === "ArrowLeft") {
+    konamiCode.push("Left");
+  } else if (event.key === "ArrowRight") {
+    konamiCode.push("Right");
+  } else if (event.key === "b" || event.key === "B") {
+    konamiCode.push("B");
+  } else if (event.key === "a" || event.key === "A") {
+    konamiCode.push("A");
+  }
+
+  if (konamiCode.join("") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
+    konamiCode = [];
+    document.body.style.background = getRandomColor();
+  }
+});
+
+let konamiCode = [];
+
+function getRandomColor() {
+  const letters = "0123456789ABCDEF";
+  let color = "#";
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
         const toggleSwitch = document.getElementById("toggle-switch");
         const favicon = document.querySelector("link[rel='icon']");
         const defaultFavicon = "content/favicons/tab.png";
