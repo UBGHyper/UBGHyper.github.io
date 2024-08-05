@@ -1,105 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UBGHyper - Games</title>
-  <link rel="stylesheet" href="config/main.css">
-  <link rel="icon" type="image/png" href="content/favicons/tab.png">
-  <style>
-
-  </style>
-</head>
-<body>
-  <!-- Back button -->
-  <button class="back-button" onclick="window.location.href='index.html'">
-    <img src="../content/favicons/back.png" alt="Back">
-  </button>
-
-  <!-- Game iframe -->
-  <iframe id="gameFrame" width="900px" height="700px" frameborder="0"></iframe>
-
-  <!-- Game title -->
-  <div class="game-title">
-    <h2 id="gameTitle"></h2>
-  </div>
-
-  <!-- Fullscreen button -->
-  <button id="fullscreenButton">
-    <img src="../content/favicons/fullscreen.png" alt="Fullscreen">
-  </button>
-
-  <!-- Change tab button -->
-  <button id="changeTabButton">Change Tab Icon and Name</button>
-
-  <div class="switch-container">
-    <label class="switch">
-      <input type="checkbox" id="lightModeToggle">
-      <span class="slider"></span>
-    </label>
-    <span class="mode-text">Dark Mode On</span>
-  </div>
-
-  <!-- Script to handle game loading and fullscreen functionality -->
-  <script type="module">
-    const serverUrl = "https://ubghyper.github.io/GameList.github.io/";
-    const urlParams = new URLSearchParams(window.location.search);
-    const gameUrl = urlParams.get("gameurl");
-
-    if (!gameUrl) {
-      alert("Game URL not provided!");
-      window.location.href = "/"; // Redirect to homepage if game URL is missing
-    } else {
-      const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`;
-      document.getElementById("gameFrame").src = embedUrl;
-      const title = gameUrl.replace(/[-\/]/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
-      document.getElementById("gameTitle").textContent = title;
-    }
-
-    let isFullscreen = false;
-
-    document.getElementById("fullscreenButton").addEventListener("click", () => {
-      if (!isFullscreen) {
-        document.getElementById("gameFrame").requestFullscreen().catch((err) => {
-          console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
-        isFullscreen = true;
-      } else {
-        if (document.exitFullscreen) {
-          document.exitFullscreen().catch((err) => {
-            console.log(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
-          });
-          isFullscreen = false;
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBGHyper - Games</title>
+    <link rel="stylesheet" href="config/main.css">
+    <link rel="icon" type="image/png" href="content/favicons/tab.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #121212;
+            color: #ffffff;
         }
-      }
-    });
 
-    document.getElementById("changeTabButton").addEventListener("click", () => {
-      const favicon = document.querySelector("link[rel='icon']");
-      favicon.href = "content/favicons/classroom.png";
-      document.title = "Classroom";
-    });
+        .back-button {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
 
-    document.getElementById('lightModeToggle').addEventListener('change', function() {
-      document.body.classList.toggle('light-mode');
-      document.querySelector('.mode-text').classList.toggle('light-mode');
-      document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
-    });
-    const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
-let konamiIndex = 0;
+        .back-button img {
+            width: 24px;
+            height: 24px;
+        }
 
-document.addEventListener('keydown', function(event) {
-  if (event.keyCode === konamiCode[konamiIndex]) {
-    konamiIndex++;
-    if (konamiIndex === konamiCode.length) {
-      document.body.classList.add('rainbow-background');
-      konamiIndex = 0;  // Reset the index after the code is successfully entered
-    }
-  } else {
-    konamiIndex = 0;
-  }
-});
+        .game-title {
+            margin: 20px 0;
+        }
 
-  </script>
+        .game-title h2 {
+            margin: 0;
+        }
+
+        #gameFrame {
+            border: 1px solid #444;
+        }
+
+        #fullscreenButton {
+            margin: 10px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        #fullscreenButton img {
+            width: 24px;
+            height: 24px;
+        }
+
+        #changeTabButton {
+            margin: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #changeTabButton:hover {
+            background-color: #0056b3;
+        }
+
+        .switch-container {
+            display: flex;
+            align-items: center;
+            margin: 10px;
+        }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+
+        input:checked+.slider {
+            background-color: #2196F3;
+        }
+
+        input:checked+.slider:before {
+            transform: translateX(26px);
+        }
+
+        .mode-text {
+            margin-left: 10px;
+        }
+
+        .light-mode {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .light-mode .slider {
+            background-color: #2196F3;
+        }
+
+        .rainbow-background {
+            background: linear-gradient(45deg, #ff0000, #ff7f00, #ffff00, #7fff00, #00ff00, #00ff7f, #00ffff, #007fff, #0000ff, #7f00ff, #ff00ff, #ff007f);
+            background-size: 400% 400%;
+            animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 0%;
+            }
+
+            50% {
+                background-position: 100% 100%;
+            }
+
+            100% {
+                background-position: 0% 0%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Back button -->
+    <button class="back-button" onclick="window.location.href='index.html'">
+        <img src="../content/favicons/back.png" alt="Back">
+    </button>
+
+    <!-- Game iframe -->
+    <iframe id="gameFrame" width="900" height="700" frameborder="0"></iframe>
+
+    <!-- Game title -->
+    <div class="game-title">
+        <h2 id="gameTitle"></h2>
+    </div>
+
+    <!-- Fullscreen button -->
+    <button id="fullscreenButton">
+        <img src="../content/favicons/fullscreen.png" alt="Fullscreen">
+    </button>
+
+    <!-- Change tab button -->
+    <button id="changeTabButton">Change Tab Icon and Name</button>
+
+    <!-- Light/Dark mode toggle -->
+    <div class="switch-container">
+        <label class="switch">
+            <input type="checkbox" id="lightModeToggle">
+            <span class="slider"></span>
+        </label>
+        <span class="mode-text">Dark Mode On</span>
+    </div>
+
+    <!-- Script to handle game loading and fullscreen functionality -->
+    <script type="module">
+        const serverUrl = "https://ubghyper.github.io/GameList.github.io/";
+        const urlParams = new URLSearchParams(window.location.search);
+        const gameUrl = urlParams.get("gameurl");
+
+        if (!gameUrl) {
+            alert("Game URL not provided!");
+            window.location.href = "/"; // Redirect to homepage if game URL is missing
+        } else {
+            const embedUrl = `${serverUrl}/${gameUrl.replace(/\/$/, '')}`;
+            document.getElementById("gameFrame").src = embedUrl;
+            const title = gameUrl.replace(/[-\/]/g, ' ').replace(/\b\w/g, (m) => m.toUpperCase());
+            document.getElementById("gameTitle").textContent = title;
+        }
+
+        let isFullscreen = false;
+
+        document.getElementById("fullscreenButton").addEventListener("click", () => {
+            if (!isFullscreen) {
+                document.getElementById("gameFrame").requestFullscreen().catch((err) => {
+                    console.log(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+                });
+                isFullscreen = true;
+            } else {
+                if (document.exitFullscreen) {
+                    document.exitFullscreen().catch((err) => {
+                        console.log(`Error attempting to disable full-screen mode: ${err.message} (${err.name})`);
+                    });
+                    isFullscreen = false;
+                }
+            }
+        });
+
+        document.getElementById("changeTabButton").addEventListener("click", () => {
+            const favicon = document.querySelector("link[rel='icon']");
+            favicon.href = "content/favicons/classroom.png";
+            document.title = "Classroom";
+        });
+
+        document.getElementById('lightModeToggle').addEventListener('change', function () {
+            document.body.classList.toggle('light-mode');
+            document.querySelector('.mode-text').classList.toggle('light-mode');
+            document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
+        });
+
+        const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+        let konamiIndex = 0;
+
+        document.addEventListener('keydown', function (event) {
+            if (event.keyCode === konamiCode[konamiIndex]) {
+                konamiIndex++;
+                if (konamiIndex === konamiCode.length) {
+                    document.body.classList.add('rainbow-background');
+                    konamiIndex = 0; // Reset the index after the code is successfully entered
+                }
+            } else {
+                konamiIndex = 0;
+            }
+        });
+    </script>
 </body>
+
 </html>
