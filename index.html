@@ -12,6 +12,31 @@
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
     <style>
         /* Add your styles here */
+        #easterEggImage {
+            display: none;
+            position: absolute;
+            top: 10%;
+            left: 10%;
+            width: 300px;
+            z-index: 1000;
+        }
+        #colorChangeDiv {
+            padding: 20px;
+            background-color: lightgray;
+            cursor: pointer;
+        }
+        .secret-button-container {
+            display: none; /* Initially hidden */
+        }
+        .confetti-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1000;
+        }
     </style>
 </head>
 <body>
@@ -45,28 +70,26 @@
         <option value="dark-theme">Dark</option>
         <option value="light-theme">Light</option>
     </select>
+
+    <!-- Secret Button -->
+    <div class="secret-button-container">
+        <button id="secretButton">Find the Secret!</button>
+    </div>
+
+    <!-- Confetti Container -->
+    <div id="confetti" class="confetti-container"></div>
+
+    <!-- Easter Egg Image -->
+    <img id="easterEggImage" src="https://example.com/easter-egg-image.png" alt="Easter Egg" />
+
+    <!-- Color Change Div -->
+    <div id="colorChangeDiv">
+        Click me to change background color!
+    </div>
+
     <script>
-        let konamiCode = [];
-
-        document.addEventListener("keydown", function(event) {
-            const keyMap = {
-                "ArrowUp": "Up",
-                "ArrowDown": "Down",
-                "ArrowLeft": "Left",
-                "ArrowRight": "Right",
-                "b": "B",
-                "B": "B",
-                "a": "A",
-                "A": "A"
-            };
-            if (keyMap[event.key]) {
-                konamiCode.push(keyMap[event.key]);
-            }
-
-            if (konamiCode.join(",") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
-                konamiCode = [];
-                document.body.style.background = getRandomColor();
-            }
+        document.addEventListener('dblclick', () => {
+            alert("You found the hidden message! 🎉");
         });
 
         function getRandomColor() {
@@ -97,6 +120,29 @@
             document.querySelector('.mode-text')?.classList.add(theme);
         });
 
+        document.getElementById('colorChangeDiv').addEventListener('click', () => {
+            document.body.style.backgroundColor = getRandomColor();
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'S' && event.ctrlKey) {
+                document.querySelector('.secret-button-container').style.display = 'block';
+            }
+        });
+
+        document.getElementById('secretButton').addEventListener('click', () => {
+            window.location.href = 'https://example.com/secret'; // Replace with your secret page URL
+        });
+
+        // Confetti Animation
+        document.getElementById('confettiButton')?.addEventListener('click', () => {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+        });
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
