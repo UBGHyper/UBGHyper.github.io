@@ -313,8 +313,9 @@ body.blue-mode .theme-select {
         </select>
     </div>
     <script>
-        
-        document.addEventListener("keydown", function(event) {
+let konamiCode = [];
+
+document.addEventListener("keydown", function(event) {
   if (event.key === "ArrowUp") {
     konamiCode.push("Up");
   } else if (event.key === "ArrowDown") {
@@ -334,8 +335,6 @@ body.blue-mode .theme-select {
     document.body.style.background = getRandomColor();
   }
 });
-
-let konamiCode = [];
 
 function getRandomColor() {
   const letters = "0123456789ABCDEF";
