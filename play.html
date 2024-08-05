@@ -7,6 +7,25 @@
   <link rel="stylesheet" href="config/main.css">
   <link rel="icon" type="image/png" href="content/favicons/tab.png">
   <style>
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+  padding-top: 50px;
+  transition: background 0.5s ease;
+}
+
+.rainbow-background {
+  background: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 400% 400%;
+  animation: rainbow 5s infinite;
+}
+
+@keyframes rainbow {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
     .switch-container {
       position: fixed;
       bottom: 20px;
@@ -238,6 +257,21 @@
       document.querySelector('.mode-text').classList.toggle('light-mode');
       document.querySelector('.mode-text').textContent = this.checked ? 'Dark Mode Off' : 'Dark Mode On';
     });
+    const konamiCode = [38, 38, 40, 40, 37, 39, 37, 39, 66, 65];
+let konamiIndex = 0;
+
+document.addEventListener('keydown', function(event) {
+  if (event.keyCode === konamiCode[konamiIndex]) {
+    konamiIndex++;
+    if (konamiIndex === konamiCode.length) {
+      document.body.classList.add('rainbow-background');
+      konamiIndex = 0;  // Reset the index after the code is successfully entered
+    }
+  } else {
+    konamiIndex = 0;
+  }
+});
+
   </script>
 </body>
 </html>
