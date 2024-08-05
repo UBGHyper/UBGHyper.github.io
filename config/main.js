@@ -1,4 +1,4 @@
-var sitename = "v1.0"; // Change this to change the name of your website.
+var sitename = "UBG Hyper"; // Change this to change the name of your website.
 var subtext = "v1.0"; // set the subtext
 
 // more settings in main.css
