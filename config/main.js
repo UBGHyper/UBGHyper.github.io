@@ -1,5 +1,3 @@
-// This changes the title of your site
-
 var sitename = "v1.0"; // Change this to change the name of your website.
 var subtext = "v1.0"; // set the subtext
 
@@ -36,10 +34,10 @@ document.getElementById('themeSelect').addEventListener('change', function() {
 import "/config/custom.js";
 
 var serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
-var currentPageTitle = document.title;
-document.title = `${currentPageTitle} | ${sitename}`;
+document.title = sitename; // Update the title with the sitename
 let gamesData = []; 
 
+// rest of your code...
 function displayFilteredGames(filteredGames) {
   const gamesContainer = document.getElementById("gamesContainer");
   gamesContainer.innerHTML = ""; 
