@@ -40,9 +40,21 @@
             <label for="toggle-switch">
                 <span class="toggle-slider"></span>
             </label>
+        </div>
+        <button id="suggestion-button" style="
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+        ">Send Suggestion</button>
+    </div>
 
     <script>
-        let konamiCode = [];
+                let konamiCode = [];
 
         document.addEventListener("keydown", function(event) {
             if (event.key === "ArrowUp") {
@@ -95,6 +107,17 @@
             const theme = this.value;
             document.body.className = theme;
             document.querySelector('.footer').className = `footer ${theme}`;
+        });
+        // ... existing code ...
+
+        const suggestionButton = document.getElementById("suggestion-button");
+
+        suggestionButton.addEventListener("click", () => {
+            const suggestion = prompt("Enter your suggestion:");
+            if (suggestion) {
+                const mailToLink = `Evest356@gmail.com?subject=Suggestion&body=${encodeURIComponent(suggestion)}`;
+                window.location.href = mailToLink;
+            }
         });
     </script>
 </body>
