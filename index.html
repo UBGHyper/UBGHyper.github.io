@@ -1,8 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
     <meta name="google-site-verification" content="21YhGY4My3yQLoryE7UachSeo4rYTdep6Db3qq27PG8" />
     <meta name="google-adsense-account" content="ca-pub-8895667704497452">
     <meta charset="UTF-8">
@@ -11,7 +10,6 @@
     <link rel="stylesheet" href="config/main.css">
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
-    <meta charset="UTF-8">
     <style>
         /* Add your styles here */
     </style>
@@ -33,16 +31,7 @@
         <div class="game-square"></div>
     </div>
     <div class="switch-container">
-        <button style="
-  background-color: #4CAF50;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-" onclick="window.location.href='https://soggycat0.github.io';">SoggyCat0</button>
+        <button style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://soggycat0.github.io';">SoggyCat0</button>
         <div class="toggle-switch">
             <input type="checkbox" id="toggle-switch" />
             <label for="toggle-switch">
@@ -56,34 +45,22 @@
             <option value="blue-mode">Blue</option>
         </select>
     </div>
-    <div class="center">
-        <button id="suggestionsButton" style="
-  background-color: #008CBA;
-  color: #fff;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-">Suggestions</button>
-    </div>
     <script>
         let konamiCode = [];
 
         document.addEventListener("keydown", function(event) {
-            if (event.key === "ArrowUp") {
-                konamiCode.push("Up");
-            } else if (event.key === "ArrowDown") {
-                konamiCode.push("Down");
-            } else if (event.key === "ArrowLeft") {
-                konamiCode.push("Left");
-            } else if (event.key === "ArrowRight") {
-                konamiCode.push("Right");
-            } else if (event.key === "b" || event.key === "B") {
-                konamiCode.push("B");
-            } else if (event.key === "a" || event.key === "A") {
-                konamiCode.push("A");
+            const keyMap = {
+                "ArrowUp": "Up",
+                "ArrowDown": "Down",
+                "ArrowLeft": "Left",
+                "ArrowRight": "Right",
+                "b": "B",
+                "B": "B",
+                "a": "A",
+                "A": "A"
+            };
+            if (keyMap[event.key]) {
+                konamiCode.push(keyMap[event.key]);
             }
 
             if (konamiCode.join("") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
@@ -109,13 +86,8 @@
         const toggledTitle = "Classroom";
 
         toggleSwitch.addEventListener("change", () => {
-            if (toggleSwitch.checked) {
-                favicon.href = toggledFavicon;
-                document.title = toggledTitle;
-            } else {
-                favicon.href = defaultFavicon;
-                document.title = defaultTitle;
-            }
+            favicon.href = toggleSwitch.checked ? toggledFavicon : defaultFavicon;
+            document.title = toggleSwitch.checked ? toggledTitle : defaultTitle;
         });
 
         document.getElementById('themeSelect').addEventListener('change', function() {
@@ -125,9 +97,6 @@
             document.querySelector('.mode-text').className = `mode-text ${theme}`;
         });
 
-        document.getElementById('suggestionsButton').addEventListener('click', function() {
-            alert('Suggestions button clicked!');
-        });
     </script>
 </body>
 </html>
