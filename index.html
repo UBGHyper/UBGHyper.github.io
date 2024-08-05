@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
-    <meta name="google-site-verification" content="21YhGY4My3yQLoryE7UachSeo4rYTdep6Db3qq27PG8" />
-    <meta name="google-adsense-account" content="ca-pub-8895667704497452">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBGHyper - Home</title>
@@ -11,41 +8,115 @@
     <script src="config/main.js" type="module"></script>
     <link rel="icon" type="image/png" href="content/favicons/tab.png">
     <style>
-        /* Add your styles here */
-        #easterEggImage {
-            display: none;
-            position: absolute;
-            top: 10%;
-            left: 10%;
-            width: 300px;
-            z-index: 1000;
+        /* General styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            text-align: center;
         }
-        #colorChangeDiv {
-            padding: 20px;
-            background-color: lightgray;
+        .center {
+            text-align: center;
+            margin: 20px;
+        }
+        .Apple-font {
+            font-family: 'Apple System', sans-serif;
+        }
+        .footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+        }
+        .game-container {
+            display: flex;
+            justify-content: center;
+            margin: 20px;
+        }
+        .game-square {
+            width: 100px;
+            height: 100px;
+            background-color: #ff5722;
+            border-radius: 10px;
             cursor: pointer;
+            transition: transform 0.3s;
         }
-        .secret-button-container {
-            display: none; /* Initially hidden */
+        .game-square:hover {
+            transform: scale(1.1);
         }
-        .confetti-container {
+        .switch-container {
+            margin: 20px;
+        }
+        .toggle-switch {
+            display: inline-block;
+            position: relative;
+            width: 60px;
+            height: 34px;
+        }
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        .toggle-slider {
             position: absolute;
+            cursor: pointer;
             top: 0;
             left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1000;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            border-radius: 50%;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+        }
+        input:checked + .toggle-slider {
+            background-color: #4CAF50;
+        }
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin: 5px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px;
         }
     </style>
 </head>
 <body>
     <div class="center">
         <h1 class="Apple-font">UBG Hyper</h1>
-        <h1 class="Apple-font">↓ Games ↓</h1>
+        <h2 class="Apple-font">↓ Games ↓</h2>
     </div>
     <div class="center">
-        <input type="text" id="searchInput" placeholder="Search games">
+        <input type="text" id="searchInput" placeholder="Search games" style="padding: 10px; font-size: 16px;">
     </div>
     <div id="gamesContainer"></div>
     <div class="footer">
@@ -53,17 +124,17 @@
         <h1 class="Apple-font">Fibble</h1>
     </div>
     <div class="game-container">
-        <div class="game-square"></div>
+        <div class="game-square" onclick="unlockSecretGame()"></div>
     </div>
     <div class="switch-container">
-        <button style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://soggycat0.github.io';">SoggyCat0</button>
+        <button onclick="window.location.href='https://soggycat0.github.io';">SoggyCat0</button>
         <div class="toggle-switch">
             <input type="checkbox" id="toggle-switch" />
             <label for="toggle-switch">
                 <span class="toggle-slider"></span>
             </label>
         </div>
-        <button style="background-color: #4CAF50; color: #fff; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-weight: bold;" onclick="window.location.href='https://forms.gle/fEKyBwT683ABdtkz6';">Suggestions</button>
+        <button onclick="window.location.href='https://forms.gle/fEKyBwT683ABdtkz6';">Suggestions</button>
     </div>
     <select id="themeSelect">
         <option value="">Default</option>
@@ -71,25 +142,28 @@
         <option value="light-theme">Light</option>
     </select>
 
-    <!-- Secret Button -->
-    <div class="secret-button-container">
-        <button id="secretButton">Find the Secret!</button>
-    </div>
-
-    <!-- Confetti Container -->
-    <div id="confetti" class="confetti-container"></div>
-
-    <!-- Easter Egg Image -->
-    <img id="easterEggImage" src="https://example.com/easter-egg-image.png" alt="Easter Egg" />
-
-    <!-- Color Change Div -->
-    <div id="colorChangeDiv">
-        Click me to change background color!
-    </div>
-
     <script>
-        document.addEventListener('dblclick', () => {
-            alert("You found the hidden message! 🎉");
+        let konamiCode = [];
+
+        document.addEventListener("keydown", function(event) {
+            const keyMap = {
+                "ArrowUp": "Up",
+                "ArrowDown": "Down",
+                "ArrowLeft": "Left",
+                "ArrowRight": "Right",
+                "b": "B",
+                "B": "B",
+                "a": "A",
+                "A": "A"
+            };
+            if (keyMap[event.key]) {
+                konamiCode.push(keyMap[event.key]);
+            }
+
+            if (konamiCode.join(",") === "Up,Up,Down,Down,Left,Right,Left,Right,B,A") {
+                konamiCode = [];
+                document.body.style.background = getRandomColor();
+            }
         });
 
         function getRandomColor() {
@@ -117,32 +191,12 @@
             const theme = this.value;
             document.body.className = theme;
             document.querySelector('.footer').className = `footer ${theme}`;
-            document.querySelector('.mode-text')?.classList.add(theme);
         });
 
-        document.getElementById('colorChangeDiv').addEventListener('click', () => {
-            document.body.style.backgroundColor = getRandomColor();
-        });
-
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'S' && event.ctrlKey) {
-                document.querySelector('.secret-button-container').style.display = 'block';
-            }
-        });
-
-        document.getElementById('secretButton').addEventListener('click', () => {
-            window.location.href = 'https://example.com/secret'; // Replace with your secret page URL
-        });
-
-        // Confetti Animation
-        document.getElementById('confettiButton')?.addEventListener('click', () => {
-            confetti({
-                particleCount: 100,
-                spread: 70,
-                origin: { y: 0.6 }
-            });
-        });
+        function unlockSecretGame() {
+            alert('Congratulations! You found a secret game!');
+            // Code to unlock a secret game goes here
+        }
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
 </body>
 </html>
