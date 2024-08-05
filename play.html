@@ -160,6 +160,33 @@
       background-color: #555;
       transform: scale(1.05);
     }
+    
+    /* Loading Bar Styles */
+    .loading-bar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background-color: #f0f0f0;
+      z-index: 1000;
+      transition: width 0.5s ease-in-out;
+    }
+
+    .loading-bar .spinner {
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      background-color: orange;
+      animation: loading 2s linear infinite;
+    }
+
+    @keyframes loading {
+      0% { width: 0; }
+      100% { width: 100%; }
+    }
   </style>
 </head>
 <body>
@@ -190,6 +217,11 @@
       <span class="slider"></span>
     </label>
     <span class="mode-text">Dark Mode On</span>
+  </div>
+
+  <!-- Loading Bar -->
+  <div class="loading-bar">
+    <div class="spinner"></div>
   </div>
 
   <!-- Script to handle game loading and fullscreen functionality -->
