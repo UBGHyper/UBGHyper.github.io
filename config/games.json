@@ -3,7 +3,8 @@
     "name": "2048",
     "image": "2048.jpg",
     "url": "2048",
-    "new": false
+    "new": false,
+    "credits":xxxxx,
   },
   {
     "name": "Awesome Tanks 2",
