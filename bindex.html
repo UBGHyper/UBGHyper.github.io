@@ -3,157 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Styled Page</title>
-    <style>
-        /* Desktop - 1 */
-        .container {
-            display: flex;
-            flex-direction: row;
-            align-items: flex-start;
-            padding: 10px;
-            gap: 10px;
-            position: absolute;
-            width: 1440px;
-            height: 1024px;
-            background: #FFFFFF;
-            box-sizing: border-box;
-        }
-
-        /* Button styles */
-        .button {
-            box-sizing: border-box;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;
-            padding: 12px;
-            gap: 8px;
-            background: #2C2C2C;
-            border: 1px solid #2C2C2C;
-            border-radius: 8px;
-            color: #F5F5F5;
-            font-family: 'Inter', sans-serif;
-            font-size: 16px;
-            line-height: 16px;
-            text-align: center;
-            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-
-        .button.small {
-            width: 116px;
-            height: 28px;
-        }
-
-        .button.medium {
-            width: 143px;
-            height: 28px;
-        }
-
-        .button.large {
-            width: 118px;
-            height: 28px;
-        }
-
-        /* Button hover and active effects */
-        .button:hover {
-            background: #3a3a3a; /* Darker shade for hover */
-            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
-            transform: scale(1.05); /* Slightly enlarges button */
-        }
-
-        .button:active {
-            background: #1a1a1a; /* Even darker shade for active state */
-            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow effect */
-            transform: scale(0.98); /* Slightly shrinks button */
-        }
-
-        /* Icon styles */
-        .icon {
-            position: absolute;
-            border: 1.6px solid #F5F5F5;
-        }
-
-        .icon.top-left {
-            left: 8.33%;
-            right: 8.33%;
-            top: 8.33%;
-            bottom: 12.42%;
-        }
-
-        .icon.center {
-            left: 25%;
-            right: 25%;
-            top: 25%;
-            bottom: 25%;
-        }
-
-        /* Background overlay */
-        .overlay {
-            box-sizing: border-box;
-            position: absolute;
-            width: 1388px;
-            height: 931px;
-            background: rgba(226, 226, 226, 0.4);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 2px;
-        }
-
-        /* Text styles */
-        .title {
-            position: absolute;
-            width: 624px;
-            height: 488px;
-            left: 362px;
-            top: 72px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 700;
-            font-size: 41px;
-            line-height: 41px;
-            text-align: center;
-            color: #000000;
-        }
-
-        .subtitle {
-            position: absolute;
-            width: 985px;
-            height: 29px;
-            left: 206px;
-            top: 221px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 29px;
-            line-height: 29px;
-            text-align: center;
-            color: #000000;
-        }
-
-        .footer {
-            position: absolute;
-            width: 269px;
-            height: 29px;
-            left: 14px;
-            top: 890px;
-            font-family: 'Inter', sans-serif;
-            font-weight: 400;
-            font-size: 29px;
-            line-height: 29px;
-            text-align: center;
-            color: #000000;
-        }
-    </style>
+    <title>UBGHyper - The Better Games Website</title>
+    <link rel="stylesheet" href="styles.css"> <!-- assuming the CSS file is named "styles.css" -->
 </head>
 <body>
-    <div class="container">
-        <div class="button small">Home</div>
-        <div class="button medium">Games</div>
-        <div class="button large">Useful Resources</div>
-        <div class="icon top-left"></div>
-        <div class="icon center"></div>
-        <div class="overlay"></div>
-        <div class="title">UBGHyper The Better Games Website</div>
-        <div class="subtitle">Find awesome flash & HTML games here, free of charge and unblocked.</div>
-        <div class="footer">A website by Fibble</div>
+    <div class="mask-group">
+        <div class="desktop-1">
+            <div class="button-container">
+                <button class="button">
+                    <span class="star"></span>
+                    <span class="button-text">Button 1</span>
+                    <span class="x"></span>
+                </button>
+                <button class="button">
+                    <span class="star"></span>
+                    <span class="button-text">Button 2</span>
+                    <span class="x"></span>
+                </button>
+                <button class="button">
+                    <span class="star"></span>
+                    <span class="button-text">Button 3</span>
+                    <span class="x"></span>
+                </button>
+                <button class="button">
+                    <span class="star"></span>
+                    <span class="button-text">Button 4</span>
+                    <span class="x"></span>
+                </button>
+            </div>
+            <div class="ubghyper-container">
+                <h1 class="ubghyper-title">UBGHyper - The Better Games Website</h1>
+                <p class="ubghyper-description">Find awesome flash & HTML games here, free of charge and unblocked.</p>
+                <p class="ubghyper-footer">A website by Fibble</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>
