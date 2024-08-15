@@ -1,62 +1,24 @@
-// Settings
-const sitename = "UBG Hyper"; // Change this to change the name of your website.
-const subtext = "v1.0"; // Set the subtext
+// This changes the title of your site
 
-// More settings in main.css
+var sitename = "native."; // Change this to change the name of your website.
+var subtext = "v1.2"; // set the subtext
 
-// Get elements
-const toggleSwitch = document.getElementById("toggle-switch");
-const favicon = document.querySelector("link[rel='icon']");
-const themeSelect = document.getElementById('themeSelect');
-const searchInput = document.getElementById("searchInput");
-const gamesContainer = document.getElementById("gamesContainer");
-const subtitleElement = document.getElementById("subtitle");
+// more settings in main.css
 
-// Favicon settings
-const defaultFavicon = "content/favicons/tab.png";
-const toggledFavicon = "content/favicons/classroom.png";
 
-// Title settings
-const defaultTitle = "UBGHyper - Home";
-const toggledTitle = "Classroom";
 
-// Event listener for toggle switch
-if (toggleSwitch) {
-  toggleSwitch.addEventListener("change", () => {
-    if (toggleSwitch.checked) {
-      favicon.href = toggledFavicon;
-      document.title = toggledTitle;
-    } else {
-      favicon.href = defaultFavicon;
-      document.title = defaultTitle;
-    }
-  });
-}
+// END CONFIG
+// DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOUR DOING!
 
-// Event listener for theme select
-if (themeSelect) {
-  themeSelect.addEventListener('change', function() {
-    const theme = this.value;
-    document.body.className = theme;
-    document.querySelector('.footer').className = `footer ${theme}`;
-    document.querySelector('.mode-text').className = `mode-text ${theme}`;
-  });
-}
+import "/./config/custom.js";
 
-// Import custom configurations
-import "/config/custom.js";
-
-// Server URL and games data
-const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
+var serverUrl1 = "https://parcoil-assets.onrender.com";
+var currentPageTitle = document.title;
+document.title = `${currentPageTitle} | ${sitename}`;
 let gamesData = []; 
 
-// Display filtered games
 function displayFilteredGames(filteredGames) {
-  if (!gamesContainer) {
-    console.error("Element with id 'gamesContainer' not found.");
-    return;
-  }
-
+  const gamesContainer = document.getElementById("gamesContainer");
   gamesContainer.innerHTML = ""; 
 
   filteredGames.forEach((game) => {
@@ -79,17 +41,18 @@ function displayFilteredGames(filteredGames) {
   });
 }
 
-// Handle search input
+
 function handleSearchInput() {
-  if (!gamesData) return;
-  const searchInputValue = searchInput.value.toLowerCase();
+  const searchInputValue = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
   const filteredGames = gamesData.filter((game) =>
     game.name.toLowerCase().includes(searchInputValue)
   );
   displayFilteredGames(filteredGames);
 }
 
-// Fetch and display games data
+
 fetch("./config/games.json") 
   .then((response) => response.json())
   .then((data) => {
@@ -98,17 +61,11 @@ fetch("./config/games.json")
   })
   .catch((error) => console.error("Error fetching games:", error));
 
-// Attach event listener to search input
-if (searchInput) {
-  searchInput.addEventListener("input", handleSearchInput);
-}
 
-// Update subtitle
-if (subtitleElement) {
-  subtitleElement.innerHTML = subtext;
-} else {
-  console.error("Element with id 'subtitle' not found.");
-}
+document
+  .getElementById("searchInput")
+  .addEventListener("input", handleSearchInput);
 
-// Set document title
-document.title = sitename;
+document.getElementById("title").innerHTML = `${sitename}`;
+
+document.getElementById("subtitle").innerHTML = `${subtext}`
