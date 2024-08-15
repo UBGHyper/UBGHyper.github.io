@@ -2082,6 +2082,7 @@ textarea.w-input, textarea.w-select {
 
 .navbar-wrapper {
   background-color: #ffc179;
+  background-image: linear-gradient(#ff8000, #ff4517);
   border-radius: 8px;
   justify-content: space-between;
   align-items: center;
@@ -2255,8 +2256,34 @@ textarea.w-input, textarea.w-select {
   display: flex;
 }
 
-.body, .body-2 {
+.body {
   background-color: #787878;
+}
+
+.body-2 {
+  background-color: #fff2d1;
+  margin-bottom: -996px;
+  font-family: Inconsolata, monospace;
+}
+
+.paragraph {
+  text-align: center;
+  font-family: Droid Serif, serif;
+  font-size: 40px;
+}
+
+.heading-4 {
+  text-align: center;
+  font-size: 20px;
+}
+
+.section {
+  margin-bottom: 492px;
+  padding-bottom: 55px;
+}
+
+.code-block {
+  margin-bottom: 204px;
 }
 
 @media screen and (max-width: 991px) {
