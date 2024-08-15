@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Styled Page</title>
+    <style>
+        /* Desktop - 1 */
+        .container {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding: 10px;
+            gap: 10px;
+            position: absolute;
+            width: 1440px;
+            height: 1024px;
+            background: #FFFFFF;
+        }
+
+        /* Button styles */
+        .button {
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 12px;
+            gap: 8px;
+            background: #2C2C2C;
+            border: 1px solid #2C2C2C;
+            border-radius: 8px;
+            color: #F5F5F5;
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 16px;
+            text-align: center;
+        }
+
+        .button.small {
+            width: 116px;
+            height: 28px;
+        }
+
+        .button.medium {
+            width: 143px;
+            height: 28px;
+        }
+
+        .button.large {
+            width: 118px;
+            height: 28px;
+        }
+
+        /* Star styles */
+        .star {
+            display: none;
+            width: 16px;
+            height: 16px;
+        }
+
+        /* X icon styles */
+        .x-icon {
+            display: none;
+            width: 16px;
+            height: 16px;
+        }
+
+        /* Icon styles */
+        .icon {
+            position: absolute;
+            border: 1.6px solid #F5F5F5;
+        }
+
+        .icon.top-left {
+            left: 8.33%;
+            right: 8.33%;
+            top: 8.33%;
+            bottom: 12.42%;
+        }
+
+        .icon.center {
+            left: 25%;
+            right: 25%;
+            top: 25%;
+            bottom: 25%;
+        }
+
+        /* Background overlay */
+        .overlay {
+            box-sizing: border-box;
+            position: absolute;
+            width: 1388px;
+            height: 931px;
+            background: rgba(226, 226, 226, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+        }
+
+        /* Text styles */
+        .title {
+            position: absolute;
+            width: 624px;
+            height: 488px;
+            left: 362px;
+            top: 72px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: 41px;
+            line-height: 41px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .subtitle {
+            position: absolute;
+            width: 985px;
+            height: 29px;
+            left: 206px;
+            top: 221px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 29px;
+            line-height: 29px;
+            text-align: center;
+            color: #000000;
+        }
+
+        .footer {
+            position: absolute;
+            width: 269px;
+            height: 29px;
+            left: 14px;
+            top: 890px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            font-size: 29px;
+            line-height: 29px;
+            text-align: center;
+            color: #000000;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="button small">Button</div>
+        <div class="button medium">Button</div>
+        <div class="button large">Button</div>
+        <div class="icon top-left"></div>
+        <div class="icon center"></div>
+        <div class="overlay"></div>
+        <div class="title">UBGHyper The Better Games Website</div>
+        <div class="subtitle">Find awesome flash & HTML games here, free of charge and unblocked.</div>
+        <div class="footer">A website by Fibble</div>
+    </div>
+</body>
+</html>
