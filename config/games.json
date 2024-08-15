@@ -13,61 +13,61 @@
   },
   {
     "name": "Awesome Planes",
-    "image": "awesometanks2.jpg",
+    "image": "awesomeplanes.jpg",
     "url": "Awesome-Planes",
     "new": false
   },
   {
     "name": "Bloons TD 4",
-    "image": "awesometanks2.jpg",
+    "image": "bloonstd4.jpg",
     "url": "BTD-4",
     "new": false
   },
   {
     "name": "Bob The Robber",
-    "image": "awesometanks2.jpg",
+    "image": "bobtherobber.jpg",
     "url": "Bob-The-Robber",
     "new": false
   },
   {
-    "name": "Gun Mayham 2",
-    "image": "awesometanks2.jpg",
-    "url": "Gun-Mayham-2",
+    "name": "Gun Mayhem 2",
+    "image": "gunmayhem2.jpg",
+    "url": "Gun-Mayhem-2",
     "new": false
   },
   {
     "name": "Happy Wheels",
-    "image": "awesometanks2.jpg",
+    "image": "happywheels.jpg",
     "url": "Happy-Wheels",
     "new": false
   },
   {
     "name": "Raft Wars",
-    "image": "awesometanks2.jpg",
+    "image": "raftwars.jpg",
     "url": "Raft-Wars",
     "new": false
   },
   {
     "name": "Raft Wars 2",
-    "image": "awesometanks2.jpg",
+    "image": "raftwars2.jpg",
     "url": "Raft-Wars-2",
     "new": false
   },
   {
     "name": "Super Smash Flash",
-    "image": "bitlife.jpg",
+    "image": "supersmashflash.jpg",
     "url": "Super-Smash-Flash",
     "new": false
   },
   {
     "name": "Swords and Souls",
-    "image": "bitlife.jpg",
+    "image": "swordsandsouls.jpg",
     "url": "Swords-And-Souls",
     "new": false
   },
   {
     "name": "Ninja VS Evil Corporation",
-    "image": "bitlife.jpg",
+    "image": "ninjavsevil.jpg",
     "url": "ninjavsevil",
     "new": false
   },
@@ -79,7 +79,7 @@
   },
   {
     "name": "Bloons TD5",
-    "image": "btd5.jpg",
+    "image": "bloonstd5.jpg",
     "url": "Bloons-TD-5",
     "new": false
   },
@@ -97,7 +97,7 @@
   },
   {
     "name": "Learn to Fly 3",
-    "image": "bitlife.jpg",
+    "image": "learntofly3.jpg",
     "url": "Learn-To-Fly-3",
     "new": false
   },
@@ -204,12 +204,6 @@
     "new": false
   },
   {
-    "name": "Super Smash Flash",
-    "image": "supersmashflash.jpg",
-    "url": "Super-Smash-Flash",
-    "new": false
-  },
-  {
     "name": "Duck Life 4",
     "image": "ducklife4.jpg",
     "url": "Duck-Life-4",
@@ -234,20 +228,14 @@
     "new": false
   },
   {
-    "name": "Moto3XM 3",
-    "image": "moto3xm3.jpg",
-    "url": "Moto3XM-3",
-    "new": false
-  },
-  {
     "name": "Click The Wawas",
-    "image": "moto3xm2.jpg",
+    "image": "clickthewawas.jpg",
     "url": "Click-The-Wawas",
     "new": false
   },
   {
     "name": "Iron Snout",
-    "image": "IronSnout.jpg",
+    "image": "ironsnout.jpg",
     "url": "Iron-Snout",
     "new": false
   },
