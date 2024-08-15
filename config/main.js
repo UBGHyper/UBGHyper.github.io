@@ -1,12 +1,16 @@
 // Settings
-var sitename = "UBG Hyper"; // Change this to change the name of your website.
-var subtext = "v1.0"; // set the subtext
+const sitename = "UBG Hyper"; // Change this to change the name of your website.
+const subtext = "v1.0"; // Set the subtext
 
 // More settings in main.css
 
 // Get elements
 const toggleSwitch = document.getElementById("toggle-switch");
 const favicon = document.querySelector("link[rel='icon']");
+const themeSelect = document.getElementById('themeSelect');
+const searchInput = document.getElementById("searchInput");
+const gamesContainer = document.getElementById("gamesContainer");
+const subtitleElement = document.getElementById("subtitle");
 
 // Favicon settings
 const defaultFavicon = "content/favicons/tab.png";
@@ -16,38 +20,40 @@ const toggledFavicon = "content/favicons/classroom.png";
 const defaultTitle = "UBGHyper - Home";
 const toggledTitle = "Classroom";
 
-// Add event listener to toggle switch
-toggleSwitch.addEventListener("change", () => {
-  if (toggleSwitch.checked) {
-    favicon.href = toggledFavicon;
-    document.title = toggledTitle;
-  } else {
-    favicon.href = defaultFavicon;
-    document.title = defaultTitle;
-  }
-});
+// Event listener for toggle switch
+if (toggleSwitch) {
+  toggleSwitch.addEventListener("change", () => {
+    if (toggleSwitch.checked) {
+      favicon.href = toggledFavicon;
+      document.title = toggledTitle;
+    } else {
+      favicon.href = defaultFavicon;
+      document.title = defaultTitle;
+    }
+  });
+}
 
-// Add event listener to theme select
-document.getElementById('themeSelect').addEventListener('change', function() {
-  const theme = this.value;
-  document.body.className = theme;
-  document.querySelector('.footer').className = `footer ${theme}`;
-  document.querySelector('.mode-text').className = `mode-text ${theme}`;
-});
+// Event listener for theme select
+if (themeSelect) {
+  themeSelect.addEventListener('change', function() {
+    const theme = this.value;
+    document.body.className = theme;
+    document.querySelector('.footer').className = `footer ${theme}`;
+    document.querySelector('.mode-text').className = `mode-text ${theme}`;
+  });
+}
 
-
-// END CONFIG
-// DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOUR DOING!
-
+// Import custom configurations
 import "/config/custom.js";
 
-var serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
-document.title = sitename; // Update the title with the sitename
+// Server URL and games data
+const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
 let gamesData = []; 
 
-// rest of your code...
+// Display filtered games
 function displayFilteredGames(filteredGames) {
-  const gamesContainer = document.getElementById("gamesContainer");
+  if (!gamesContainer) return;
+
   gamesContainer.innerHTML = ""; 
 
   filteredGames.forEach((game) => {
@@ -70,16 +76,16 @@ function displayFilteredGames(filteredGames) {
   });
 }
 
+// Handle search input
 function handleSearchInput() {
-  const searchInputValue = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
+  const searchInputValue = searchInput.value.toLowerCase();
   const filteredGames = gamesData.filter((game) =>
     game.name.toLowerCase().includes(searchInputValue)
   );
   displayFilteredGames(filteredGames);
 }
 
+// Fetch and display games data
 fetch("./config/games.json") 
   .then((response) => response.json())
   .then((data) => {
@@ -88,16 +94,17 @@ fetch("./config/games.json")
   })
   .catch((error) => console.error("Error fetching games:", error));
 
+// Attach event listener to search input
+if (searchInput) {
+  searchInput.addEventListener("input", handleSearchInput);
+}
 
-document
-  .getElementById("searchInput")
-  .addEventListener("input", handleSearchInput);
-
-const subtitleElement = document.getElementById("subtitle");
+// Update subtitle
 if (subtitleElement) {
-  subtitleElement.innerHTML = `${subtext}`;
+  subtitleElement.innerHTML = subtext;
 } else {
   console.error("Element with id 'subtitle' not found.");
 }
 
-document.getElementById("subtitle").innerHTML = `${subtext}`
+// Set document title
+document.title = sitename;
