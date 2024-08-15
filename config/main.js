@@ -52,7 +52,10 @@ let gamesData = [];
 
 // Display filtered games
 function displayFilteredGames(filteredGames) {
-  if (!gamesContainer) return;
+  if (!gamesContainer) {
+    console.error("Element with id 'gamesContainer' not found.");
+    return;
+  }
 
   gamesContainer.innerHTML = ""; 
 
@@ -78,6 +81,7 @@ function displayFilteredGames(filteredGames) {
 
 // Handle search input
 function handleSearchInput() {
+  if (!gamesData) return;
   const searchInputValue = searchInput.value.toLowerCase();
   const filteredGames = gamesData.filter((game) =>
     game.name.toLowerCase().includes(searchInputValue)
