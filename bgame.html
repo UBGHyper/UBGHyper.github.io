@@ -180,17 +180,6 @@
             return color;
         }
 
-        const toggleSwitch = document.getElementById("toggle-switch");
-        const favicon = document.querySelector("link[rel='icon']");
-        const defaultFavicon = "content/favicons/tab.png";
-        const toggledFavicon = "content/favicons/classroom.png";
-        const defaultTitle = "UBGHyper - Home";
-        const toggledTitle = "Classroom";
-
-        toggleSwitch.addEventListener("change", () => {
-            favicon.href = toggleSwitch.checked ? toggledFavicon : defaultFavicon;
-            document.title = toggleSwitch.checked ? toggledTitle : defaultTitle;
-        });
 
         document.getElementById('themeSelect').addEventListener('change', function() {
             const theme = this.value;
@@ -198,9 +187,6 @@
             document.querySelector('.footer').className = `footer ${theme}`;
         });
 
-        function unlockSecretGame() {
-            alert('Congratulations! You found a secret game!');
-            // Code to unlock a secret game goes here
-        }
+
     </script>
 </html>
