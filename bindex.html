@@ -16,6 +16,7 @@
             width: 1440px;
             height: 1024px;
             background: #FFFFFF;
+            box-sizing: border-box;
         }
 
         /* Button styles */
@@ -35,6 +36,8 @@
             font-size: 16px;
             line-height: 16px;
             text-align: center;
+            transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
         }
 
         .button.small {
@@ -52,18 +55,17 @@
             height: 28px;
         }
 
-        /* Star styles */
-        .star {
-            display: none;
-            width: 16px;
-            height: 16px;
+        /* Button hover and active effects */
+        .button:hover {
+            background: #3a3a3a; /* Darker shade for hover */
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+            transform: scale(1.05); /* Slightly enlarges button */
         }
 
-        /* X icon styles */
-        .x-icon {
-            display: none;
-            width: 16px;
-            height: 16px;
+        .button:active {
+            background: #1a1a1a; /* Even darker shade for active state */
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2); /* Reduced shadow effect */
+            transform: scale(0.98); /* Slightly shrinks button */
         }
 
         /* Icon styles */
@@ -143,9 +145,9 @@
 </head>
 <body>
     <div class="container">
-        <div class="button small">Button</div>
-        <div class="button medium">Button</div>
-        <div class="button large">Button</div>
+        <div class="button small">Home</div>
+        <div class="button medium">Games</div>
+        <div class="button large">Useful Resources</div>
         <div class="icon top-left"></div>
         <div class="icon center"></div>
         <div class="overlay"></div>
