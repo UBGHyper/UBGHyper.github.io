@@ -55,7 +55,7 @@
   },
   {
     "name": "Cookie Clicker",
-    "image": "img/goldenCookie.png",
+    "image": "cookieclicker.jpg",
     "url": "Cookie-Clicker",
     "new": false
   },
@@ -70,5 +70,10 @@
     "image": "splash.png",
     "url": "Drive-Mad",
     "new": false
+  },
+  {
+    "name": "Chat room",
+    "image": "",
+    "url": "Chat-Room",
+    "new": false
   }
-]
