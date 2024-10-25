@@ -143,6 +143,24 @@
         </div>
     </div>
     <script>
+        // Retrieve the corresponding game data to display title and credits
+fetch("./config/games.json")
+    .then(response => response.json())
+    .then(data => {
+        const gameData = data.find(game => game.url === gameUrl);
+        
+        if (gameData) {
+            const formattedTitle = gameData.name; // Use name from game data
+            document.getElementById("gameTitle").innerText = formattedTitle;
+            document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+        } else {
+            console.warn("Game data not found for:", gameUrl); // Debugging info
+            document.getElementById("gameTitle").innerText = "Game Not Found";
+            document.getElementById("gameCredits").innerText = "Developer: Unknown";
+        }
+    })
+    .catch(error => console.error("Error fetching game data:", error));
+
         document.addEventListener('DOMContentLoaded', () => {
             const themeToggle = document.getElementById('themeToggle');
             const currentTheme = localStorage.getItem('theme') || 'light';
