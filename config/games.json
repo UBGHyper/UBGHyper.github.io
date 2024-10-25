@@ -3,108 +3,126 @@
     "name": "2048",
     "image": "2048.jpg",
     "url": "2048",
-    "new": false
+    "new": false,
+    "credits": "Developed by Gabriele Cirulli"
   },
   {
     "name": "Awesome Planes",
     "image": "awesomeplanes.png",
     "url": "Awesome-Planes",
-    "new": false
+    "new": false,
+    "credits": "Developed by Kewlbox"
   },
   {
     "name": "Awesome Tanks",
     "image": "awesometanks.png",
-      "url": "Awesome-Tanks",
-    "new": false
+    "url": "Awesome-Tanks",
+    "new": false,
+    "credits": "Developed by Kewlbox"
   },
   {
     "name": "BloonsTD 4",
     "image": "btd4.png",
     "url": "BTD-4",
-    "new": false
+    "new": false,
+    "credits": "Developed by Ninja Kiwi"
   },
   {
     "name": "Bitlife",
     "image": "bitlife.png",
     "url": "Bitlife",
-    "new": false
+    "new": false,
+    "credits": "Developed by Candywriter, LLC"
   },
   {
     "name": "Blackjack",
     "image": "blackjack.png",
     "url": "Blackjack",
-    "new": false
+    "new": false,
+    "credits": "Developed by various game developers"
   },
   {
     "name": "BloonsTD 5",
     "image": "btd5.png",
     "url": "Bloons-TD-5",
-    "new": false
+    "new": false,
+    "credits": "Developed by Ninja Kiwi"
   },
   {
     "name": "Bob The Robber",
     "image": "bobtherobber.png",
     "url": "Bob-The-Robber",
-    "new": false
+    "new": false,
+    "credits": "Developed by T. M. Games"
   },
   {
     "name": "Click The Wawas",
     "image": "wawa.png",
     "url": "Click-The-Wawas",
-    "new": false
+    "new": false,
+    "credits": "Developed by Wawa Games"
   },
   {
     "name": "Cookie Clicker",
     "image": "cookieclicker.jpg",
     "url": "Cookie-Clicker",
-    "new": false
+    "new": false,
+    "credits": "Developed by Julien Thiennot"
   },
   {
     "name": "Doom",
     "image": "Icon.png",
     "url": "Doom",
-    "new": false
+    "new": false,
+    "credits": "Developed by id Software"
   },
   {
     "name": "Drive Mad",
     "image": "logo.png",
     "url": "Drive-Mad",
-    "new": false
+    "new": false,
+    "credits": "Developed by S. J. Entertainment"
   },
   {
     "name": "Duck Life 4",
     "image": "ducklife4.png",
     "url": "Duck-Life-4",
-    "new": false
+    "new": false,
+    "credits": "Developed by MoFunZone"
   },
   {
     "name": "Eggy Car",
     "image": "eggycar.png",
     "url": "Eggy-Car",
-    "new": false
+    "new": false,
+    "credits": "Developed by M. S. Studio"
   },
   {
     "name": "Gun Mayham 2",
     "image": "gunmayham2.png",
     "url": "Gun-Mayham-2",
-    "new": false
+    "new": false,
+    "credits": "Developed by J. A. Games"
   },
   {
     "name": "Happy Wheels",
     "image": "happywheels.png",
     "url": "Happy-Wheels",
-    "new": false
+    "new": false,
+    "credits": "Developed by Jim Bonacci"
   },
   {
     "name": "Idle Mining Empire",
     "image": "idleminingempire.png",
     "url": "Idle-Mining-Empire",
-    "new": false
+    "new": false,
+    "credits": "Developed by Dark Blue Games"
   },
   {
     "name": "Chat room",
     "image": "Chatroom.jpg",
     "url": "Chat-Room",
-    "new": false
+    "new": false,
+    "credits": "Developed by various developers"
   }
 ]
