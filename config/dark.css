@@ -109,13 +109,26 @@ body {
         }
 
 /* Games container styles */
-#gamesContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 0 20px; /* Add padding to the sides */
-  box-sizing: border-box;
-}
+        #gamesContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-height: 70vh; /* Limit the height for scrolling */
+            overflow-y: auto; /* Enable vertical scrolling */
+        }
+        .game-card {
+            background: white;
+            border-radius: 15px; /* Increased roundness of corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 200px;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
 
 /* Game card styles */
 .game {
