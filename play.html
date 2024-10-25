@@ -175,18 +175,18 @@
             const embedUrl = `${serverUrl1}/${gameUrl}`;
             document.getElementById("gameFrame").src = embedUrl;
 
-            // Format game title and credits from the URL
-            const gameTitle = gameUrl.split('/').pop().replace(/\.html$/, ''); // Remove .html
-            const formattedTitle = gameTitle.replace(/-/g, ' '); // Replace hyphens with spaces
-            document.getElementById("gameTitle").innerText = formattedTitle;
-
-            // Retrieve the corresponding game data to display credits
+            // Retrieve the corresponding game data to display title and credits
             fetch("./config/games.json")
                 .then(response => response.json())
                 .then(data => {
                     const gameData = data.find(game => game.url === gameUrl);
                     if (gameData) {
+                        const formattedTitle = gameData.name; // Use name from game data
+                        document.getElementById("gameTitle").innerText = formattedTitle;
                         document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+                    } else {
+                        document.getElementById("gameTitle").innerText = "Game Not Found";
+                        document.getElementById("gameCredits").innerText = "Developer: Unknown";
                     }
                 })
                 .catch(error => console.error("Error fetching game data:", error));
