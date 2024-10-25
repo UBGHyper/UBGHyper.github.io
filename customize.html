@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customize CSS</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customize Your Site</h1>
+    <form id="customizationForm">
+        <label for="colorScheme">Color Scheme (e.g., #ff5733):</label>
+        <input type="text" id="colorScheme" placeholder="Enter hex color code" />
+
+        <label for="backgroundImage">Background Image URL:</label>
+        <input type="text" id="backgroundImage" placeholder="Enter image URL" />
+
+        <button type="submit">Apply Customizations</button>
+    </form>
+    <script>
+        document.getElementById('customizationForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const color = document.getElementById('colorScheme').value;
+            const imageUrl = document.getElementById('backgroundImage').value;
+
+            if (color) {
+                document.body.style.color = color;
+            }
+            if (imageUrl) {
+                document.body.style.backgroundImage = `url(${imageUrl})`;
+                document.body.style.backgroundSize = 'cover';
+                document.body.style.backgroundRepeat = 'no-repeat';
+            }
+        });
+    </script>
+</body>
+</html>
