@@ -1,13 +1,6 @@
 // This changes the title of your site
-var sitename = "UBGHyper"; // Change this to change the name of your website.
-var subtext = "v1.0"; // Set the subtext
-
-// More settings in main.css
-
-// END CONFIG
-// DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOU'RE DOING!
-
-import "/./config/custom.js";
+var sitename = "UBGHyper"; 
+var subtext = "v1.0"; 
 
 var serverUrl1 = "https://ubghyper.github.io/GameList.github.io/";
 var currentPageTitle = document.title;
@@ -25,7 +18,7 @@ function displayFilteredGames(filteredGames) {
     const gameImage = document.createElement("img");
     gameImage.src = `${serverUrl1}/${game.url}/${game.image}`;
     gameImage.alt = game.name;
-    gameImage.onclick = () => showGameCredits(game); // Updated to show credits
+    gameImage.onclick = () => showGameCredits(game);
 
     const gameName = document.createElement("p");
     gameName.textContent = game.name;
@@ -37,25 +30,22 @@ function displayFilteredGames(filteredGames) {
 }
 
 function showGameCredits(game) {
-  // Create a modal or a section to display the credits
   const creditsModal = document.getElementById("creditsModal");
   creditsModal.innerHTML = `
     <h2>${game.name}</h2>
     <p>Developer: ${game.credits}</p>
     <button onclick="closeCredits()">Close</button>
   `;
-  creditsModal.style.display = "block"; // Show the modal
+  creditsModal.style.display = "block"; 
 }
 
 function closeCredits() {
   const creditsModal = document.getElementById("creditsModal");
-  creditsModal.style.display = "none"; // Hide the modal
+  creditsModal.style.display = "none"; 
 }
 
 function handleSearchInput() {
-  const searchInputValue = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
+  const searchInputValue = document.getElementById("searchInput").value.toLowerCase();
   const filteredGames = gamesData.filter((game) =>
     game.name.toLowerCase().includes(searchInputValue)
   );
@@ -67,12 +57,28 @@ fetch("./config/games.json")
   .then((data) => {
     gamesData = data;
     displayFilteredGames(data); 
+
+    // Fetching details for the game from the URL parameter
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const gameUrl = urlParams.get("gameurl");
+
+    if (gameUrl) {
+      const gameData = data.find(game => game.url === gameUrl);
+      if (gameData) {
+        // Display game title and credits
+        document.getElementById("gameTitle").innerText = gameData.name;
+        document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+        // Update the iframe source
+        document.getElementById("gameFrame").src = `${serverUrl1}/${gameUrl}`;
+      } else {
+        document.getElementById("gameTitle").innerText = "Game Not Found";
+        document.getElementById("gameCredits").innerText = "Developer: Unknown";
+      }
+    }
   })
   .catch((error) => console.error("Error fetching games:", error));
 
-document
-  .getElementById("searchInput")
-  .addEventListener("input", handleSearchInput);
-
+document.getElementById("searchInput").addEventListener("input", handleSearchInput);
 document.getElementById("title").innerHTML = `${sitename}`;
 document.getElementById("subtitle").innerHTML = `${subtext}`;
