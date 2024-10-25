@@ -14,6 +14,7 @@
             height: 100vh;
             margin: 0;
             background-color: #f0f0f0;
+            transition: background-color 0.3s, color 0.3s;
         }
         #gameFrame {
             border: 10px solid #3498db; /* Thinner border */
@@ -98,6 +99,28 @@
             margin-left: 20px;
             text-transform: capitalize; /* Ensures title is capitalized */
         }
+
+        /* Custom scrollbar styles */
+        ::-webkit-scrollbar {
+            width: 12px; /* Width of the scrollbar */
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; /* Light grey background for the track */
+            border-radius: 10px; /* Rounded corners for the track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #ff8c00; /* Orange color for the scrollbar handle */
+            border-radius: 10px; /* Rounded corners for the handle */
+            border: 3px solid #f1f1f1; /* Space between the thumb and track */
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #e07b00; /* Darker orange on hover */
+        }
+        /* For Firefox */
+        body {
+            scrollbar-width: thin; /* Thin scrollbar for Firefox */
+            scrollbar-color: #ff8c00 #f1f1f1; /* Orange handle and light grey track for Firefox */
+        }
     </style>
 </head>
 <body>
@@ -105,20 +128,15 @@
         <iframe id="gameFrame" src="" frameborder="0"></iframe>
         <div id="controls">
             <label id="toggleSwitch">
-                <input type="checkbox" id="toggleInput">
+                <input type="checkbox" id="themeToggle">
                 <span class="slider"></span>
             </label>
             <div id="gameTitle">Game Title Here</div>
             <button id="fullscreenBtn">Go Fullscreen</button>
         </div>
-          <div class="toggle-container">
-                <label for="themeToggle">Toggle Dark/Light Mode</label>
-              <div class="toggle">
-         <br>
     </div>
     <script>
-
-                document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', () => {
             const themeToggle = document.getElementById('themeToggle');
             const currentTheme = localStorage.getItem('theme') || 'light';
 
@@ -132,11 +150,8 @@
             });
 
             function setTheme(theme) {
-                if (theme === 'dark') {
-                    document.getElementById('themeStyle').setAttribute('href', 'config/dark.css');
-                } else {
-                    document.getElementById('themeStyle').setAttribute('href', 'config/light.css');
-                }
+                document.body.style.backgroundColor = theme === 'dark' ? '#333' : '#f0f0f0';
+                document.body.style.color = theme === 'dark' ? '#fff' : '#000';
                 localStorage.setItem('theme', theme);
             }
         });
@@ -161,7 +176,6 @@
 
         const iframe = document.getElementById('gameFrame');
         const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const toggleInput = document.getElementById('toggleInput');
         const faviconLink = document.getElementById('favicon');
 
         fullscreenBtn.addEventListener('click', () => {
@@ -173,16 +187,6 @@
                 iframe.webkitRequestFullscreen();
             } else if (iframe.msRequestFullscreen) { // IE/Edge
                 iframe.msRequestFullscreen();
-            }
-        });
-
-        toggleInput.addEventListener('change', () => {
-            if (toggleInput.checked) {
-                faviconLink.href = "../assets/icons/googleclassroom.ico"; // Replace with your "on" favicon
-                document.title = "Google Classroom"; // Replace with your "on" title
-            } else {
-                faviconLink.href = "../assets/icons/ubghyper.ico"; // Replace with your default favicon
-                document.title = "UBGHyper"; // Replace with your "off" title
             }
         });
     </script>
