@@ -27,6 +27,19 @@
             transition: all 1s ease;
             box-sizing: border-box;
             position: relative;
+            display: none; /* Hide initially */
+        }
+        #loading {
+            position: absolute;
+            width: 300%;
+            height: 740px;
+            background: url('path/to/your/loading.gif') no-repeat center center;
+            background-size: cover;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1; /* Ensure loading is on top */
         }
         #controls {
             position: absolute;
@@ -110,6 +123,7 @@
 </head>
 <body>
     <div style="display: flex; flex-direction: column; align-items: center;">
+        <div id="loading">Loading...</div>
         <iframe id="gameFrame" src="" frameborder="0"></iframe>
         <div id="gameTitle">Game Title Here</div>
         <div id="gameCredits">Developer: Developer Name Here</div>
@@ -134,7 +148,18 @@
             window.location.href = "/"; // Redirect to homepage if game URL is missing
         } else {
             const embedUrl = `${serverUrl1}/${gameUrl}`;
-            document.getElementById("gameFrame").src = embedUrl;
+            const gameFrame = document.getElementById("gameFrame");
+            const loading = document.getElementById("loading");
+
+            gameFrame.src = embedUrl;
+
+            // Show loading GIF while the iframe is loading
+            loading.style.display = "flex";
+
+            gameFrame.onload = function() {
+                loading.style.display = "none"; // Hide loading GIF when content is loaded
+                gameFrame.style.display = "block"; // Show the iframe
+            };
 
             // Fetch game data
             fetch("./config/games.json")
