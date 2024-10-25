@@ -205,6 +205,13 @@
             iframe.msRequestFullscreen();
         }
     });
+    fetch("./config/games.json")
+    .then(response => response.json())
+    .then(data => {
+        console.log(data); // Log the fetched data
+        const gameData = data.find(game => game.url === gameUrl);
+        ...
+
 </script>
 
     </script>
