@@ -96,7 +96,7 @@
         #gameTitle {
             font-size: 20px;
             font-weight: bold;
-            margin-left: 20px;
+            margin-top: 10px; /* Space between title and iframe */
             text-transform: capitalize; /* Ensures title is capitalized */
         }
 
@@ -126,12 +126,12 @@
 <body>
     <div style="display: flex; flex-direction: column; align-items: center;">
         <iframe id="gameFrame" src="" frameborder="0"></iframe>
+        <div id="gameTitle">Game Title Here</div>
         <div id="controls">
             <label id="toggleSwitch">
                 <input type="checkbox" id="themeToggle">
                 <span class="slider"></span>
             </label>
-            <div id="gameTitle">Game Title Here</div>
             <button id="fullscreenBtn">Go Fullscreen</button>
         </div>
     </div>
@@ -170,7 +170,7 @@
 
             // Format game title from the URL
             const gameTitle = gameUrl.split('/').pop().replace(/\.html$/, ''); // Remove .html
-            const formattedTitle = gameTitle.replace(/-/g, ' ').replace(/\b\w/g, char => char.toUpperCase()); // Replace hyphens with spaces and capitalize words
+            const formattedTitle = gameTitle.replace(/-/g, ' '); // Replace hyphens with spaces
             document.getElementById("gameTitle").innerText = formattedTitle;
         }
 
