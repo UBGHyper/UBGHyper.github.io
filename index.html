@@ -121,65 +121,64 @@
             <a href="https://github.com/UBGHyper/UBGHyper.github.io/">UBG Hyper</a>
         </p>
     </div>
-<body>
-    <div class="fixed-bottom-bar" id="bottomBar">
-        <div class="toggle-container">
-            <span>Dark Mode:</span>
-            <div class="toggle">
-                <input type="checkbox" id="themeToggle" />
-                <span class="slider"></span>
+            <div class="fixed-bottom-bar" id="bottomBar">
+            <div class="toggle-container">
+                <span>Dark Mode:</span>
+                <div class="toggle">
+                    <input type="checkbox" id="themeToggle" />
+                    <span class="slider"></span>
+                </div>
             </div>
-        </div>
-        <div class="toggle-container">
-            <span>Google Classroom:</span>
-            <div class="toggle">
-                <input type="checkbox" id="tabToggle" />
-                <span class="slider"></span>
+            <div class="toggle-container">
+                <span>Google Classroom:</span>
+                <div class="toggle">
+                    <input type="checkbox" id="tabToggle" />
+                    <span class="slider"></span>
+                </div>
             </div>
+            <input type="text" id="searchInput" placeholder="Search games" />
         </div>
-        <input type="text" id="searchInput" placeholder="Search games" />
-    </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                const themeToggle = document.getElementById('themeToggle');
+                const tabToggle = document.getElementById('tabToggle');
+                const currentTheme = localStorage.getItem('theme') || 'light';
+                const faviconLink = document.getElementById('faviconLink');
 
+                // Set initial theme
+                setTheme(currentTheme);
+                themeToggle.checked = currentTheme === 'dark';
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggle = document.getElementById('themeToggle');
-            const tabToggle = document.getElementById('tabToggle');
-            const currentTheme = localStorage.getItem('theme') || 'light';
-            const faviconLink = document.getElementById('faviconLink');
+                themeToggle.addEventListener('change', () => {
+                    console.log("Theme toggle changed: ", themeToggle.checked);
+                    const newTheme = themeToggle.checked ? 'dark' : 'light';
+                    setTheme(newTheme);
+                });
 
-            // Set initial theme
-            setTheme(currentTheme);
-            themeToggle.checked = currentTheme === 'dark';
+                tabToggle.addEventListener('change', () => {
+                    console.log("Tab toggle changed: ", tabToggle.checked);
+                    if (tabToggle.checked) {
+                        faviconLink.href = "../assets/icons/googleclassroom.ico";
+                        document.title = "Google Classroom";
+                    } else {
+                        faviconLink.href = "../assets/icons/ubghyper.ico";
+                        document.title = "UBG Hyper";
+                    }
+                });
 
-            themeToggle.addEventListener('change', () => {
-                const newTheme = themeToggle.checked ? 'dark' : 'light';
-                setTheme(newTheme);
-            });
-
-            tabToggle.addEventListener('change', () => {
-                if (tabToggle.checked) {
-                    faviconLink.href = "../assets/icons/googleclassroom.ico";
-                    document.title = "Google Classroom";
-                } else {
-                    faviconLink.href = "../assets/icons/ubghyper.ico";
-                    document.title = "UBG Hyper";
+                function setTheme(theme) {
+                    if (theme === 'dark') {
+                        document.getElementById('themeStyle').setAttribute('href', 'config/dark.css');
+                        document.body.style.backgroundColor = '#333';
+                        document.body.style.color = '#fff';
+                    } else {
+                        document.getElementById('themeStyle').setAttribute('href', 'config/light.css');
+                        document.body.style.backgroundColor = '#f9f9f9';
+                        document.body.style.color = '#000';
+                    }
+                    localStorage.setItem('theme', theme);
                 }
             });
-
-            function setTheme(theme) {
-                if (theme === 'dark') {
-                    document.getElementById('themeStyle').setAttribute('href', 'config/dark.css');
-                    document.body.style.backgroundColor = '#333';
-                    document.body.style.color = '#fff';
-                } else {
-                    document.getElementById('themeStyle').setAttribute('href', 'config/light.css');
-                    document.body.style.backgroundColor = '#f9f9f9';
-                    document.body.style.color = '#000';
-                }
-                localStorage.setItem('theme', theme);
-            }
-        });
-    </script>
-</body>
+        </script>
+    </body>
 </html>
