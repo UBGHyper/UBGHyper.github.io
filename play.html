@@ -121,44 +121,76 @@
             <button id="fullscreenBtn">Go Fullscreen</button>
         </div>
     </div>
-<script>
-const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
-const queryString = window.location.search;
-const urlParams = new URLSearchParams(queryString);
-const gameUrl = urlParams.get("gameurl");
+    <script>
+        const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const gameUrl = urlParams.get("gameurl");
 
-console.log("Game URL:", gameUrl); // Log the extracted game URL
+        console.log("Game URL:", gameUrl); // Log the extracted game URL
 
-if (!gameUrl) {
-    alert("Game URL not provided!");
-    window.location.href = "/"; // Redirect to homepage if game URL is missing
-} else {
-    const embedUrl = `${serverUrl1}/${gameUrl}`;
-    document.getElementById("gameFrame").src = embedUrl;
+        if (!gameUrl) {
+            alert("Game URL not provided!");
+            window.location.href = "/"; // Redirect to homepage if game URL is missing
+        } else {
+            const embedUrl = `${serverUrl1}/${gameUrl}`;
+            document.getElementById("gameFrame").src = embedUrl;
 
-    // Fetch game data
-    fetch("./config/games.json")
-        .then(response => response.json())
-        .then(data => {
-            console.log("Fetched games data:", data); // Log the entire data array
-            const gameData = data.find(game => game.url === gameUrl);
-            
-            if (gameData) {
-                document.getElementById("gameTitle").innerText = gameData.name; 
-                document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
-            } else {
-                document.getElementById("gameTitle").innerText = "Game Not Found";
-                document.getElementById("gameCredits").innerText = "Developer: Unknown";
+            // Fetch game data
+            fetch("./config/games.json")
+                .then(response => response.json())
+                .then(data => {
+                    console.log("Fetched games data:", data); // Log the entire data array
+                    const gameData = data.find(game => game.url === gameUrl);
+                    
+                    if (gameData) {
+                        document.getElementById("gameTitle").innerText = gameData.name; 
+                        document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+                    } else {
+                        document.getElementById("gameTitle").innerText = "Game Not Found";
+                        document.getElementById("gameCredits").innerText = "Developer: Unknown";
+                    }
+                })
+                .catch(error => {
+                    console.error("Error fetching game data:", error);
+                    document.getElementById("gameTitle").innerText = "Error fetching game data";
+                    document.getElementById("gameCredits").innerText = "Developer: Unknown";
+                });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+
+            // Set initial theme
+            setTheme(currentTheme);
+            themeToggle.checked = currentTheme === 'dark';
+
+            themeToggle.addEventListener('change', () => {
+                const newTheme = themeToggle.checked ? 'dark' : 'light';
+                setTheme(newTheme);
+            });
+
+            function setTheme(theme) {
+                document.body.style.backgroundColor = theme === 'dark' ? '#333' : '#f0f0f0';
+                document.body.style.color = theme === 'dark' ? '#fff' : '#000';
+                localStorage.setItem('theme', theme);
             }
-        })
-        .catch(error => {
-            console.error("Error fetching game data:", error);
-            document.getElementById("gameTitle").innerText = "Error fetching game data";
-            document.getElementById("gameCredits").innerText = "Developer: Unknown";
         });
-}
 
-
-    document.addEventListener('DOMContentLoaded', () => {
-        const themeToggle = document.getElementById('themeToggle');
-        const currentTheme = loc
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        fullscreenBtn.addEventListener('click', () => {
+            const iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) {
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) {
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) {
+                iframe.msRequestFullscreen();
+            }
+        });
+    </script>
+</body>
+</html>
