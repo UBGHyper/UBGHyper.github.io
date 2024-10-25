@@ -26,32 +26,32 @@
             max-height: 70vh; /* Limit the height for scrolling */
             overflow-y: auto; /* Enable vertical scrolling */
         }
-.game-card {
-    background: white;
-    border-radius: 15px; /* Increased roundness of corners */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
-    width: 200px;
-}
+        .game-card {
+            background: white;
+            border-radius: 15px; /* Increased roundness of corners */
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 200px;
+        }
         .game-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
         }
-.fixed-bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    background: rgba(155, 57, 34, 0.5);
-    border: 2px solid #9B3922;
-    border-radius: 15px; /* Slightly rounder corners */
-    padding: 5px 10px; /* Reduced padding for a thinner bar */
-    display: flex;
-    align-items: center;
-    z-index: 1000;
-    gap: 10px;
-}
+        .fixed-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(155, 57, 34, 0.5);
+            border: 2px solid #9B3922;
+            border-radius: 15px; /* Slightly rounder corners */
+            padding: 5px 10px; /* Reduced padding for a thinner bar */
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            gap: 10px;
+        }
         .customize-button {
             background-color: #4CAF50;
             color: white;
@@ -76,18 +76,18 @@
         }
 
         ::-webkit-scrollbar-thumb {
-            background: #888; /* Color of the scrollbar handle */
+            background: #6c757d; /* Custom color of the scrollbar handle */
             border-radius: 10px; /* Rounded corners for the handle */
         }
 
         ::-webkit-scrollbar-thumb:hover {
-            background: #555; /* Color of the handle on hover */
+            background: #495057; /* Darker color of the handle on hover */
         }
 
         /* For Firefox */
         body {
             scrollbar-width: thin; /* Thin scrollbar for Firefox */
-            scrollbar-color: #888 #f1f1f1; /* Handle and track colors for Firefox */
+            scrollbar-color: #6c757d #f1f1f1; /* Handle and track colors for Firefox */
         }
     </style>
     <script src="config/main.js" type="module"></script>
