@@ -6,53 +6,52 @@
     <title>UBGHyper</title>
     <link id="favicon" rel="icon" href="../assets/icons/ubghyper.ico" type="image/x-icon">
     <style>
-body {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    margin: 0;
-    background-image: url('../assets/background/background.png'); /* Replace with your image path */
-    background-size: cover; /* Optional: makes the image cover the whole area */
-    background-position: center; /* Optional: centers the image */
-    transition: background-color 0.3s, color 0.3s;
-}
-
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('../assets/background/background.png'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            transition: background-color 0.3s, color 0.3s;
+        }
         #gameFrame {
-            border: 10px solid #ababab; /* Thinner border */
-            border-bottom: 70px solid #f7b97e; /* Thicker bottom border */
-            border-radius: 20px; /* Rounded corners */
-            width: 300%; /* Increased width */
-            height: 740px; /* Increased height */
-            transition: all 1s ease; /* Smooth transition */
-            box-sizing: border-box; /* Ensure padding and border are included in width/height */
+            border: 10px solid #ababab;
+            border-bottom: 70px solid #f7b97e;
+            border-radius: 20px;
+            width: 300%;
+            height: 740px;
+            transition: all 1s ease;
+            box-sizing: border-box;
             position: relative;
         }
         #controls {
             position: absolute;
-            bottom: 10px; /* Adjust as needed */
-            left: 10px; /* Adjust as needed */
+            bottom: 10px;
+            left: 10px;
             display: flex;
             align-items: center;
-            background: white; /* Background for better visibility */
+            background: white;
             padding: 10px;
-            border-radius: 10px; /* Rounded corners */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         }
         #fullscreenBtn {
-            margin-left: 10px; /* Space between toggle and button */
+            margin-left: 10px;
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color: #3498db; /* Button background color */
-            color: white; /* Button text color */
-            border: none; /* Remove default border */
-            border-radius: 5px; /* Round button corners */
-            transition: background-color 0.3s; /* Smooth button hover */
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
         }
         #fullscreenBtn:hover {
-            background-color: #2980b9; /* Darker color on hover */
+            background-color: #2980b9;
         }
         #toggleSwitch {
             position: relative;
@@ -74,18 +73,18 @@ body {
             bottom: 0;
             background-color: #ccc;
             transition: .4s;
-            border-radius: 34px; /* More rounded corners */
+            border-radius: 34px;
         }
         .slider:before {
             position: absolute;
             content: "";
-            height: 30px; /* Increased height for the toggle */
-            width: 30px; /* Increased width for the toggle */
+            height: 30px;
+            width: 30px;
             left: 4px;
-            bottom: 2px; /* Adjusted position */
+            bottom: 2px;
             background-color: white;
             transition: .4s;
-            border-radius: 50%; /* Fully rounded toggle */
+            border-radius: 50%;
         }
         #toggleSwitch input:checked + .slider {
             background-color: #3498db;
@@ -99,30 +98,34 @@ body {
         #gameTitle {
             font-size: 20px;
             font-weight: bold;
-            margin-top: 10px; /* Space between title and iframe */
-            text-transform: capitalize; /* Ensures title is capitalized */
+            margin-top: 10px;
+            text-transform: capitalize;
         }
-
+        #gameCredits {
+            font-size: 16px;
+            color: #555;
+            margin-top: 5px; /* Space between title and credits */
+        }
         /* Custom scrollbar styles */
         ::-webkit-scrollbar {
-            width: 12px; /* Width of the scrollbar */
+            width: 12px;
         }
         ::-webkit-scrollbar-track {
-            background: #f1f1f1; /* Light grey background for the track */
-            border-radius: 10px; /* Rounded corners for the track */
+            background: #f1f1f1;
+            border-radius: 10px;
         }
         ::-webkit-scrollbar-thumb {
-            background: #ff8c00; /* Orange color for the scrollbar handle */
-            border-radius: 10px; /* Rounded corners for the handle */
-            border: 3px solid #f1f1f1; /* Space between the thumb and track */
+            background: #ff8c00;
+            border-radius: 10px;
+            border: 3px solid #f1f1f1;
         }
         ::-webkit-scrollbar-thumb:hover {
-            background: #e07b00; /* Darker orange on hover */
+            background: #e07b00;
         }
         /* For Firefox */
         body {
-            scrollbar-width: thin; /* Thin scrollbar for Firefox */
-            scrollbar-color: #ff8c00 #f1f1f1; /* Orange handle and light grey track for Firefox */
+            scrollbar-width: thin;
+            scrollbar-color: #ff8c00 #f1f1f1;
         }
     </style>
 </head>
@@ -130,6 +133,7 @@ body {
     <div style="display: flex; flex-direction: column; align-items: center;">
         <iframe id="gameFrame" src="" frameborder="0"></iframe>
         <div id="gameTitle">Game Title Here</div>
+        <div id="gameCredits">Developer: Developer Name Here</div> <!-- New element for credits -->
         <div id="controls">
             <label id="toggleSwitch">
                 <input type="checkbox" id="themeToggle">
@@ -171,10 +175,21 @@ body {
             const embedUrl = `${serverUrl1}/${gameUrl}`;
             document.getElementById("gameFrame").src = embedUrl;
 
-            // Format game title from the URL
+            // Format game title and credits from the URL
             const gameTitle = gameUrl.split('/').pop().replace(/\.html$/, ''); // Remove .html
             const formattedTitle = gameTitle.replace(/-/g, ' '); // Replace hyphens with spaces
             document.getElementById("gameTitle").innerText = formattedTitle;
+
+            // Retrieve the corresponding game data to display credits
+            fetch("./config/games.json")
+                .then(response => response.json())
+                .then(data => {
+                    const gameData = data.find(game => game.url === gameUrl);
+                    if (gameData) {
+                        document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+                    }
+                })
+                .catch(error => console.error("Error fetching game data:", error));
         }
 
         const iframe = document.getElementById('gameFrame');
@@ -186,7 +201,7 @@ body {
                 iframe.requestFullscreen();
             } else if (iframe.mozRequestFullScreen) { // Firefox
                 iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
                 iframe.webkitRequestFullscreen();
             } else if (iframe.msRequestFullscreen) { // IE/Edge
                 iframe.msRequestFullscreen();
