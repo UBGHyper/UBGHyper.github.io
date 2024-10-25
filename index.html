@@ -50,11 +50,6 @@
             z-index: 1000;
             gap: 10px;
         }
-        .toggle-container {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
         .toggle {
             position: relative;
             display: inline-block;
@@ -123,19 +118,13 @@
         </p>
     </div>
     <div class="fixed-bottom-bar" id="bottomBar">
-        <div class="toggle-container">
-            <span>Dark Mode:</span>
-            <div class="toggle">
-                <input type="checkbox" id="themeToggle" />
-                <span class="slider"></span>
-            </div>
+        <div class="toggle">
+            <input type="checkbox" id="themeToggle" />
+            <span class="slider"></span>
         </div>
-        <div class="toggle-container">
-            <span>Google Classroom:</span>
-            <div class="toggle">
-                <input type="checkbox" id="tabToggle" />
-                <span class="slider"></span>
-            </div>
+        <div class="toggle">
+            <input type="checkbox" id="tabToggle" />
+            <span class="slider"></span>
         </div>
         <input type="text" id="searchInput" placeholder="Search games" />
     </div>
