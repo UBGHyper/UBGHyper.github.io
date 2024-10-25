@@ -67,8 +67,38 @@
   },
   {
     "name": "Drive Mad",
-    "image": "splash.png",
+    "image": "logo.png",
     "url": "Drive-Mad",
+    "new": false
+  },
+  {
+    "name": "Duck Life 4",
+    "image": "ducklife4.png",
+    "url": "Duck-Life-4",
+    "new": false
+  },
+  {
+    "name": "Eggy Car",
+    "image": "eggycar.png",
+    "url": "Eggy-Car",
+    "new": false
+  },
+  {
+    "name": "Gun Mayham 2",
+    "image": "gunmayham2.png",
+    "url": "Gun-Mayham-2",
+    "new": false
+  },
+  {
+    "name": "Happy Wheels",
+    "image": "happywheels.png",
+    "url": "Happy-Wheels",
+    "new": false
+  },
+  {
+    "name": "Idle Mining Empire",
+    "image": "idleminingempire.png",
+    "url": "Idle-Mining-Empire",
     "new": false
   },
   {
