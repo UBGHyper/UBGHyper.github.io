@@ -142,89 +142,71 @@
             <button id="fullscreenBtn">Go Fullscreen</button>
         </div>
     </div>
-    <script>
-        // Retrieve the corresponding game data to display title and credits
-fetch("./config/games.json")
-    .then(response => response.json())
-    .then(data => {
-        const gameData = data.find(game => game.url === gameUrl);
-        
-        if (gameData) {
-            const formattedTitle = gameData.name; // Use name from game data
-            document.getElementById("gameTitle").innerText = formattedTitle;
-            document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
-        } else {
-            console.warn("Game data not found for:", gameUrl); // Debugging info
-            document.getElementById("gameTitle").innerText = "Game Not Found";
-            document.getElementById("gameCredits").innerText = "Developer: Unknown";
-        }
-    })
-    .catch(error => console.error("Error fetching game data:", error));
+<script>
+    const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+    const gameUrl = urlParams.get("gameurl");
 
-        document.addEventListener('DOMContentLoaded', () => {
-            const themeToggle = document.getElementById('themeToggle');
-            const currentTheme = localStorage.getItem('theme') || 'light';
+    if (!gameUrl) {
+        alert("Game URL not provided!");
+        window.location.href = "/"; // Redirect to homepage if game URL is missing
+    } else {
+        const embedUrl = `${serverUrl1}/${gameUrl}`;
+        document.getElementById("gameFrame").src = embedUrl;
 
-            // Set initial theme
-            setTheme(currentTheme);
-            themeToggle.checked = currentTheme === 'dark';
+        // Fetch game data once
+        fetch("./config/games.json")
+            .then(response => response.json())
+            .then(data => {
+                const gameData = data.find(game => game.url === gameUrl);
+                
+                if (gameData) {
+                    document.getElementById("gameTitle").innerText = gameData.name; 
+                    document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+                } else {
+                    document.getElementById("gameTitle").innerText = "Game Not Found";
+                    document.getElementById("gameCredits").innerText = "Developer: Unknown";
+                }
+            })
+            .catch(error => console.error("Error fetching game data:", error));
+    }
 
-            themeToggle.addEventListener('change', () => {
-                const newTheme = themeToggle.checked ? 'dark' : 'light';
-                setTheme(newTheme);
-            });
+    document.addEventListener('DOMContentLoaded', () => {
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
 
-            function setTheme(theme) {
-                document.body.style.backgroundColor = theme === 'dark' ? '#333' : '#f0f0f0';
-                document.body.style.color = theme === 'dark' ? '#fff' : '#000';
-                localStorage.setItem('theme', theme);
-            }
+        // Set initial theme
+        setTheme(currentTheme);
+        themeToggle.checked = currentTheme === 'dark';
+
+        themeToggle.addEventListener('change', () => {
+            const newTheme = themeToggle.checked ? 'dark' : 'light';
+            setTheme(newTheme);
         });
 
-        const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const gameUrl = urlParams.get("gameurl");
-
-        if (!gameUrl) {
-            alert("Game URL not provided!");
-            window.location.href = "/"; // Redirect to homepage if game URL is missing
-        } else {
-            const embedUrl = `${serverUrl1}/${gameUrl}`;
-            document.getElementById("gameFrame").src = embedUrl;
-
-            // Retrieve the corresponding game data to display title and credits
-            fetch("./config/games.json")
-                .then(response => response.json())
-                .then(data => {
-                    const gameData = data.find(game => game.url === gameUrl);
-                    if (gameData) {
-                        const formattedTitle = gameData.name; // Use name from game data
-                        document.getElementById("gameTitle").innerText = formattedTitle;
-                        document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
-                    } else {
-                        document.getElementById("gameTitle").innerText = "Game Not Found";
-                        document.getElementById("gameCredits").innerText = "Developer: Unknown";
-                    }
-                })
-                .catch(error => console.error("Error fetching game data:", error));
+        function setTheme(theme) {
+            document.body.style.backgroundColor = theme === 'dark' ? '#333' : '#f0f0f0';
+            document.body.style.color = theme === 'dark' ? '#fff' : '#000';
+            localStorage.setItem('theme', theme);
         }
+    });
 
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    fullscreenBtn.addEventListener('click', () => {
         const iframe = document.getElementById('gameFrame');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const faviconLink = document.getElementById('favicon');
+        if (iframe.requestFullscreen) {
+            iframe.requestFullscreen();
+        } else if (iframe.mozRequestFullScreen) {
+            iframe.mozRequestFullScreen();
+        } else if (iframe.webkitRequestFullscreen) {
+            iframe.webkitRequestFullscreen();
+        } else if (iframe.msRequestFullscreen) {
+            iframe.msRequestFullscreen();
+        }
+    });
+</script>
 
-        fullscreenBtn.addEventListener('click', () => {
-            if (iframe.requestFullscreen) {
-                iframe.requestFullscreen();
-            } else if (iframe.mozRequestFullScreen) { // Firefox
-                iframe.mozRequestFullScreen();
-            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, and Opera
-                iframe.webkitRequestFullscreen();
-            } else if (iframe.msRequestFullscreen) { // IE/Edge
-                iframe.msRequestFullscreen();
-            }
-        });
     </script>
 </body>
 </html>
