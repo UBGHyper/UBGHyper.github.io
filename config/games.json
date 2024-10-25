@@ -21,9 +21,9 @@
     "credits": "Developed by Kewlbox"
   },
   {
-    "name": "BloonsTD 4",
+    "name": "Bloons TD 4",
     "image": "btd4.png",
-    "url": "BTD-4",
+    "url": "Bloons-TD-4",
     "new": false,
     "credits": "Developed by Ninja Kiwi"
   },
@@ -42,7 +42,7 @@
     "credits": "Developed by various game developers"
   },
   {
-    "name": "BloonsTD 5",
+    "name": "Bloons TD 5",
     "image": "btd5.png",
     "url": "Bloons-TD-5",
     "new": false,
@@ -98,9 +98,9 @@
     "credits": "Developed by M. S. Studio"
   },
   {
-    "name": "Gun Mayham 2",
+    "name": "Gun Mayhem 2",
     "image": "gunmayham2.png",
-    "url": "Gun-Mayham-2",
+    "url": "Gun-Mayhem-2",
     "new": false,
     "credits": "Developed by J. A. Games"
   },
@@ -119,7 +119,7 @@
     "credits": "Developed by Dark Blue Games"
   },
   {
-    "name": "Chat room",
+    "name": "Chat Room",
     "image": "Chatroom.jpg",
     "url": "Chat-Room",
     "new": false,
