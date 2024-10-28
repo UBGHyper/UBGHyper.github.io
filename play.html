@@ -132,10 +132,16 @@
                 <input type="checkbox" id="themeToggle">
                 <span class="slider"></span>
             </label>
-            <button id="fullscreenBtn">Go Fullscreen</button>
+                        <button id="fullscreenBtn">Go Fullscreen</button>
         </div>
     </div>
     <script>
+        // Ensure the URL does not end with a slash
+        if (window.location.search.endsWith('/')) {
+            const newUrl = window.location.href.slice(0, -1);
+            window.history.replaceState({}, document.title, newUrl);
+        }
+
         const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
