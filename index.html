@@ -35,7 +35,6 @@
             transition: transform 0.3s, box-shadow 0.3s;
             width: 200px;
             text-align: center; /* Center text in game cards */
-            cursor: pointer; /* Change cursor to pointer */
         }
         .game-card:hover {
             transform: translateY(-5px);
@@ -100,12 +99,8 @@
     <div class="center">
         <h1 id="title">Welcome to UBG Hyper</h1>
     </div>
-    <div id="gamesContainer" role="region" aria-labelledby="title">
-        <div class="game-card" data-game-id="1">Game 1</div>
-        <div class="game-card" data-game-id="2">Game 2</div>
-        <div class="game-card" data-game-id="3">Game 3</div>
-        <div class="game-card" data-game-id="4">Game 4</div>
-    </div>
+        <div id="gamesContainer"></div>
+</div>
     <div class="center">
         <p>
             Made by Fibble | credit: native 
@@ -149,7 +144,6 @@
                 }
             });
 
-            // Function to set the theme
             function setTheme(theme) {
                 if (theme === 'dark') {
                     document.getElementById('themeStyle').setAttribute('href', 'config/dark.css');
@@ -162,17 +156,6 @@
                 }
                 localStorage.setItem('theme', theme);
             }
-
-            // Add click event listener to game cards
-            const gameCards = document.querySelectorAll('.game-card');
-            gameCards.forEach(card => {
-                card.addEventListener('click', () => {
-                    const gameId = card.getAttribute('data-game-id');
-                    alert(`You clicked on Game ${gameId}`);
-                    // Here you can add more logic to handle the game selection
-                    // e.g., redirect to a game page or load a game
-                });
-            });
         });
     </script>
 </body>
