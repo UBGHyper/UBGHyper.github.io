@@ -1,7 +1,7 @@
 // This changes the title of your site
 
-const sitename = "native."; // Change this to change the name of your website.
-const subtext = "v1.2"; // Set the subtext
+const sitename = "UBGHyper"; // Change this to change the name of your website.
+const subtext = "v1.0"; // Set the subtext
 
 // More settings in main.css
 
@@ -10,7 +10,7 @@ const subtext = "v1.2"; // Set the subtext
 
 import "../config/custom.js";
 
-const serverUrl1 = "https://parcoil-assets.onrender.com";
+const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
 const currentPageTitle = document.title;
 document.title = `${currentPageTitle} | ${sitename}`;
 let gamesData = []; 
