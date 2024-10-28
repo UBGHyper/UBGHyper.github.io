@@ -1,5 +1,5 @@
 // This changes the title of your site
-
+document.addEventListener("DOMContentLoaded", () => {
 const sitename = "UBGHyper"; // Change this to change the name of your website.
 const subtext = "v1.0"; // Set the subtext
 
@@ -37,34 +37,52 @@ function displayFilteredGames(filteredGames) {
     gameDiv.appendChild(gameName);
     gamesContainer.appendChild(gameDiv);
   });
-}
 
-function handleSearchInput() {
-  const searchInputValue = document
-    .getElementById("searchInput")
-    .value.toLowerCase();
-  const filteredGames = gamesData.filter((game) =>
-    game.name.toLowerCase().includes(searchInputValue)
-  );
-  displayFilteredGames(filteredGames);
-}
 
-fetch("../config/games.json") 
-  .then((response) => {
-    if (!response.ok) {
-      throw new Error("Network response was not ok");
-    }
-    return response.json();
-  })
+}
+  function handleSearchInput() {
+    const searchInputValue = document.getElementById("searchInput").value.toLowerCase();
+    const filteredGames = gamesData.filter((game) =>
+      game.name.toLowerCase().includes(searchInputValue)
+    );
+    displayFilteredGames(filteredGames);
+  }
+
+fetch("./config/games.json") 
+  .then((response) => response.json())
   .then((data) => {
     gamesData = data;
     displayFilteredGames(data); 
   })
   .catch((error) => console.error("Error fetching games:", error));
 
-document
-  .getElementById("searchInput")
-  .addEventListener("input", handleSearchInput);
+
+      // Fetching details for the game from the URL parameter
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const gameUrl = urlParams.get("gameurl");
+
+      if (gameUrl) {
+        const gameData = data.find(game => game.url === gameUrl);
+        if (gameData) {
+          // Display game title and credits
+          document.getElementById("gameTitle").innerText = gameData.name;
+          document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+          // Update the iframe source
+          document.getElementById("gameFrame").src = `${serverUrl1}/${gameUrl}`;
+        } else {
+          document.getElementById("gameTitle").innerText = "Game Not Found";
+          document.getElementById("gameCredits").innerText = "Developer: Unknown";
+        }
+      }
+    })
+    .catch((error) => console.error("Error fetching games:", error));
+
+  document.getElementById("searchInput").addEventListener("input", handleSearchInput);
+  document.getElementById("title").innerHTML = `${sitename}`;
+
+  document.getElementById("subtitle").innerHTML = `${subtext}`;
+
 
 document.getElementById("title").textContent = sitename;
 document.getElementById("subtitle").textContent = subtext;
