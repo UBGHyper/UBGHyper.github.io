@@ -100,6 +100,14 @@
         <h1 id="title">Welcome to UBG Hyper</h1>
     </div>
     <div id="gamesContainer" role="region" aria-labelledby="title"></div>
+    
+    <!-- Modal for game credits -->
+    <div id="creditsModal" style="display:none; position:fixed; top:20%; left:50%; transform:translate(-50%, -20%); background:white; padding:20px; border-radius:10px; box-shadow:0 4px 10px rgba(0, 0, 0, 0.2); z-index:1000;">
+        <h2 id="gameTitle"></h2>
+        <p id="gameCredits"></p>
+        <button onclick="closeCredits()">Close</button>
+    </div>
+
     <div class="center">
         <p>
             Made by Fibble | credit: native 
@@ -156,6 +164,28 @@
                 localStorage.setItem('theme', theme);
             }
         });
+
+        // Function to show game credits
+        function showGameCredits(game) {
+            const creditsModal = document.getElementById("creditsModal");
+            const gameTitleElement = document.getElementById("gameTitle");
+            const gameCreditsElement = document.getElementById("gameCredits");
+
+            if (!creditsModal || !gameTitleElement || !gameCreditsElement) {
+                console.error("One or more elements are missing in the DOM.");
+                return;
+            }
+
+            gameTitleElement.innerHTML = game.name;
+            gameCreditsElement.innerHTML = `Developer: ${game.credits}`;
+            creditsModal.style.display = "block"; 
+        }
+
+        // Function to close the credits modal
+        function closeCredits() {
+            const creditsModal = document.getElementById("creditsModal");
+            creditsModal.style.display = "none";
+        }
     </script>
 </body>
 </html>
