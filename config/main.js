@@ -59,27 +59,27 @@ document.addEventListener("DOMContentLoaded", () => {
       gamesData = data;
       displayFilteredGames(data); 
       gameData = data; // Store game data for later use
+
+      // Fetching details for the game from the URL parameter
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      const gameUrl = urlParams.get("gameurl");
+
+      if (gameUrl) {
+        const gameDataFound = gameData.find(game => game.url === gameUrl);
+        if (gameDataFound) {
+          // Display game title and credits
+          document.getElementById("gameTitle").innerText = gameDataFound.name;
+          document.getElementById("gameCredits").innerText = `Developer: ${gameDataFound.credits}`;
+          // Update the iframe source
+          document.getElementById("gameFrame").src = `${serverUrl1}/${gameUrl}`;
+        } else {
+          document.getElementById("gameTitle").innerText = "Game Not Found";
+          document.getElementById("gameCredits").innerText = "Developer: Unknown";
+        }
+      }
     })
     .catch((error) => console.error("Error fetching games:", error));
-
-  // Fetching details for the game from the URL parameter
-  const queryString = window.location.search;
-  const urlParams = new URLSearchParams(queryString);
-  const gameUrl = urlParams.get("gameurl");
-
-  if (gameUrl) {
-    const gameDataFound = gameData.find(game => game.url === gameUrl);
-    if (gameDataFound) {
-      // Display game title and credits
-      document.getElementById("gameTitle").innerText = gameDataFound.name;
-      document.getElementById("gameCredits").innerText = `Developer: ${gameDataFound.credits}`;
-      // Update the iframe source
-      document.getElementById("gameFrame").src = `${serverUrl1}/${gameUrl}`;
-    } else {
-      document.getElementById("gameTitle").innerText = "Game Not Found";
-      document.getElementById("gameCredits").innerText = "Developer: Unknown";
-    }
-  }
 
   document.getElementById("searchInput").addEventListener("input", handleSearchInput);
   document.getElementById("title").textContent = sitename;
