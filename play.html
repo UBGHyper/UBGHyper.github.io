@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBGHyper</title>
     <link id="favicon" rel="icon" href="../assets/icons/ubghyper.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"> <!-- Google Font -->
     <style>
         body {
             display: flex;
@@ -16,6 +17,7 @@
             background-image: url('../assets/background/background.png'); 
             background-size: cover;
             background-position: center;
+            font-family: 'Roboto', sans-serif; /* Apply the font to the body */
         }
         #gameFrame {
             border: 10px solid #676666;
@@ -95,30 +97,29 @@
             transform: translateX(26px);
         }
         #gameTitle {
-            font-size: 20px;
+            font-size: 16px;
             font-weight: bold;
-            margin-top: 10px;
-            text-transform: capitalize;
+            color: #fff;
+            margin-right: 10px;
         }
         #gameCredits {
-            font-size: 16px;
-            color: #555;
-            margin-top: 5px;
+            font-size: 14px;
+            color: #ddd;
+            margin-right: 20px;
         }
     </style>
 </head>
 <body>
     <div style="display: flex; flex-direction: column; align-items: center;">
-        <div id="loading">Loading...</div>
         <iframe id="gameFrame" src="" frameborder="0"></iframe>
-        <div id="gameTitle" style="display: inline-block;">Game Title Here</div>
-        <div id="gameCredits" style="display: inline-block; margin-left: 10px;">Developer: Developer Name Here</div>
         <div id="controls">
+            <div id="gameTitle">Game Title Here</div>
+            <div id="gameCredits">Developer: Developer Name Here</div>
             <label id="toggleSwitch">
                 <input type="checkbox" id="themeToggle">
                 <span class="slider"></span>
             </label>
-                        <button id="fullscreenBtn">Go Fullscreen</button>
+            <button id="fullscreenBtn">Go Fullscreen</button>
         </div>
     </div>
     <script>
