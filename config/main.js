@@ -9,7 +9,7 @@ document.addEventListener("DOMContentLoaded", () => {
 // END CONFIG
 // DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOUR DOING!
 
-import "/./config/custom.js";
+import "./config/custom.js";
 
 var serverUrl1 = "https://ubghyper.github.io/gameslist.github.io"
 var currentPageTitle = document.title;
