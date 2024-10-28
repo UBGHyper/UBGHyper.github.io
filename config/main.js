@@ -1,18 +1,17 @@
-document.addEventListener("DOMContentLoaded", () => {
-  // This changes the title of your site
-  var sitename = "UBGHyper"; 
-  var subtext = "v1.0"; 
-// more settings in main.css
+// This changes the title of your site
 
+const sitename = "native."; // Change this to change the name of your website.
+const subtext = "v1.2"; // Set the subtext
 
+// More settings in main.css
 
-  
 // END CONFIG
-// DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOUR DOING!
-import "./config/custom.js";
+// DO NOT MODIFY IF YOU DO NOT KNOW WHAT YOU'RE DOING!
 
-var serverUrl1 = "https://ubghyper.github.io/gameslist.github.io"
-var currentPageTitle = document.title;
+import "../config/custom.js";
+
+const serverUrl1 = "https://parcoil-assets.onrender.com";
+const currentPageTitle = document.title;
 document.title = `${currentPageTitle} | ${sitename}`;
 let gamesData = []; 
 
@@ -29,55 +28,43 @@ function displayFilteredGames(filteredGames) {
     gameImage.alt = game.name;
     gameImage.onclick = () => {
       window.location.href = `play.html?gameurl=${game.url}/`;
+    };
 
-      const gameName = document.createElement("p");
-      gameName.textContent = game.name;
+    const gameName = document.createElement("p");
+    gameName.textContent = game.name;
 
-      gameDiv.appendChild(gameImage);
-      gameDiv.appendChild(gameName);
-      gamesContainer.appendChild(gameDiv);
-    });
-  }
+    gameDiv.appendChild(gameImage);
+    gameDiv.appendChild(gameName);
+    gamesContainer.appendChild(gameDiv);
+  });
+}
 
-  function handleSearchInput() {
-    const searchInputValue = document.getElementById("searchInput").value.toLowerCase();
-    const filteredGames = gamesData.filter((game) =>
-      game.name.toLowerCase().includes(searchInputValue)
-    );
-    displayFilteredGames(filteredGames);
-  }
+function handleSearchInput() {
+  const searchInputValue = document
+    .getElementById("searchInput")
+    .value.toLowerCase();
+  const filteredGames = gamesData.filter((game) =>
+    game.name.toLowerCase().includes(searchInputValue)
+  );
+  displayFilteredGames(filteredGames);
+}
 
-fetch("./config/games.json") 
-  .then((response) => response.json())
+fetch("../config/games.json") 
+  .then((response) => {
+    if (!response.ok) {
+      throw new Error("Network response was not ok");
+    }
+    return response.json();
+  })
   .then((data) => {
     gamesData = data;
     displayFilteredGames(data); 
   })
   .catch((error) => console.error("Error fetching games:", error));
 
+document
+  .getElementById("searchInput")
+  .addEventListener("input", handleSearchInput);
 
-      // Fetching details for the game from the URL parameter
-      const queryString = window.location.search;
-      const urlParams = new URLSearchParams(queryString);
-      const gameUrl = urlParams.get("gameurl");
-
-      if (gameUrl) {
-        const gameData = data.find(game => game.url === gameUrl);
-        if (gameData) {
-          // Display game title and credits
-          document.getElementById("gameTitle").innerText = gameData.name;
-          document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
-          // Update the iframe source
-          document.getElementById("gameFrame").src = `${serverUrl1}/${gameUrl}`;
-        } else {
-          document.getElementById("gameTitle").innerText = "Game Not Found";
-          document.getElementById("gameCredits").innerText = "Developer: Unknown";
-        }
-      }
-    })
-    .catch((error) => console.error("Error fetching games:", error));
-
-  document.getElementById("searchInput").addEventListener("input", handleSearchInput);
-  document.getElementById("title").innerHTML = `${sitename}`;
-
-  document.getElementById("subtitle").innerHTML = `${subtext}`;
+document.getElementById("title").textContent = sitename;
+document.getElementById("subtitle").textContent = subtext;
