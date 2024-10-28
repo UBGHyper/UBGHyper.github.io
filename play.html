@@ -20,26 +20,13 @@
         }
         #gameFrame {
             border: 10px solid #ababab;
-            border-bottom: 70px solid #f7b97e;
+            border-bottom: 70px solid #e34b14;
             border-radius: 20px;
-            width: 300%;
+            background: url('../assets/background/loading.gif');
             height: 740px;
-            transition: all 1s ease;
+            transition: all 3s ease;
             box-sizing: border-box;
             position: relative;
-            display: none; /* Hide initially */
-        }
-        #loading {
-            position: absolute;
-            width: 300%;
-            height: 740px;
-            background: url('path/to/your/loading.gif') no-repeat center center;
-            background-size: cover;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 1; /* Ensure loading is on top */
         }
         #controls {
             position: absolute;
@@ -47,7 +34,7 @@
             left: 10px;
             display: flex;
             align-items: center;
-            background: white;
+            background: #827e7d;
             padding: 10px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -57,14 +44,14 @@
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color: #3498db;
-            color: white;
+            background-color: #ff5405;
+            color: #827e7d;
             border: none;
             border-radius: 5px;
             transition: background-color 0.3s;
         }
         #fullscreenBtn:hover {
-            background-color: #2980b9;
+            background-color: #a63602;
         }
         #toggleSwitch {
             position: relative;
