@@ -81,4 +81,3 @@ fetch("./config/games.json")
   document.getElementById("title").innerHTML = `${sitename}`;
 
   document.getElementById("subtitle").innerHTML = `${subtext}`;
-});
