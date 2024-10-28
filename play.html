@@ -123,6 +123,26 @@
         </div>
     </div>
     <script>
+
+        fetch("./config/games.json")
+    .then(response => response.json())
+    .then(data => {
+        const gameData = data.find(game => game.url === gameUrl);
+        
+        if (gameData) {
+            document.getElementById("gameTitle").innerText = gameData.name; 
+            document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+        } else {
+            document.getElementById("gameTitle").innerText = "Game Not Found";
+            document.getElementById("gameCredits").innerText = "Developer: Unknown";
+        }
+    })
+    .catch(error => {
+        console.error("Error fetching game data:", error);
+        document.getElementById("gameTitle").innerText = "Error fetching game data";
+        document.getElementById("gameCredits").innerText = "Developer: Unknown";
+    });
+        
         // Ensure the URL does not end with a slash
         if (window.location.search.endsWith('/')) {
             const newUrl = window.location.href.slice(0, -1);
