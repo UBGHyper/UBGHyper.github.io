@@ -119,6 +119,20 @@
     "credits": "Developed by Dark Blue Games"
   },
   {
+    "name": "Among Us Online",
+    "image": "amongus.png",
+    "url": "AmongUs-Online",
+    "new": false,
+    "credits": "Developed by TimMcool"
+  },
+  {
+    "name": "Iron Snout",
+    "image": "ironsnout.png",
+    "url": "Iron-Snout",
+    "new": false,
+    "credits": "Developed by SnoutUp"
+  },
+  {
     "name": "Chat Room",
     "image": "Chatroom.jpg",
     "url": "Chat-Room",
