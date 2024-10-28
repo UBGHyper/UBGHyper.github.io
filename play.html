@@ -29,17 +29,19 @@
             box-sizing: border-box;
             position: relative;
         }
-        #controls {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            display: flex;
-            align-items: center;
-            background: #827e7d;
-            padding: 10px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        }
+    #controls {
+        position: absolute;
+        bottom: 10px;
+        left: 10px;
+        display: flex;
+        justify-content: center; /* Center items horizontally */
+        align-items: center;
+        background: #827e7d;
+        padding: 10px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        width: calc(100% - 20px); /* Adjust width to fit the container */
+    }
         #fullscreenBtn {
             margin-left: 10px;
             padding: 10px 20px;
@@ -96,23 +98,10 @@
         #toggleSwitch input:checked + .slider:before {
             transform: translateX(26px);
         }
-#gameTitle {
-    font-size: 24px; /* Increased font size for better visibility */
-    font-weight: bold;
-    margin-top: 15px; /* Increased margin for better spacing */
-    text-transform: capitalize;
-    color: #333; /* Darker color for improved readability */
-    letter-spacing: 1px; /* Added letter spacing for a more polished look */
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-}
-
-#gameCredits {
-    font-size: 18px; /* Slightly larger font size */
-    color: #777; /* Lighter gray for a softer appearance */
-    margin-top: 8px; /* Increased margin for better spacing */
-    font-style: italic; /* Italicized for differentiation */
-    line-height: 1.5; /* Improved line height for readability */
-}
+    #gameTitle, #gameCredits {
+        display: inline-block; /* Ensure these are inline-block for spacing */
+        margin: 0 10px; /* Add margin for spacing between title and credits */
+    }
     </style>
 </head>
 <body>
