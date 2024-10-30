@@ -135,38 +135,7 @@
             <button id="fullscreenBtn">Go Fullscreen</button>
          </div>
       </div>
-      <script>
-         const recentGames = JSON.parse(localStorage.getItem('recentGames')) || [];
-         
-         // Function to display recently played games
-         function displayRecentGames() {
-             const recentGamesList = document.getElementById('recentGamesList');
-             recentGamesList.innerHTML = ''; // Clear previous entries
-         
-             recentGames.slice(-3).forEach(game => { // Get the last 3 games
-                 const gameElement = document.createElement('div');
-                 gameElement.innerHTML = `<a href="${game.url}"><img src="${game.image}" alt="${game.name}" title="${game.name}"></a>`;
-                 recentGamesList.appendChild(gameElement);
-             });
-         }
-         
-         // Call the function to display games on page load
-         document.addEventListener('DOMContentLoaded', displayRecentGames);
-         
-                 // Example of updating the recently played games array
-         function updateRecentGames(game) {
-             // Check if the game is already in the list
-             if (!recentGames.some(g => g.url === game.url)) {
-                 recentGames.push(game); // Add the new game
-                 localStorage.setItem('recentGames', JSON.stringify(recentGames)); // Save to local storage
-             }
-         }
-         
-         // Call this function when loading a new game
-         const gameData = { url: gameUrl, name: gameData.name, image: gameData.image }; // Assuming you have image data
-         updateRecentGames(gameData);
-         
-                 
+      <script>                 
                  fetch("./config/games.json")
              .then(response => response.json())
              .then(data => {
