@@ -5,157 +5,110 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>UBGHyper</title>
       <link id="favicon" rel="icon" href="../assets/icons/ubghyper.ico" type="image/x-icon">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
-     crossorigin="anonymous"></script>  
-         <style>
-         #recentGames {
-         background-color: rgba(255, 255, 255, 0.8);
-         border: 1px solid #676666;
-         border-radius: 10px;
-         padding: 10px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-         }
-         #recentGames img {
-         width: 100%; /* Makes the images responsive */
-         border-radius: 5px;
-         margin-bottom: 10px;
-         cursor: pointer; /* Changes cursor to pointer on hover */
-         }
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>  
+      <style>
          body {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-         justify-content: center;
-         height: 100vh;
-         margin: 0;
-         background-image: url('../assets/background/background.png'); 
-         background-size: cover;
-         background-position: center;
-         font-family: 'Roboto', sans-serif; /* Apply the font to the body */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('../assets/background/background.png'); 
+            background-size: cover;
+            background-position: center;
+            font-family: 'Poppins', sans-serif; 
          }
+
          #gameFrame {
-         border: 10px solid #676666;
-         border-bottom: 10px solid #676666;
-         border-radius: 20px;
-         background: url('../assets/background/loading.gif');
-         width: 950px;
-         height: 750px;
-         box-sizing: border-box;
-         position: relative;
+            border: 10px solid #676666;
+            border-radius: 20px;
+            background: url('../assets/background/loading.gif');
+            width: 950px;
+            height: 750px;
+            box-sizing: border-box;
+            position: relative;
          }
+
          #controls {
-         bottom: 10px;
-         left: 50%; /* Center horizontally */
-         transform: translateX(-50%); /* Adjust to truly center */
-         display: flex;
-         justify-content: center; /* Center items horizontally */
-         align-items: center; /* Center items vertically */
-         background: #827e7d;
-         padding: 10px;
-         border-radius: 10px;
-         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-         width: auto; /* Change this to auto to fit content */
+            display: flex;
+            justify-content: center; 
+            align-items: center; 
+            background: #827e7d;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: auto; 
+            margin-top: 20px; /* Added margin for spacing */
          }
+
          #fullscreenBtn {
-         margin-left: 10px;
-         padding: 10px 20px;
-         font-size: 16px;
-         cursor: pointer;
-         background-color: #615f5f;
-         color: #000000;
-         border: none;
-         border-radius: 5px;
-         transition: background-color 0.3s;
+            margin-left: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #615f5f;
+            color: #ffffff; /* Changed text color for better contrast */
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
          }
+
          #fullscreenBtn:hover {
-         background-color: #ff5405;
+            background-color: #ff5405;
          }
-         #toggleSwitch {
-         position: relative;
-         display: inline-block;
-         width: 60px;
-         height: 34px;
+
+         #comments {
+            position: absolute;
+            right: 20px; /* Positioned on the right */
+            top: 10%; /* Adjusted vertical position */
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid #676666;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            width: 300px; /* Fixed width for comments section */
+            max-height: 400px; /* Max height for scrolling */
+            overflow-y: auto; /* Scroll if content exceeds max height */
          }
-         #toggleSwitch input {
-         opacity: 0;
-         width: 0;
-         height: 0;
-         }
-         .slider {
-         position: absolute;
-         cursor: pointer;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         background-color: #f6f6f6;
-         transition: .4s;
-         border-radius: 34px;
-         }
-         .slider:before {
-         position: absolute;
-         content: "";
-         height: 30px;
-         width: 30px;
-         left: 4px;
-         bottom: 2px;
-         background-color: #000000;
-         transition: .4s;
-         border-radius: 50%;
-         }
-         #toggleSwitch input:checked + .slider {
-         background-color: #f25f16;
-         }
-         #toggleSwitch input:focus + .slider {
-         box-shadow: 0 0 1px #eb6315;
-         }
-         #toggleSwitch input:checked + .slider:before {
-         transform: translateX(26px);
-         }
+
          #gameTitle, #gameCredits {
-         display: inline-block; /* Ensure these are inline-block for spacing */
-         margin: 0 10px; /* Add margin for spacing between title and credits */
+            display: inline-block; 
+            margin: 0 10px; 
          }
       </style>
    </head>
    <body>
       <div style="display: flex; flex-direction: column; align-items: center;">
          <iframe id="gameFrame" src="" frameborder="0"></iframe>
-         <div style="display: flex; flex-direction: row; align-items: flex-start;">
-            </div>
-         </div>
          <div id="controls">
-            <div id="gameTitle" style="display: inline-block;">Game Title Here</div>
-            <div id="gameCredits" style="display: inline-block; margin-left: 10px;">Developer: Developer Name Here</div>
+            <div id="gameTitle">Game Title Here</div>
+            <div id="gameCredits">Developer: Developer Name Here</div>
             <label id="toggleSwitch">
-            <input type="checkbox" id="themeToggle">
-            <span class="slider"></span>
+               <input type="checkbox" id="themeToggle">
+               <span class="slider"></span>
             </label>
             <button id="fullscreenBtn">Go Fullscreen</button>
-                     <div id="controls">
-         <Comments>
-    <script src="https://giscus.app/client.js"
-        data-repo="ubghyper.github.io/"
-        data-repo-id="R_kgDOGdm08Q"
-        data-category="General"
-        data-category-id="DIC_kwDOGdm08c4CA4Ew"
-        data-mapping="pathname"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="top"
-        data-theme="dark"
-        data-lang="en"
-        crossorigin="anonymous"
-        async>
-</script>
-</Comments>
+         </div>
+         <div id="comments">
+            <script src="https://giscus.app/client.js"
+               data-repo="ubghyper.github.io/"
+               data-repo-id="R_kgDOGdm08Q"
+               data-category="General"
+               data-category-id="DIC_kwDOGdm08c4CA4Ew"
+               data-mapping="pathname"
+               data-reactions-enabled="1"
+               data-emit-metadata="0"
+               data-input-position="top"
+               data-theme="dark"
+               data-lang="en"
+               crossorigin="anonymous"
+               async>
+            </script>
          </div>
       </div>
-      
-      <script>             
-
-         
+      <script>         
                  fetch("./config/games.json")
              .then(response => response.json())
              .then(data => {
