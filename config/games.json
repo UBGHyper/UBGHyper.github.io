@@ -133,6 +133,13 @@
     "credits": "Developed by SnoutUp"
   },
   {
+    "name": "Jelly Truck",
+    "image": "jellytruck.jpg",
+    "url": "Jelly-Truck",
+    "new": false,
+    "credits": "Developed by Gametornado"
+  },
+  {
     "name": "Chat Room",
     "image": "Chatroom.jpg",
     "url": "Chat-Room",
