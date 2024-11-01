@@ -8,6 +8,41 @@
   --text-color: white;
   --accent-color: #404040;
 } */
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px; /* Thinner scrollbar */
+    height: 8px; /* Thinner horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+    background: #e0e0e0; /* Light grey background for the track */
+    border-radius: 10px; /* Rounded corners for the track */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #4CAF50; /* Green color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid #e0e0e0; /* Border around the thumb */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #388E3C; /* Darker green on hover */
+}
+
+/* Optional: Style for horizontal scrollbar */
+::-webkit-scrollbar-horizontal {
+    height: 8px; /* Height for the horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background: #4CAF50; /* Green color for the horizontal thumb */
+}
+
+/* For Firefox */
+html {
+    scrollbar-width: thin; /* Thinner scrollbar */
+    scrollbar-color: #4CAF50 #e0e0e0; /* Thumb color and track color */
+}
 
 * {
   font-family: ubuntu;
