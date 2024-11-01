@@ -71,7 +71,7 @@
   },
   {
     "name": "Doom",
-    "image": "Icon.png",
+    "image": "doom.png",
     "url": "Doom",
     "new": false,
     "credits": "Developed by id Software"
