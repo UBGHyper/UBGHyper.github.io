@@ -205,100 +205,93 @@
   {
     "name": "Raft Wars",
     "image": "portalflash.jpg",
-    "url": "Raft-Wars"
+    "url": "Raft-Wars",
     "new": false,
     "credits": "Developed by Martijn Kunst"
   },
   {
     "name": "Raft Wars 2",
     "image": "portalflash.jpg",
-    "url": "Raft-Wars-2"
+    "url": "Raft-Wars-2",
     "new": false,
     "credits": "Developed by Martijn Kunst"
   },
   {
     "name": "Retro Bowl",
     "image": "retrobowl.jpg",
-    "url": "Retro-Bowl"
+    "url": "Retro-Bowl",
     "new": false,
     "credits": "Developed by New Star Games"
   },
   {
     "name": "Run 3",
     "image": "run3.jpg",
-    "url": "Run-3"
+    "url": "Run-3",
     "new": false,
     "credits": "Developed by Player_03"
   },
   {
     "name": "Slope",
     "image": "slope.jpg",
-    "url": "Slope"
+    "url": "Slope",
     "new": false,
     "credits": "Developed by Rob Kay"
   },
   {
     "name": "Snow Rider 3D",
     "image": "snow-rider-3d.jpg",
-    "url": "Snow-Rider-3D"
+    "url": "Snow-Rider-3D",
     "new": false,
     "credits": "Developed by Ashima Prabhakar"
   },
   {
     "name": "Submerisble",
     "image": "submerisble.jpg",
-    "url": "Submerisble"
+    "url": "Submerisble",
     "new": false,
-    "credits": "Developed by unkown"
+    "credits": "Developed by unknown"
   },
   {
     "name": "Super Smash Flash",
     "image": "supersmashflash.jpg",
-    "url": "Duper-Smash-Flash"
+    "url": "Duper-Smash-Flash",
     "new": false,
     "credits": "Developed by McLeodGaming"
   },
   {
     "name": "Swords & Souls",
     "image": "swordsandsouls.jpg",
-    "url": "Swords-And-Souls"
+    "url": "Swords-And-Souls",
     "new": false,
     "credits": "Developed by SoulGame Studio"
   },
   {
     "name": "Tanuki Sunset",
     "image": "tanukisunset.jpg",
-    "url": "Tanuki-Sunset"
+    "url": "Tanuki-Sunset",
     "new": false,
     "credits": "Developed by Squid Squad"
   },
   {
     "name": "There Is No Game",
     "image": "thereisnogame.jpg",
-    "url": "There-Is-No-Game"
+    "url": "There-Is-No-Game",
     "new": false,
     "credits": "Developed by Pascal Cammisotto"
   },
   {
     "name": "Minecraft",
     "image": "minecraft.jpg",
-    "url": "Minecraft"
-    "new": false,
-    "credits": "Developed by Mojang"
-  },
-  {
-    "name": "Minecraft",
-    "image": "minecraft.jpg",
-    "url": "Minecraft"
+    "url": "Minecraft",
     "new": false,
     "credits": "Developed by Mojang"
   },
   {
     "name": "Chatroom",
     "image": "chatroom.jpg",
-    "url": "Chat-Room"
+    "url": "Chat-Room",
     "new": false,
-    "credits": "Developed by unkown"
+    "credits": "Developed by unknown"
   },
   {
     "name": "Ninja vs Evil Coorp",
