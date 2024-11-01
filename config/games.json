@@ -294,6 +294,104 @@
     "credits": "Developed by unknown"
   },
   {
+    "name": "Hobo 1",
+    "image": "hobo.jpg",
+    "url": "Hobo-1",
+    "new": false,
+    "credits": "Developed by ArmorGames"
+  },
+  {
+    "name": "Hobo 2",
+    "image": "hobo.jpg",
+    "url": "Hobo-2",
+    "new": false,
+    "credits": "Developed by ArmorGames"
+  },
+  {
+    "name": "Hobo 3",
+    "image": "hobo.jpg",
+    "url": "Hobo-3",
+    "new": false,
+    "credits": "Developed by ArmorGames"
+  },
+  {
+    "name": "Hobo 4",
+    "image": "hobo.jpg",
+    "url": "Hobo-4",
+    "new": false,
+    "credits": "Developed by ArmorGames"
+  },
+  {
+    "name": "Hobo 5",
+    "image": "hobo.jpg",
+    "url": "Hobo-5",
+    "new": false,
+    "credits": "Developed by ArmorGames"
+  },
+  {
+    "name": "Hobo 6",
+    "image": "hobo.jpg",
+    "url": "Hobo-6",
+    "new": false,
+    "credits": "Developed by ArmorGames"
+  },
+  {
+    "name": "Hobo 7",
+    "image": "hobo.jpg",
+    "url": "Hobo-7",
+    "new": false,
+    "credits": "Developed by ArmorGames"
+  },
+  {
+    "name": "Riddle School 1",
+    "image": "hobo.jpg",
+    "url": "Riddle-School-1",
+    "new": false,
+    "credits": "Developed by Jonochrome"
+  },
+  {
+    "name": "Riddle School 2",
+    "image": "hobo.jpg",
+    "url": "Riddle-School-2",
+    "new": false,
+    "credits": "Developed by Jonochrome"
+  },
+  {
+    "name": "Riddle School 3",
+    "image": "hobo.jpg",
+    "url": "Riddle-School-3",
+    "new": false,
+    "credits": "Developed by Jonochrome"
+  },
+  {
+    "name": "Riddle School 4",
+    "image": "hobo.jpg",
+    "url": "Riddle-School-4",
+    "new": false,
+    "credits": "Developed by Jonochrome"
+  },
+  {
+    "name": "Riddle School 5",
+    "image": "hobo.jpg",
+    "url": "Riddle-School-5",
+    "new": false,
+    "credits": "Developed by Jonochrome"
+  },
+  {
+    "name": "Riddle School Transfer",
+    "image": "hobo.jpg",
+    "url": "Riddle-School-Transfer",
+    "new": false,
+    "credits": "Developed by Jonochrome"
+  },
+  {
+    "name": "Riddle School Transfer 2",
+    "image": "hobo.jpg",
+    "url": "Riddle-School-Transfer-2",
+    "new": false,
+    "credits": "Developed by Jonochrome"
+  },
+  {
     "name": "Ninja vs Evil Coorp",
     "image": "eee.jpg",
     "url": "ninjavsevil",
