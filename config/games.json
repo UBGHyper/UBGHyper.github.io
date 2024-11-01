@@ -294,6 +294,13 @@
     "credits": "Developed by Mojang"
   },
   {
+    "name": "Chatroom",
+    "image": "chatroom.jpg",
+    "url": "Chat-Room"
+    "new": false,
+    "credits": "Developed by unkown"
+  },
+  {
     "name": "Ninja vs Evil Coorp",
     "image": "eee.jpg",
     "url": "ninjavsevil",
