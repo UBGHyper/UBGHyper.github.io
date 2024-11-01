@@ -138,8 +138,8 @@ body {
   flex: 1 0 200px; /* Flexbox item properties */
   max-width: 200px; /* Limit maximum width */
   display: inline-block;
-  margin: 10px;
   transition: transform 0.3s ease;
+  border-radius: 10px; /* Adjust the value for more or less rounding */
 }
 .game:hover {
   transform: scale(0.95); /* Scale up on hover */
