@@ -9,39 +9,33 @@
   --accent-color: #404040;
 } */
 /* Custom scrollbar styles */
-::-webkit-scrollbar {
-    width: 8px; /* Thinner scrollbar */
-    height: 8px; /* Thinner horizontal scrollbar */
+
+body {
+  --sb-track-color: #676767;
+  --sb-thumb-color: #dc4100;
+  --sb-size: 14px;
 }
 
-::-webkit-scrollbar-track {
-    background: #e0e0e0; /* Light grey background for the track */
-    border-radius: 10px; /* Rounded corners for the track */
+body::-webkit-scrollbar {
+  width: var(--sb-size)
 }
 
-::-webkit-scrollbar-thumb {
-    background: #4CAF50; /* Green color for the thumb */
-    border-radius: 10px; /* Rounded corners for the thumb */
-    border: 2px solid #e0e0e0; /* Border around the thumb */
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 7px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #388E3C; /* Darker green on hover */
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 7px;
+  
 }
 
-/* Optional: Style for horizontal scrollbar */
-::-webkit-scrollbar-horizontal {
-    height: 8px; /* Height for the horizontal scrollbar */
-}
-
-::-webkit-scrollbar-thumb:horizontal {
-    background: #4CAF50; /* Green color for the horizontal thumb */
-}
-
-/* For Firefox */
-html {
-    scrollbar-width: thin; /* Thinner scrollbar */
-    scrollbar-color: #4CAF50 #e0e0e0; /* Thumb color and track color */
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
 }
 
 * {
