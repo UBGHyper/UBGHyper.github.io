@@ -21,6 +21,142 @@
     <meta name="description" content="Find fun, unblocked & free games here at UBGHyper.">
     <meta name="author" content="UBGHyper on GitHub">   
     <style>
+
+*,
+::before,
+::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.toggle-btn2 {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  display: inline-block;
+}
+.toggle-btn2 input[type="checkbox"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  outline: none;
+  background-color: #fff;
+}
+.toggle-btn2 .circle {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: #000;
+  transition: all 300ms ease-in-out;
+  pointer-events: none;
+}
+.toggle-btn2 .circle::before {
+  content: "";
+  width: 50%;
+  height: 50%;  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  transition: all 300ms ease-in-out;
+  transition-delay: 100ms;
+}
+.toggle-btn2 input[type="checkbox"]:checked {
+  background-color: #000;
+}
+.toggle-btn2 input[type="checkbox"]:checked ~ .circle {
+  background-color: #fff;
+  left: 105px;
+}
+.toggle-btn2 input[type="checkbox"]:checked ~ .circle::before {
+  width: 25%;
+  border-radius: 10px;
+  background-color: #000;
+}
+
+
+
+
+
+
+
+        *,
+::before,
+::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+.toggle-btn {
+  width: 150px;
+  height: 50px;
+  position: relative;
+  display: inline-block;
+}
+.toggle-btn input[type="checkbox"] {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 30px;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.2);
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  cursor: pointer;
+  transition: all 300ms ease-in-out;
+  outline: none;
+  background-color: #fff;
+}
+.toggle-btn .circle {
+  position: absolute;
+  width: 35px;
+  height: 35px;
+  top: 50%;
+  left: 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  transition: all 300ms ease-in-out;
+  pointer-events: none;
+  border: 8px solid #0d4f8b;
+  border-radius: 50%;
+}
+.toggle-btn .circle::before {
+  content: "";
+  position: absolute;
+  width: 60%;
+  height: 80%;
+  top: -2px;
+  left: 0;
+  border-radius: 50%;
+  transform: rotate(30deg) scale(0);
+  transition: all 300ms ease-in-out;
+  transition-delay: 50ms;
+}
+.toggle-btn input[type="checkbox"]:checked {
+  background-color: #0d4f8b;
+}
+.toggle-btn input[type="checkbox"]:checked ~ .circle {
+  left: 105px;
+  border: 0;
+  background-color: #fff;
+}
+.toggle-btn input[type="checkbox"]:checked ~ .circle::before {
+  background-color: #0d4f8b;
+  transform: rotate(30deg) scale(1);
+}
+
         body {
             font-family: 'Roboto', sans-serif;
             margin: 0;
@@ -78,11 +214,11 @@
     <div id="gamesContainer"></div>
     <div class="fixed-bottom-bar" id="bottomBar" aria-label="Bottom navigation bar">
         <input type="text" id="searchInput" placeholder="Search games" aria-label="Search games">
-        <label class="toggle" aria-label="Toggle theme">
+        <label class="toggle-btn" aria-label="Toggle theme">
             <input type="checkbox" id="themeToggle">
             <span class="slider"></span>
         </label>
-        <label class="toggle" aria-label="Toggle tab">
+        <label class="toggle-btn2" aria-label="Toggle tab">
             <input type="checkbox" id="tabToggle">
             <span class="slider"></span>
         </label>
