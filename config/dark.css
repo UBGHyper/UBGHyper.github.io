@@ -174,14 +174,16 @@ body {
 }
 
 /* Game image styles */
+/* Game image styles */
 .game img {
-  width: 100%; /* Occupy full width of container */
-  max-width: 100%; /* Ensure image does not exceed container width */
-  height: auto; /* Maintain aspect ratio */
-  cursor: pointer;
+  width: 200px; /* Set a fixed width */
+  height: 150px; /* Set a fixed height */
+  object-fit: cover; /* Maintain aspect ratio and fill the box */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  cursor: pointer;
 }
+
 
 footer {
   position: fixed;
