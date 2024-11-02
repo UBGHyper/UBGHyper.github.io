@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>UBGHyper</title>
-      <link id="favicon" rel="icon" href="../assets/icons/ubghyper.ico" type="image/x-icon">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>  
-      <style>
-         body {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBGHyper</title>
+    <link id="favicon" rel="icon" href="../assets/icons/ubghyper.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>  
+    <style>
+        body {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -19,9 +19,9 @@
             background-size: cover;
             background-position: center;
             font-family: 'Poppins', sans-serif; 
-         }
+        }
 
-         #gameFrame {
+        #gameFrame {
             border: 10px solid #676666;
             border-radius: 20px;
             background: url('../assets/background/loading.gif');
@@ -29,9 +29,9 @@
             height: 750px;
             box-sizing: border-box;
             position: relative;
-         }
+        }
 
-         #controls {
+        #controls {
             display: flex;
             justify-content: center; 
             align-items: center; 
@@ -41,9 +41,9 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             width: auto; 
             margin-top: 20px; /* Added margin for spacing */
-         }
+        }
 
-         #fullscreenBtn {
+        #fullscreenBtn {
             margin-left: 10px;
             padding: 10px 20px;
             font-size: 16px;
@@ -53,13 +53,13 @@
             border: none;
             border-radius: 5px;
             transition: background-color 0.3s;
-         }
+        }
 
-         #fullscreenBtn:hover {
+        #fullscreenBtn:hover {
             background-color: #ff5405;
-         }
+        }
 
-         #comments {
+        #comments {
             position: absolute;
             right: 20px; /* Positioned on the right */
             top: 10%; /* Adjusted vertical position */
@@ -71,134 +71,109 @@
             width: 300px; /* Fixed width for comments section */
             max-height: 400px; /* Max height for scrolling */
             overflow-y: auto; /* Scroll if content exceeds max height */
-         }
+        }
 
-         #gameTitle, #gameCredits {
+        #gameTitle, #gameCredits {
             display: inline-block; 
             margin: 0 10px; 
-         }
-      </style>
-   </head>
-   <body>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-         <iframe id="gameFrame" src="" frameborder="0"></iframe>
-         <div id="controls">
+        }
+    </style>
+</head>
+<body>
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <iframe id="gameFrame" src="" frameborder="0"></iframe>
+        <div id="controls">
             <div id="gameTitle">Game Title Here</div>
             <div id="gameCredits">Developer: Developer Name Here</div>
             <label id="toggleSwitch">
-               <input type="checkbox" id="themeToggle">
-               <span class="slider"></span>
+                <input type="checkbox" id="themeToggle">
+                <span class="slider"></span>
             </label>
             <button id="fullscreenBtn">Go Fullscreen</button>
-         </div>
-      </div>
-      <script>         
-                 fetch("./config/games.json")
-             .then(response => response.json())
-             .then(data => {
-                 const gameData = data.find(game => game.url === gameUrl);
-                 
-                 if (gameData) {
-                     document.getElementById("gameTitle").innerText = gameData.name; 
-                     document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
-                 } else {
-                     document.getElementById("gameTitle").innerText = "Game Not Found";
-                     document.getElementById("gameCredits").innerText = "Developer: Unknown";
-                 }
-             })
-             .catch(error => {
-                 console.error("Error fetching game data:", error);
-                 document.getElementById("gameTitle").innerText = "Error fetching game data";
-                 document.getElementById("gameCredits").innerText = "Developer: Unknown";
-             });
-                 
-                 // Ensure the URL does not end with a slash
-                 if (window.location.search.endsWith('/')) {
-                     const newUrl = window.location.href.slice(0, -1);
-                     window.history.replaceState({}, document.title, newUrl);
-                 }
-         
-                 const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
-                 const queryString = window.location.search;
-                 const urlParams = new URLSearchParams(queryString);
-                 const gameUrl = urlParams.get("gameurl");
-         
-                 console.log("Game URL:", gameUrl); // Log the extracted game URL
-         
-                 if (!gameUrl) {
-                     alert("Game URL not provided!");
-                     window.location.href = "/"; // Redirect to homepage if game URL is missing
-                 } else {
-                     const embedUrl = `${serverUrl1}/${gameUrl}`;
-                     const gameFrame = document.getElementById("gameFrame");
-         
-                     gameFrame.src = embedUrl;
-         
-                     // Show loading GIF while the iframe is loading
-                     loading.style.display = "flex";
-         
-                     gameFrame.onload = function() {
-                         loading.style.display = "none"; // Hide loading GIF when content is loaded
-                         gameFrame.style.display = "block"; // Show the iframe
-                     };
-         
-                     // Fetch game data
-                     fetch("./config/games.json")
-                         .then(response => response.json())
-                         .then(data => {
-                             console.log("Fetched games data:", data); // Log the entire data array
-                             const gameData = data.find(game => game.url === gameUrl);
-                             
-                             if (gameData) {
-                                 document.getElementById("gameTitle").innerText = gameData.name; 
-                                 document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
-                             } else {
-                                 document.getElementById("gameTitle").innerText = "Game Not Found";
-                                 document.getElementById("gameCredits").innerText = "Developer: Unknown";
-                             }
-                         })
-                         .catch(error => {
-                             console.error("Error fetching game data:", error);
-                             document.getElementById("gameTitle").innerText = "Error fetching game data";
-                             document.getElementById("gameCredits").innerText = "Developer: Unknown";
-                         });
-                 }
-         
-                 document.addEventListener('DOMContentLoaded', () => {
-                     const themeToggle = document.getElementById('themeToggle');
-                     const currentTheme = localStorage.getItem('theme') || 'light';
-         
-                     // Set initial theme
-                     setTheme(currentTheme);
-                     themeToggle.checked = currentTheme === 'dark';
-         
-                     themeToggle.addEventListener('change', () => {
-                         const newTheme = themeToggle.checked ? 'dark' : 'light';
-                         setTheme(newTheme);
-                     });
-         
-                     function setTheme(theme) {
-                         document.body.style.backgroundColor = theme === 'dark' ? '#333' : '#f0f0f0';
-                         document.body.style.color = theme === 'dark' ? '#fff' : '#000';
-                         localStorage.setItem('theme', theme);
-                     }
-                 });
-         
-                 const fullscreenBtn = document.getElementById('fullscreenBtn');
-                 fullscreenBtn.addEventListener('click', () => {
-                     const iframe = document.getElementById('gameFrame');
-                     if (iframe.requestFullscreen) {
-                         iframe.requestFullscreen();
-                     } else if (iframe.mozRequestFullScreen) {
-                         iframe.mozRequestFullScreen();
-                     } else if (iframe.webkitRequestFullscreen) {
-                         iframe.webkitRequestFullscreen();
-                     } else if (iframe.msRequestFullscreen) {
-                         iframe.msRequestFullscreen();
-                     }
-                 });
-         
-             
-      </script>
-   </body>
+        </div>
+    </div>
+    <script>
+        // Fetch game data
+        fetch("./config/games.json")
+            .then(response => response.json())
+            .then(data => {
+                const gameData = data.find(game => game.url === gameUrl);
+                if (gameData) {
+                    document.getElementById("gameTitle").innerText = gameData.name; 
+                    document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+                } else {
+                    document.getElementById("gameTitle").innerText = "Game Not Found";
+                    document.getElementById("gameCredits").innerText = "Developer: Unknown";
+                }
+            })
+            .catch(error => {
+                console.error("Error fetching game data:", error);
+                document.getElementById("gameTitle").innerText = "Error fetching game data";
+                document.getElementById("gameCredits").innerText = "Developer: Unknown";
+            });
+
+        // Ensure the URL does not end with a slash
+        if (window.location.search.endsWith('/')) {
+            const newUrl = window.location.href.slice(0, -1);
+            window.history.replaceState({}, document.title, newUrl);
+        }
+
+        const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const gameUrl = urlParams.get("gameurl");
+
+        console.log("Game URL:", gameUrl); // Log the extracted game URL
+
+        if (!gameUrl) {
+            alert("Game URL not provided!");
+            window.location.href = "/"; // Redirect to homepage if game URL is missing
+        } else {
+            const embedUrl = `${serverUrl1}/${gameUrl}`;
+            const gameFrame = document.getElementById("gameFrame");
+            gameFrame.src = embedUrl;
+
+            // Show loading GIF while the iframe is loading
+            gameFrame.onload = function() {
+                gameFrame.style.display = "block"; // Show the iframe
+            };
+        }
+
+        // Fullscreen functionality
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        fullscreenBtn.addEventListener('click', () => {
+            const iframe = document.getElementById('gameFrame');
+            if (iframe.requestFullscreen) {
+                iframe.requestFullscreen();
+            } else if (iframe.mozRequestFullScreen) { // Firefox
+                iframe.mozRequestFullScreen();
+            } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari and Opera
+                iframe.webkitRequestFullscreen();
+            } else if (iframe.msRequestFullscreen) { // IE/Edge
+                iframe.msRequestFullscreen();
+            }
+        });
+
+        // Theme toggle
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+
+            // Set initial theme
+            setTheme(currentTheme);
+            themeToggle.checked = currentTheme === 'dark';
+
+            themeToggle.addEventListener('change', () => {
+                const newTheme = themeToggle.checked ? 'dark' : 'light';
+                setTheme(newTheme);
+            });
+
+            function setTheme(theme) {
+                document.body.style.backgroundColor = theme === 'dark' ? '#333' : '#f0f0f0';
+                document.body.style.color = theme === 'dark' ? '#fff' : '#000';
+                localStorage.setItem('theme', theme);
+            }
+        });
+    </script>
+</body>
 </html>
