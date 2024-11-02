@@ -280,9 +280,16 @@
     "credits": "Developed by Pascal Cammisotto"
   },
   {
-    "name": "Minecraft",
+    "name": "Minecraft Classic Online",
     "image": "minecraft.jpg",
-    "url": "Minecraft",
+    "url": "Minecraft-Online",
+    "new": false,
+    "credits": "Developed by Mojang"
+  },
+  {
+    "name": "Eaglercraft",
+    "image": "minecraft.jpg",
+    "url": "Eaglercraft",
     "new": false,
     "credits": "Developed by Mojang"
   },
