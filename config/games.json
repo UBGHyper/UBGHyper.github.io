@@ -392,6 +392,97 @@
     "credits": "Developed by Jonochrome"
   },
   {
+    "name": "Sift Heads 1",
+    "image": "siftheads1.png",
+    "url": "Sift-Heads-1",
+    "new": false,
+    "credits": "Developed by Pyrozen"
+  },
+  {
+    "name": "Sift Heads 2",
+    "image": "siftheads2.png",
+    "url": "Sift-Heads-2",
+    "new": false,
+    "credits": "Developed by Pyrozen"
+  },
+  {
+    "name": "Sift Heads 3",
+    "image": "siftheads3.png",
+    "url": "Sift-Heads-3",
+    "new": false,
+    "credits": "Developed by Pyrozen"
+  },
+  {
+    "name": "Sift Heads 4",
+    "image": "siftheads4.png",
+    "url": "Sift-Heads-4",
+    "new": false,
+    "credits": "Developed by Pyrozen"
+  },
+  {
+    "name": "Sift Heads 5",
+    "image": "siftheads5.png",
+    "url": "Sift-Heads-5",
+    "new": false,
+    "credits": "Developed by Pyrozen"
+  },
+  {
+    "name": "Deep Sleep 1",
+    "image": "deepsleep1.png",
+    "url": "Deep-Sleep-1",
+    "new": false,
+    "credits": "Developed by Armour Games"
+  },
+  {
+    "name": "Deep Sleep 2",
+    "image": "deepsleep2.png",
+    "url": "Deep-Sleep-2",
+    "new": false,
+    "credits": "Developed by Armour Games"
+  },
+  {
+    "name": "Deep Sleep 3",
+    "image": "deepsleep3.png",
+    "url": "Deep-Sleep-3",
+    "new": false,
+    "credits": "Developed by Armour Games"
+  },
+  {
+    "name": "Dont Escape 1",
+    "image": "dontescape1.png",
+    "url": "Dont-Escape-1",
+    "new": false,
+    "credits": "Developed by Armour Games"
+  },
+  {
+    "name": "Dont Escape 2",
+    "image": "dontescape2.png",
+    "url": "Dont-Escape-2",
+    "new": false,
+    "credits": "Developed by Armour Games"
+  },
+  {
+    "name": "Dont Escape 3",
+    "image": "dontescape3.png",
+    "url": "Dont-Escape-3",
+    "new": false,
+    "credits": "Developed by Armour Games"
+  },
+  {
+    "name": "Burrito Bison",
+    "image": "burritobison.png",
+    "url": "Burrito-Bison",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Burrito Bison Revenge",
+    "image": "burritobisonrevenge.png",
+    "url": "Burrito-Bison-Revenge",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
     "name": "Ninja vs Evil Coorp",
     "image": "eee.jpg",
     "url": "ninjavsevil",
