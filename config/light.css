@@ -3,13 +3,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 
 /* Variable configuration */
+/* Uncomment and define variables if needed */
 /* :root {
   --background-color: #41444e;
   --text-color: white;
   --accent-color: #404040;
 } */
-/* Custom scrollbar styles */
 
+/* Custom scrollbar styles */
 body {
   --sb-track-color: #676767;
   --sb-thumb-color: #dc4100;
@@ -17,30 +18,29 @@ body {
 }
 
 body::-webkit-scrollbar {
-  width: var(--sb-size)
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 7px;
+  width: var(--sb-size);
+  background: var(--sb-track-color); /* Background for the scrollbar track */
 }
 
 body::-webkit-scrollbar-thumb {
   background: var(--sb-thumb-color);
   border-radius: 7px;
-  
 }
 
-@supports not selector(::-webkit-scrollbar) {
+body::-webkit-scrollbar-thumb:hover {
+  background: #b83200; /* Darker shade on hover for better visibility */
+}
+
+@supports not (selector(::-webkit-scrollbar)) {
   body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
 
 * {
-  font-family: ubuntu;
+  font-family: 'Ubuntu', sans-serif; /* Use quotes for font family */
 }
+
 /* General styles */
 body {
   background-image: url('../assets/background/background-white.png'); /* Set your background image */
@@ -48,7 +48,6 @@ body {
   background-repeat: no-repeat; /* Prevent repeating */
   background-attachment: fixed; /* Keep it fixed when scrolling */
   color: var(--text-color);
-  font-family: "ubuntu", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-user-select: none;
@@ -60,78 +59,77 @@ body {
 .game {
   background-color: white;
 }
-        /* Toggle Switch Styles */
-        .toggle-container {
-            display: flex;
-            align-items: center;
-            margin: 10px;
-        }
 
-        .toggle {
-            position: relative;
-            width: 60px;
-            height: 34px;
-        }
+/* Toggle Switch Styles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
 
-        .toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
 
-        input:checked + .slider {
-            background-color: #b0b0b0;
-        }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
 
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
+input:checked + .slider {
+  background-color: #b0b0b0;
+}
 
-        /* Fixed Bottom Bar Styles */
-        .fixed-bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #e8e8e8;
-            padding: 10px;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
 
+/* Fixed Bottom Bar Styles */
+.fixed-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #e8e8e8;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
 /* Search input styles */
 #searchInput {
   padding: 10px;
   box-sizing: border-box;
-  margin-bottom: 20px;
+  margin: 20px auto; /* Center horizontally */
   width: 100%; /* Occupy full width */
   max-width: 400px; /* Limit maximum width */
-  margin: 20px auto; /* Center horizontally */
   border-radius: 10px;
   border: none;
   user-select: none;
@@ -139,28 +137,30 @@ body {
 }
 
 /* Games container styles */
-        #gamesContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-height: 70vh; /* Limit the height for scrolling */
-            overflow-y: auto; /* Enable vertical scrolling */
-        }
-        .game-card {
-            background: white;
-            border-radius: 15px; /* Increased roundness of corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 200px;
-        }
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+#gamesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-height: 70vh; /* Limit the height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+}
 
-/* Game card styles */
+.game-card {
+  background: white;
+  border-radius: 15px; /* Increased roundness of corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 200px;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Game styles */
 .game {
   margin: 10px;
   text-align: center;
@@ -170,6 +170,7 @@ body {
   transition: transform 0.3s ease;
   border-radius: 10px; /* Adjust the value for more or less rounding */
 }
+
 .game:hover {
   transform: scale(0.95); /* Scale up on hover */
 }
@@ -184,7 +185,7 @@ body {
   cursor: pointer;
 }
 
-
+/* Footer styles */
 footer {
   position: fixed;
   bottom: 0;
