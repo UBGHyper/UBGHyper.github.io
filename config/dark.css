@@ -1,8 +1,15 @@
 /* Import custom styles */
 @import url(/./config/custom.css);
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
-/* Custom scrollbar styles */
 
+/* Define scrollbar color variables */
+:root {
+  --sb-size: 10px; /* Customize scrollbar width */
+  --sb-track-color: #f1f1f1; /* Track color */
+  --sb-thumb-color: #888; /* Thumb color */
+}
+
+/* Custom scrollbar styles */
 body::-webkit-scrollbar {
   width: var(--sb-size);
 }
@@ -17,16 +24,16 @@ body::-webkit-scrollbar-thumb {
   border-radius: 7px;
 }
 
+body::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Darker on hover */
+}
+
 @supports not selector(::-webkit-scrollbar) {
   body {
-      scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
+      scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
   }
 }
 
-* {
-  font-family: ubuntu;
-}
 /* General styles */
 body {
   background-image: url('../assets/background/background.png'); /* Set your background image */
@@ -35,7 +42,7 @@ body {
   background-attachment: fixed; /* Keep it fixed when scrolling */
   background-color: var(--background-color); /* Fallback color */
   color: var(--text-color);
-  font-family: "ubuntu", sans-serif;
+  font-family: "Ubuntu", sans-serif;
   margin: 0;
   padding: 0;
   -webkit-user-select: none;
@@ -47,6 +54,7 @@ body {
 .game {
   background-color: #333;
 }
+
 /* Search input styles */
 #searchInput {
   padding: 10px;
@@ -60,92 +68,96 @@ body {
   user-select: none;
   outline: none;
 }
-        /* Toggle Switch Styles */
-        .toggle-container {
-            display: flex;
-            align-items: center;
-            margin: 10px;
-        }
 
-        .toggle {
-            position: relative;
-            width: 60px;
-            height: 34px;
-        }
+/* Toggle Switch Styles */
+.toggle-container {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
 
-        .toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
+.toggle {
+  position: relative;
+  width: 60px;
+  height: 34px;
+}
 
-        .slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
+.toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
 
-        .slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 34px;
+}
 
-        input:checked + .slider {
-            background-color: #7a7a7a;
-        }
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
 
-        input:checked + .slider:before {
-            transform: translateX(26px);
-        }
+input:checked + .slider {
+  background-color: #7a7a7a;
+}
 
-        /* Fixed Bottom Bar Styles */
-        .fixed-bottom-bar {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background-color: #5c5c5c;
-            padding: 10px;
-            box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Fixed Bottom Bar Styles */
+.fixed-bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #5c5c5c;
+  padding: 10px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
 
 /* Games container styles */
-        #gamesContainer {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 15px;
-            max-height: 70vh; /* Limit the height for scrolling */
-            overflow-y: auto; /* Enable vertical scrolling */
-        }
-        .game-card {
-            background: white;
-            border-radius: 15px; /* Increased roundness of corners */
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            width: 200px;
-        }
-        .game-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-        }
+#gamesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  max-height: 70vh; /* Limit the height for scrolling */
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding-right: var(--sb-size); /* Prevent content from being hidden behind scrollbar */
+}
 
-/* Game card styles */
+.game-card {
+  background: white;
+  border-radius: 15px; /* Increased roundness of corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  width: 200px;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Game styles */
 .game {
   margin: 10px;
   text-align: center;
@@ -161,7 +173,6 @@ body {
 }
 
 /* Game image styles */
-/* Game image styles */
 .game img {
   width: 200px; /* Set a fixed width */
   height: 150px; /* Set a fixed height */
@@ -171,7 +182,7 @@ body {
   cursor: pointer;
 }
 
-
+/* Footer styles */
 footer {
   position: fixed;
   bottom: 0;
