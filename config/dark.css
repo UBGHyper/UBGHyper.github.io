@@ -166,7 +166,7 @@ input:checked + .slider:before {
 /* Game image styles */
 .game img {
   width: 200px; /* Set a fixed width */
-  height: 150px; /* Set a fixed height */
+  height: 200px; /* Set a fixed height */
   object-fit: cover; /* Maintain aspect ratio and fill the box */
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
