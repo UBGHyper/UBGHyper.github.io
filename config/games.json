@@ -189,9 +189,16 @@
     "credits": "Developed by Madpuffers"
   },
   {
-    "name": "Poly Track",
+    "name": "Poly Track New",
     "image": "polytrack.jpg",
-    "url": "Polytrack",
+    "url": "Polytrack-New",
+    "new": false,
+    "credits": "Developed by Kodub"
+  },
+  {
+    "name": "Poly Track Old",
+    "image": "polytrack.jpg",
+    "url": "Polytrack-Old",
     "new": false,
     "credits": "Developed by Kodub"
   },
