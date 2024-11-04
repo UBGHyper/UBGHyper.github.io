@@ -232,7 +232,7 @@
   },
   {
     "name": "Run 3",
-    "image": "run3.jpg",
+    "image": "run3.png",
     "url": "Run-3",
     "new": false,
     "credits": "Developed by Player_03"
@@ -295,14 +295,14 @@
   },
   {
     "name": "Eaglercraft",
-    "image": "minecraft.jpg",
+    "image": "eaglercraft.jpg",
     "url": "Eaglercraft",
     "new": false,
     "credits": "Developed by Mojang"
   },
   {
     "name": "Chatroom",
-    "image": "chatroom.jpg",
+    "image": "chatroom.png",
     "url": "Chat-Room",
     "new": false,
     "credits": "Developed by unknown"
