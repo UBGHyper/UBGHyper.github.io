@@ -400,7 +400,7 @@
   },
   {
     "name": "Riddle School Transfer 2",
-    "image": "riddleschooltransfer.png.png",
+    "image": "riddleschooltransfer2.png",
     "url": "Riddle-School-Transfer-2",
     "new": false,
     "credits": "Developed by Jonochrome"
@@ -498,7 +498,7 @@
   },
   {
     "name": "Ninja vs Evil Coorp",
-    "image": "eee.jpg",
+    "image": "ninjavsevilcoorp.jpg",
     "url": "ninjavsevil",
     "new": false,
     "credits": "Developed by various developers"
