@@ -497,10 +497,17 @@
     "credits": "Developed by Juicy Beast"
   },
   {
-    "name": "Ninja vs Evil Coorp",
-    "image": "ninjavsevilcoorp.jpg",
-    "url": "ninjavsevil",
+    "name": "Binding of Isaac",
+    "image": "Binding-Of-Isaac.jpg",
+    "url": "Binding-Of-Isaac",
     "new": false,
-    "credits": "Developed by various developers"
+    "credits": "Developed by Edmund McMillen"
+   },
+  {
+    "name": "Papas Scooperia",
+    "image": "PapasScooperia.jpg",
+    "url": "Papas-Scooperia",
+    "new": false,
+    "credits": "Developed by Flipline Studios"
   }
 ]
