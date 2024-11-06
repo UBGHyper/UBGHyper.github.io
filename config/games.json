@@ -497,6 +497,104 @@
     "credits": "Developed by Juicy Beast"
   },
   {
+    "name": "Zombotron",
+    "image": "zombotron.png",
+    "url": "Zombotron",
+    "new": false,
+    "credits": "Developed by Ant Karlov"
+  },
+  {
+    "name": "Zombotro 2",
+    "image": "zombotro2.png",
+    "url": "Zombotro-2",
+    "new": false,
+    "credits": "Developed by Ant Karlov"
+  },
+  {
+    "name": "The Impossible Quiz",
+    "image": "theimpossiblequiz.png",
+    "url": "The-Impossible-Quiz",
+    "new": false,
+    "credits": "Developed by Slap-me-do"
+  },
+  {
+    "name": "The Impossible Quiz",
+    "image": "theimpossiblequiz.png",
+    "url": "The-Impossible-Quiz-2",
+    "new": false,
+    "credits": "Developed by Slap-me-do"
+  },
+  {
+    "name": "Strikeforce Kitty 2",
+    "image": "burritobisonrevenge.png",
+    "url": "Strikeforce-Kitty-2",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Strikeforce Kitty",
+    "image": "burritobisonrevenge.png",
+    "url": "Strikeforce-Kitty",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Strikeforce Heroes",
+    "image": "burritobisonrevenge.png",
+    "url": "Strikeforce-Heroes",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Stealing the Diamond",
+    "image": "burritobisonrevenge.png",
+    "url": "Stealing-The-Diamond",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Rockgarden",
+    "image": "burritobisonrevenge.png",
+    "url": "Rockgarden",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Papas Wingeria",
+    "image": "burritobisonrevenge.png",
+    "url": "Papas-Wingeria",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Papas Pancakeria",
+    "image": "burritobisonrevenge.png",
+    "url": "Papas-PnCk",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Papas Pasteria",
+    "image": "burritobisonrevenge.png",
+    "url": "Papas-Pasta",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Papa Louie 1",
+    "image": "burritobisonrevenge.png",
+    "url": "Papas-Louie-1",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
+    "name": "Papa Louie 2",
+    "image": "burritobisonrevenge.png",
+    "url": "Papas-Louie-2",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
     "name": "Binding of Isaac",
     "image": "Binding-Of-Isaac.jpg",
     "url": "Binding-Of-Isaac",
