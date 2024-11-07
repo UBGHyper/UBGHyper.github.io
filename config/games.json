@@ -518,8 +518,8 @@
     "credits": "Developed by Slap-me-do"
   },
   {
-    "name": "The Impossible Quiz",
-    "image": "theimpossiblequiz.png",
+    "name": "The Impossible Quiz 2",
+    "image": "theimpossiblequiz2.png",
     "url": "The-Impossible-Quiz-2",
     "new": false,
     "credits": "Developed by Slap-me-do"
@@ -533,77 +533,77 @@
   },
   {
     "name": "Strikeforce Kitty",
-    "image": "burritobisonrevenge.png",
+    "image": "strikeforcekitty.png",
     "url": "Strikeforce-Kitty",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Strikeforce Heroes",
-    "image": "burritobisonrevenge.png",
+    "image": "strikeforceheroes.png",
     "url": "Strikeforce-Heroes",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Stealing the Diamond",
-    "image": "burritobisonrevenge.png",
+    "image": "stealingthediamond.png",
     "url": "Stealing-The-Diamond",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Rockgarden",
-    "image": "burritobisonrevenge.png",
+    "image": "rockgarden.png",
     "url": "Rockgarden",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Papas Wingeria",
-    "image": "burritobisonrevenge.png",
+    "image": "papaswingeria.png",
     "url": "Papas-Wingeria",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Papas Pancakeria",
-    "image": "burritobisonrevenge.png",
+    "image": "papaspancakeria.png",
     "url": "Papas-PnCk",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Papas Pasteria",
-    "image": "burritobisonrevenge.png",
+    "image": "papaspasteria.png",
     "url": "Papas-Pasta",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Papa Louie 1",
-    "image": "burritobisonrevenge.png",
+    "image": "papalouie1.png",
     "url": "Papas-Louie-1",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Papa Louie 2",
-    "image": "burritobisonrevenge.png",
+    "image": "papalouie2.png",
     "url": "Papas-Louie-2",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
   {
     "name": "Binding of Isaac",
-    "image": "Binding-Of-Isaac.jpg",
+    "image": "bindingofisaac.jpg",
     "url": "Binding-Of-Isaac",
     "new": false,
     "credits": "Developed by Edmund McMillen"
    },
   {
     "name": "Papas Scooperia",
-    "image": "PapasScooperia.png",
+    "image": "papasScooperia.png",
     "url": "Papas-Scooperia",
     "new": false,
     "credits": "Developed by Flipline Studios"
