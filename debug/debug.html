@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DEBUG</title>
+  <style>
+    #errorConsole {
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 10px;
+      max-height: 200px;
+      overflow-y: scroll;
+      font-family: monospace;
+    }
+    #userCount {
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Debug Menu</menu></h1>
+  <p id="userCount">Current Users on UBGHyper: <span id="userCountValue">0</span></p>
+
+  <div id="errorConsole">
+    <h2>Console Errors:</h2>
+    <ul id="errorList"></ul>
+  </div>
+
+  <script>
+    // Section 1: Display User Count on Index Page
+    if (localStorage.getItem('userCount') === null) {
+      localStorage.setItem('userCount', 0);
+    }
+
+    function updateUserCount(change) {
+      const currentCount = parseInt(localStorage.getItem('userCount')) || 0;
+      const newCount = currentCount + change;
+      localStorage.setItem('userCount', newCount);
+      document.getElementById('userCountValue').innerText = newCount;
+    }
+
+    // Increment user count on load
+    updateUserCount(1);
+
+    // Decrement user count on unload
+    window.addEventListener('beforeunload', () => updateUserCount(-1));
+
+    // Section 2: Display Console Errors
+    const errorList = document.getElementById('errorList');
+
+    window.onerror = function (message, source, lineno, colno, error) {
+      const errorItem = document.createElement('li');
+      errorItem.textContent = `Error: ${message} at ${source}:${lineno}:${colno}`;
+      errorList.appendChild(errorItem);
+      return true; // Prevent the default error logging
+    };
+
+    window.addEventListener('unhandledrejection', function (event) {
+      const errorItem = document.createElement('li');
+      errorItem.textContent = `Unhandled Promise Rejection: ${event.reason}`;
+      errorList.appendChild(errorItem);
+    });
+  </script>
+</body>
+</html>
