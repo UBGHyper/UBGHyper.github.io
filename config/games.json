@@ -497,6 +497,13 @@
     "credits": "Developed by Juicy Beast"
   },
   {
+    "name": "Burrito Bison 3",
+    "image": "burritobison3.png",
+    "url": "Burrito-Bison-3",
+    "new": false,
+    "credits": "Developed by Juicy Beast"
+  },
+  {
     "name": "Zombotron",
     "image": "zombotron.png",
     "url": "Zombotron",
