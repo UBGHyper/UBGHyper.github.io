@@ -168,21 +168,21 @@
     "credits": "Developed by XGen Studios"
   },
   {
-    "name": "Moto3XM 2",
-    "image": "motherload.jpg",
+    "name": "MotoX2M 2",
+    "image": "moto3xm2.png",
     "url": "Moto3XM-2",
     "new": false,
     "credits": "Developed by Madpuffers"
   },
   {
-    "name": "Moto3XM 3",
-    "image": "moto3xm3.jpg",
+    "name": "MotoX3M 3",
+    "image": "moto3xm3.png",
     "url": "Moto3XM-3",
     "new": false,
     "credits": "Developed by Madpuffers"
   },
   {
-    "name": "Moto3XM",
+    "name": "MotoX3M",
     "image": "moto3xm.png",
     "url": "Moto3XM",
     "new": false,
@@ -190,14 +190,14 @@
   },
   {
     "name": "Poly Track New",
-    "image": "polytrack.jpg",
+    "image": "polytrack-new.jpg",
     "url": "Polytrack-New",
     "new": false,
     "credits": "Developed by Kodub"
   },
   {
     "name": "Poly Track Old",
-    "image": "polytrack.jpg",
+    "image": "polytrack-old.jpg",
     "url": "Polytrack-Old",
     "new": false,
     "credits": "Developed by Kodub"
@@ -211,14 +211,14 @@
   },
   {
     "name": "Raft Wars",
-    "image": "portalflash.jpg",
+    "image": "raftwars.png",
     "url": "Raft-Wars",
     "new": false,
     "credits": "Developed by Martijn Kunst"
   },
   {
     "name": "Raft Wars 2",
-    "image": "portalflash.jpg",
+    "image": "raftwars2.png",
     "url": "Raft-Wars-2",
     "new": false,
     "credits": "Developed by Martijn Kunst"
@@ -253,14 +253,14 @@
   },
   {
     "name": "Submerisble",
-    "image": "submerisble.jpg",
+    "image": "submerisble.png",
     "url": "Submerisble",
     "new": false,
     "credits": "Developed by unknown"
   },
   {
     "name": "Super Smash Flash",
-    "image": "supersmashflash.jpg",
+    "image": "super-smash-flash.jpg",
     "url": "Duper-Smash-Flash",
     "new": false,
     "credits": "Developed by McLeodGaming"
@@ -498,7 +498,7 @@
   },
   {
     "name": "Burrito Bison 3",
-    "image": "burritobison3.png",
+    "image": "burrito-bison-3.png",
     "url": "Burrito-Bison-3",
     "new": false,
     "credits": "Developed by Juicy Beast"
@@ -511,16 +511,16 @@
     "credits": "Developed by Ant Karlov"
   },
   {
-    "name": "Zombotro 2",
-    "image": "zombotro2.png",
-    "url": "Zombotro-2",
+    "name": "Zombotron 2",
+    "image": "zombotron2.png",
+    "url": "Zombotron-2",
     "new": false,
     "credits": "Developed by Ant Karlov"
   },
   {
     "name": "The Impossible Quiz",
     "image": "theimpossiblequiz.png",
-    "url": "The-Impossible-Quiz",
+    "url": "The-Impossible-Quiz-Deluxe",
     "new": false,
     "credits": "Developed by Slap-me-do"
   },
@@ -533,7 +533,7 @@
   },
   {
     "name": "Strikeforce Kitty 2",
-    "image": "burritobisonrevenge.png",
+    "image": "strikeforcekitty2.png",
     "url": "Strikeforce-Kitty-2",
     "new": false,
     "credits": "Developed by Juicy Beast"
@@ -569,7 +569,7 @@
   {
     "name": "Papas Wingeria",
     "image": "papaswingeria.png",
-    "url": "Papas-Wingeria",
+    "url": "Papas-Wing",
     "new": false,
     "credits": "Developed by Juicy Beast"
   },
@@ -610,50 +610,64 @@
   },
   {
     "name": "Papas Scooperia",
-    "image": "papasScooperia.png",
-    "url": "Papas-Scooperia",
+    "image": "papasscooperia.png",
+    "url": "Papa-Scoop",
     "new": false,
     "credits": "Developed by Flipline Studios"
   },
   {
     "name": "Bloons Tower Defence 2",
-    "image": "bloons-tower-defence-2.png",
+    "image": "bloons-tower-defence-2.jpg",
     "url": "Bloons-Tower-Defence-2",
     "new": false,
     "credits": "Developed by Ninja Kiwi"
   },
   {
     "name": "Bloons Tower Defence 3",
-    "image": "bloons-tower-defence-3.png",
+    "image": "bloons-tower-defence-3.jpg",
     "url": "Bloons-Tower-Defence-3",
     "new": false,
     "credits": "Developed by Ninja Kiwi"
   },
   {
     "name": "Bloons Tower Defence",
-    "image": "bloons-tower-defence-1.png",
+    "image": "bloons-tower-defence.jpg",
     "url": "Bloons-Tower-Defence",
     "new": false,
     "credits": "Developed by Ninja Kiwi"
   },
   {
     "name": "Troll Face Quest",
-    "image": "troll-face-quest-1.png",
+    "image": "trollface-quest.jpg",
     "url": "Troll-Face-Quest",
     "new": false,
     "credits": "Developed by PPLLAAYY"
   },
   {
     "name": "Troll Face Quest 2",
-    "image": "troll-face-quest-2.png",
+    "image": "trollface-quest-2.jpg",
     "url": "Troll-Face-Quest-2",
     "new": false,
     "credits": "Developed by PPLLAAYY"
   },
   {
     "name": "Troll Face Quest 3",
-    "image": "troll-face-quest-3.png",
+    "image": "trollface-quest-3.jpg",
     "url": "Troll-Face-Quest-3",
+    "new": false,
+    "credits": "Developed by PPLLAAYY"
+  },
+  {
+    "name": "Troll Face Quest 4",
+    "image": "trollface-quest-4.jpg",
+    "url": "Troll-Face-Quest-4",
+    "new": false,
+    "credits": "Developed by PPLLAAYY"
+  },
+  {
+    "name": "Troll Face Quest 5",
+    "image": "trollface-quest-5.jpg",
+    "url": "Troll-Face-Quest-5",
     "new": false,
     "credits": "Developed by PPLLAAYY"
   },
@@ -666,7 +680,7 @@
   },
   {
     "name": "Territory War",
-    "image": "territory-war.png",
+    "image": "territory-war.jpg",
     "url": "Territory-War",
     "new": false,
     "credits": "Developed by Afro Ninja"
@@ -680,14 +694,21 @@
   },
   {
     "name": "Storm The House",
-    "image": "storm-the-house.png",
+    "image": "storm-the-house.jpg",
     "url": "Storm-The-House",
     "new": false,
     "credits": "Developed by IvoryDrive"
   },
   {
+    "name": "Storm The House 2",
+    "image": "storm-the-house-2.jpg",
+    "url": "Storm-The-House-2",
+    "new": false,
+    "credits": "Developed by IvoryDrive"
+  },
+  {
     "name": "Stick War 1",
-    "image": "stick-war-1.png",
+    "image": "stick-war.jpg",
     "url": "Stick-War-1",
     "new": false,
     "credits": "Developed by Jason Whitham"
@@ -701,7 +722,7 @@
   },
   {
     "name": "Stick RPG",
-    "image": "stick-rpg.png",
+    "image": "stick-rpg.jpg",
     "url": "Stick-RPG",
     "new": false,
     "credits": "Developed by XGen Studios"
@@ -729,77 +750,77 @@
   },
   {
     "name": "Shopping Cart Hero",
-    "image": "shopping-cart-hero.png",
+    "image": "shopping-cart-hero.jpg",
     "url": "Shopping-Cart-Hero",
     "new": false,
     "credits": "Developed by MonkeyWantBanana"
   },
   {
     "name": "Shopping Cart Hero 2",
-    "image": "shopping-cart-hero-2.png",
+    "image": "shopping-cart-hero-2.jpg",
     "url": "Shopping-Cart-Hero-2",
     "new": false,
     "credits": "Developed by MonkeyWantBanana"
   },
   {
     "name": "Shopping Cart Hero 3",
-    "image": "shopping-cart-hero-3.png",
+    "image": "shopping-cart-hero-3.jpg",
     "url": "Shopping-Cart-Hero-3",
     "new": false,
     "credits": "Developed by MonkeyWantBanana"
   },
   {
     "name": "Sentry Knight",
-    "image": "sentry-knight.png",
+    "image": "sentry-knight.jpg",
     "url": "Sentry-Knight",
     "new": false,
     "credits": "Developed by TylerNG"
   },
   {
     "name": "qwop",
-    "image": "qwop.png",
+    "image": "qwop.jpg",
     "url": "qwop",
     "new": false,
     "credits": "Developed by Bennett Foddy"
   },
   {
     "name": "Pandemic",
-    "image": "pandemic.png",
+    "image": "pandemic.jpg",
     "url": "Pandemic",
     "new": false,
     "credits": "Developed by Dark Realm Studios"
   },
   {
     "name": "Pandemic 2",
-    "image": "pandemic2.png",
+    "image": "pandemic-2.jpg",
     "url": "Pandemic-2",
     "new": false,
     "credits": "Developed by Dark Realm Studios"
   },
   {
     "name": "Madness Project Nexus",
-    "image": "madness-project-nexus.png",
+    "image": "madness-project-nexus.jpg",
     "url": "Madness-Project-Nexus",
     "new": false,
     "credits": "Developed by Krinkels"
   },
   {
     "name": "Madness",
-    "image": "madness.png",
+    "image": "madness.jpg",
     "url": "Madness",
     "new": false,
     "credits": "Developed by Krinkels"
   },
   {
     "name": "Learn To Fly 3",
-    "image": "learn-to-fly-3.png",
+    "image": "learn-to-fly-3.jpg",
     "url": "Learn-To-Fly-3",
     "new": false,
     "credits": "Developed by Light Bringer Games"
   },
   {
     "name": "Interactive Buddy",
-    "image": "interactivebuddy.png",
+    "image": "interactivebuddy.jpg",
     "url": "Interactive-Buddy",
     "new": false,
     "credits": "Developed by shock-value"
@@ -827,35 +848,35 @@
   },
   {
     "name": "Fat Cat",
-    "image": "fatcat.png",
+    "image": "fat-cat.jpg",
     "url": "Fat-Cat",
     "new": false,
     "credits": "Developed by Nitrome"
   },
   {
     "name": "Ducklife",
-    "image": "ducklife.png",
+    "image": "ducklife.jpg",
     "url": "Ducklife",
     "new": false,
     "credits": "Developed by Wix Games"
   },
   {
     "name": "Ducklife 2",
-    "image": "ducklife2.png",
+    "image": "ducklife-2.jpg",
     "url": "Ducklife-2",
     "new": false,
     "credits": "Developed by Wix Games"
   },
   {
     "name": "Ducklife 3",
-    "image": "ducklife3.png",
+    "image": "ducklife-3.jpg",
     "url": "Ducklife-3",
     "new": false,
     "credits": "Developed by Wix Games"
   },
   {
     "name": "Ducklife 4",
-    "image": "ducklife4.png",
+    "image": "ducklife-4.jpg",
     "url": "Ducklife-4",
     "new": false,
     "credits": "Developed by Wix Games"
@@ -876,21 +897,21 @@
   },
   {
     "name": "Crush The Castle",
-    "image": "crush-the-castle.png",
+    "image": "crush-the-castle.jpg",
     "url": "Crush-The-Castle",
     "new": false,
     "credits": "Developed by Armor Games"
   },
   {
     "name": "Crush The Castle 2",
-    "image": "crush-the-castle2.png",
+    "image": "crush-the-castle2.jpg",
     "url": "Crush-The-Castle-2",
     "new": false,
     "credits": "Developed by Armor Games"
   },
   {
     "name": "Computer Bashing",
-    "image": "computer-bashing.png",
+    "image": "computer-bashing.jpg",
     "url": "Computer-Bashing",
     "new": false,
     "credits": "Developed by Cool Math Games"
@@ -904,7 +925,7 @@
   },
   {
     "name": "Canabalt",
-    "image": "canabalt.png",
+    "image": "canabalt.jpg",
     "url": "Canabalt",
     "new": false,
     "credits": "Developed by Adam Saltsman"
@@ -918,35 +939,35 @@
   },
   {
     "name": "Age Of War",
-    "image": "age-of-war.png",
+    "image": "age-of-war.jpg",
     "url": "Age-Of-War",
     "new": false,
     "credits": "Developed by Louissi"
   },
   {
     "name": "Age Of War 2",
-    "image": "age-of-war2.png",
+    "image": "age-of-war2.jpg",
     "url": "Age-Of-War-2",
     "new": false,
     "credits": "Developed by Louissi"
   },
   {
     "name": "Achievement Unlocked",
-    "image": "achievement-unlocked.png",
+    "image": "achievement-unlocked.jpg",
     "url": "Achievement-Unlocked",
     "new": false,
     "credits": "Developed by John Cooney"
   },
   {
     "name": "Achievement Unlocked 2",
-    "image": "achievement-unlocked-2.png",
+    "image": "achievement-unlocked-2.jpg",
     "url": "Achievement-Unlocked-2",
     "new": false,
     "credits": "Developed by John Cooney"
   },
   {
     "name": "Achievement Unlocked 3",
-    "image": "achievement-unlocked-3.png",
+    "image": "achievement-unlocked-3.jpg",
     "url": "Achievement-Unlocked-3",
     "new": false,
     "credits": "Developed by John Cooney"
