@@ -2,7 +2,7 @@
 import "../config/custom.js";
 
 document.addEventListener("DOMContentLoaded", () => {
-  const sitename = "UBGHyper"; // Change this to change the name of your website.
+  const sitename = "Unblocked Games Hyper"; // Change this to change the name of your website.
   const subtext = "v1.0"; // Set the subtext
 
   // More settings in main.css
