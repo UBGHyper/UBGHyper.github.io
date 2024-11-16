@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UBG Hyper</title>
+    
+    <link rel="stylesheet" href="config/light.css" id="themeStyle">
+    <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
+    
+    <meta property="og:image" content="../assets/icons/ubghyper.ico">
+    <meta property="og:url" content="https://ubghyper.github.io/">
+    <meta property="og:site_name" content="Free, unblocked and fun games">
+    <meta name="theme-color" content="#ff8000">
+    <meta name="google-site-verification" content="Olbv8f2uRODkQ97-bibYZUUNSr2m2cfCUuH82ntbjoQ">
+    <meta property="og:description" content="Find fun, unblocked & free games here at UBGHyper.">
+    <meta name="description" content="Find fun, unblocked & free games here at UBGHyper.">
+    <meta name="author" content="UBGHyper on GitHub">   
+
+    <style>
+
+body {
+    --sb-track-color: #636363;
+    --sb-thumb-color: #ff8500;
+    --sb-size: 17px;
+}
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .center {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        #gamesContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-height: 70vh; 
+            overflow-y: auto; 
+        }
+
+        .game-card {
+            background: white;
+            border-radius: 15px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            width: 200px;
+            text-align: center;
+        }
+
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .fixed-bottom-bar {
+            position: fixed;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(155, 57, 34, 0.5);
+            border: 2px solid #9B3922;
+            border-radius: 15px; 
+            padding: 5px 10px; 
+            display: flex;
+            align-items: center;
+            z-index: 1000;
+            gap: 10px;
+        }
+
+        /* Toggle Switch Styles */
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 15px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: #ff5e00;
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+    </style>
+    
+    <script src="../config/main.js" type="module"></script>
+</head>
+<body>
+    <div class="center">
+        <h1 id="title">Welcome to UBG Hyper</h1>
+    </div>
+    <div id="gamesContainer"></div>
+    <div class="fixed-bottom-bar" id="bottomBar" aria-label="Bottom navigation bar">
+        <input type="text" id="searchInput" placeholder="Search games" aria-label="Search games">
+        
+        <label class="toggle" aria-label="Toggle theme">
+            <input type="checkbox" id="themeToggle">
+            <span class="toggle-slider"></span>
+        </label>
+        
+        <label class="toggle" aria-label="Toggle tab">
+            <input type="checkbox" id="tabToggle">
+            <span class="toggle-slider"></span>
+        </label>
+    </div>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            const themeToggle = document.getElementById('themeToggle');
+            const tabToggle = document.getElementById('tabToggle');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+            const faviconLink = document.getElementById('faviconLink');
+
+            // Set initial theme
+            setTheme(currentTheme);
+            themeToggle.checked = currentTheme === 'dark';
+
+            themeToggle.addEventListener('change', () => {
+                const newTheme = themeToggle.checked ? 'dark' : 'light';
+                setTheme(newTheme);
+            });
+
+            tabToggle.addEventListener('change', () => {
+                if (tabToggle.checked) {
+                    faviconLink.href = "../assets/icons/googleclassroom.ico";
+                    document.title = "Google Classroom";
+                } else {
+                    faviconLink.href = "../assets/icons/ubghyper.ico";
+                    document.title = "UBG Hyper";
+                }
+            });
+
+            function setTheme(theme) {
+                const themeStyle = document.getElementById('themeStyle');
+                if (theme === 'dark') {
+                    themeStyle.setAttribute('href', '../config/dark.css');
+                    document.body.style.backgroundColor = '#333';
+                    document.body.style.color = '#fff';
+                } else {
+                    themeStyle.setAttribute('href', '../config/light.css');
+                    document.body.style.backgroundColor = '#f9f9f9';
+                    document.body.style.color = '#000';
+                }
+                localStorage.setItem('theme', theme);
+            }
+        });
+    </script>
+</body>
+</html>
