@@ -143,88 +143,106 @@
             transform: translateX(30px);
         }
 
-        /* Carousel Styles */
-        .carousel {
-            padding: 40px 20px;
-            text-align: center;
-        }
+/* Carousel Styles */
+.carousel {
+    padding: 20px 10px; /* Reduced padding */
+    text-align: center;
+}
 
-        .carousel-container {
-            position: relative;
-            display: flex;
-            overflow: hidden;
-            border-radius: 15px;
-            background-color: var(--carousel-bg);
-            margin-top: 30px;
-            width: 100%; /* Ensures the carousel takes full width */
-        }
+.carousel-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    border-radius: 15px;
+    background-color: var(--carousel-bg);
+    margin-top: 30px;
+    width: 80%; /* Set a smaller width for the carousel */
+    max-width: 900px; /* Optional: Limit max width */
+    margin-left: auto;
+    margin-right: auto; /* Centering the carousel */
+}
 
-        .carousel-slide {
-            display: flex;
-            transition: transform 0.5s ease;
-            width: 300%; /* Three items shown at once (100% per item) */
-        }
+.carousel-slide {
+    display: flex;
+    transition: transform 0.5s ease;
+    width: 300%; /* Three items shown at once (100% per item) */
+}
 
-        .carousel-item {
-            flex: 0 0 100%; /* Ensures each item takes 100% of the container width */
-            text-align: center;
-            padding: 20px;
-            box-sizing: border-box; /* Prevents overflow from padding */
-        }
+.carousel-item {
+    flex: 0 0 100%; /* Ensures each item takes 100% of the container width */
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
 
-        .carousel-item img {
-            width: 100%;
-            height: auto;
-            object-fit: cover;
-            border-radius: 10px;
-        }
+.carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
 
-        .carousel-text {
-            margin-top: 20px;
-            color: var(--text-color);
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 10px;
-        }
+.carousel-text {
+    margin-top: 20px;
+    color: var(--text-color);
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 10px;
+}
 
-        .carousel-text h3 {
-            font-size: 24px;
-            font-weight: 600;
-            margin-bottom: 10px;
-            color: var(--link-color);
-        }
+.carousel-text h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--link-color);
+}
 
-        .carousel-text p {
-            font-size: 16px;
-            margin-bottom: 20px;
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-            color: #fff;
-        }
+.carousel-text p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    max-width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    color: #fff;
+}
 
-        .carousel-controls {
-            position: absolute;
-            top: 50%;
-            left: 10px;
-            transform: translateY(-50%);
-            font-size: 30px;
-            color: #fff;
-            cursor: pointer;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            border-radius: 50%;
-            transition: background-color 0.3s ease;
-        }
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 50%;
+    transition: background-color 0.3s ease;
+}
 
-        .carousel-controls:hover {
-            background-color: rgba(0, 0, 0, 0.7);
-        }
+.carousel-controls:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
 
-        .carousel-controls.right {
-            left: auto;
-            right: 10px;
-        }
+.carousel-controls.right {
+    left: auto;
+    right: 10px;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .carousel-container {
+        width: 90%; /* Adjust to make carousel a bit smaller on mobile */
+    }
+
+    .carousel-item img {
+        width: 90%; /* Reduce image size in mobile view */
+    }
+
+    .carousel-text {
+        font-size: 14px;
+    }
+}
 
         /* Responsive Styles */
         @media screen and (max-width: 768px) {
@@ -321,6 +339,84 @@
                 margin-bottom: 20px;
             }
         }
+/* Changelog Section Styles */
+#changelog {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: var(--carousel-bg); /* Matching the carousel background */
+    margin-top: 40px;
+    border-radius: 15px;
+    width: 70%; /* Set a fixed width (you can adjust the percentage or use px) */
+    max-width: 800px; /* Optional: Limit max width */
+    margin-left: auto; /* Center horizontally */
+    margin-right: auto; /* Center horizontally */
+}
+
+#changelog h2 {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+#changelog ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#changelog li {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: var(--text-color);
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.changelog-mark {
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.changelog-mark.new {
+    background-color: #28a745; /* Green for new */
+    color: white;
+}
+
+.changelog-mark.fixed {
+    background-color: #ffc107; /* Yellow for fixed */
+    color: white;
+}
+
+.changelog-mark.removed {
+    background-color: #dc3545; /* Red for removed */
+    color: white;
+}
+
+/* Responsive Adjustments for Changelog */
+@media screen and (max-width: 768px) {
+    #changelog h2 {
+        font-size: 24px;
+    }
+    #changelog li {
+        font-size: 14px;
+    }
+}
+
+
+/* Responsive Adjustments for Changelog */
+@media screen and (max-width: 768px) {
+    #changelog h2 {
+        font-size: 24px;
+    }
+    #changelog li {
+        font-size: 14px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -386,6 +482,20 @@
             <span class="carousel-controls right">&#10095;</span>
         </div>
     </section>
+<!-- Changelog Section -->
+<section id="changelog">
+    <h2>Changelog v1.0</h2>
+    <ul>
+        <li><span class="changelog-mark new">New</span> Added a home screen.</li>
+        <li><span class="changelog-mark fixed">Fixed</span> Fixed UI bugs with the in game fixed bar</li>
+        <li><span class="changelog-mark removed">Removed</span> Removed original homepage and renamed as "games.html".</li>
+        <li><span class="changelog-mark fixed">Fixed</span> Made games.html fit better with the general theme (navbar).</li>
+        <li><span class="changelog-mark new">New</span> Added a contact page.</li>
+        <li><span class="changelog-mark new">New</span> Added a customize page.</li>
+        <li><span class="changelog-mark new">New</span> Added a nav bar for better cross page functionality.</li>
+        <!-- Add more changelog items as needed -->
+    </ul>
+</section>
 
     <!-- Developer Section -->
     <section id="developers">

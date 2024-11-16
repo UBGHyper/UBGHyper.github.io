@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - UBGHyper</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your existing CSS -->
+    <style>
+        /* Contact Page Specific Styles */
+        #contact {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: var(--carousel-bg);
+            border-radius: 15px;
+            width: 70%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #contact h2 {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-color);
+        }
+
+        #contact p {
+            font-size: 18px;
+            color: var(--text-color);
+            margin-bottom: 40px;
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            background-color: var(--button-bg);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .contact-form button:hover {
+            background-color: darkorange;
+        }
+
+        .contact-info {
+            margin-top: 40px;
+            font-size: 18px;
+            color: var(--text-color);
+        }
+
+        .contact-info a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Styles */
+        @media screen and (max-width: 768px) {
+            #contact {
+                width: 90%;
+            }
+
+            #contact h2 {
+                font-size: 28px;
+            }
+
+            .contact-form input, .contact-form textarea {
+                font-size: 14px;
+            }
+
+            .contact-form button {
+                font-size: 16px;
+            }
+        }
+        /* Default (Light Mode) */
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --link-color: #ff6600;
+            --navbar-bg: #333;
+            --navbar-link-color: #fff;
+            --carousel-bg: #fff;
+            --button-bg: #ff6600;
+            --background-image: url('../assets/background/background-white.png');
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            --bg-color: #333;
+            --text-color: #fff;
+            --link-color: #ff8500;
+            --navbar-bg: #111;
+            --navbar-link-color: #fff;
+            --carousel-bg: #222;
+            --button-bg: #ff5e00;
+            --background-image: url('../assets/background/background.png');
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: var(--background-image);
+            background-size: cover;
+            background-attachment: fixed;
+            transition: all 0.3s ease;
+        }
+
+        /* Global Header Styling */
+        h1, h2 {
+            color: var(--text-color);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--navbar-bg);
+            padding: 0px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #444;
+        }
+
+        .navbar .logo h2 {
+            color: var(--navbar-link-color);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--navbar-link-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar (same as in your main page) -->
+    <nav class="navbar">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="../assets/icons/ubghyper.ico" alt="Logo" style="height: 30px; margin-right: 10px;">
+            <h2>UBGHyper</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://ubghyper.github.io/">Home</a></li>
+            <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
+            <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
+            <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Theme Toggle -->
+        <div class="toggle-group">
+            <label class="toggle" aria-label="Toggle theme">
+                <input type="checkbox" id="themeToggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions, feedback, or just want to get in touch, feel free to use the form below. We'd love to hear from you!</p>
+
+        <!-- Contact Form -->
+        <form action="#" method="POST" class="contact-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+            <p>Or contact us directly:</p>
+            <p>Email: <a href="mailto:Evest356@gmail.com">Evest356@gmail.com</a></p>
+            <p>Follow us on social media:</p>
+            <p>
+                <a href="https://twitter.com/ubghyper" target="_blank">Twitter</a> |
+                <a href="https://github.com/UBGHyper" target="_blank">GitHub</a>
+            </p>
+        </div>
+    </section>
+
+    <!-- JavaScript for theme toggle (same as in your main page) -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const themeToggle = document.getElementById('themeToggle');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+
+            // Set initial theme
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.checked = true;
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggle.checked = false;
+            }
+
+            themeToggle.addEventListener('change', () => {
+                if (themeToggle.checked) {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

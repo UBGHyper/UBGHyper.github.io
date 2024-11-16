@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customize UBG Hyper</title>
+
+    <link rel="stylesheet" href="config/light.css" id="themeStyle">
+    <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+    <style>
+        /* Default (Light Mode) */
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --link-color: #ff6600;
+            --navbar-bg: #333;
+            --navbar-link-color: #fff;
+            --carousel-bg: #fff;
+            --button-bg: #ff6600;
+            --background-image: url('../assets/background/background-white.png');
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            --bg-color: #333;
+            --text-color: #fff;
+            --link-color: #ff8500;
+            --navbar-bg: #111;
+            --navbar-link-color: #fff;
+            --carousel-bg: #222;
+            --button-bg: #ff5e00;
+            --background-image: url('../assets/background/background.png');
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: var(--background-image);
+            background-size: cover;
+            background-attachment: fixed;
+            transition: all 0.3s ease;
+        }
+
+        h1, h2 {
+            color: var(--text-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--navbar-bg);
+            padding: 0px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #444;
+        }
+
+        .navbar .logo h2 {
+            color: var(--navbar-link-color);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--navbar-link-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+        }
+
+        .center {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .customize-container {
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .customize-container label {
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .customize-container input,
+        .customize-container select {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 100%;
+            border: 1px solid #ccc;
+        }
+
+        .customize-container button {
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .customize-container button:hover {
+            background-color: #e65c00;
+        }
+
+        .background-preview {
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo" style="display: flex; align-items: center;">
+            <img src="../assets/icons/ubghyper.ico" alt="Logo" style="height: 30px; margin-right: 10px;">
+            <h2>UBGHyper</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://ubghyper.github.io/">Home</a></li>
+            <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
+            <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
+            <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+        </ul>
+
+        <!-- Dark/Light Mode Toggle -->
+        <div class="toggle-group">
+            <label class="toggle" aria-label="Toggle theme">
+                <input type="checkbox" id="themeToggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Customize Page Content -->
+    <div class="center">
+        <h1>Customize UBG Hyper</h1>
+    </div>
+
+    <div class="customize-container">
+        <form id="customizeForm">
+            <div>
+                <label for="backgroundImage">Background Image URL:</label>
+                <input type="text" id="backgroundImage" placeholder="Enter URL for background image" />
+            </div>
+
+            <div>
+                <label for="fontFamily">Font Family:</label>
+                <select id="fontFamily">
+                    <option value="Poppins">Poppins</option>
+                    <option value="Arial">Arial</option>
+                    <option value="Verdana">Verdana</option>
+                    <option value="Tahoma">Tahoma</option>
+                    <option value="Georgia">Georgia</option>
+                    <option value="Times New Roman">Times New Roman</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="themeColor">Theme Color:</label>
+                <input type="color" id="themeColor" value="#ff8000" />
+            </div>
+
+            <div>
+                <label for="darkModeToggle">Dark Mode:</label>
+                <input type="checkbox" id="darkModeToggle" />
+            </div>
+
+            <div class="background-preview" id="backgroundPreview">
+                Background Preview
+            </div>
+
+            <button type="submit">Save Customization</button>
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('customizeForm');
+            const backgroundImageInput = document.getElementById('backgroundImage');
+            const fontFamilySelect = document.getElementById('fontFamily');
+            const themeColorInput = document.getElementById('themeColor');
+            const darkModeToggle = document.getElementById('darkModeToggle');
+            const backgroundPreview = document.getElementById('backgroundPreview');
+            const themeToggle = document.getElementById('themeToggle');
+
+            // Load saved settings from localStorage
+            const savedSettings = JSON.parse(localStorage.getItem('customSettings')) || {};
+
+            if (savedSettings.backgroundImage) {
+                document.body.style.backgroundImage = `url(${savedSettings.backgroundImage})`;
+                backgroundImageInput.value = savedSettings.backgroundImage;
+                backgroundPreview.style.backgroundImage = `url(${savedSettings.backgroundImage})`;
+            }
+
+            if (savedSettings.fontFamily) {
+                document.body.style.fontFamily = savedSettings.fontFamily;
+                fontFamilySelect.value = savedSettings.fontFamily;
+            }
+
+            if (savedSettings.themeColor) {
+                document.documentElement.style.setProperty('--button-bg', savedSettings.themeColor);
+                themeColorInput.value = savedSettings.themeColor;
+            }
+
+            if (savedSettings.darkMode) {
+                document.body.classList.add('dark-mode');
+                darkModeToggle.checked = true;
+                themeToggle.checked = true;
+            }
+
+            // Update background preview when user changes the URL input
+            backgroundImageInput.addEventListener('input', () => {
+                const url = backgroundImageInput.value;
+                backgroundPreview.style.backgroundImage = `url(${url})`;
+            });
+
+            // Handle Dark/Light mode toggle
+            themeToggle.addEventListener('change', () => {
+                if (themeToggle.checked) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+                localStorage.setItem('customSettings', JSON.stringify({ ...savedSettings, darkMode: themeToggle.checked }));
+            });
+
+            // Handle form submission
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+
+                const backgroundImage = backgroundImageInput.value;
+                const fontFamily = fontFamilySelect.value;
+                const themeColor = themeColorInput.value;
+                const darkMode = darkModeToggle.checked;
+
+                // Save settings to localStorage
+                const settings = {
+                    backgroundImage,
+                    fontFamily,
+                    themeColor,
+                    darkMode
+                };
+
+                localStorage.setItem('customSettings', JSON.stringify(settings));
+
+                // Apply the settings
+                document.body.style.backgroundImage = `url(${backgroundImage})`;
+                document.body.style.fontFamily = fontFamily;
+                document.documentElement.style.setProperty('--button-bg', themeColor);
+
+                if (darkMode) {
+                    document.body.classList.add('dark-mode');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                }
+
+                alert('Your custom settings have been saved!');
+            });
+        });
+    </script>
+</body>
+</html>
