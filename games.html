@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBG Hyper</title>
-    
+    <script src="../config/global.js"></script>
     <link rel="stylesheet" href="config/light.css" id="themeStyle">
+    <link rel="stylesheet" href="config/searchbar.css" id="themeStyle">
     <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
@@ -114,6 +115,7 @@
             list-style: none;
             display: flex;
             gap: 20px;
+            position: static;
         }
 
         .nav-links li {
@@ -131,18 +133,6 @@
             color: var(--link-color);
         }
 
-        /* Search Bar in Navbar */
-        .search-container {
-            display: flex;
-            align-items: center;
-        }
-
-        .search-container input {
-            padding: 5px;
-            border-radius: 5px;
-            border: 1px solid #797979;
-            font-size: 16px;
-        }
 
         /* Toggle Switch Styles */
         .toggle {
@@ -255,11 +245,14 @@
             <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
             <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
         </ul>
-    
-        <!-- Search Bar -->
+
         <div class="search-container">
-            <input type="text" id="searchInput" placeholder="Search games" aria-label="Search games">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Search Games"/>
+                <span></span>
+            </div>
         </div>
+
 
         <!-- Theme Toggle -->
         <div class="toggle-group">
