@@ -190,6 +190,52 @@
         .nav-links a:hover {
             color: var(--link-color);
         }
+        
+        /* Toggle Switch Styles */
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 15px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--button-bg);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
     </style>
 </head>
 <body>
@@ -204,6 +250,7 @@
             <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
             <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
             <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+            <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
         </ul>
 
         <!-- Theme Toggle -->

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Local Save Data - UBGHyper</title>
+    <link rel="stylesheet" href="config/light.css" id="themeStyle">
+    <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
+    <script src="../config/global.js"></script>
+    <meta name="theme-color" content="#ff8000">
+    <meta name="google-site-verification" content="Olbv8f2uRODkQ97-bibYZUUNSr2m2cfCUuH82ntbjoQ">
+    <meta property="og:description" content="Manage your local save data, cookies, and settings in UBGHyper.">
+    <style>
+        /* Default (Light Mode) */
+        :root {
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --link-color: #ff6600;
+            --navbar-bg: #333;
+            --navbar-link-color: #fff;
+            --carousel-bg: #fff;
+            --button-bg: #ff6600;
+            --background-image: url('../assets/background/background-white.png');
+            --font-family: 'Poppins', sans-serif;
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            --bg-color: #333;
+            --text-color: #fff;
+            --link-color: #ff8500;
+            --navbar-bg: #111;
+            --navbar-link-color: #fff;
+            --carousel-bg: #222;
+            --button-bg: #ff5e00;
+            --background-image: url('../assets/background/background.png');
+        }
+
+        body {
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: var(--background-image);
+            background-size: cover;
+            background-attachment: fixed;
+            transition: all 0.3s ease;
+        }
+
+        h1, h2 {
+            color: var(--text-color);
+        }
+
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Toggle Switch Styles */
+        .toggle {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 30px;
+        }
+
+        .toggle input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 15px;
+        }
+
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 24px;
+            width: 24px;
+            left: 3px;
+            bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .toggle-slider {
+            background-color: var(--button-bg);
+        }
+
+        input:checked + .toggle-slider:before {
+            transform: translateX(30px);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--navbar-bg);
+            padding: 0px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #444;
+        }
+
+        .navbar .logo h2 {
+            color: var(--navbar-link-color);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+            position: static;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--navbar-link-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+        }
+
+        .toggle-group {
+            margin-left: 20px;
+        }
+
+        /* Local Storage & Cookies Management */
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .container h2 {
+            text-align: center;
+        }
+
+        .data-section {
+            margin: 20px 0;
+        }
+
+        .data-section pre {
+            background: #222;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .actions {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        button {
+            background-color: var(--button-bg);
+            color: white;
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        button:hover {
+            background-color: #ff8500;
+        }
+
+        .input-text {
+            width: 100%;
+            padding: 10px;
+            font-size: 14px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .file-input {
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        /* Styling for save data edit form */
+        .game-save-entry {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+            padding: 5px;
+            background-color: #f1f1f1;
+            border-radius: 5px;
+        }
+
+        .game-save-entry button {
+            background-color: #ff6600;
+            font-size: 14px;
+        }
+
+        .edit-text {
+            width: 60%;
+            padding: 5px;
+            font-size: 14px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-right: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo" style="display: flex; align-items: center;">
+            <!-- Logo Image -->
+            <img src="../assets/icons/ubghyper.ico" alt="Logo" style="height: 30px; margin-right: 10px;">
+            <h2>UBGHyper</h2>
+        </div>
+        <ul class="nav-links">
+            <li><a href="https://ubghyper.github.io/">Home</a></li>
+            <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
+            <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
+            <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+            <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
+        </ul>
+    
+        <!-- Theme Toggle -->
+        <div class="toggle-group">
+            <label class="toggle" aria-label="Toggle theme">
+                <input type="checkbox" id="themeToggle">
+                <span class="toggle-slider"></span>
+            </label>
+        </div>
+    </nav>
+
+    <!-- Local Storage Management Page -->
+    <div class="container">
+        <h2>Manage Local Save Data</h2>
+
+        <!-- LocalStorage Section -->
+        <div class="data-section">
+            <h3>LocalStorage Data</h3>
+            <pre id="localStorageData"></pre>
+        </div>
+
+        <!-- Cookies Section -->
+        <div class="data-section">
+            <h3>Cookies</h3>
+            <pre id="cookiesData"></pre>
+        </div>
+
+        <!-- Game Data Section -->
+        <div class="data-section">
+            <h3>Game Data (Saved Games)</h3>
+            <div id="gameDataContainer">
+                <!-- Dynamic game saves will appear here -->
+            </div>
+        </div>
+
+        <!-- Actions Section -->
+        <div class="actions">
+            <button onclick="clearLocalStorage()">Clear LocalStorage</button>
+            <button onclick="clearCookies()">Clear Cookies</button>
+            <button onclick="downloadData()">Download Data</button>
+            <button onclick="uploadData()">Upload Data</button>
+        </div>
+    </div>
+
+    <script>
+
+        // Function to get and display the LocalStorage data
+        function displayLocalStorage() {
+            const localStorageData = JSON.stringify(localStorage, null, 2);
+            document.getElementById("localStorageData").textContent = localStorageData;
+        }
+
+        // Function to get and display the cookies
+        function displayCookies() {
+            const cookies = document.cookie;
+            document.getElementById("cookiesData").textContent = cookies || 'No cookies found.';
+        }
+
+        // Function to display game data saved in localStorage
+        function displayGameData() {
+            const gameDataContainer = document.getElementById("gameDataContainer");
+            gameDataContainer.innerHTML = '';  // Clear the current content
+
+            const gameKeys = Object.keys(localStorage).filter(key => key.startsWith('gameSave_'));
+            gameKeys.forEach(gameSaveKey => {
+                const gameSaveData = localStorage.getItem(gameSaveKey);
+                const saveEntry = document.createElement("div");
+                saveEntry.classList.add('game-save-entry');
+                saveEntry.innerHTML = `
+                    <input class="edit-text" id="input-${gameSaveKey}" value="${gameSaveData}" />
+                    <button onclick="saveGameData('${gameSaveKey}')">Save</button>
+                `;
+                gameDataContainer.appendChild(saveEntry);
+            });
+        }
+
+        // Function to save the edited game data back to localStorage
+        function saveGameData(gameSaveKey) {
+            const newGameData = document.getElementById(`input-${gameSaveKey}`).value;
+            localStorage.setItem(gameSaveKey, newGameData);
+            displayGameData();  // Refresh game data display
+        }
+
+        // Function to clear LocalStorage
+        function clearLocalStorage() {
+            localStorage.clear();
+            displayLocalStorage();
+            displayGameData();
+        }
+
+        // Function to clear cookies
+        function clearCookies() {
+            const cookies = document.cookie.split("; ");
+            cookies.forEach(cookie => {
+                const [name] = cookie.split("=");
+                document.cookie = `${name}=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/`;
+            });
+            displayCookies();
+        }
+
+        // Function to download data
+        function downloadData() {
+            const localStorageData = {};
+            for (let i = 0; i < localStorage.length; i++) {
+                const key = localStorage.key(i);
+                localStorageData[key] = localStorage.getItem(key);
+            }
+
+            const cookiesData = document.cookie;
+            const data = {
+                localStorage: localStorageData,
+                cookies: cookiesData
+            };
+
+            const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'saveData.json';
+            link.click();
+        }
+
+        // Function to upload JSON data to LocalStorage and Cookies
+        function uploadData() {
+            const fileInput = document.createElement('input');
+            fileInput.type = 'file';
+            fileInput.accept = '.json';
+            fileInput.onchange = function (e) {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onload = function (event) {
+                    const data = JSON.parse(event.target.result);
+                    for (const key in data.localStorage) {
+                        localStorage.setItem(key, data.localStorage[key]);
+                    }
+                    document.cookie = data.cookies;
+                    alert("Data uploaded successfully!");
+                    displayLocalStorage();
+                    displayCookies();
+                    displayGameData();
+                };
+                reader.readAsText(file);
+            };
+            fileInput.click();
+        }
+
+        // Initial display
+        displayLocalStorage();
+        displayCookies();
+        displayGameData();
+
+
+            const themeToggle = document.getElementById('themeToggle');
+            const currentTheme = localStorage.getItem('theme') || 'light';
+
+            // Set initial theme
+            if (currentTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+                themeToggle.checked = true;
+            } else {
+                document.body.classList.remove('dark-mode');
+                themeToggle.checked = false;
+            }
+
+            themeToggle.addEventListener('change', () => {
+                if (themeToggle.checked) {
+                    document.body.classList.add('dark-mode');
+                    localStorage.setItem('theme', 'dark');
+                } else {
+                    document.body.classList.remove('dark-mode');
+                    localStorage.setItem('theme', 'light');
+                }
+            });
+    </script>
+
+</body>
+</html>

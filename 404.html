@@ -1,82 +1,251 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>404 - Page Not Found</title>
+    <meta charset="UTF-8">
     <meta name="google-adsense-account" content="ca-pub-4293684626558852">
     <meta name="robots" content="noindex">
+    <title>404 - Page Not Found</title>
     <style>
-        @import url('https://fonts.googleapis.com/css?family=Roboto+Mono');
-        
-        .center-xy {
-            width: inherit;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%,-50%);
-            position: absolute;
-        }
-        
-        html, body {
-            font-family: 'Roboto Mono', monospace;
-            font-size: 16px;
-        }
-        
-        html {
-            box-sizing: border-box;
-            user-select: none;
-        }
-        
         body {
-            background-image: url('../assets/background/background.png');
-        }
-        
-        *, *:before, *:after {
-            box-sizing: inherit;
-        }
-        
-        .container {
-            width: 100%;
-        }
-        
-        .copy-container {
+            background-image: url(../assets/background/background.png);
+            font-family: 'Roboto Mono', monospace;
+            color: white;
             text-align: center;
-        }
-        
-        p {
-            color: #fff;
-            font-size: 24px;
-            letter-spacing: .2px;
             margin: 0;
+            padding: 0;
+            overflow: hidden;
+            animation: fadeIn 1s ease-out;
         }
-        
-        #cb-replay {
-            fill: #666;
-            width: 20px;
-            margin: 15px;
-            right: 0;
-            bottom: 0;
-            position: absolute;
-            overflow: inherit;
+
+        h1 {
+            font-size: 80px;
+            margin-top: 50px;
+            color: #ff7300;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 0.5s;
+        }
+
+        p {
+            font-size: 20px;
+            margin: 20px 0;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1s;
+        }
+
+        .game-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 1.5s;
+        }
+
+        .word {
+            font-size: 40px;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            font-weight: bold;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 2s;
+        }
+
+        .letters {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .letter-button {
+            font-size: 24px;
+            padding: 10px 15px;
+            background-color: #4d4d4d;
+            border: none;
+            color: #fff;
             cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
         }
-        
-        #cb-replay:hover {
-            fill: #888;
+
+        .letter-button:hover {
+            background-color: #1abc9c;
+        }
+
+        .letter-button:disabled {
+            background-color: #7f8c8d;
+            cursor: not-allowed;
+        }
+
+        .letter-button:active {
+            transform: scale(0.9);
+        }
+
+        .result {
+            font-size: 24px;
+            margin-top: 30px;
+            opacity: 0;
+            animation: fadeIn 1s ease-out forwards 2.5s;
+        }
+
+        .restart-btn {
+            display: none;
+            padding: 15px 30px;
+            font-size: 20px;
+            background-color: #ff5e00;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-out forwards 3s;
+        }
+
+        .restart-btn:hover {
+            background-color: #c0392b;
+        }
+.number { display: inline-block; transition: transform 1s ease-out; } .number.spin { transform: rotate(360deg); }
+        /* Fade In animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
-<h1>404</h1>
-<div class="container">
-    <div class="copy-container center-xy">
-        <p>
-            404, page not found.
-        </p>
-        <span class="handle"></span>
-    </div>
-</div>
+    <h1>4<span class="number" id="spinZero">0</span>4</h1>
+    <p>Oops! Looks like you're lost... Let's play a game to find your way back!</p>
 
-</svg>
+    <div class="game-container">
+        <div class="word" id="wordDisplay">_ _ _ _ _</div>
+        <div class="letters" id="lettersContainer"></div>
+        <div class="result" id="gameResult"></div>
+        <button class="restart-btn" id="restartButton" onclick="restartGame()">Play Again</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <script>
+        const words = ["FOUROFOUR", "LOST", "HYPER", "GAMES", "WOBILLIAM"];
+        let mysteryWord, guessedLetters, attempts, correctGuesses;
+
+        function initGame() {
+            mysteryWord = words[Math.floor(Math.random() * words.length)];
+            guessedLetters = [];
+            attempts = 6;
+            correctGuesses = 0;
+            document.getElementById('gameResult').textContent = '';
+            document.getElementById('restartButton').style.display = 'none';
+            updateWordDisplay();
+            generateLetterButtons();
+        }
+
+        function updateWordDisplay() {
+            const wordDisplay = mysteryWord.split('').map(letter => 
+                guessedLetters.includes(letter) ? letter : '_'
+            ).join(' ');
+
+            document.getElementById('wordDisplay').textContent = wordDisplay;
+        }
+
+        function generateLetterButtons() {
+            const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+            const lettersContainer = document.getElementById('lettersContainer');
+            lettersContainer.innerHTML = '';
+
+            letters.forEach(letter => {
+                const button = document.createElement('button');
+                button.textContent = letter;
+                button.classList.add('letter-button');
+                button.onclick = () => handleGuess(letter);
+                lettersContainer.appendChild(button);
+            });
+        }
+
+        function handleGuess(letter) {
+            if (guessedLetters.includes(letter) || attempts <= 0) return;
+
+            guessedLetters.push(letter);
+
+            if (mysteryWord.includes(letter)) {
+                correctGuesses++;
+                updateWordDisplay();
+                animateCorrectGuess(letter);
+                checkWin();
+            } else {
+                attempts--;
+                showGameResult(`Incorrect! Attempts left: ${attempts}`);
+                animateWrongGuess();
+                if (attempts <= 0) {
+                    showGameResult(`Game Over! The word was: ${mysteryWord}`);
+                    endGame();
+                }
+            }
+
+            // Disable the clicked button
+            const button = document.querySelector(`button:contains(${letter})`);
+            button.disabled = true;
+        }
+
+        function animateCorrectGuess(letter) {
+            const letterElements = document.getElementsByClassName('letter-button');
+            for (const button of letterElements) {
+                if (button.textContent === letter) {
+                    button.style.transform = 'scale(1.1)';
+                    setTimeout(() => {
+                        button.style.transform = 'scale(1)';
+                    }, 200);
+                }
+            }
+        }
+
+        function animateWrongGuess() {
+            const wordElement = document.getElementById('wordDisplay');
+            wordElement.classList.add('shake');
+            setTimeout(() => {
+                wordElement.classList.remove('shake');
+            }, 500);
+        }
+
+        function showGameResult(resultText) {
+            document.getElementById('gameResult').textContent = resultText;
+        }
+
+        function triggerConfetti() {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 },
+                colors: ['#e74c3c', '#1abc9c', '#f39c12']
+            });
+        }
+
+        function checkWin() {
+            if (correctGuesses === mysteryWord.length) {
+                showGameResult('You found your way back!');
+                triggerConfetti();
+                endGame();
+            }
+        }
+
+        function endGame() {
+            document.querySelectorAll('.letter-button').forEach(button => button.disabled = true);
+            document.getElementById('restartButton').style.display = 'inline-block';
+        }
+
+        function restartGame() {
+            initGame();
+        }
+
+        window.onload = initGame;
+
+        document.getElementById('spinZero').addEventListener('click', function() {
+            this.classList.add('spin');
+        });
+    </script>
 </body>
 </html>
-<script>
-</script>

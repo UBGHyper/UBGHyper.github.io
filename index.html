@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBG Hyper</title>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
     <link rel="stylesheet" href="config/light.css" id="themeStyle">
     <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -31,6 +32,40 @@
             --font-family: 'Poppins', sans-serif;
         }
 
+
+        body {
+  --sb-track-color: #505050;
+  --sb-thumb-color: #ff7b00;
+  --sb-size: 12px;
+}
+
+.surprise-mode {
+    background-color: #ff00ff; /* Bright magenta or any fun color */
+    color: yellow;
+}
+
+body::-webkit-scrollbar {
+  width: var(--sb-size)
+}
+
+body::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+  border-radius: 7px;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+  border-radius: 7px;
+  
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  body {
+    scrollbar-color: var(--sb-thumb-color)
+                     var(--sb-track-color);
+  }
+
+    }
         /* Dark Mode */
         .dark-mode {
             --bg-color: #333;
@@ -447,6 +482,7 @@
         <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
         <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
         <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+        <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
     </ul>
 
     <!-- Theme Toggle -->
@@ -497,7 +533,7 @@
     </section>
 <!-- Changelog Section -->
 <section id="changelog">
-    <h2>Changelog v1.1</h2>
+    <h2>Changelog v1.2</h2>
     <ul>
         <li><span class="changelog-mark new">New</span> Added a home screen.</li>
         <li><span class="changelog-mark fixed">Fixed</span> Fixed UI bugs with the in game fixed bar</li>
@@ -506,7 +542,17 @@
         <li><span class="changelog-mark new">New</span> Added a contact page.</li>
         <li><span class="changelog-mark new">New</span> Added a customize page.</li>
         <li><span class="changelog-mark new">New</span> Added a nav bar for better cross page functionality.</li>
+        <li><span class="changelog-mark new">New</span> Added a custom scoll bar.</li>
+        <li><span class="changelog-mark new">New</span> Added a page to edit your save data.</li>
         <li><span class="changelog-mark fixed">Fixed</span> Fixed the customize option (making it universal).</li>
+        <li><span class="changelog-mark new">New</span> Added secrets????!! 🤫</li>
+        <li><span class="changelog-mark new">New</span> Gave the 404 screen some more pizaz.</li>
+        <li><span class="changelog-mark removed">Removed</span> Removed webcounter.php (didnt work).</li>
+        <li><span class="changelog-mark new">New</span> Added a debug page (to make my life easier).</li>
+
+
+
+
         <!-- Add more changelog items as needed -->
     </ul>
 </section>
@@ -536,10 +582,39 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            const konamiCode = [
+                'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+                'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'
+            ];
+            let konamiIndex = 0;
+
+            // Listen for keydown events to detect Konami Code (arrow keys)
+            document.addEventListener('keydown', (event) => {
+                if (event.key === konamiCode[konamiIndex]) {
+                    konamiIndex++;
+                    if (konamiIndex === konamiCode.length) {
+                        // Konami code is complete, trigger confetti
+                        triggerConfetti();
+                        konamiIndex = 0; // Reset the Konami code index
+                    }
+                } else {
+                    konamiIndex = 0; // Reset if the wrong key is pressed
+                }
+            });
+
+            // Function to trigger confetti
+            function triggerConfetti() {
+                confetti({
+                    particleCount: 200,
+                    spread: 70,
+                    origin: { y: 0.6 }
+                });
+            }
+
+            // Existing theme toggle functionality
             const themeToggle = document.getElementById('themeToggle');
             const currentTheme = localStorage.getItem('theme') || 'light';
 
-            // Set initial theme
             if (currentTheme === 'dark') {
                 document.body.classList.add('dark-mode');
                 themeToggle.checked = true;
@@ -585,6 +660,25 @@
                 carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
             });
         });
+
+        let toggleClickCount = 0;
+themeToggle.addEventListener('click', () => {
+    toggleClickCount++;
+    if (toggleClickCount === 15) {
+        document.body.classList.add('surprise-mode');
+        alert("Surprise theme activated!");
+        toggleClickCount = 0; // Reset count
+    }
+});
+
+const developerImg = document.querySelectorAll('.developer-img');
+developerImg.forEach(img => {
+    img.addEventListener('click', () => {
+        img.src = "../assets/icons/serious.png"; // Replace with a funny image
+        alert("You found the hidden easter egg! 🥳");
+    });
+});
+
     </script>
 </body>
 </html>

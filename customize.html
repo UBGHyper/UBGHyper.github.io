@@ -5,19 +5,219 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize UBG Hyper</title>
     <script src="../config/global.js"></script>
-
     <link rel="stylesheet" href="config/light.css" id="themeStyle">
     <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-
     <style>
-        /* Your existing styles here... */
-    </style>
+        :root {
+            --bg-color: #333;
+            --text-color: #fff;
+            --link-color: #ff8500;
+            --navbar-bg: #111;
+            --navbar-link-color: #fff;
+            --carousel-bg: #222;
+            --button-bg: #ff5e00;
+            --background-image: url('../assets/background/background.png');
+            --font-family: 'Poppins', sans-serif; /* Default font */
+        }
 
-    <!-- Include global.js for settings application across all pages -->
+        body {
+            font-family: var(--font-family, 'Poppins', sans-serif); /* Default font is Poppins */
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: var(--background-image);
+            background-size: cover;
+            background-attachment: fixed;
+            transition: all 0.3s ease;
+        }
+
+        h1, h2 {
+            color: var(--text-color);
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--navbar-bg);
+            padding: 0px 30px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            border-bottom: 2px solid #444;
+            font-family: var(--font-family); /* Ensure navbar uses the selected font */
+        }
+
+        .navbar .logo h2 {
+            color: var(--navbar-link-color);
+            font-size: 20px;
+            font-weight: 600;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            margin: 0;
+        }
+
+        .nav-links a {
+            color: var(--navbar-link-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 18px;
+            font-family: var(--font-family); /* Ensure links use the selected font */
+        }
+
+        .nav-links a:hover {
+            color: var(--link-color);
+        }
+
+        .center {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .customize-container {
+            width: 80%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(73, 73, 73, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .customize-container label {
+            font-weight: 600;
+            margin-right: 10px;
+        }
+
+        .customize-container input,
+        .customize-container select,
+        .customize-container .slider {
+            padding: 10px;
+            font-size: 16px;
+            margin: 10px 0;
+            border-radius: 5px;
+            width: 100%;
+            border: 1px solid #ff5e00;
+        }
+
+        .background-preview {
+            width: 100%;
+            height: 200px;
+            margin-top: 20px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: rgb(255, 136, 0);
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .text-preview {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--text-color);
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            text-align: center;
+            font-family: var(--font-family, 'Poppins', sans-serif); /* Ensure font family applies here too */
+        }
+
+        .live-preview {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .live-preview p {
+            margin: 10px 0;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .customize-container button {
+            padding: 10px 20px;
+            background-color: var(--button-bg);
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            width: auto;
+            font-family: var(--font-family); /* Ensure buttons use the selected font */
+        }
+
+        .customize-container button:hover {
+            background-color: #e65c00;
+        }
+
+        .premade-themes {
+            margin-top: 40px;
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .theme-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+        }
+
+        .theme-button {
+            padding: 10px 20px;
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 5px;
+            width: 120px;
+            position: absolute;
+            bottom: 10px;
+            transition: transform 0.3s;
+            font-family: var(--font-family); /* Ensure theme buttons use the selected font */
+        }
+
+        .theme-button:hover {
+            transform: scale(1.05);
+        }
+
+        .theme-preview {
+            width: 120px;
+            height: 80px;
+            background-size: cover;
+            background-position: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            position: relative;
+        }
+    </style>
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar">
         <div class="logo" style="display: flex; align-items: center;">
             <img src="../assets/icons/ubghyper.ico" alt="Logo" style="height: 30px; margin-right: 10px;">
@@ -28,9 +228,9 @@
             <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
             <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
             <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+            <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
         </ul>
 
-        <!-- Dark/Light Mode Toggle -->
         <div class="toggle-group">
             <label class="toggle" aria-label="Toggle theme">
                 <input type="checkbox" id="themeToggle">
@@ -39,7 +239,6 @@
         </div>
     </nav>
 
-    <!-- Customize Page Content -->
     <div class="center">
         <h1>Customize UBG Hyper</h1>
     </div>
@@ -69,102 +268,218 @@
             </div>
 
             <div>
-                <label for="darkModeToggle">Dark Mode:</label>
-                <input type="checkbox" id="darkModeToggle" />
+                <label for="textColor">Text Font Color:</label>
+                <input type="color" id="textColor" value="#333333" />
             </div>
 
-            <div class="background-preview" id="backgroundPreview">
-                Background Preview
+            <div>
+                <label for="navbarColor">Navbar Color:</label>
+                <input type="color" id="navbarColor" value="#333333" />
             </div>
 
-            <button type="submit">Save Customization</button>
+            <div class="button-container">
+                <button type="button" id="saveButton">Save</button>
+                <button type="button" id="resetButton">Reset</button>
+            </div>
         </form>
+
+        <div class="background-preview" id="backgroundPreview">
+            <span>Background Preview</span>
+        </div>
+
+        <div class="text-preview" id="textPreview">
+            <span>Text Color Preview</span>
+        </div>
+
+        <div class="premade-themes">
+            <!-- Preset Theme 1: Beach -->
+            <div class="theme-container">
+                <div class="theme-preview" style="background-image: url('../assets/background/calm-vaporwave.png');"></div>
+                <button class="theme-button" style="background-color: #f6b3f8;" data-theme="calmvapor">Vaporwave1</button>
+            </div>
+
+            <!-- Preset Theme 2: Forest -->
+            <div class="theme-container">
+                <div class="theme-preview" style="background-image: url('../assets/background/red-vaporwave.png');"></div>
+                <button class="theme-button" style="background-color: #570000;" data-theme="redvapor">Vaporwave2</button>
+            </div>
+
+            <!-- Preset Theme 3: Cityscape -->
+            <div class="theme-container">
+                <div class="theme-preview" style="background-image: url('../assets/background/vaporwave-blue.png');"></div>
+                <button class="theme-button" style="background-color: #003468;" data-theme="bluevapor">Vaporwave3</button>
+            </div>
+
+            <!-- Preset Theme 4: Calm -->
+            <div class="theme-container">
+                <div class="theme-preview" style="background-image: url('../assets/background/calm.png');"></div>
+                <button class="theme-button" style="background-color: #91caff;" data-theme="calm">Calm</button>
+            </div>
+
+            <!-- Preset Theme 5: Collab -->
+            <div class="theme-container">
+                <div class="theme-preview" style="background-image: url('../assets/background/collab.png');"></div>
+                <button class="theme-button" style="background-color: #007cf8;" data-theme="collab">Collab</button>
+            </div>
+        </div>
     </div>
 
+    <script src="config/customize.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('customizeForm');
-            const backgroundImageInput = document.getElementById('backgroundImage');
-            const fontFamilySelect = document.getElementById('fontFamily');
-            const themeColorInput = document.getElementById('themeColor');
-            const darkModeToggle = document.getElementById('darkModeToggle');
-            const backgroundPreview = document.getElementById('backgroundPreview');
-            const themeToggle = document.getElementById('themeToggle');
+document.addEventListener('DOMContentLoaded', () => {
+    const backgroundImageInput = document.getElementById('backgroundImage');
+    const fontFamilySelect = document.getElementById('fontFamily');
+    const themeColorPicker = document.getElementById('themeColor');
+    const textColorPicker = document.getElementById('textColor');
+    const navbarColorPicker = document.getElementById('navbarColor');
+    const backgroundPreview = document.getElementById('backgroundPreview');
+    const textPreview = document.getElementById('textPreview');
+    const saveButton = document.getElementById('saveButton');
+    const resetButton = document.getElementById('resetButton');
+    const navbar = document.querySelector('.navbar');
+    const body = document.body;
 
-            // Load saved settings from localStorage
-            const savedSettings = JSON.parse(localStorage.getItem('customSettings')) || {};
+    // Default values to reset to
+    const defaultValues = {
+        backgroundImage: '',
+        fontFamily: 'Poppins',
+        themeColor: '#ff6600',
+        textColor: '#333333',
+        navbarColor: '#333333'
+    };
 
-            if (savedSettings.backgroundImage) {
-                document.body.style.backgroundImage = `url(${savedSettings.backgroundImage})`;
-                backgroundImageInput.value = savedSettings.backgroundImage;
-                backgroundPreview.style.backgroundImage = `url(${savedSettings.backgroundImage})`;
-            }
+    // Function to update preview elements live
+    const updatePreview = () => {
+        // Update the background preview live
+        if (backgroundImageInput.value) {
+            backgroundPreview.style.backgroundImage = `url(${backgroundImageInput.value})`;
+        } else {
+            backgroundPreview.style.backgroundImage = ''; // Reset if no URL
+        }
 
-            if (savedSettings.fontFamily) {
-                document.body.style.fontFamily = savedSettings.fontFamily;
-                fontFamilySelect.value = savedSettings.fontFamily;
-            }
+        // Update the font family preview live
+        const fontFamily = fontFamilySelect.value;
+        textPreview.style.fontFamily = fontFamily;
 
-            if (savedSettings.themeColor) {
-                document.documentElement.style.setProperty('--button-bg', savedSettings.themeColor);
-                themeColorInput.value = savedSettings.themeColor;
-            }
+        // Update text preview color live
+        textPreview.style.color = textColorPicker.value;
 
-            if (savedSettings.darkMode) {
-                document.body.classList.add('dark-mode');
-                darkModeToggle.checked = true;
-                themeToggle.checked = true;
-            }
+        // Update background color for preview
+        backgroundPreview.style.backgroundColor = themeColorPicker.value;
+    };
 
-            // Update background preview when user changes the URL input
-            backgroundImageInput.addEventListener('input', () => {
-                const url = backgroundImageInput.value;
-                backgroundPreview.style.backgroundImage = `url(${url})`;
-            });
+    // Function to apply changes to the actual page
+    const applyCustomizations = () => {
+        // Apply background image to actual page
+        if (backgroundImageInput.value) {
+            document.documentElement.style.setProperty('--background-image', `url(${backgroundImageInput.value})`);
+        } else {
+            document.documentElement.style.setProperty('--background-image', ''); // Reset the background image
+        }
 
-            // Handle Dark/Light mode toggle
-            themeToggle.addEventListener('change', () => {
-                if (themeToggle.checked) {
-                    document.body.classList.add('dark-mode');
-                } else {
-                    document.body.classList.remove('dark-mode');
-                }
-                localStorage.setItem('customSettings', JSON.stringify({ ...savedSettings, darkMode: themeToggle.checked }));
-            });
+        // Apply font family to actual page
+        const fontFamily = fontFamilySelect.value;
+        document.documentElement.style.setProperty('--font-family', fontFamily);
+        body.style.fontFamily = fontFamily;
 
-            // Handle form submission
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-
-                const backgroundImage = backgroundImageInput.value;
-                const fontFamily = fontFamilySelect.value;
-                const themeColor = themeColorInput.value;
-                const darkMode = darkModeToggle.checked;
-
-                // Save settings to localStorage
-                const settings = {
-                    backgroundImage,
-                    fontFamily,
-                    themeColor,
-                    darkMode
-                };
-
-                localStorage.setItem('customSettings', JSON.stringify(settings));
-
-                // Apply the settings
-                document.body.style.backgroundImage = `url(${backgroundImage})`;
-                document.body.style.fontFamily = fontFamily;
-                document.documentElement.style.setProperty('--button-bg', themeColor);
-
-                if (darkMode) {
-                    document.body.classList.add('dark-mode');
-                } else {
-                    document.body.classList.remove('dark-mode');
-                }
-
-                alert('Your custom settings have been saved!');
-            });
+        // Apply theme color to actual page
+        document.documentElement.style.setProperty('--link-color', themeColorPicker.value);
+        document.documentElement.style.setProperty('--button-bg', themeColorPicker.value);
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.style.color = themeColorPicker.value;
         });
+        document.querySelectorAll('.button-container button').forEach(button => {
+            button.style.backgroundColor = themeColorPicker.value;
+        });
+
+        // Apply text color to actual page
+        document.documentElement.style.setProperty('--text-color', textColorPicker.value);
+        body.style.color = textColorPicker.value;
+
+        // Apply navbar color to actual page
+        document.documentElement.style.setProperty('--navbar-bg', navbarColorPicker.value);
+        navbar.style.backgroundColor = navbarColorPicker.value;
+    };
+
+    saveButton.addEventListener('click', (event) => {
+        event.preventDefault();
+        applyCustomizations();  // Apply customizations to the real page
+    });
+
+    resetButton.addEventListener('click', () => {
+        // Reset both preview and actual page to default values
+        backgroundImageInput.value = defaultValues.backgroundImage;
+        fontFamilySelect.value = defaultValues.fontFamily;
+        themeColorPicker.value = defaultValues.themeColor;
+        textColorPicker.value = defaultValues.textColor;
+        navbarColorPicker.value = defaultValues.navbarColor;
+
+        // Reset preview
+        updatePreview();
+
+        // Reset actual page (applies to the live website)
+        applyCustomizations();
+
+        // Reset the background image CSS variable (this is key)
+        document.documentElement.style.setProperty('--background-image', '');  // Clear the background image CSS variable
+    });
+
+    // Listen for changes to inputs to update preview live
+    backgroundImageInput.addEventListener('input', updatePreview);
+    fontFamilySelect.addEventListener('change', updatePreview);
+    themeColorPicker.addEventListener('input', updatePreview);
+    textColorPicker.addEventListener('input', updatePreview);
+    navbarColorPicker.addEventListener('input', updatePreview);
+
+    // Event listeners for preset themes
+    const themeButtons = document.querySelectorAll('.theme-button');
+    themeButtons.forEach(button => {
+        button.addEventListener('click', (event) => {
+            const theme = event.target.getAttribute('data-theme');
+            switch (theme) {
+                case 'calmvapor':
+                    backgroundImageInput.value = '../assets/background/calm-vaporwave.png';
+                    fontFamilySelect.value = 'Poppins';
+                    themeColorPicker.value = '#f6b3f8';
+                    textColorPicker.value = '#4a4a4a';
+                    navbarColorPicker.value = '#e3a6e2';
+                    break;
+                case 'redvapor':
+                    backgroundImageInput.value = '../assets/background/red-vaporwave.png';
+                    fontFamilySelect.value = 'Arial';
+                    themeColorPicker.value = '#ff0000';
+                    textColorPicker.value = '#ffffff';
+                    navbarColorPicker.value = '#570000';
+                    break;
+                case 'bluevapor':
+                    backgroundImageInput.value = '../assets/background/vaporwave-blue.png';
+                    fontFamilySelect.value = 'Verdana';
+                    themeColorPicker.value = '#003468';
+                    textColorPicker.value = '#ffffff';
+                    navbarColorPicker.value = '#003468';
+                    break;
+                case 'calm':
+                    backgroundImageInput.value = '../assets/background/calm.png';
+                    fontFamilySelect.value = 'Georgia';
+                    themeColorPicker.value = '#91caff';
+                    textColorPicker.value = '#ffffff';
+                    navbarColorPicker.value = '#004d66';
+                    break;
+                case 'collab':
+                    backgroundImageInput.value = '../assets/background/collab.png';
+                    fontFamilySelect.value = 'Times New Roman';
+                    themeColorPicker.value = '#007cf8';
+                    textColorPicker.value = '#ffffff';
+                    navbarColorPicker.value = '#003366';
+                    break;
+                default:
+                    break;
+            }
+            updatePreview(); // Update the preview immediately when a preset theme is selected
+        });
+    });
+});
+
     </script>
 </body>
 </html>
