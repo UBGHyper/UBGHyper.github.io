@@ -4,113 +4,17 @@
 
 
 
-body::-webkit-scrollbar {
-  width: var(--sb-size)
-}
-
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 9px;
-}
-
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 9px;
-  
-}
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
-}
-
 * {
   font-family: 'Ubuntu', sans-serif; /* Use quotes for font family */
 }
 
 /* General styles */
-body {
-  background-image: url('../assets/background/background-white.png'); /* Set your background image */
-  background-size: cover; /* Cover the entire area */
-  background-repeat: no-repeat; /* Prevent repeating */
-  background-attachment: fixed; /* Keep it fixed when scrolling */
-  color: var(--text-color);
-  margin: 0;
-  padding: 0;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
+
 
 .game {
   background-color: white;
 }
 
-/* Toggle Switch Styles */
-.toggle-container {
-  display: flex;
-  align-items: center;
-  margin: 10px;
-}
-
-.toggle {
-  position: relative;
-  width: 60px;
-  height: 34px;
-}
-
-.toggle input {
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: #ccc;
-  transition: .4s;
-  border-radius: 34px;
-}
-
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 26px;
-  width: 26px;
-  left: 4px;
-  bottom: 4px;
-  background-color: white;
-  transition: .4s;
-  border-radius: 50%;
-}
-
-input:checked + .slider {
-  background-color: #b0b0b0;
-}
-
-input:checked + .slider:before {
-  transform: translateX(26px);
-}
-
-/* Fixed Bottom Bar Styles */
-.fixed-bottom-bar {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background-color: #e8e8e8;
-  padding: 10px;
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
-  text-align: center;
-}
 
 /* Search input styles */
 #searchInput {

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customize UBG Hyper</title>
     <script src="../config/global.js"></script>
+    <script src="../config/main.js" type="module"></script>
     <link rel="stylesheet" href="config/light.css" id="themeStyle">
     <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -230,13 +231,6 @@
             <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
             <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
         </ul>
-
-        <div class="toggle-group">
-            <label class="toggle" aria-label="Toggle theme">
-                <input type="checkbox" id="themeToggle">
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
     </nav>
 
     <div class="center">
@@ -326,160 +320,143 @@
 
     <script src="config/customize.js"></script>
     <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const backgroundImageInput = document.getElementById('backgroundImage');
-    const fontFamilySelect = document.getElementById('fontFamily');
-    const themeColorPicker = document.getElementById('themeColor');
-    const textColorPicker = document.getElementById('textColor');
-    const navbarColorPicker = document.getElementById('navbarColor');
-    const backgroundPreview = document.getElementById('backgroundPreview');
-    const textPreview = document.getElementById('textPreview');
-    const saveButton = document.getElementById('saveButton');
-    const resetButton = document.getElementById('resetButton');
-    const navbar = document.querySelector('.navbar');
-    const body = document.body;
+        document.addEventListener('DOMContentLoaded', () => {
+            const backgroundImageInput = document.getElementById('backgroundImage');
+            const fontFamilySelect = document.getElementById('fontFamily');
+            const themeColorPicker = document.getElementById('themeColor');
+            const textColorPicker = document.getElementById('textColor');
+            const navbarColorPicker = document.getElementById('navbarColor');
+            const backgroundPreview = document.getElementById('backgroundPreview');
+            const textPreview = document.getElementById('textPreview');
+            const saveButton = document.getElementById('saveButton');
+            const resetButton = document.getElementById('resetButton');
+            const navbar = document.querySelector('.navbar');
+            const body = document.body;
 
-    // Default values to reset to
-    const defaultValues = {
-        backgroundImage: '',
-        fontFamily: 'Poppins',
-        themeColor: '#ff6600',
-        textColor: '#333333',
-        navbarColor: '#333333'
-    };
+            // Default values to reset to
+            const defaultValues = {
+                backgroundImage: '',
+                fontFamily: 'Poppins',
+                themeColor: '#ff6600',
+                textColor: '#333333',
+                navbarColor: '#333333'
+            };
 
-    // Function to update preview elements live
-    const updatePreview = () => {
-        // Update the background preview live
-        if (backgroundImageInput.value) {
-            backgroundPreview.style.backgroundImage = `url(${backgroundImageInput.value})`;
-        } else {
-            backgroundPreview.style.backgroundImage = ''; // Reset if no URL
-        }
+            // Function to update preview elements live
+            const updatePreview = () => {
+                // Update the background preview live
+                if (backgroundImageInput.value) {
+                    backgroundPreview.style.backgroundImage = `url(${backgroundImageInput.value})`;
+                } else {
+                    backgroundPreview.style.backgroundImage = ''; // Reset if no URL
+                }
 
-        // Update the font family preview live
-        const fontFamily = fontFamilySelect.value;
-        textPreview.style.fontFamily = fontFamily;
+                // Update the font family preview live
+                const fontFamily = fontFamilySelect.value;
+                textPreview.style.fontFamily = fontFamily;
 
-        // Update text preview color live
-        textPreview.style.color = textColorPicker.value;
+                // Update text preview color live
+                textPreview.style.color = textColorPicker.value;
 
-        // Update background color for preview
-        backgroundPreview.style.backgroundColor = themeColorPicker.value;
-    };
+                // Update background color for preview
+                backgroundPreview.style.backgroundColor = themeColorPicker.value;
+            };
 
-    // Function to apply changes to the actual page
-    const applyCustomizations = () => {
-        // Apply background image to actual page
-        if (backgroundImageInput.value) {
-            document.documentElement.style.setProperty('--background-image', `url(${backgroundImageInput.value})`);
-        } else {
-            document.documentElement.style.setProperty('--background-image', ''); // Reset the background image
-        }
+            // Function to apply changes to the actual page
+            const applyCustomizations = () => {
+                // Apply background image to actual page
+                if (backgroundImageInput.value) {
+                    document.documentElement.style.setProperty('--background-image', `url(${backgroundImageInput.value})`);
+                } else {
+                    document.documentElement.style.setProperty('--background-image', ''); // Reset the background image
+                }
 
-        // Apply font family to actual page
-        const fontFamily = fontFamilySelect.value;
-        document.documentElement.style.setProperty('--font-family', fontFamily);
-        body.style.fontFamily = fontFamily;
+                // Apply font family to actual page
+                const fontFamily = fontFamilySelect.value;
+                document.documentElement.style.setProperty('--font-family', fontFamily);
+                body.style.fontFamily = fontFamily;
 
-        // Apply theme color to actual page
-        document.documentElement.style.setProperty('--link-color', themeColorPicker.value);
-        document.documentElement.style.setProperty('--button-bg', themeColorPicker.value);
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.style.color = themeColorPicker.value;
-        });
-        document.querySelectorAll('.button-container button').forEach(button => {
-            button.style.backgroundColor = themeColorPicker.value;
-        });
+                // Apply theme color to actual page
+                document.documentElement.style.setProperty('--link-color', themeColorPicker.value);
+                document.documentElement.style.setProperty('--button-bg', themeColorPicker.value);
+                document.querySelectorAll('.navbar a').forEach(link => {
+                    link.style.color = themeColorPicker.value;
+                });
+                document.querySelectorAll('.button-container button').forEach(button => {
+                    button.style.backgroundColor = themeColorPicker.value;
+                });
 
-        // Apply text color to actual page
-        document.documentElement.style.setProperty('--text-color', textColorPicker.value);
-        body.style.color = textColorPicker.value;
+                // Apply text color to actual page
+                document.documentElement.style.setProperty('--text-color', textColorPicker.value);
+                body.style.color = textColorPicker.value;
 
-        // Apply navbar color to actual page
-        document.documentElement.style.setProperty('--navbar-bg', navbarColorPicker.value);
-        navbar.style.backgroundColor = navbarColorPicker.value;
-    };
+                // Apply navbar color to actual page
+                document.documentElement.style.setProperty('--navbar-bg', navbarColorPicker.value);
+                navbar.style.backgroundColor = navbarColorPicker.value;
 
-    saveButton.addEventListener('click', (event) => {
-        event.preventDefault();
-        applyCustomizations();  // Apply customizations to the real page
-    });
+                // Save customizations to localStorage
+                localStorage.setItem('bgImage', backgroundImageInput.value);
+                localStorage.setItem('fontFamily', fontFamilySelect.value);
+                localStorage.setItem('themeColor', themeColorPicker.value);
+                localStorage.setItem('textColor', textColorPicker.value);
+                localStorage.setItem('navbarColor', navbarColorPicker.value);
+            };
 
-    resetButton.addEventListener('click', () => {
-        // Reset both preview and actual page to default values
-        backgroundImageInput.value = defaultValues.backgroundImage;
-        fontFamilySelect.value = defaultValues.fontFamily;
-        themeColorPicker.value = defaultValues.themeColor;
-        textColorPicker.value = defaultValues.textColor;
-        navbarColorPicker.value = defaultValues.navbarColor;
+            // Function to reset to default
+            const resetToDefaults = () => {
+                localStorage.removeItem('bgImage');
+                localStorage.removeItem('fontFamily');
+                localStorage.removeItem('themeColor');
+                localStorage.removeItem('textColor');
+                localStorage.removeItem('navbarColor');
 
-        // Reset preview
-        updatePreview();
+                // Reset to defaults
+                backgroundImageInput.value = defaultValues.backgroundImage;
+                fontFamilySelect.value = defaultValues.fontFamily;
+                themeColorPicker.value = defaultValues.themeColor;
+                textColorPicker.value = defaultValues.textColor;
+                navbarColorPicker.value = defaultValues.navbarColor;
 
-        // Reset actual page (applies to the live website)
-        applyCustomizations();
+                updatePreview();
+                applyCustomizations();
+            };
 
-        // Reset the background image CSS variable (this is key)
-        document.documentElement.style.setProperty('--background-image', '');  // Clear the background image CSS variable
-    });
+            saveButton.addEventListener('click', (event) => {
+                event.preventDefault();
+                applyCustomizations();
+            });
 
-    // Listen for changes to inputs to update preview live
-    backgroundImageInput.addEventListener('input', updatePreview);
-    fontFamilySelect.addEventListener('change', updatePreview);
-    themeColorPicker.addEventListener('input', updatePreview);
-    textColorPicker.addEventListener('input', updatePreview);
-    navbarColorPicker.addEventListener('input', updatePreview);
+            resetButton.addEventListener('click', () => {
+                resetToDefaults();
+            });
 
-    // Event listeners for preset themes
-    const themeButtons = document.querySelectorAll('.theme-button');
-    themeButtons.forEach(button => {
-        button.addEventListener('click', (event) => {
-            const theme = event.target.getAttribute('data-theme');
-            switch (theme) {
-                case 'calmvapor':
-                    backgroundImageInput.value = '../assets/background/calm-vaporwave.png';
-                    fontFamilySelect.value = 'Poppins';
-                    themeColorPicker.value = '#f6b3f8';
-                    textColorPicker.value = '#4a4a4a';
-                    navbarColorPicker.value = '#e3a6e2';
-                    break;
-                case 'redvapor':
-                    backgroundImageInput.value = '../assets/background/red-vaporwave.png';
-                    fontFamilySelect.value = 'Arial';
-                    themeColorPicker.value = '#ff0000';
-                    textColorPicker.value = '#ffffff';
-                    navbarColorPicker.value = '#570000';
-                    break;
-                case 'bluevapor':
-                    backgroundImageInput.value = '../assets/background/vaporwave-blue.png';
-                    fontFamilySelect.value = 'Verdana';
-                    themeColorPicker.value = '#003468';
-                    textColorPicker.value = '#ffffff';
-                    navbarColorPicker.value = '#003468';
-                    break;
-                case 'calm':
-                    backgroundImageInput.value = '../assets/background/calm.png';
-                    fontFamilySelect.value = 'Georgia';
-                    themeColorPicker.value = '#91caff';
-                    textColorPicker.value = '#ffffff';
-                    navbarColorPicker.value = '#004d66';
-                    break;
-                case 'collab':
-                    backgroundImageInput.value = '../assets/background/collab.png';
-                    fontFamilySelect.value = 'Times New Roman';
-                    themeColorPicker.value = '#007cf8';
-                    textColorPicker.value = '#ffffff';
-                    navbarColorPicker.value = '#003366';
-                    break;
-                default:
-                    break;
+            // Listen for changes to inputs to update preview live
+            backgroundImageInput.addEventListener('input', updatePreview);
+            fontFamilySelect.addEventListener('change', updatePreview);
+            themeColorPicker.addEventListener('input', updatePreview);
+            textColorPicker.addEventListener('input', updatePreview);
+            navbarColorPicker.addEventListener('input', updatePreview);
+
+            // Load saved preferences from localStorage if available
+            if (localStorage.getItem('bgImage')) {
+                backgroundImageInput.value = localStorage.getItem('bgImage');
             }
-            updatePreview(); // Update the preview immediately when a preset theme is selected
-        });
-    });
-});
+            if (localStorage.getItem('fontFamily')) {
+                fontFamilySelect.value = localStorage.getItem('fontFamily');
+            }
+            if (localStorage.getItem('themeColor')) {
+                themeColorPicker.value = localStorage.getItem('themeColor');
+            }
+            if (localStorage.getItem('textColor')) {
+                textColorPicker.value = localStorage.getItem('textColor');
+            }
+            if (localStorage.getItem('navbarColor')) {
+                navbarColorPicker.value = localStorage.getItem('navbarColor');
+            }
 
+            updatePreview();
+            applyCustomizations();
+        });
     </script>
 </body>
 </html>

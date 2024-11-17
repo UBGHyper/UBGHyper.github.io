@@ -96,11 +96,12 @@
             justify-content: space-between;
             align-items: center;
             background-color: var(--navbar-bg);
-            padding: 0px 30px;
+            padding: 10px 0px;
             position: sticky;
             top: 0;
             z-index: 10;
             border-bottom: 2px solid #444;
+            height: 60px; /* Ensure navbar height stays consistent */
         }
 
         .navbar .logo h2 {
@@ -131,6 +132,45 @@
             color: var(--link-color);
         }
 
+        /* Search Bar Styling */
+        .search-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .search-box {
+            position: relative;
+            width: 250px;
+            height: 35px;
+            border-radius: 20px;
+            background-color: var(--navbar-bg);
+            display: flex;
+            align-items: center;
+            padding: 0 10px;
+            transition: width 0.3s ease;
+        }
+
+        .search-box input {
+            border: none;
+            outline: none;
+            background: transparent;
+            color: var(--text-colour);
+            font-size: 16px;
+            width: 100%;
+            padding: 5px 0;
+            border-radius: 20px;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input::placeholder {
+            color: #aaa;
+        }
+
+        .search-box input:focus {
+            width: 180px;
+            padding: 0 10px;
+        }
 
         /* Toggle Switch Styles */
         .toggle {
@@ -251,7 +291,6 @@
                 <span></span>
             </div>
         </div>
-
 
         <!-- Theme Toggle -->
         <div class="toggle-group">
