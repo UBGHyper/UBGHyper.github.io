@@ -1,0 +1,10 @@
+/* global.css */
+:root {
+    --bg-color: #333;
+    --text-color: #fff;
+    --link-color: #ff8500;
+    --navbar-bg: #111;
+    --font-family: 'Poppins', sans-serif;
+    /* other variables */
+}
+
