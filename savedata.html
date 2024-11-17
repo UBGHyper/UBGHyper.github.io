@@ -240,6 +240,9 @@
             margin-right: 10px;
         }
 
+        .edit-mode {
+            background-color: #ffefdb;
+        }
     </style>
 </head>
 <body>
@@ -302,7 +305,6 @@
     </div>
 
     <script>
-
         // Function to get and display the LocalStorage data
         function displayLocalStorage() {
             const localStorageData = JSON.stringify(localStorage, null, 2);
@@ -326,11 +328,28 @@
                 const saveEntry = document.createElement("div");
                 saveEntry.classList.add('game-save-entry');
                 saveEntry.innerHTML = `
-                    <input class="edit-text" id="input-${gameSaveKey}" value="${gameSaveData}" />
+                    <input class="edit-text" id="input-${gameSaveKey}" value="${gameSaveData}" disabled />
+                    <button onclick="toggleEdit('${gameSaveKey}')">Edit</button>
                     <button onclick="saveGameData('${gameSaveKey}')">Save</button>
                 `;
                 gameDataContainer.appendChild(saveEntry);
             });
+        }
+
+        // Function to toggle between edit and view mode
+        function toggleEdit(gameSaveKey) {
+            const inputField = document.getElementById(`input-${gameSaveKey}`);
+            const button = inputField.nextElementSibling;
+            
+            if (inputField.disabled) {
+                inputField.disabled = false;
+                button.textContent = "Cancel";
+                inputField.classList.add('edit-mode');
+            } else {
+                inputField.disabled = true;
+                button.textContent = "Edit";
+                inputField.classList.remove('edit-mode');
+            }
         }
 
         // Function to save the edited game data back to localStorage
@@ -407,28 +426,27 @@
         displayCookies();
         displayGameData();
 
+        const themeToggle = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('theme') || 'light';
 
-            const themeToggle = document.getElementById('themeToggle');
-            const currentTheme = localStorage.getItem('theme') || 'light';
+        // Set initial theme
+        if (currentTheme === 'dark') {
+            document.body.classList.add('dark-mode');
+            themeToggle.checked = true;
+        } else {
+            document.body.classList.remove('dark-mode');
+            themeToggle.checked = false;
+        }
 
-            // Set initial theme
-            if (currentTheme === 'dark') {
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
                 document.body.classList.add('dark-mode');
-                themeToggle.checked = true;
+                localStorage.setItem('theme', 'dark');
             } else {
                 document.body.classList.remove('dark-mode');
-                themeToggle.checked = false;
+                localStorage.setItem('theme', 'light');
             }
-
-            themeToggle.addEventListener('change', () => {
-                if (themeToggle.checked) {
-                    document.body.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.body.classList.remove('dark-mode');
-                    localStorage.setItem('theme', 'light');
-                }
-            });
+        });
     </script>
 
 </body>
