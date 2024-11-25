@@ -581,6 +581,13 @@
     "credits": "Developed by Flipline Studios"
   },
   {
+    "name": "Papas Cheeseria",
+    "image": "papascheeseria.jpg",
+    "url": "Papas-Cheese",
+    "new": false,
+    "credits": "Developed by Flipline Studios"
+  },
+  {
     "name": "Papas Wingeria",
     "image": "papaswingeria.png",
     "url": "Papas-Wing",
