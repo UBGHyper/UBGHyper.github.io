@@ -567,39 +567,46 @@
     "credits": "Developed by Juicy Beast"
   },
   {
+    "name": "Papas Burgeria",
+    "image": "papas-burgeria.jpg",
+    "url": "Papas-Burg",
+    "new": false,
+    "credits": "Developed by Flipline Studios"
+  },
+  {
     "name": "Papas Wingeria",
     "image": "papaswingeria.png",
     "url": "Papas-Wing",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Flipline Studios"
   },
   {
     "name": "Papas Pancakeria",
     "image": "papaspancakeria.png",
     "url": "Papas-PnCk",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Flipline Studios"
   },
   {
     "name": "Papas Pasteria",
     "image": "papaspasteria.png",
     "url": "Papas-Pasta",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Flipline Studios"
   },
   {
     "name": "Papa Louie 1",
     "image": "papalouie1.png",
     "url": "Papas-Louie-1",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Flipline Studios"
   },
   {
     "name": "Papa Louie 2",
     "image": "papalouie2.png",
     "url": "Papas-Louie-2",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Flipline Studios"
   },
   {
     "name": "Binding of Isaac",
