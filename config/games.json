@@ -21,6 +21,13 @@
     "credits": "Developed by Kewlbox"
   },
   {
+    "name": "Block Blast",
+    "image": "block-blast.png",
+    "url": "Block-Blast"
+    "new": false,
+    "credits": "Developed by "
+  },
+  {
     "name": "Bloons TD 4",
     "image": "btd4.png",
     "url": "BTD-4",
