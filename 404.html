@@ -130,6 +130,34 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+    function applyCustomizations(customizations) {
+        document.documentElement.style.setProperty('--font-family', customizations.fontFamily);
+        document.documentElement.style.setProperty('--text-color', customizations.textColor);
+        document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor);
+
+        document.body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
+        document.body.style.fontFamily = customizations.fontFamily;
+        document.body.style.color = customizations.textColor;
+        document.querySelector('.navbar').style.backgroundColor = customizations.navbarColor;
+
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.style.color = customizations.themeColor;
+        });
+        document.querySelectorAll('.button-container button').forEach(button => {
+            button.style.backgroundColor = customizations.themeColor;
+        });
+    }
+
+    function loadSettings() {
+        const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
+        if (savedSettings) {
+            applyCustomizations(savedSettings);
+        }
+    }
+
+    loadSettings();
+});
         const words = ["FOUROFOUR", "LOST", "HYPER", "GAMES", "WOBILLIAM"];
         let mysteryWord, guessedLetters, attempts, correctGuesses;
 

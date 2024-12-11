@@ -1,705 +1,701 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UBG Hyper</title>
-    <script src="../config/customize.js"></script>
-    <link rel="stylesheet" href="../config/global.css">
-    <script src="../config/main.js" type="module"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
-     crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-    <link rel="stylesheet" href="config/light.css" id="themeStyle">
-    <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
-    <script src="../config/global.js"></script>
-    <meta property="og:image" content="../assets/icons/ubghyper.ico">
-    <meta property="og:url" content="https://ubghyper.github.io/">
-    <meta property="og:site_name" content="Free, unblocked and fun games">
-    <meta name="theme-color" content="#ff8000">
-    <meta name="google-site-verification" content="Olbv8f2uRODkQ97-bibYZUUNSr2m2cfCUuH82ntbjoQ">
-    <meta property="og:description" content="Find fun, unblocked & free games here at UBGHyper.">
-    <meta name="description" content="Find fun, unblocked & free games here at UBGHyper.">
-    <meta name="author" content="UBGHyper on GitHub">   
-    <style>
-        /* Default (Light Mode) */
-        :root {
-            --bg-color: #f9f9f9;
-            --text-color: #333;
-            --link-color: #ff6600;
-            --navbar-bg: #333;
-            --navbar-link-color: #fff;
-            --carousel-bg: #fff;
-            --button-bg: #ff6600;
-            --background-image: url('../assets/background/background-white.png');
-            --font-family: 'Poppins', sans-serif;
-        }
-
-
-        body {
-  --sb-track-color: #505050;
-  --sb-thumb-color: #ff7b00;
-  --sb-size: 12px;
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>UBG Hyper</title>
+      </script>
+      <script src="../config/main.js" type="module"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
+         crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+      <link rel="stylesheet" href="config/light.css" id="themeStyle">
+      <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
+      <meta property="og:image" content="../assets/icons/ubghyper.ico">
+      <meta property="og:url" content="https://ubghyper.github.io/">
+      <meta property="og:site_name" content="Free, unblocked and fun games">
+      <meta name="theme-color" content="#ff8000">
+      <meta name="google-site-verification" content="Olbv8f2uRODkQ97-bibYZUUNSr2m2cfCUuH82ntbjoQ">
+      <meta property="og:description" content="Find fun, unblocked & free games here at UBGHyper.">
+      <meta name="description" content="Find fun, unblocked & free games here at UBGHyper.">
+      <meta name="author" content="UBGHyper on GitHub">
+      <style>
+         /* Default (Light Mode) */
+         :root {
+         --bg-color: #f9f9f9;
+         --text-color: #333;
+         --link-color: #ff6600;
+         --navbar-bg: #333;
+         --navbar-link-color: #fff;
+         --carousel-bg: #fff;
+         --button-bg: #ff6600;
+         --background-image: url('../assets/background/background-white.png');
+         --font-family: 'Poppins', sans-serif;
+         }
+         body {
+         --sb-track-color: #505050;
+         --sb-thumb-color: #ff7b00;
+         --sb-size: 12px;
+         }
+         .surprise-mode {
+         background-color: #ff00ff; /* Bright magenta or any fun color */
+         color: yellow;
+         }
+         body::-webkit-scrollbar {
+         width: var(--sb-size)
+         }
+         body::-webkit-scrollbar-track {
+         background: var(--sb-track-color);
+         border-radius: 7px;
+         }
+         body::-webkit-scrollbar-thumb {
+         background: var(--sb-thumb-color);
+         border-radius: 7px;
+         }
+         @supports not selector(::-webkit-scrollbar) {
+         body {
+         scrollbar-color: var(--sb-thumb-color)
+         var(--sb-track-color);
+         }
+         }
+         /* Dark Mode */
+         .dark-mode {
+         --bg-color: #333;
+         --text-color: #fff;
+         --link-color: #ff8500;
+         --navbar-bg: #111;
+         --navbar-link-color: #fff;
+         --carousel-bg: #222;
+         --button-bg: #ff5e00;
+         --background-image: url('../assets/background/background.png');
+         }
+         body {
+         font-family: var(--font-family);
+         margin: 0;
+         padding: 0;
+         background-color: var(--bg-color);
+         color: var(--text-color);
+         background-image: var(--background-image);
+         background-size: cover;
+         background-attachment: fixed;
+         transition: all 0.3s ease;
+         }
+         /* Global Header Styling */
+         h1, h2 {
+         color: var(--text-color);
+         }
+         a {
+         color: var(--link-color);
+         text-decoration: none;
+         }
+         a:hover {
+         text-decoration: underline;
+         }
+         .navbar {
+   display: flex;
+   justify-content: space-between;
+   align-items: center; /* Ensures items are centered vertically */
+   background-color: var(--navbar-bg);
+   padding: 3px 15px; /* Further reduce padding to make the nav bar thinner */
+   border-bottom: 2px solid #444;
+   /* Remove the sticky positioning */
+   /* position: sticky; */
+   /* top: 0; */
+   /* z-index: 10; */
 }
 
-.surprise-mode {
-    background-color: #ff00ff; /* Bright magenta or any fun color */
-    color: yellow;
+.nav-links {
+   list-style: none;
+   display: flex;
+   align-items: center; /* Center the nav links vertically */
+   gap: 20px;
+   margin: 0;
+   padding: 0;
 }
 
-body::-webkit-scrollbar {
-  width: var(--sb-size)
+.nav-links li {
+   margin: 0;
+   line-height: 1.5; /* Adjust line-height for better vertical alignment */
 }
 
-body::-webkit-scrollbar-track {
-  background: var(--sb-track-color);
-  border-radius: 7px;
+.nav-links a,
+#randomGameBtn {
+   color: var(--text-color);
+   text-decoration: none;
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 1.5; /* Adjust to align text properly */
+   background: none; /* Remove button background */
+   border: none; /* Remove button border */
+   cursor: pointer; /* Ensure cursor is pointer for button */
+   padding: 0; /* Remove any button padding */
+   margin: 0;
 }
 
-body::-webkit-scrollbar-thumb {
-  background: var(--sb-thumb-color);
-  border-radius: 7px;
-  
+.nav-links a:hover,
+#randomGameBtn:hover {
+   color: var(--navbar-link-color);
 }
-
-@supports not selector(::-webkit-scrollbar) {
-  body {
-    scrollbar-color: var(--sb-thumb-color)
-                     var(--sb-track-color);
-  }
-
-    }
-        /* Dark Mode */
-        .dark-mode {
-            --bg-color: #333;
-            --text-color: #fff;
-            --link-color: #ff8500;
-            --navbar-bg: #111;
-            --navbar-link-color: #fff;
-            --carousel-bg: #222;
-            --button-bg: #ff5e00;
-            --background-image: url('../assets/background/background.png');
-        }
-
-        body {
-            font-family: var(--font-family);
-            margin: 0;
-            padding: 0;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            background-image: var(--background-image);
-            background-size: cover;
-            background-attachment: fixed;
-            transition: all 0.3s ease;
-        }
-
-        /* Global Header Styling */
-        h1, h2 {
-            color: var(--text-color);
-        }
-
-        a {
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Navigation Bar */
-        .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--navbar-bg);
-            padding: 0px 30px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            border-bottom: 2px solid #444;
-        }
-
-        .navbar .logo h2 {
-            color: var(--navbar-link-color);
-            font-size: 20px;
-            font-weight: 600;
-        }
-
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            position: static;
-        }
-
-        .nav-links li {
-            margin: 0;
-        }
-
-        .nav-links a {
-            color: var(--navbar-link-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 18px;
-        }
-
-        .nav-links a:hover {
-            color: var(--link-color);
-        }
-
-        /* Toggle Switch Styles */
-        .toggle {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 30px;
-        }
-
-        .toggle input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-
-        .toggle-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 15px;
-        }
-
-        .toggle-slider:before {
-            position: absolute;
-            content: "";
-            height: 24px;
-            width: 24px;
-            left: 3px;
-            bottom: 3px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-
-        input:checked + .toggle-slider {
-            background-color: var(--button-bg);
-        }
-
-        input:checked + .toggle-slider:before {
-            transform: translateX(30px);
-        }
-
-/* Carousel Styles */
-.carousel {
-    padding: 20px 10px; /* Reduced padding */
-    text-align: center;
-}
-
-.carousel-container {
-    position: relative;
-    display: flex;
-    overflow: hidden;
-    border-radius: 15px;
-    background-color: var(--carousel-bg);
-    margin-top: 30px;
-    width: 80%; /* Set a smaller width for the carousel */
-    max-width: 900px; /* Optional: Limit max width */
-    margin-left: auto;
-    margin-right: auto; /* Centering the carousel */
-}
-
-.carousel-slide {
-    display: flex;
-    transition: transform 0.5s ease;
-    width: 300%; /* Three items shown at once (100% per item) */
-}
-
-.carousel-item {
-    flex: 0 0 100%; /* Ensures each item takes 100% of the container width */
-    text-align: center;
-    padding: 20px;
-    box-sizing: border-box;
-}
-
-.carousel-item img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-    border-radius: 10px;
-}
-
-.carousel-text {
-    margin-top: 20px;
-    color: var(--text-color);
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 10px;
-}
-
-.carousel-text h3 {
-    font-size: 24px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--link-color);
-}
-
-.carousel-text p {
-    font-size: 16px;
-    margin-bottom: 20px;
-    max-width: 80%;
-    margin-left: auto;
-    margin-right: auto;
-    color: #fff;
-}
-
-.carousel-controls {
-    position: absolute;
-    top: 50%;
-    left: 10px;
-    transform: translateY(-50%);
-    font-size: 30px;
-    color: #fff;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
-    padding: 10px;
-    border-radius: 50%;
-    transition: background-color 0.3s ease;
-}
-
-.carousel-controls:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
-.carousel-controls.right {
-    left: auto;
-    right: 10px;
-}
-
-/* Responsive Styles */
-@media screen and (max-width: 768px) {
-    .carousel-container {
-        width: 90%; /* Adjust to make carousel a bit smaller on mobile */
-    }
-
-    .carousel-item img {
-        width: 90%; /* Reduce image size in mobile view */
-    }
-
-    .carousel-text {
-        font-size: 14px;
-    }
-}
-
-        /* Responsive Styles */
-        @media screen and (max-width: 768px) {
-            .carousel-item img {
-                width: 90%;
-            }
-            .carousel-text {
-                font-size: 14px;
-            }
-        }
-
-        /* Game and Developer Section Styles */
-        #developers {
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .developer-box {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-            margin-top: 40px;
-        }
-
-        .developer-profile {
-            background-color: var(--carousel-bg);
-            border-radius: 15px;
-            width: 300px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .developer-img {
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .developer-info h3 {
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-
-        .developer-info p {
-            font-size: 16px;
-            margin-bottom: 15px;
-        }
-
-        .developer-info a {
-            font-size: 16px;
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .developer-info a:hover {
-            text-decoration: underline;
-        }
-
-        /* Page Layout */
-        header {
-            text-align: center;
-            padding: 80px 20px;
-        }
-
-        header h1 {
-            font-size: 36px;
-            font-weight: 700;
-        }
-
-        /* Mobile Responsiveness */
-        @media screen and (max-width: 768px) {
-            .navbar {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 1px;
-            }
-
-            .nav-links {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 15px;
-                margin-top: 15px;
-            }
-
-            .developer-box {
-                gap: 20px;
-            }
-
-            .developer-profile {
-                width: 250px;
-                margin-bottom: 20px;
-            }
-        }
-/* Changelog Section Styles */
-#changelog {
-    padding: 40px 20px;
-    text-align: center;
-    background-color: var(--carousel-bg); /* Matching the carousel background */
-    margin-top: 40px;
-    border-radius: 15px;
-    width: 70%; /* Set a fixed width (you can adjust the percentage or use px) */
-    max-width: 800px; /* Optional: Limit max width */
-    margin-left: auto; /* Center horizontally */
-    margin-right: auto; /* Center horizontally */
-}
-
-#changelog h2 {
-    font-size: 28px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: var(--text-color);
-}
-
-#changelog ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-#changelog li {
-    font-size: 16px;
-    margin-bottom: 10px;
-    color: var(--text-color);
-    text-align: left;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.changelog-mark {
-    font-weight: bold;
-    padding: 3px 8px;
-    border-radius: 5px;
-    margin-right: 10px;
-}
-
-.changelog-mark.new {
-    background-color: #28a745; /* Green for new */
-    color: white;
-}
-
-.changelog-mark.fixed {
-    background-color: #ffc107; /* Yellow for fixed */
-    color: white;
-}
-
-.changelog-mark.removed {
-    background-color: #dc3545; /* Red for removed */
-    color: white;
-}
-
-/* Responsive Adjustments for Changelog */
-@media screen and (max-width: 768px) {
-    #changelog h2 {
-        font-size: 24px;
-    }
-    #changelog li {
-        font-size: 14px;
-    }
-}
-
-
-/* Responsive Adjustments for Changelog */
-@media screen and (max-width: 768px) {
-    #changelog h2 {
-        font-size: 24px;
-    }
-    #changelog li {
-        font-size: 14px;
-    }
-}
-
-    </style>
-</head>
-<body>
-
-    <!-- Navigation Bar -->
-<!-- Navigation Bar -->
-<nav class="navbar">
-    <div class="logo" style="display: flex; align-items: center;">
-        <!-- Logo Image -->
-        <img src="../assets/icons/ubghyper.ico" alt="Logo" style="height: 30px; margin-right: 10px;">
-        <h2>UBGHyper</h2>
-    </div>
-    <ul class="nav-links">
-        <li><a href="https://ubghyper.github.io/">Home</a></li>
-        <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
-        <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
-        <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
-        <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
-    </ul>
-
-    <!-- Theme Toggle -->
-    <div class="toggle-group">
-        <label class="toggle" aria-label="Toggle theme">
+         /* Toggle Switch Styles */
+         .toggle {
+         position: relative;
+         display: inline-block;
+         width: 60px;
+         height: 30px;
+         }
+         .toggle input {
+         opacity: 0;
+         width: 0;
+         height: 0;
+         }
+         .toggle-slider {
+         position: absolute;
+         cursor: pointer;
+         top: 0;
+         left: 0;
+         right: 0;
+         bottom: 0;
+         background-color: #ccc;
+         transition: .4s;
+         border-radius: 15px;
+         }
+         .toggle-slider:before {
+         position: absolute;
+         content: "";
+         height: 24px;
+         width: 24px;
+         left: 3px;
+         bottom: 3px;
+         background-color: white;
+         transition: .4s;
+         border-radius: 50%;
+         }
+         input:checked + .toggle-slider {
+         background-color: var(--button-bg);
+         }
+         input:checked + .toggle-slider:before {
+         transform: translateX(30px);
+         }
+         /* Carousel Styles */
+         .carousel {
+         padding: 20px 10px; /* Reduced padding */
+         text-align: center;
+         }
+         .carousel-container {
+         position: relative;
+         display: flex;
+         overflow: hidden;
+         border-radius: 15px;
+         background-color: var(--carousel-bg);
+         margin-top: 30px;
+         width: 80%; /* Set a smaller width for the carousel */
+         max-width: 900px; /* Optional: Limit max width */
+         margin-left: auto;
+         margin-right: auto; /* Centering the carousel */
+         }
+         .carousel-slide {
+         display: flex;
+         transition: transform 0.5s ease;
+         width: 300%; /* Three items shown at once (100% per item) */
+         }
+         .carousel-item {
+         flex: 0 0 100%; /* Ensures each item takes 100% of the container width */
+         text-align: center;
+         padding: 20px;
+         box-sizing: border-box;
+         }
+         .carousel-item img {
+         width: 100%;
+         height: auto;
+         object-fit: cover;
+         border-radius: 10px;
+         }
+         .carousel-text {
+         margin-top: 20px;
+         color: var(--text-color);
+         background-color: rgba(0, 0, 0, 0.5);
+         padding: 10px;
+         border-radius: 10px;
+         }
+         .carousel-text h3 {
+         font-size: 24px;
+         font-weight: 600;
+         margin-bottom: 10px;
+         color: var(--link-color);
+         }
+         .carousel-text p {
+         font-size: 16px;
+         margin-bottom: 20px;
+         max-width: 80%;
+         margin-left: auto;
+         margin-right: auto;
+         color: #fff;
+         }
+         .carousel-controls {
+         position: absolute;
+         top: 50%;
+         left: 10px;
+         transform: translateY(-50%);
+         font-size: 30px;
+         color: #fff;
+         cursor: pointer;
+         background-color: rgba(0, 0, 0, 0.5);
+         padding: 10px;
+         border-radius: 50%;
+         transition: background-color 0.3s ease;
+         }
+         .carousel-controls:hover {
+         background-color: rgba(0, 0, 0, 0.7);
+         }
+         .carousel-controls.right {
+         left: auto;
+         right: 10px;
+         }
+         /* Responsive Styles */
+         @media screen and (max-width: 768px) {
+         .carousel-container {
+         width: 90%; /* Adjust to make carousel a bit smaller on mobile */
+         }
+         .carousel-item img {
+         width: 90%; /* Reduce image size in mobile view */
+         }
+         .carousel-text {
+         font-size: 14px;
+         }
+         }
+         /* Responsive Styles */
+         @media screen and (max-width: 768px) {
+         .carousel-item img {
+         width: 90%;
+         }
+         .carousel-text {
+         font-size: 14px;
+         }
+         }
+         /* Game and Developer Section Styles */
+         #developers {
+         padding: 40px 20px;
+         text-align: center;
+         }
+         .developer-box {
+         display: flex;
+         justify-content: center;
+         gap: 40px;
+         flex-wrap: wrap;
+         margin-top: 40px;
+         }
+         .developer-profile {
+         background-color: var(--carousel-bg);
+         border-radius: 15px;
+         width: 300px;
+         padding: 20px;
+         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+         text-align: center;
+         }
+         .developer-img {
+         width: 100px;
+         height: 100px;
+         border-radius: 50%;
+         margin-bottom: 15px;
+         }
+         .developer-info h3 {
+         font-size: 20px;
+         margin-bottom: 10px;
+         }
+         .developer-info p {
+         font-size: 16px;
+         margin-bottom: 15px;
+         }
+         .developer-info a {
+         font-size: 16px;
+         color: var(--link-color);
+         text-decoration: none;
+         }
+         .developer-info a:hover {
+         text-decoration: underline;
+         }
+         /* Page Layout */
+         header {
+         text-align: center;
+         padding: 80px 20px;
+         }
+         header h1 {
+         font-size: 36px;
+         font-weight: 700;
+         }
+         /* Mobile Responsiveness */
+         @media screen and (max-width: 768px) {
+         .navbar {
+         flex-direction: column;
+         align-items: flex-start;
+         padding: 1px;
+         }
+         .nav-links {
+         flex-direction: column;
+         align-items: flex-start;
+         gap: 15px;
+         margin-top: 15px;
+         }
+         .developer-box {
+         gap: 20px;
+         }
+         .developer-profile {
+         width: 250px;
+         margin-bottom: 20px;
+         }
+         }
+         /* Changelog Section Styles */
+         #changelog {
+         padding: 40px 20px;
+         text-align: center;
+         background-color: var(--carousel-bg); /* Matching the carousel background */
+         margin-top: 40px;
+         border-radius: 15px;
+         width: 70%; /* Set a fixed width (you can adjust the percentage or use px) */
+         max-width: 800px; /* Optional: Limit max width */
+         margin-left: auto; /* Center horizontally */
+         margin-right: auto; /* Center horizontally */
+         }
+         #changelog h2 {
+         font-size: 28px;
+         font-weight: 700;
+         margin-bottom: 20px;
+         color: var(--text-color);
+         }
+         #changelog ul {
+         list-style-type: none;
+         padding: 0;
+         }
+         #changelog li {
+         font-size: 16px;
+         margin-bottom: 10px;
+         color: var(--text-color);
+         text-align: left;
+         max-width: 600px;
+         margin-left: auto;
+         margin-right: auto;
+         }
+         .changelog-mark {
+         font-weight: bold;
+         padding: 3px 8px;
+         border-radius: 5px;
+         margin-right: 10px;
+         }
+         .changelog-mark.new {
+         background-color: #28a745; /* Green for new */
+         color: white;
+         }
+         .changelog-mark.fixed {
+         background-color: #ffc107; /* Yellow for fixed */
+         color: white;
+         }
+         .changelog-mark.removed {
+         background-color: #dc3545; /* Red for removed */
+         color: white;
+         }
+         /* Responsive Adjustments for Changelog */
+         @media screen and (max-width: 768px) {
+         #changelog h2 {
+         font-size: 24px;
+         }
+         #changelog li {
+         font-size: 14px;
+         }
+         }
+         /* Responsive Adjustments for Changelog */
+         @media screen and (max-width: 768px) {
+         #changelog h2 {
+         font-size: 24px;
+         }
+         #changelog li {
+         font-size: 14px;
+         }
+         }
+         button {
+         padding: 15px 25px;
+         font-size: 16px;
+         background-color: var(--button-bg);
+         border: none;
+         border-radius: 5px;
+         color: white;
+         cursor: pointer;
+         transition: background-color 0.3s, box-shadow 0.3s, transform 0.3s;
+         outline: none;
+         /* New styles */
+         background-image: linear-gradient(to right, #ff6600, #ff9500);
+         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+         }
+         button:hover {
+         background-color: #ff7b00;
+         box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.15);
+         transform: translateY(-2px);
+         }
+         button:active {
+         transform: translateY(0px);
+         box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+         }
+      </style>
+   </head>
+   <body>
+      <!-- Navigation Bar -->
+      <!-- Navigation Bar -->
+      <nav class="navbar">
+         <div class="logo" style="display: flex; align-items: center;">
+            <!-- Logo Image -->
+            <h2>UBGHyper</h2>
+         </div>
+         <ul class="nav-links">
+            <li><a href="https://ubghyper.github.io/">Home</a></li>
+            <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
+            <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
+            <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+            <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
+            <button id="randomGameBtn">Random</button>
+         </ul>
+         <!-- Theme Toggle -->
+         <div class="toggle-group">
+            <label class="toggle" aria-label="Toggle theme">
             <input type="checkbox" id="themeToggle">
             <span class="toggle-slider"></span>
-        </label>
-    </div>
-</nav>
-
-
-    <!-- Welcome Title -->
-    <header>
-        <h1>Welcome to <span style="color: #ff6600;">UBG</span>Hyper</h1>
-        <p>Discover the best free online games in one place!</p>
-    </header>
-
-    <!-- Game Carousel Section -->
-    <section id="carousel" class="carousel">
-        <div class="carousel-container">
+            </label>
+         </div>
+      </nav>
+      <!-- Welcome Title -->
+      <header>
+         <h1>Welcome to <span style="color: #ff6600;">UBG</span>Hyper</h1>
+         <p>Discover the best free online games in one place!</p>
+      </header>
+      <!-- Game Carousel Section -->
+      <section id="carousel" class="carousel">
+         <div class="carousel-container">
             <div class="carousel-slide">
-                <div class="carousel-item">
-                    <img src="../assets/images/carousel/drivemad.jpg" alt="Drive Mad">
-                    <div class="carousel-text">
-                        <h3>Drive Mad</h3>
-                        <p>Drive Mad is a physics-based driving game where players control a quirky vehicle through increasingly difficult courses filled with obstacles, ramps, and jumps. With simple controls and unpredictable mechanics, it challenges players to navigate wild terrains while avoiding crashes while trying to reach the finish line.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../assets/images/carousel/burritobison.jpg" alt="Burrito Bison">
-                    <div class="carousel-text">
-                        <h3>Burrito Bison</h3>
-                        <p>Burrito Bison is an action-packed, quirky game where you play as a luchador bear, launching yourself through candy-filled landscapes to smash through enemies and collect upgrades. With fast-paced gameplay, epic combos, and hilarious visuals, you’ll battle your way through levels to defeat the evil gummies and escape the candy world.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="../assets/images/carousel/dontescape3.jpg" alt="Dont Escape 3">
-                    <div class="carousel-text">
-                        <h3>Dont Escape 3</h3>
-                        <p>Don’t Escape 3 is a tense, point-and-click adventure where you must solve puzzles and make crucial decisions to survive an impending doom. Set in a ruined spaceship, you must carefully plan your actions to avoid disaster and escape the terrifying consequences of your choices.</p>
-                    </div>
-                </div>
+               <div class="carousel-item">
+                  <img src="../assets/images/carousel/drivemad.jpg" alt="Drive Mad">
+                  <div class="carousel-text">
+                     <h3>Drive Mad</h3>
+                     <p>Drive Mad is a physics-based driving game where players control a quirky vehicle through increasingly difficult courses filled with obstacles, ramps, and jumps. With simple controls and unpredictable mechanics, it challenges players to navigate wild terrains while avoiding crashes while trying to reach the finish line.</p>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <img src="../assets/images/carousel/burritobison.jpg" alt="Burrito Bison">
+                  <div class="carousel-text">
+                     <h3>Burrito Bison</h3>
+                     <p>Burrito Bison is an action-packed, quirky game where you play as a luchador bear, launching yourself through candy-filled landscapes to smash through enemies and collect upgrades. With fast-paced gameplay, epic combos, and hilarious visuals, you’ll battle your way through levels to defeat the evil gummies and escape the candy world.</p>
+                  </div>
+               </div>
+               <div class="carousel-item">
+                  <img src="../assets/images/carousel/dontescape3.jpg" alt="Dont Escape 3">
+                  <div class="carousel-text">
+                     <h3>Dont Escape 3</h3>
+                     <p>Don’t Escape 3 is a tense, point-and-click adventure where you must solve puzzles and make crucial decisions to survive an impending doom. Set in a ruined spaceship, you must carefully plan your actions to avoid disaster and escape the terrifying consequences of your choices.</p>
+                  </div>
+               </div>
             </div>
             <span class="carousel-controls left">&#10094;</span>
             <span class="carousel-controls right">&#10095;</span>
-        </div>
-    </section>
-<!-- Changelog Section -->
-<section id="changelog">
-    <h2>Changelog v1.2</h2>
-    <ul>
-        <li><span class="changelog-mark new">New</span> Added a home screen.</li>
-        <li><span class="changelog-mark fixed">Fixed</span> Fixed UI bugs with the in game fixed bar</li>
-        <li><span class="changelog-mark removed">Removed</span> Removed original homepage and renamed as "games.html".</li>
-        <li><span class="changelog-mark fixed">Fixed</span> Made games.html fit better with the general theme (navbar).</li>
-        <li><span class="changelog-mark new">New</span> Added a contact page.</li>
-        <li><span class="changelog-mark new">New</span> Added a customize page.</li>
-        <li><span class="changelog-mark new">New</span> Added a nav bar for better cross page functionality.</li>
-        <li><span class="changelog-mark new">New</span> Added a custom scoll bar.</li>
-        <li><span class="changelog-mark new">New</span> Added a page to edit your save data.</li>
-        <li><span class="changelog-mark fixed">Fixed</span> Fixed the customize option (making it universal).</li>
-        <li><span class="changelog-mark new">New</span> Added secrets????!! 🤫</li>
-        <li><span class="changelog-mark new">New</span> Gave the 404 screen some more pizaz.</li>
-        <li><span class="changelog-mark removed">Removed</span> Removed webcounter.php (didnt work).</li>
-        <li><span class="changelog-mark new">New</span> Added a debug page (to make my life easier).</li>
+         </div>
+      </section>
+      <!-- Changelog Section -->
+      <section id="changelog">
+         <h2>Changelog v1.3</h2>
+         <ul>
+            <li><span class="changelog-mark fixed">Fixed</span> Fixed the customize page!!! (made it apply universally)</li>
+            <li><span class="changelog-mark new">New</span> Added more customization presets.</li>
+            <li><span class="changelog-mark fixed">Fixed</span> Fixed some weird errors with savedata and cusomize</li>
 
-
-
-
-        <!-- Add more changelog items as needed -->
-    </ul>
-</section>
-
-    <!-- Developer Section -->
-    <section id="developers">
-        <h2>Meet the Developers</h2>
-        <div class="developer-box">
+            <!-- Add more changelog items as needed -->
+         </ul>
+      </section>
+      <!-- Developer Section -->
+      <section id="developers">
+         <h2>Developers</h2>
+         <div class="developer-box">
             <div class="developer-profile">
-                <img src="../assets/icons/fibble.png" alt="Fibble" class="developer-img">
-                <div class="developer-info">
-                    <h3>Fibble</h3>
-                    <p>I make html stuff and have dabbled in a bit of minecraft modding and datapack production. Feel free to send me an email at Evest356@gmail.com</p>
-                    <a href="https://github.com/UBGHyper" target="_blank">GitHub Profile</a>
-                </div>
+               <img src="../assets/icons/fibble.png" alt="Fibble" class="developer-img">
+               <div class="developer-info">
+                  <h3>Fibble</h3>
+                  <p>🦅🦅🦅</p>
+                  <a href="https://github.com/UBGHyper" target="_blank">GitHub Profile</a>
+               </div>
             </div>
             <div class="developer-profile">
-                <img src="../assets/icons/merp.png" alt="Merp" class="developer-img">
-                <div class="developer-info">
-                    <h3>Merp</h3>
-                    <p>Here because bored.</p>
-                    <a href="https://github.com/gitboui" target="_blank">GitHub Profile</a>
-                </div>
+               <img src="../assets/icons/merp.png" alt="Merp" class="developer-img">
+               <div class="developer-info">
+                  <h3>Merp</h3>
+                  <p>I dont really know, I dont care</p>
+                  <a href="https://github.com/gitboui" target="_blank">GitHub Profile</a>
+               </div>
             </div>
             <div class="developer-profile">
-                <img src="../assets/icons/fibble.png" alt="Fich" class="developer-img">
-                <div class="developer-info">
-                    <h3>Fich</h3>
-                    <p>Hi I like lionfish.</p>
-                    <a href="https://github.com/Icie-Boy" target="_blank">GitHub Profile</a>
-                </div>
+               <img src="../assets/icons/fich.png" alt="Fich" class="developer-img">
+               <div class="developer-info">
+                  <h3>Fich</h3>
+                  <p>Hi I like lionfish.</p>
+                  <a href="https://github.com/Icie-Boy" target="_blank">GitHub Profile</a>
+               </div>
             </div>
             <div class="developer-profile">
-                <img src="../assets/icons/fibble.png" alt="TreeNoTrunk" class="developer-img">
-                <div class="developer-info">
-                    <h3>TreeNoTrunk</h3>
-                    <p>I like men and little boys.</p>
-                    <a href="https://github.com/UBGHyper" target="_blank">GitHub Profile</a>
-                </div>
+               <img src="../assets/icons/TreeNoTrunk.png" alt="TreeNoTrunk" class="developer-img">
+               <div class="developer-info">
+                  <h3>TreeNoTrunk</h3>
+                  <p>👍</p>
+                  <a href="https://github.com/UBGHyper" target="_blank">GitHub Profile</a>
+               </div>
             </div>
-        </div>
-    </section>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const konamiCode = [
-                'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
-                'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'
-            ];
-            let konamiIndex = 0;
-
-            // Listen for keydown events to detect Konami Code (arrow keys)
-            document.addEventListener('keydown', (event) => {
-                if (event.key === konamiCode[konamiIndex]) {
-                    konamiIndex++;
-                    if (konamiIndex === konamiCode.length) {
-                        // Konami code is complete, trigger confetti
-                        triggerConfetti();
-                        konamiIndex = 0; // Reset the Konami code index
-                    }
-                } else {
-                    konamiIndex = 0; // Reset if the wrong key is pressed
-                }
-            });
-
-            // Function to trigger confetti
-            function triggerConfetti() {
-                confetti({
-                    particleCount: 200,
-                    spread: 70,
-                    origin: { y: 0.6 }
-                });
-            }
-
-            // Existing theme toggle functionality
-            const themeToggle = document.getElementById('themeToggle');
-            const currentTheme = localStorage.getItem('theme') || 'light';
-
-            if (currentTheme === 'dark') {
-                document.body.classList.add('dark-mode');
-                themeToggle.checked = true;
-            } else {
-                document.body.classList.remove('dark-mode');
-                themeToggle.checked = false;
-            }
-
-            themeToggle.addEventListener('change', () => {
-                if (themeToggle.checked) {
-                    document.body.classList.add('dark-mode');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    document.body.classList.remove('dark-mode');
-                    localStorage.setItem('theme', 'light');
-                }
-            });
-
-            // Carousel functionality
-            const carouselSlide = document.querySelector('.carousel-slide');
-            const prevBtn = document.querySelector('.carousel-controls.left');
-            const nextBtn = document.querySelector('.carousel-controls.right');
-
-            let counter = 0;
-            const items = document.querySelectorAll('.carousel-item');
-            const totalItems = items.length;
-
-            prevBtn.addEventListener('click', () => {
-                if (counter === 0) {
-                    counter = totalItems - 1;
-                } else {
-                    counter--;
-                }
-                carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
-            });
-
-            nextBtn.addEventListener('click', () => {
-                if (counter === totalItems - 1) {
-                    counter = 0;
-                } else {
-                    counter++;
-                }
-                carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
-            });
-        });
-
-        let toggleClickCount = 0;
-themeToggle.addEventListener('click', () => {
-    toggleClickCount++;
-    if (toggleClickCount === 15) {
-        document.body.classList.add('surprise-mode');
-        alert("Surprise theme activated!");
-        toggleClickCount = 0; // Reset count
-    }
-});
-
-const developerImg = document.querySelectorAll('.developer-img');
-developerImg.forEach(img => {
-    img.addEventListener('click', () => {
-        img.src = "../assets/icons/serious.png"; // Replace with a funny image
-        alert("You found the hidden easter egg! 🥳");
-    });
-});
-
-    </script>
-</body>
+         </div>
+      </section>
+      <script>
+         document.getElementById('randomGameBtn').addEventListener('click', () => {
+         fetch('./config/games.json')
+         .then(response => response.json())
+         .then(games => {
+             if (games.length > 0) {
+                 // Select a random game
+                 const randomIndex = Math.floor(Math.random() * games.length);
+                 const randomGame = games[randomIndex];
+         
+                 // Construct URL based on the selected random game
+                 const gameUrl = randomGame.url;
+                 
+                 // Redirect to the game page with the selected random game URL
+                 window.location.href = `./play.html?gameurl=${encodeURIComponent(gameUrl)}`;
+             } else {
+                 alert('No games available');
+             }
+         })
+         .catch(error => {
+             console.error('Error fetching games:', error);
+             alert('Error loading games');
+         });
+         });
+         document.addEventListener('DOMContentLoaded', () => {
+         function applyCustomizations(customizations) {
+         document.documentElement.style.setProperty('--font-family', customizations.fontFamily);
+         document.documentElement.style.setProperty('--text-color', customizations.textColor);
+         document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor);
+         
+         document.body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
+         document.body.style.fontFamily = customizations.fontFamily;
+         document.body.style.color = customizations.textColor;
+         document.querySelector('.navbar').style.backgroundColor = customizations.navbarColor;
+         
+         document.querySelectorAll('.navbar a').forEach(link => {
+         link.style.color = customizations.themeColor;
+         });
+         document.querySelectorAll('.button-container button').forEach(button => {
+         button.style.backgroundColor = customizations.themeColor;
+         });
+         }
+         
+         function loadSettings() {
+         const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
+         if (savedSettings) {
+         applyCustomizations(savedSettings);
+         }
+         }
+         
+         loadSettings();
+         });
+         document.addEventListener('DOMContentLoaded', () => {
+         const konamiCode = [
+         'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
+         'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight'
+         ];
+         let konamiIndex = 0;
+         
+         // Listen for keydown events to detect Konami Code (arrow keys)
+         document.addEventListener('keydown', (event) => {
+         if (event.key === konamiCode[konamiIndex]) {
+             konamiIndex++;
+             if (konamiIndex === konamiCode.length) {
+                 // Konami code is complete, trigger confetti
+                 triggerConfetti();
+                 konamiIndex = 0; // Reset the Konami code index
+             }
+         } else {
+             konamiIndex = 0; // Reset if the wrong key is pressed
+         }
+         });
+         
+         // Function to trigger confetti
+         function triggerConfetti() {
+         confetti({
+             particleCount: 200,
+             spread: 70,
+             origin: { y: 0.6 }
+         });
+         }
+         
+         // Existing theme toggle functionality
+         const themeToggle = document.getElementById('themeToggle');
+         const currentTheme = localStorage.getItem('theme') || 'light';
+         
+         if (currentTheme === 'dark') {
+         document.body.classList.add('dark-mode');
+         themeToggle.checked = true;
+         } else {
+         document.body.classList.remove('dark-mode');
+         themeToggle.checked = false;
+         }
+         
+         themeToggle.addEventListener('change', () => {
+         if (themeToggle.checked) {
+             document.body.classList.add('dark-mode');
+             localStorage.setItem('theme', 'dark');
+         } else {
+             document.body.classList.remove('dark-mode');
+             localStorage.setItem('theme', 'light');
+         }
+         });
+         
+         // Carousel functionality
+         const carouselSlide = document.querySelector('.carousel-slide');
+         const prevBtn = document.querySelector('.carousel-controls.left');
+         const nextBtn = document.querySelector('.carousel-controls.right');
+         
+         let counter = 0;
+         const items = document.querySelectorAll('.carousel-item');
+         const totalItems = items.length;
+         
+         prevBtn.addEventListener('click', () => {
+         if (counter === 0) {
+             counter = totalItems - 1;
+         } else {
+             counter--;
+         }
+         carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
+         });
+         
+         nextBtn.addEventListener('click', () => {
+         if (counter === totalItems - 1) {
+             counter = 0;
+         } else {
+             counter++;
+         }
+         carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
+         });
+         });
+         
+         let toggleClickCount = 0;
+         themeToggle.addEventListener('click', () => {
+         toggleClickCount++;
+         if (toggleClickCount === 15) {
+         document.body.classList.add('surprise-mode');
+         alert("Surprise theme activated!");
+         toggleClickCount = 0; // Reset count
+         }
+         });
+         
+         const developerImg = document.querySelectorAll('.developer-img');
+         developerImg.forEach(img => {
+         img.addEventListener('click', () => {
+         img.src = "../assets/icons/serious.png"; // Replace with a funny image
+         alert("You found the hidden easter egg! 🥳");
+         });
+         });
+         
+      </script>
+   </body>
 </html>

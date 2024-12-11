@@ -5,14 +5,14 @@
     <script src="../config/customize.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../config/global.css">
+    <script src="../js/customization.js"></script>
     <title>Manage Local Save Data - UBGHyper</title>
     <link rel="stylesheet" href="config/light.css" id="themeStyle">
     <link rel="icon" href="../assets/icons/ubghyper.ico" id="faviconLink">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
     <script src="../config/global.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>
     <meta name="theme-color" content="#ff8000">
     <meta name="google-site-verification" content="Olbv8f2uRODkQ97-bibYZUUNSr2m2cfCUuH82ntbjoQ">
     <meta property="og:description" content="Manage your local save data, cookies, and settings in UBGHyper.">
@@ -291,12 +291,12 @@
             <pre id="cookiesData"></pre>
         </div>
 
-        <!-- Game Data Section -->
-        <div class="data-section">
-            <h3>Game Data (Saved Games)</h3>
-            <div id="gameDataContainer">
-                <!-- Dynamic game saves will appear here -->
-            </div>
+
+         <div class="data-section">
+            <h3>Edit Local Storage</h3>
+            <textarea id="editLocalStorage" class="input-text" rows="10" placeholder="Edit your local storage data here..."></textarea>
+            <button onclick="updateLocalStorage()">Save Changes</button>
+        </div>
         </div>
 
         <!-- Actions Section -->
@@ -309,6 +309,35 @@
     </div>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            function applyCustomizations(customizations) {
+                document.documentElement.style.setProperty('--font-family', customizations.fontFamily);
+                document.documentElement.style.setProperty('--text-color', customizations.textColor);
+                document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor);
+
+                document.body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
+                document.body.style.fontFamily = customizations.fontFamily;
+                document.body.style.color = customizations.textColor;
+                document.querySelector('.navbar').style.backgroundColor = customizations.navbarColor;
+
+                document.querySelectorAll('.navbar a').forEach(link => {
+                    link.style.color = customizations.themeColor;
+                });
+                document.querySelectorAll('.button-container button').forEach(button => {
+                    button.style.backgroundColor = customizations.themeColor;
+                });
+            }
+
+            function loadSettings() {
+                const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
+                if (savedSettings) {
+                    applyCustomizations(savedSettings);
+                }
+            }
+
+            loadSettings();
+        });
+
         // Function to get and display the LocalStorage data
         function displayLocalStorage() {
             const localStorageData = JSON.stringify(localStorage, null, 2);
@@ -451,7 +480,59 @@
                 localStorage.setItem('theme', 'light');
             }
         });
+       // Function to get and display the LocalStorage data
+        function displayLocalStorage() {
+            const localStorageData = JSON.stringify(localStorage, null, 2);
+            document.getElementById("localStorageData").textContent = localStorageData;
+            document.getElementById("editLocalStorage").value = localStorageData;
+        }
+        
+        function updateLocalStorage() {
+    try {
+        // Parse the edited data from textarea
+        const editedData = JSON.parse(document.getElementById("editLocalStorage").value);
+
+        // Clear the entire localStorage
+        localStorage.clear();
+
+        // Iterate over the parsed object and save data to localStorage
+        for (const key in editedData) {
+            if (Object.prototype.hasOwnProperty.call(editedData, key)) {
+                localStorage.setItem(key, editedData[key]);
+            }
+        }
+
+        // Display a success message
+        alert("Local storage updated successfully!");
+        
+        // Refresh the displayed local storage data
+        displayLocalStorage();
+    } catch (error) {
+        alert("Error: Invalid JSON format. Please check the JSON structure and try again.");
+    }
+}
+
+    // Function to refresh any dynamic content or settings affected by localStorage changes
+    function refreshDynamicContent() {
+        // Example: Reload theme or other customizations if they are based on local storage
+        loadSettings(); // Assuming loadSettings function exists for applying such settings
+        // Any other components or states that depend on updated local storage should be refreshed here
+    }
+
+    // Function to get and display the LocalStorage data
+    function displayLocalStorage() {
+        const localStorageData = JSON.stringify(localStorage, null, 2);
+        document.getElementById("localStorageData").textContent = localStorageData;
+        document.getElementById("editLocalStorage").value = localStorageData;
+    }
+
+    // Initial display of data
+    document.addEventListener('DOMContentLoaded', () => {
+        displayLocalStorage();
+        // Other initialization functions
+    });
     </script>
+
 
 </body>
 </html>

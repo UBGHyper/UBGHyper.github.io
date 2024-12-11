@@ -1,273 +1,540 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-      <script src="../config/customize.js"></script>
-      <link rel="stylesheet" href="../config/global.css">
-    <script src="../config/global.js"></script>
-    <script src="../config/main.js" type="module"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
-     crossorigin="anonymous"></script>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>UBGHyper</title>
-      <link id="favicon" rel="icon" href="../assets/icons/ubghyper.ico" type="image/x-icon">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
-      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>  
-      <style>
-                 /* CSS Variables */
-                 :root {
-            --navbar-bg: #222;
-            --navbar-link-color: #fff;
-            --link-color: #ff5e00;
-            --button-bg: #ff7b00;
-         }
-         body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background-color: #f0f0f0;
-            background-image: url('../assets/background/background-white.png'); /* Default light background */
-            background-size: cover;
-            background-position: center;
-            transition: background-color 0.3s, color 0.3s, background-image 0.3s;
-         }
-         #gameFrame {
-         display: none; /* Initially hide the iframe */
-         border: 10px solid #676666;
-         border-radius: 20px;
-         background: url('../assets/background/loading.gif') center center no-repeat;
-         background-size: cover;
-         width: 950px;
-         height: 600px;
-         box-sizing: border-box;
-         position: relative;
-         }
-         #controls {
-         display: flex;
-         justify-content: space-between; /* Distribute elements evenly */
-         align-items: center;
-         background: #464646;
-         padding: 15px 30px; /* Increased padding for better spacing */
-         border-radius: 10px;
-         box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-         margin-top: 20px;
-         width: 80%;
-         max-width: 900px;
-         position: relative; /* For better alignment */
-         }
-         .styled-button {
-         background-color: #b0b0b0;
-         color: white;
-         border: none;
-         border-radius: 5px;
-         padding: 15px 25px; /* Adjusted padding */
-         text-align: center;
-         text-decoration: none;
-         font-size: 16px;
-         transition: background-color 0.3s, transform 0.3s;
-         cursor: pointer;
-         margin-right: 20px;
-         }
-         .styled-button:hover {
-         background-color: #ff5e00;
-         transform: scale(1.05);
-         }
-         #fullscreenBtn {
-         padding: 12px 22px; /* Adjusted padding */
-         font-size: 16px;
-         cursor: pointer;
-         background-color: #615f5f;
-         color: #ffffff;
-         border: none;
-         border-radius: 5px;
-         transition: background-color 0.3s;
-         }
-         #fullscreenBtn:hover {
-         background-color: #ff5405;
-         }
-         /* Game Title and Credits */
-         #gameTitle, #gameCredits {
-         font-size: 18px;
-         font-weight: 500;
-         color: white;
-         margin: 0;
-         text-align: center;
-         }
-         /* Space between game title and credits */
-         #gameTitle {
-         margin-bottom: 0px; /* Adjusted margin */
-         }
-         /* Theme Toggle */
-         .toggle {
-         position: relative;
-         display: inline-block;
-         width: 60px;
-         height: 30px;
-         margin-right: 20px; /* Space before fullscreen button */
-         }
-         .toggle input {
-         opacity: 0;
-         width: 0;
-         height: 0;
-         }
-         .toggle-slider {
-         position: absolute;
-         cursor: pointer;
-         top: 0;
-         left: 0;
-         right: 0;
-         bottom: 0;
-         background-color: #ccc;
-         transition: .4s;
-         border-radius: 15px;
-         }
-         .toggle-slider:before {
-         position: absolute;
-         content: "";
-         height: 24px;
-         width: 24px;
-         left: 3px;
-         bottom: 3px;
-         background-color: white;
-         transition: .4s;
-         border-radius: 50%;
-         }
-         input:checked + .toggle-slider {
-         background-color: #ff7b00;
-         }
-         input:checked + .toggle-slider:before {
-         transform: translateX(30px);
-         }
-         #gameTitle, #gameCredits {
-         font-size: 18px;
-         font-weight: 500;
-         color: white;
-         margin: 0 px;
-         }
-         /* Dark Theme Styles */
-         .dark-mode {
-         background-color: #333;
-         color: #fff;
-         background-image: url('../assets/background/background.png'); /* Dark background */
-         }
-         .dark-mode #controls {
-         background: #222;
-         }
-         .dark-mode #fullscreenBtn {
-         background-color: #555;
-         }
-         .dark-mode .styled-button {
-         background-color: #6f6f6f;
-         }
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UBGHyper</title>
+  
+  <!-- Styles and Scripts -->
+  <link rel="stylesheet" href="../config/global.css">
+  <link id="favicon" rel="icon" href="../assets/icons/ubghyper.ico" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300..900&family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+  <script defer src="../config/customize.js"></script>
+  <script defer src="../js/customization.js"></script>
+  <script defer src="../config/global.js"></script>
+  <script defer src="../config/main.js" type="module"></script>
 
-      </style>
-   </head>
+  <!-- Ads -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>  
 
-   <body>
-      <div style="display: flex; flex-direction: column; align-items: center;">
-         <iframe id="gameFrame" src="" frameborder="0"></iframe>
-         <div id="controls">
-            <a href="index.html" class="styled-button">Back</a>
-            <div id="gameTitle">Game Title Here</div>
-            <div id="gameCredits">Developer Name Here</div>
-            </label>
-            <button id="fullscreenBtn">Go Fullscreen</button>
-            <label class="toggle" aria-label="Toggle theme">
-               <input type="checkbox" id="themeToggle">
-               <span class="toggle-slider"></span>
-            </label>
+  <style>
+    :root {
+      --navbar-bg: #222;
+      --navbar-link-color: #fff;
+      --link-color: #ff5e00;
+      --button-bg: #ff7b00;
+    }
+    
+    body {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f0f0f0;
+      background-image: url('../assets/background/background-white.png');
+      background-size: cover;
+      background-position: center;
+      transition: background-color 0.3s, color 0.3s, background-image 0.3s;
+    }
 
-         </div>
-      </div>
-      <script>
-         // Fetch game data
-         const queryString = window.location.search;
-         const urlParams = new URLSearchParams(queryString);
-         let gameUrl = urlParams.get("gameurl");
-         
-         if (!gameUrl) {
-             alert("Game URL not provided!");
-             window.location.href = "/"; // Redirect to homepage if game URL is missing
-         } else {
-             // Remove trailing slash if it exists
-             gameUrl = gameUrl.endsWith("/") ? gameUrl.slice(0, -1) : gameUrl;
-         
-             const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
-             const embedUrl = `${serverUrl1}/${gameUrl}`;
-         
-             // Fetch game data
-             fetch("./config/games.json")
-                 .then(response => response.json())
-                 .then(data => {
-                     const gameData = data.find(game => game.url === gameUrl);
-                     if (gameData) {
-                         document.getElementById("gameTitle").innerText = gameData.name;
-                         document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
-                     } else {
-                         document.getElementById("gameTitle").innerText = "Game Not Found";
-                         document.getElementById("gameCredits").innerText = "Developer: Unknown";
-                     }
-                 })
-                 .catch(error => {
-                     console.error("Error fetching game data:", error);
-                     document.getElementById("gameTitle").innerText = "Error fetching game data";
-                     document.getElementById("gameCredits").innerText = "Developer: Unknown";
-                 });
-         
-             const gameFrame = document.getElementById("gameFrame");
-             gameFrame.src = embedUrl;
-         
-             // Show loading GIF while the iframe is loading
-             gameFrame.onload = function() {
-                 gameFrame.style.display = "block"; // Show the iframe
-             };
-         }
-         
-         
-                 // Fullscreen functionality
-                 const fullscreenBtn = document.getElementById('fullscreenBtn');
-                 fullscreenBtn.addEventListener('click', () => {
-                     const iframe = document.getElementById('gameFrame');
-                     if (iframe.requestFullscreen) {
-                         iframe.requestFullscreen();
-                     } else if (iframe.mozRequestFullScreen) { // Firefox
-                         iframe.mozRequestFullScreen();
-                     } else if (iframe.webkitRequestFullscreen) { // Chrome, Safari, Opera
-                         iframe.webkitRequestFullscreen();
-                     } else if (iframe.msRequestFullscreen) { // IE/Edge
-                         iframe.msRequestFullscreen();
-                     }
-                 });
-         
-                 // Theme toggle functionality
-                 document.addEventListener('DOMContentLoaded', () => {
-                     const themeToggle = document.getElementById('themeToggle');
-                     const currentTheme = localStorage.getItem('theme') || 'light';
-         
-                     // Set initial theme
-                     setTheme(currentTheme);
-                     themeToggle.checked = currentTheme === 'dark';
-         
-                     themeToggle.addEventListener('change', () => {
-                         const newTheme = themeToggle.checked ? 'dark' : 'light';
-                         setTheme(newTheme);
-                     });
-         
-                     function setTheme(theme) {
-                         if (theme === 'dark') {
-                             document.body.classList.add('dark-mode');
-                         } else {
-                             document.body.classList.remove('dark-mode');
-                         }
-                         localStorage.setItem('theme', theme);
-                     }
-                 });
-                 
-             
-      </script>
-   </body>
+    #gameFrame {
+      display: none;
+      border: 10px solid #676666;
+      border-radius: 20px;
+      background: url('../assets/background/loading.gif') center center no-repeat;
+      background-size: cover;
+      width: 950px;
+      height: 600px;
+      box-sizing: border-box;
+      position: relative;
+    }
+
+    #controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #464646;
+      padding: 15px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      margin-top: 20px;
+      width: 80%;
+      max-width: 900px;
+      position: relative;
+    }
+
+    .styled-button {
+      background-color: #b0b0b0;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 15px 25px;
+      text-align: center;
+      text-decoration: none;
+      font-size: 16px;
+      transition: background-color 0.3s, transform 0.3s;
+      cursor: pointer;
+      margin-right: 20px;
+    }
+
+    .styled-button:hover {
+      background-color: #ff5e00;
+      transform: scale(1.05);
+    }
+
+    #fullscreenBtn {
+      padding: 12px 22px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #615f5f;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+    }
+
+    #fullscreenBtn:hover {
+      background-color: #ff5405;
+    }
+
+    #gameTitle, #gameCredits {
+      font-size: 18px;
+      font-weight: 500;
+      color: white;
+      margin: 0;
+      text-align: center;
+    }
+
+    .toggle {
+      position: relative;
+      display: inline-block;
+      width: 60px;
+      height: 30px;
+      margin-right: 20px;
+    }
+
+    .toggle input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .toggle-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #ccc;
+      transition: .4s;
+      border-radius: 15px;
+    }
+
+    .toggle-slider:before {
+      position: absolute;
+      content: "";
+      height: 24px;
+      width: 24px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+    }
+
+    input:checked + .toggle-slider {
+      background-color: #ff7b00;
+    }
+
+    input:checked + .toggle-slider:before {
+      transform: translateX(30px);
+    }
+
+    .dark-mode {
+      background-color: #333;
+      color: #fff;
+      background-image: url('../assets/background/background.png');
+    }
+
+    .dark-mode #controls {
+      background: #222;
+    }
+
+    .dark-mode #fullscreenBtn {
+      background-color: #555;
+    }
+
+    .dark-mode .styled-button {
+      background-color: #6f6f6f;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 1000;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.5s ease, visibility 0.5s;
+    }
+
+    #overlay.show {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #recommendedGames {
+      background-color: #000000;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      max-width: 900px;
+      width: 90%;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.5s ease;
+      transform: scale(0.9);
+    }
+
+    #overlay.show #recommendedGames {
+      transform: scale(1);
+    }
+
+    #recommendedContainer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .recommended-game {
+      background-color: #ffffff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: calc(33.333% - 40px);
+      min-width: 200px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .recommended-game:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .recommended-game {
+        width: calc(50% - 40px);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .recommended-game {
+        width: 100%;
+      }
+    }
+
+    .recommended-game h4 {
+      font-size: 18px;
+      margin: 10px 0;
+      color: #333;
+    }
+
+    .recommended-game p {
+      font-size: 14px;
+      color: #666;
+    }
+
+    #arrowButton {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 50px;
+      background-color: #ff7b00;
+      border-radius: 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    #arrowButton:hover {
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      transform: translateX(-50%) translateY(-5px);
+    }
+
+    #arrowButton::after {
+      content: '';
+      border-style: solid;
+      border-width: 0 10px 10px 10px;
+      border-color: transparent transparent #fff transparent;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div style="display: flex; flex-direction: column; align-items: center;">
+    <iframe id="gameFrame" src="" frameborder="0"></iframe>
+    <div id="controls">
+      <a href="index.html" class="styled-button">Back</a>
+      <div id="gameTitle">Game Title Here</div>
+      <div id="gameCredits">Developer Name Here</div>
+      <button id="fullscreenBtn">Go Fullscreen</button>
+      <label class="toggle" aria-label="Toggle theme">
+        <input type="checkbox" id="themeToggle">
+        <span class="toggle-slider"></span>
+      </label>
+    </div>
+  </div>
+
+  <div id="arrowButton"></div>
+
+  <div id="overlay">
+    <div id="recommendedGames">
+        <h3>Recommended Games</h3> <!-- Title for the recommended games section -->
+        <div id="recommendedContainer"></div>
+    </div>
+  </div>
+
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const queryParams = new URLSearchParams(window.location.search);
+    let gameUrl = queryParams.get("gameurl");
+
+    const arrowButton = document.getElementById('arrowButton');
+    const overlay = document.getElementById('overlay');
+    const recommendedGamesDiv = document.getElementById('recommendedGames');
+
+    // Function to display recommended games
+    function displayRecommendedGames(games) {
+      const container = document.getElementById('recommendedContainer');
+      container.innerHTML = '';
+
+      games.forEach(game => {
+        const div = document.createElement('div');
+        div.className = 'recommended-game';
+        div.innerHTML = `<h4>${game.name}</h4><p>Developer: ${game.credits}</p>`;
+        container.appendChild(div);
+      });
+
+      // Show the overlay with recommended games
+      overlay.classList.add('show');
+    }
+
+    // Update game title and credits without preloading recommendations
+    function loadGameData(url) {
+      fetch('./config/games.json')
+        .then(response => response.json())
+        .then(data => {
+          const gameData = data.find(game => game.url === url);
+          if (gameData) {
+            document.getElementById("gameTitle").innerText = gameData.name;
+            document.getElementById("gameCredits").innerText = `Developer: ${gameData.credits}`;
+          } else {
+            document.getElementById("gameTitle").innerText = "Game Not Found";
+            document.getElementById("gameCredits").innerText = "Developer: Unknown";
+          }
+        })
+        .catch(error => {
+          console.error("Error fetching game data:", error);
+          document.getElementById("gameTitle").innerText = "Error fetching game data";
+          document.getElementById("gameCredits").innerText = "Developer: Unknown";
+        });
+    }
+
+    // Click event for the arrow button to show overlay with recommended games
+    arrowButton.addEventListener('click', () => {
+      fetch('./config/games.json')
+        .then(response => response.json())
+        .then(data => {
+          // Select 3 random recommended games
+          const recommendedGames = [];
+          for (let i = 0; i < 3; i++) {
+            recommendedGames.push(
+              data[Math.floor(Math.random() * data.length)]
+            );
+          }
+          displayRecommendedGames(recommendedGames);
+        })
+        .catch(error => {
+          console.error("Error fetching recommended games data:", error);
+        });
+    });
+
+    // Click event to close overlay when clicking outside of it
+    document.addEventListener('click', (event) => {
+      if (overlay.classList.contains('show') && !recommendedGamesDiv.contains(event.target) && !arrowButton.contains(event.target)) {
+        overlay.classList.remove('show');
+      }
+    });
+
+    if (!gameUrl) {
+      alert("Game URL not provided!");
+      window.location.href = "/"; // Redirect to homepage if game URL is missing
+    } else {
+      gameUrl = gameUrl.endsWith("/") ? gameUrl.slice(0, -1) : gameUrl;
+      const serverUrl1 = "https://ubghyper.github.io/GameList.github.io";
+      const embedUrl = `${serverUrl1}/${gameUrl}`;
+
+      const gameFrame = document.getElementById("gameFrame");
+      gameFrame.src = embedUrl;
+
+      gameFrame.onload = function() {
+        gameFrame.style.display = "block";
+      };
+
+      // Load the game data, but without triggering the recommendations
+      loadGameData(gameUrl);
+    }
+
+    // Fullscreen functionality
+    const fullscreenBtn = document.getElementById('fullscreenBtn');
+    fullscreenBtn.addEventListener('click', () => {
+      const iframe = document.getElementById('gameFrame');
+      if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+      }
+      // Other vendor-prefixed fullscreen methods can be added here
+    });
+
+    // Theme toggle functionality
+    const themeToggle = document.getElementById('themeToggle');
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    setTheme(currentTheme);
+    themeToggle.checked = currentTheme === 'dark';
+
+    themeToggle.addEventListener('change', () => {
+      const newTheme = themeToggle.checked ? 'dark' : 'light';
+      setTheme(newTheme);
+    });
+
+    function setTheme(theme) {
+      if (theme === 'dark') {
+        document.body.classList.add('dark-mode');
+      } else {
+        document.body.classList.remove('dark-mode');
+      }
+      localStorage.setItem('theme', theme);
+    }
+  });
+  document.addEventListener('DOMContentLoaded', () => {
+    // Common DOM elements
+    const backgroundImageInput = document.getElementById('backgroundImage');
+    const fontFamilySelect = document.getElementById('fontFamily');
+    const themeColorPicker = document.getElementById('themeColor');
+    const textColorPicker = document.getElementById('textColor');
+    const navbarColorPicker = document.getElementById('navbarColor');
+    const saveButton = document.getElementById('saveButton');
+    const resetButton = document.getElementById('resetButton');
+    const navbar = document.querySelector('.navbar');
+    const body = document.body;
+
+    const defaultValues = {
+        backgroundImage: '',
+        fontFamily: 'Poppins',
+        themeColor: '#ff6600',
+        textColor: '#333333',
+        navbarColor: '#333333'
+    };
+
+    // Load settings from local storage and apply them
+    const loadSettings = () => {
+        const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
+        
+        if (savedSettings) {
+            // Update inputs if they exist
+            if (backgroundImageInput) backgroundImageInput.value = savedSettings.backgroundImage || '';
+            if (fontFamilySelect) fontFamilySelect.value = savedSettings.fontFamily || 'Poppins';
+            if (themeColorPicker) themeColorPicker.value = savedSettings.themeColor || '#ff6600';
+            if (textColorPicker) textColorPicker.value = savedSettings.textColor || '#333333';
+            if (navbarColorPicker) navbarColorPicker.value = savedSettings.navbarColor || '#333333';
+            applyCustomizations(savedSettings);
+        } else {
+            applyCustomizations(defaultValues);
+        }
+    };
+
+    // Apply the customization settings to the page
+    const applyCustomizations = (customizations) => {
+        document.documentElement.style.setProperty('--font-family', customizations.fontFamily || 'Poppins, sans-serif');
+        document.documentElement.style.setProperty('--text-color', customizations.textColor || '#fff');
+        document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor || '#111');
+
+        body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
+        body.style.fontFamily = customizations.fontFamily || 'Poppins, sans-serif';
+        body.style.color = customizations.textColor || '#fff';
+        navbar.style.backgroundColor = customizations.navbarColor || '#111';
+
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.style.color = customizations.themeColor || '#ff8500';
+        });
+        document.querySelectorAll('.button-container button').forEach(button => {
+            button.style.backgroundColor = customizations.themeColor || '#ff5e00';
+        });
+    };
+
+    const updatePreview = () => {
+        if (backgroundImageInput) {
+            document.getElementById('backgroundPreview').style.backgroundImage = backgroundImageInput.value ? `url(${backgroundImageInput.value})` : '';
+        }
+        document.getElementById('textPreview').style.fontFamily = fontFamilySelect.value;
+        document.getElementById('textPreview').style.color = textColorPicker.value;
+        document.getElementById('backgroundPreview').style.backgroundColor = themeColorPicker.value;
+    };
+
+    const saveSettings = () => {
+        const customizations = {
+            backgroundImage: backgroundImageInput?.value || '',
+            fontFamily: fontFamilySelect?.value || 'Poppins',
+            themeColor: themeColorPicker?.value || '#ff6600',
+            textColor: textColorPicker?.value || '#333333',
+            navbarColor: navbarColorPicker?.value || '#333333'
+        };
+        localStorage.setItem('ubgCustomizations', JSON.stringify(customizations));
+        applyCustomizations(customizations);
+    };
+
+    const resetSettings = () => {
+        if (backgroundImageInput) backgroundImageInput.value = defaultValues.backgroundImage;
+        if (fontFamilySelect) fontFamilySelect.value = defaultValues.fontFamily;
+        if (themeColorPicker) themeColorPicker.value = defaultValues.themeColor;
+        if (textColorPicker) textColorPicker.value = defaultValues.textColor;
+        if (navbarColorPicker) navbarColorPicker.value = defaultValues.navbarColor;
+        updatePreview();
+        applyCustomizations(defaultValues);
+        localStorage.removeItem('ubgCustomizations');
+    };
+
+    // Event listeners for interactive elements (if they exist)
+    saveButton?.addEventListener('click', (event) => {
+        event.preventDefault();
+        saveSettings();
+    });
+
+    resetButton?.addEventListener('click', resetSettings);
+    backgroundImageInput?.addEventListener('input', updatePreview);
+    fontFamilySelect?.addEventListener('change', updatePreview);
+    themeColorPicker?.addEventListener('input', updatePreview);
+    textColorPicker?.addEventListener('input', updatePreview);
+    navbarColorPicker?.addEventListener('input', updatePreview);
+
+    // Load and apply settings initially
+    loadSettings();
+});
+  </script>
+</body>
 </html>

@@ -8,6 +8,7 @@
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
      crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../config/global.css">
+    <script src="../js/customization.js"></script>
     <script src="../config/global.js"></script>
     <link rel="stylesheet" href="config/light.css" id="themeStyle">
     <link rel="stylesheet" href="config/searchbar.css" id="themeStyle">
@@ -24,6 +25,7 @@
     <meta name="author" content="UBGHyper on GitHub">   
 
     <style>
+        
         /* Default (Light Mode) */
         :root {
             --bg-color: #f9f9f9;
@@ -94,47 +96,51 @@
             text-decoration: underline;
         }
 
-        /* Navigation Bar */
         .navbar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: var(--navbar-bg);
-            padding: 10px 0px;
-            position: sticky;
-            top: 0;
-            z-index: 10;
-            border-bottom: 2px solid #444;
-            height: 60px; /* Ensure navbar height stays consistent */
-        }
+   display: flex;
+   justify-content: space-between;
+   align-items: center; /* Ensures items are centered vertically */
+   background-color: var(--navbar-bg);
+   padding: 3px 15px; /* Further reduce padding to make the nav bar thinner */
+   border-bottom: 2px solid #444;
+   /* Remove the sticky positioning */
+   /* position: sticky; */
+   /* top: 0; */
+   /* z-index: 10; */
+}
 
-        .navbar .logo h2 {
-            color: var(--navbar-link-color);
-            font-size: 20px;
-            font-weight: 600;
-        }
+.nav-links {
+   list-style: none;
+   display: flex;
+   align-items: center; /* Center the nav links vertically */
+   gap: 20px;
+   margin: 0;
+   padding: 0;
+}
 
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            position: static;
-        }
+.nav-links li {
+   margin: 0;
+   line-height: 1.5; /* Adjust line-height for better vertical alignment */
+}
 
-        .nav-links li {
-            margin: 0;
-        }
+.nav-links a,
+#randomGameBtn {
+   color: var(--text-color);
+   text-decoration: none;
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 1.5; /* Adjust to align text properly */
+   background: none; /* Remove button background */
+   border: none; /* Remove button border */
+   cursor: pointer; /* Ensure cursor is pointer for button */
+   padding: 0; /* Remove any button padding */
+   margin: 0;
+}
 
-        .nav-links a {
-            color: var(--navbar-link-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 18px;
-        }
-
-        .nav-links a:hover {
-            color: var(--link-color);
-        }
+.nav-links a:hover,
+#randomGameBtn:hover {
+   color: var(--navbar-link-color);
+}
 
         /* Search Bar Styling */
         .search-container {
@@ -277,32 +283,26 @@
 <body>
     <nav class="navbar">
         <div class="logo" style="display: flex; align-items: center;">
-            <!-- Logo Image -->
-            <img src="../assets/icons/ubghyper.ico" alt="Logo" style="height: 30px; margin-right: 10px;">
-            <h2>UBGHyper</h2>
+           <!-- Logo Image -->
+           <h2>UBGHyper</h2>
         </div>
         <ul class="nav-links">
-            <li><a href="https://ubghyper.github.io/">Home</a></li>
-            <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
-            <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
-            <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
-            <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
+           <li><a href="https://ubghyper.github.io/">Home</a></li>
+           <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
+           <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
+           <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
+           <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
+           <button id="randomGameBtn">Random</button>
         </ul>
-
-        <div class="search-container">
-            <div class="search-box">
-                <input type="text" id="searchInput" placeholder="Search Games"/>
-                <span></span>
-            </div>
-        </div>
-
         <!-- Theme Toggle -->
         <div class="toggle-group">
-            <label class="toggle" aria-label="Toggle theme">
-                <input type="checkbox" id="themeToggle">
-                <span class="toggle-slider"></span>
-            </label>
+           <label class="toggle" aria-label="Toggle theme">
+           <input type="checkbox" id="themeToggle">
+           <span class="toggle-slider"></span>
+           </label>
         </div>
+     </nav>
+
     </nav>
     
     <div class="center">
@@ -311,6 +311,50 @@
     <div id="gamesContainer"></div>
 
     <script>
+                document.addEventListener('DOMContentLoaded', () => {
+            // Function to update last played game
+            function updateLastPlayedGame(gameName) {
+                localStorage.setItem('lastPlayedGame', gameName);
+                document.getElementById('lastPlayedGame').textContent = gameName || "None";
+            }
+
+            // Load last played game on page load
+            const lastPlayedGame = localStorage.getItem('lastPlayedGame');
+            if (lastPlayedGame) {
+                document.getElementById('lastPlayedGame').textContent = lastPlayedGame;
+            }
+
+            // Example: You need to call updateLastPlayedGame('Game Name') whenever a game is played
+            // For example, set up event listeners on game start actions
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+    function applyCustomizations(customizations) {
+        document.documentElement.style.setProperty('--font-family', customizations.fontFamily);
+        document.documentElement.style.setProperty('--text-color', customizations.textColor);
+        document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor);
+
+        document.body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
+        document.body.style.fontFamily = customizations.fontFamily;
+        document.body.style.color = customizations.textColor;
+        document.querySelector('.navbar').style.backgroundColor = customizations.navbarColor;
+
+        document.querySelectorAll('.navbar a').forEach(link => {
+            link.style.color = customizations.themeColor;
+        });
+        document.querySelectorAll('.button-container button').forEach(button => {
+            button.style.backgroundColor = customizations.themeColor;
+        });
+    }
+
+    function loadSettings() {
+        const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
+        if (savedSettings) {
+            applyCustomizations(savedSettings);
+        }
+    }
+
+    loadSettings();
+});
         document.addEventListener('DOMContentLoaded', () => {
             const themeToggle = document.getElementById('themeToggle');
             const currentTheme = localStorage.getItem('theme') || 'light';
