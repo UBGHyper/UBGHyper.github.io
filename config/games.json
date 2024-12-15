@@ -28,6 +28,20 @@
     "credits": "Developed by Ninja Kiwi"
   },
   {
+    "name": "Block Blast",
+    "image": "block-blast.png",
+    "url": "Block-Blast",
+    "new": false,
+    "credits": "Developed by Hungry Studio"
+  },
+  {
+    "name": "Basket Random",
+    "image": "basketrandom.png",
+    "url": "Basket-Random",
+    "new": false,
+    "credits": "Developed by Hungry Studio"
+  },
+  {
     "name": "Bitlife",
     "image": "bitlife.png",
     "url": "Bitlife",
@@ -154,13 +168,6 @@
     "credits": "Developed by Light Bringer Games"
   },
   {
-    "name": "Learn to Fly 3",
-    "image": "Learntofly3.jpg",
-    "url": "Learn-To-Fly-3",
-    "new": false,
-    "credits": "Developed by Light Bringer Games"
-  },
-  {
     "name": "Motherload",
     "image": "motherload.jpg",
     "url": "Motherload",
@@ -190,7 +197,7 @@
   },
   {
     "name": "Poly Track New",
-    "image": "polytrack-new.jpg",
+    "image": "polytrack.jpg",
     "url": "Polytrack-New",
     "new": false,
     "credits": "Developed by Kodub"
@@ -201,6 +208,13 @@
     "url": "Polytrack-Old",
     "new": false,
     "credits": "Developed by Kodub"
+  },
+  {
+    "name": "Poly Track Modded",
+    "image": "polytrackmodded.png",
+    "url": "Polytrack-Modded",
+    "new": false,
+    "credits": "Developed by Kodub & Fibble"
   },
   {
     "name": "Portal Flash",
@@ -253,15 +267,15 @@
   },
   {
     "name": "Submerisble",
-    "image": "submerisble.png",
-    "url": "Submerisble",
+    "image": "submersible.png",
+    "url": "Submersible",
     "new": false,
     "credits": "Developed by unknown"
   },
   {
     "name": "Super Smash Flash",
     "image": "super-smash-flash.jpg",
-    "url": "Duper-Smash-Flash",
+    "url": "Super-Smash-Flash",
     "new": false,
     "credits": "Developed by McLeodGaming"
   },
@@ -560,13 +574,6 @@
     "credits": "Developed by Juicy Beast"
   },
   {
-    "name": "Rockgarden",
-    "image": "rockgarden.png",
-    "url": "Rockgarden",
-    "new": false,
-    "credits": "Developed by Juicy Beast"
-  },
-  {
     "name": "Papas Wingeria",
     "image": "papaswingeria.png",
     "url": "Papas-Wing",
@@ -602,9 +609,9 @@
     "credits": "Developed by Juicy Beast"
   },
   {
-    "name": "Binding of Isaac",
-    "image": "bindingofisaac.jpg",
-    "url": "Binding-Of-Isaac",
+    "name": "The Binding of Isaac",
+    "image": "thebindingofisaac.png",
+    "url": "The-Binding-Of-Isaac",
     "new": false,
     "credits": "Developed by Edmund McMillen"
   },
@@ -729,14 +736,14 @@
   },
   {
     "name": "Stick Madness",
-    "image": "stick-madness.png",
+    "image": "stickmadness.png",
     "url": "Stick-Madness",
     "new": false,
     "credits": "Developed by Jason Whitman"
   },
   {
     "name": "Stick Madness 2",
-    "image": "stick-madness2.png",
+    "image": "stickmadness2.png",
     "url": "Stick-Madness-2",
     "new": false,
     "credits": "Developed by Jason Whitman"
@@ -771,7 +778,7 @@
   },
   {
     "name": "Sentry Knight",
-    "image": "sentry-knight.jpg",
+    "image": "sentryknight.png",
     "url": "Sentry-Knight",
     "new": false,
     "credits": "Developed by TylerNG"
@@ -805,13 +812,6 @@
     "credits": "Developed by Krinkels"
   },
   {
-    "name": "Madness",
-    "image": "madness.jpg",
-    "url": "Madness",
-    "new": false,
-    "credits": "Developed by Krinkels"
-  },
-  {
     "name": "Learn To Fly 3",
     "image": "learn-to-fly-3.jpg",
     "url": "Learn-To-Fly-3",
@@ -819,8 +819,29 @@
     "credits": "Developed by Light Bringer Games"
   },
   {
+    "name": "Into Space 1",
+    "image": "intospace1.png",
+    "url": "Into-Space-1",
+    "new": false,
+    "credits": "Developed by Barbarian Games"
+  },
+  {
+    "name": "Into Space 2",
+    "image": "intospace2.png",
+    "url": "Into-Space-2",
+    "new": false,
+    "credits": "Developed by Barbarian Games"
+  },
+  {
+    "name": "Into Space 3",
+    "image": "intospace3.png",
+    "url": "Into-Space-3",
+    "new": false,
+    "credits": "Developed by Barbarian Games"
+  },
+  {
     "name": "Interactive Buddy",
-    "image": "interactivebuddy.jpg",
+    "image": "interactive-buddy.png",
     "url": "Interactive-Buddy",
     "new": false,
     "credits": "Developed by shock-value"
@@ -834,21 +855,21 @@
   },
   {
     "name": "Hedgehog Launch",
-    "image": "hedgehog-launch.png",
+    "image": "hedgehoglaunch.png",
     "url": "Hedgehog-Launch",
     "new": false,
     "credits": "Developed by Armor Games"
   },
   {
     "name": "Fleeing The Complex",
-    "image": "papa-louie-1.png",
+    "image": "fleeingthecomplex.png",
     "url": "Fleeing-The-Complex",
     "new": false,
     "credits": "Developed by Puffballs United"
   },
   {
     "name": "Fat Cat",
-    "image": "fat-cat.jpg",
+    "image": "fat-cat.png",
     "url": "Fat-Cat",
     "new": false,
     "credits": "Developed by Nitrome"
@@ -856,112 +877,119 @@
   {
     "name": "Ducklife",
     "image": "ducklife.jpg",
-    "url": "Ducklife",
+    "url": "Duck-life",
     "new": false,
     "credits": "Developed by Wix Games"
   },
   {
     "name": "Ducklife 2",
     "image": "ducklife-2.jpg",
-    "url": "Ducklife-2",
+    "url": "Duck-Life-2",
     "new": false,
     "credits": "Developed by Wix Games"
   },
   {
     "name": "Ducklife 3",
-    "image": "ducklife-3.jpg",
-    "url": "Ducklife-3",
+    "image": "ducklife-3.png",
+    "url": "Duck-Life-3",
     "new": false,
     "credits": "Developed by Wix Games"
   },
   {
     "name": "Ducklife 4",
-    "image": "ducklife-4.jpg",
-    "url": "Ducklife-4",
+    "image": "ducklife4.png",
+    "url": "Duck-Life-4",
     "new": false,
     "credits": "Developed by Wix Games"
   },
   {
     "name": "Dont Whack Your Boss",
-    "image": "dont-whack-your-boss.png",
+    "image": "dontwhackyourboss.png",
     "url": "Dont-Whack-Your-Boss",
     "new": false,
     "credits": "Developed by Doodie"
   },
   {
     "name": "Dig To China",
-    "image": "dig-to-china.png",
+    "image": "digtochina.png",
     "url": "Dig-To-China",
     "new": false,
     "credits": "Developed by Armor Games"
   },
   {
     "name": "Crush The Castle",
-    "image": "crush-the-castle.jpg",
+    "image": "crushthecastle.png",
     "url": "Crush-The-Castle",
     "new": false,
     "credits": "Developed by Armor Games"
   },
   {
     "name": "Crush The Castle 2",
-    "image": "crush-the-castle2.jpg",
+    "image": "crushthecastle2.png",
     "url": "Crush-The-Castle-2",
     "new": false,
     "credits": "Developed by Armor Games"
   },
   {
-    "name": "Computer Bashing",
-    "image": "computer-bashing.jpg",
-    "url": "Computer-Bashing",
-    "new": false,
-    "credits": "Developed by Cool Math Games"
-  },
-  {
     "name": "Clicker Heroes",
-    "image": "clicker-heroes.png",
+    "image": "clickerheroes.png",
     "url": "Clicker-Heroes",
     "new": false,
     "credits": "Developed by Playsaurus"
   },
   {
     "name": "Canabalt",
-    "image": "canabalt.jpg",
+    "image": "canabalt.png",
     "url": "Canabalt",
     "new": false,
     "credits": "Developed by Adam Saltsman"
   },
   {
     "name": "Cactus McCoy 2",
-    "image": "canabalt.png",
+    "image": "cactusmccoy2.png",
     "url": "Cactus-McCoy-2",
     "new": false,
     "credits": "Developed by Flipline"
   },
   {
     "name": "Age Of War",
-    "image": "age-of-war.jpg",
+    "image": "ageofwar.png",
     "url": "Age-Of-War",
     "new": false,
     "credits": "Developed by Louissi"
   },
   {
     "name": "Age Of War 2",
-    "image": "age-of-war2.jpg",
+    "image": "age-of-war-2.jpg",
     "url": "Age-Of-War-2",
     "new": false,
     "credits": "Developed by Louissi"
   },
   {
     "name": "Achievement Unlocked",
-    "image": "achievement-unlocked.jpg",
+    "image": "achievementunlocked.png",
     "url": "Achievement-Unlocked",
     "new": false,
     "credits": "Developed by John Cooney"
   },
   {
     "name": "Achievement Unlocked 2",
-    "image": "achievement-unlocked-2.jpg",
+    "image": "achievementunlocked2.png",
     "url": "Achievement-Unlocked-2",
+    "new": false,
+    "credits": "Developed by John Cooney"
+  },
+  {
+    "name": "Achievement Unlocked 3",
+    "image": "achievementunlocked3.png",
+    "url": "Achievement-Unlocked-3",
+    "new": false,
+    "credits": "Developed by John Cooney"
+  },
+  {
+    "name": "Mini Metro",
+    "image": "minimetro.png",
+    "url": "Achievement-Unlocked-3",
     "new": false,
     "credits": "Developed by John Cooney"
   },
@@ -1300,12 +1328,5 @@
         "url": "Jacksmith",
         "new": false,
         "credits": "Developed by Flipline Studios"
-      },
-      {
-        "name": "Achievement Unlocked 3",
-        "image": "achievement-unlocked-3.jpg",
-        "url": "Achievement-Unlocked-3",
-        "new": false,
-        "credits": "Developed by John Cooney"
       }
     ]
