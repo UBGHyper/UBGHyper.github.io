@@ -28,20 +28,6 @@
     "credits": "Developed by Ninja Kiwi"
   },
   {
-    "name": "Block Blast",
-    "image": "block-blast.png",
-    "url": "Block-Blast",
-    "new": false,
-    "credits": "Developed by Hungry Studio"
-  },
-  {
-    "name": "Basket Random",
-    "image": "basketrandom.png",
-    "url": "Basket-Random",
-    "new": false,
-    "credits": "Developed by Hungry Studio"
-  },
-  {
     "name": "Bitlife",
     "image": "bitlife.png",
     "url": "Bitlife",
@@ -61,6 +47,13 @@
     "url": "Bloons-TD-5",
     "new": false,
     "credits": "Developed by Ninja Kiwi"
+  },
+  {
+    "name": "Line Rider 2",
+    "image": "linerider2.png",
+    "url": "Line-Rider-2",
+    "new": false,
+    "credits": "Developed by Boštjan Čadež"
   },
   {
     "name": "Bob The Robber",
@@ -112,9 +105,79 @@
     "credits": "Developed by M. S. Studio"
   },
   {
+    "name": "Block Blast",
+    "image": "block-blast.png",
+    "url": "Block-Blast",
+    "new": false,
+    "credits": "Developed by M. S. Studio"
+  },
+  {
+    "name": "Basket Random",
+    "image": "basketrandom.png",
+    "url": "Basket-Random",
+    "new": false,
+    "credits": "Developed by M. S. Studio"
+  },
+  {
+    "name": "Cursed Treasure 1",
+    "image": "cursedtreasure1.png",
+    "url": "Cursed-Treasure",
+    "new": false,
+    "credits": "Developed by IriySoft"
+  },
+  {
+    "name": "Cursed Treasure 2",
+    "image": "cursedtreasure2.png",
+    "url": "Cursed-Treasure-2",
+    "new": false,
+    "credits": "Developed by IriySoft"
+  },
+  {
+    "name": "Crossing the Pit",
+    "image": "crossingthepit.png",
+    "url": "Crossing-The-Pit",
+    "new": false,
+    "credits": "Developed by PuffBallsUnited"
+  },
+  {
+    "name": "Breaking The Bank",
+    "image": "breakingthebank.png",
+    "url": "Breaking-The-Bank",
+    "new": false,
+    "credits": "Developed by PuffBallsUnited"
+  },
+  {
+    "name": "Bubble Tanks TD 1",
+    "image": "bubbletanks1.png",
+    "url": "Bubble-Tanks-TD-1",
+    "new": false,
+    "credits": "Developed by Hero Interactive"
+  },
+  {
+    "name": "Bubble Tanks TD 2",
+    "image": "bubble-tanks-2.jpg",
+    "url": "Bubble-Tanks-TD-2",
+    "new": false,
+    "credits": "Developed by Hero Interactive"
+  },
+  {
+    "name": "Bubble Tanks TD Arena",
+    "image": "bubbletanksarena.png",
+    "url": "Bubble-Tanks-Arena",
+    "new": false,
+    "credits": "Developed by Hero Interactive"
+  },
+  {
     "name": "Gun Mayham 2",
     "image": "gunmayham2.png",
     "url": "Gun-Mayham-2",
+    "new": false,
+    "credits": "Developed by J. A. Games"
+  },
+  {
+    "name": "Gun Mayham Redux",
+    "image": "gunmayhamredux.png",
+    "url": "Gun-Mayham-Redux",
     "new": false,
     "credits": "Developed by J. A. Games"
   },
@@ -168,6 +231,13 @@
     "credits": "Developed by Light Bringer Games"
   },
   {
+    "name": "Learn to Fly 3",
+    "image": "Learntofly3.jpg",
+    "url": "Learn-To-Fly-3",
+    "new": false,
+    "credits": "Developed by Light Bringer Games"
+  },
+  {
     "name": "Motherload",
     "image": "motherload.jpg",
     "url": "Motherload",
@@ -203,18 +273,18 @@
     "credits": "Developed by Kodub"
   },
   {
+    "name": "Poly Track Modded",
+    "image": "polytrackmodded.png",
+    "url": "Polytrack-Modded",
+    "new": false,
+    "credits": "Developed by Kodub"
+  },
+  {
     "name": "Poly Track Old",
     "image": "polytrack-old.jpg",
     "url": "Polytrack-Old",
     "new": false,
     "credits": "Developed by Kodub"
-  },
-  {
-    "name": "Poly Track Modded",
-    "image": "polytrackmodded.png",
-    "url": "Polytrack-Modded",
-    "new": false,
-    "credits": "Developed by Kodub & Fibble"
   },
   {
     "name": "Portal Flash",
@@ -266,7 +336,7 @@
     "credits": "Developed by Ashima Prabhakar"
   },
   {
-    "name": "Submerisble",
+    "name": "Submersible",
     "image": "submersible.png",
     "url": "Submersible",
     "new": false,
@@ -610,7 +680,7 @@
   },
   {
     "name": "The Binding of Isaac",
-    "image": "thebindingofisaac.png",
+    "image": "thebindingofissac.png",
     "url": "The-Binding-Of-Isaac",
     "new": false,
     "credits": "Developed by Edmund McMillen"
@@ -784,6 +854,27 @@
     "credits": "Developed by TylerNG"
   },
   {
+    "name": "Into Space 1",
+    "image": "intospace1.png",
+    "url": "Into-Space-1",
+    "new": false,
+    "credits": "Developed by Barbarian Games"
+  },
+  {
+    "name": "Into Space 2",
+    "image": "intospace2.png",
+    "url": "Into-Space-2",
+    "new": false,
+    "credits": "Developed by Barbarian Games"
+  },
+  {
+    "name": "Into Space 3",
+    "image": "intospace3.png",
+    "url": "Into-Space-3",
+    "new": false,
+    "credits": "Developed by Barbarian Games"
+  },
+  {
     "name": "qwop",
     "image": "qwop.jpg",
     "url": "qwop",
@@ -810,34 +901,6 @@
     "url": "Madness-Project-Nexus",
     "new": false,
     "credits": "Developed by Krinkels"
-  },
-  {
-    "name": "Learn To Fly 3",
-    "image": "learn-to-fly-3.jpg",
-    "url": "Learn-To-Fly-3",
-    "new": false,
-    "credits": "Developed by Light Bringer Games"
-  },
-  {
-    "name": "Into Space 1",
-    "image": "intospace1.png",
-    "url": "Into-Space-1",
-    "new": false,
-    "credits": "Developed by Barbarian Games"
-  },
-  {
-    "name": "Into Space 2",
-    "image": "intospace2.png",
-    "url": "Into-Space-2",
-    "new": false,
-    "credits": "Developed by Barbarian Games"
-  },
-  {
-    "name": "Into Space 3",
-    "image": "intospace3.png",
-    "url": "Into-Space-3",
-    "new": false,
-    "credits": "Developed by Barbarian Games"
   },
   {
     "name": "Interactive Buddy",
@@ -877,7 +940,7 @@
   {
     "name": "Ducklife",
     "image": "ducklife.jpg",
-    "url": "Duck-life",
+    "url": "Duck-Life",
     "new": false,
     "credits": "Developed by Wix Games"
   },
@@ -904,7 +967,7 @@
   },
   {
     "name": "Dont Whack Your Boss",
-    "image": "dontwhackyourboss.png",
+    "image": "dontwackyourboss.png",
     "url": "Dont-Whack-Your-Boss",
     "new": false,
     "credits": "Developed by Doodie"
@@ -989,9 +1052,9 @@
   {
     "name": "Mini Metro",
     "image": "minimetro.png",
-    "url": "Achievement-Unlocked-3",
+    "url": "Mini-Metro",
     "new": false,
-    "credits": "Developed by John Cooney"
+    "credits": "Developed by unkown"
   },
   {
     "name": "Awesome Cars",
@@ -1031,7 +1094,7 @@
   {
     "name": "Bloxorz",
     "image": "bloxorz.jpg",
-    "url": "",
+    "url": "Bloxorz",
     "new": false,
     "credits": "Developed by Damien Clarke"
   },
@@ -1328,5 +1391,12 @@
         "url": "Jacksmith",
         "new": false,
         "credits": "Developed by Flipline Studios"
+      },
+      {
+        "name": "Achievement Unlocked 3",
+        "image": "achievement-unlocked-3.jpg",
+        "url": "Achievement-Unlocked-3",
+        "new": false,
+        "credits": "Developed by John Cooney"
       }
     ]
