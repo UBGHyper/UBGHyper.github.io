@@ -1085,13 +1085,6 @@
     "credits": "Developed by Popcap Games"
   },
   {
-    "name": "Bejeweled 2",
-    "image": "bejeweled-2.png",
-    "url": "Bejeweled-2",
-    "new": false,
-    "credits": "Developed by Popcap Games"
-  },
-  {
     "name": "Billards",
     "image": "billards.png",
     "url": "Billards",
@@ -1104,13 +1097,6 @@
     "url": "Bloxorz",
     "new": false,
     "credits": "Developed by Damien Clarke"
-  },
-  {
-    "name": "Cooking Mama",
-    "image": "cooking-mama.png",
-    "url": "Cooking-Mama",
-    "new": false,
-    "credits": "Developed by PETA"
   },
   {
     "name": "Crash Bandicoot Flash",
