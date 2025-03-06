@@ -20,16 +20,16 @@
     <style>
         /* Default (Light Mode) */
         :root {
-            --bg-color: #f9f9f9;
-            --text-color: #333;
-            --link-color: #ff6600;
-            --navbar-bg: #333;
-            --navbar-link-color: #fff;
-            --carousel-bg: #fff;
-            --button-bg: #ff6600;
-            --background-image: url('../assets/background/background-white.png');
-            --font-family: 'Poppins', sans-serif;
-        }
+         --bg-color: #000000;
+         --text-color: #1f1f1f;
+         --link-color: #ff6600;
+         --navbar-bg: #272727;
+         --navbar-link-color: #ffffff;
+         --carousel-bg: #050404;
+         --button-bg: #ff6600;
+         --background-image: url('../assets/background/background.png');
+         --font-family: 'Poppins', sans-serif;
+         }
 
         /* Dark Mode */
         .dark-mode {
@@ -247,6 +247,24 @@
         .edit-mode {
             background-color: #ffefdb;
         }
+        .nav-links a,
+#randomGameBtn {
+   color: var(--text-color);
+   text-decoration: none;
+   font-weight: 500;
+   font-size: 18px;
+   line-height: 1.5; /* Adjust to align text properly */
+   background: none; /* Remove button background */
+   border: none; /* Remove button border */
+   cursor: pointer; /* Ensure cursor is pointer for button */
+   padding: 0; /* Remove any button padding */
+   margin: 0;
+}
+
+.nav-links a:hover,
+#randomGameBtn:hover {
+   color: var(--navbar-link-color);
+}
     </style>
 </head>
 <body>
@@ -254,26 +272,17 @@
     <!-- Navigation Bar -->
     <nav class="navbar">
         <div class="logo" style="display: flex; align-items: center;">
-            <!-- Logo Image -->
-            <img src="../assets/icons/ubghyper.ico" alt="Logo" style="height: 30px; margin-right: 10px;">
-            <h2>UBGHyper</h2>
+           <!-- Logo Image -->
+           <h2>UBGHyper</h2>
         </div>
         <ul class="nav-links">
-            <li><a href="https://ubghyper.github.io/">Home</a></li>
-            <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
-            <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
-            <li><a href="https://ubghyper.github.io/contact.html">Contact</a></li>
-            <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
+           <li><a href="https://ubghyper.github.io/">Home</a></li>
+           <li><a href="https://ubghyper.github.io/games.html">Games</a></li>
+           <li><a href="https://ubghyper.github.io/customize.html">Customize</a></li>
+           <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
+           <button id="randomGameBtn">Random</button>
         </ul>
-    
-        <!-- Theme Toggle -->
-        <div class="toggle-group">
-            <label class="toggle" aria-label="Toggle theme">
-                <input type="checkbox" id="themeToggle">
-                <span class="toggle-slider"></span>
-            </label>
-        </div>
-    </nav>
+     </nav>
 
     <!-- Local Storage Management Page -->
     <div class="container">

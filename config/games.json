@@ -1066,35 +1066,35 @@
   {
     "name": "Awesome Cars",
     "image": "awesome-cars.png",
-    "url": "",
+    "url": "Awesome-Cars",
     "new": false,
     "credits": "Developed by Gametornado"
   },
   {
     "name": "Bartender The Right Mix",
     "image": "bartender-the-right-mix.jpg",
-    "url": "",
+    "url": "Bartender-The-Right-Mix",
     "new": false,
     "credits": "Developed by Liquid Night"
   },
   {
     "name": "Bejeweled",
     "image": "bejeweled.jpg",
-    "url": "",
+    "url": "Bejeweled",
     "new": false,
     "credits": "Developed by Popcap Games"
   },
   {
     "name": "Bejeweled 2",
     "image": "bejeweled-2.png",
-    "url": "",
+    "url": "Bejeweled-2",
     "new": false,
     "credits": "Developed by Popcap Games"
   },
   {
     "name": "Billards",
     "image": "billards.png",
-    "url": "",
+    "url": "Billards",
     "new": false,
     "credits": "Developed by Unknown developer"
   },
@@ -1107,218 +1107,204 @@
   },
   {
     "name": "Cooking Mama",
-    "image": "cooking.mama.png",
-    "url": "",
+    "image": "cooking-mama.png",
+    "url": "Cooking-Mama",
     "new": false,
     "credits": "Developed by PETA"
   },
   {
     "name": "Crash Bandicoot Flash",
     "image": "crash-bandicoot.jpg",
-    "url": "",
+    "url": "Crash-Bandicoot",
     "new": false,
     "credits": "Developed by gembut and hutcoa7"
   },
   {
     "name": "Doodle Jump",
     "image": "doodle-jump.png",
-    "url": "",
-    "new": false,
-    "credits": "Developed by gembut and hutcoa7"
-  },
-  {
-    "name": "Crash Bandicoot Flash",
-    "image": "crash-bandicoot.jpg",
-    "url": "",
+    "url": "Doodle-Jump",
     "new": false,
     "credits": "Developed by gembut and hutcoa7"
   },
   {
     "name": "Earn to Die",
     "image": "earn-to-die.png",
-    "url": "",
+    "url": "Earn-to-Die",
     "new": false,
     "credits": "Developed by Toffee Games"
   },
   {
     "name": "Earn to Die 2",
     "image": "earn-to-die-2.jpg",
-    "url": "",
+    "url": "Earn-To-Die-2",
     "new": false,
     "credits": "Developed by Toffee Games"
   },
   {
     "name": "Earn to Die 2 Exodus",
     "image": "earn-to-die-2-exodus.jpg",
-    "url": "",
+    "url": "Earn-to-Die-2-Exodus",
     "new": false,
     "credits": "Developed by Toffee Games"
   },
   {
     "name": "Factory Balls",
     "image": "factory-balls.jpg",
-    "url": "",
+    "url": "Factory-Balls",
     "new": false,
     "credits": "Developed by Bart Bonte"
   },
   {
     "name": "Factory Balls 2",
     "image": "factory-balls-2.png",
-    "url": "",
+    "url": "Factory-Balls-2",
     "new": false,
     "credits": "Developed by Bart Bonte"
   },
   {
     "name": "Factory Balls 3",
     "image": "factory-balls-3.png",
-    "url": "",
+    "url": "Factory-Balls-3",
     "new": false,
     "credits": "Developed by Bart Bonte"
   },
   {
     "name": "Factory Balls 4",
-    "image": "factory-balls-4.png",
-    "url": "",
+    "image": "factory-balls4.png",
+    "url": "Factory-Balls-4",
     "new": false,
     "credits": "Developed by Bart Bonte"
   },
   {
     "name": "Fancy Pants Adventures",
     "image": "fancy-pants-adventures.jpg",
-    "url": "",
+    "url": "Fancy-Pants-Adventures",
     "new": false,
     "credits": "Developed by Brad Borne"
   },
   {
     "name": "Fancy Pants Adventures 2",
-    "image": "fancy-pants-adventures.png",
-    "url": "",
+    "image": "fancy-pants-adventures-2.png",
+    "url": "Fancy-pants-Adventure-2",
     "new": false,
     "credits": "Developed by Brad Borne"
   },
   {
     "name": "Fancy Pants Adventures 3",
     "image": "fancy-pants-adventures-3.jpg",
-    "url": "",
+    "url": "Fancy-pants-Adventure-3",
     "new": false,
     "credits": "Developed by Brad Borne"
   },
   {
-    "name": "Fireboy and Watergirl ",
+    "name": "Fireboy and Watergirl",
     "image": "fireboy-and-watergirl-1.jpg",
-    "url": "",
+    "url": "Fireboy-and-Watergirl",
     "new": false,
     "credits": "Developed by Oslo Albet"
   },
   {
     "name": "Fireboy and Watergirl 2",
     "image": "fireboy-and-watergirl-2.jpg",
-    "url": "",
+    "url": "Fireboy-and-Watergirl-2",
     "new": false,
     "credits": "Developed by Oslo Albet"
   },
   {
     "name": "Fireboy and Watergirl 3",
     "image": "fireboy-and-watergirl-3.jpg",
-    "url": "",
+    "url": "Fireboy-and-Watergirl-3",
     "new": false,
     "credits": "Developed by Oslo Albet"
   },
   {
     "name": "Flash Flight Simulator",
     "image": "flash-flight-simulator.jpg",
-    "url": "",
+    "url": "Flash-Flight-Simulator-1",
     "new": false,
     "credits": "Developed by Oslo Albet"
   },
   {
     "name": "Gunblood",
     "image": "gunblood.png",
-    "url": "",
+    "url": "Gunblood",
     "new": false,
     "credits": "Developed by Wolf Games"
   },
   {
     "name": "Johnny Upgrade",
     "image": "johnny-upgrade.png",
-    "url": "",
+    "url": "Johnny-Upgrade",
     "new": false,
     "credits": "Developed by Gameshot"
   },
   {
     "name": "Mutilate a Doll 2",
-    "image": "mutilate-a-doll-2.jpg",
-    "url": "",
+    "image": "mulilate-a-doll-2.jpg",
+    "url": "Mutilate-A-Doll-Two",
     "new": false,
     "credits": "Developed by Rava Games"
   },
   {
     "name": "Pico vs Uberkids",
     "image": "pico-vs-uberkids.jpg",
-    "url": "",
+    "url": "Pico-vs-uberkids",
     "new": false,
     "credits": "Developed by Tom Fulp"
   },
   {
     "name": "Picos School",
     "image": "picos-school.jpg",
-    "url": "",
+    "url": "Picos-school",
     "new": false,
     "credits": "Developed by Tom Fulp"
   },
   {
     "name": "Picos School 2",
     "image": "picos-school-2.png",
-    "url": "",
+    "url": "Picos-school-2",
     "new": false,
     "credits": "Developed by Tom Fulp"
   },
   {
-    "name": "Plants vs Zombies",
-    "image": "pvz.png",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Popcap Games"
-  },
-  {
     "name": "Red Ball",
     "image": "red-ball.png",
-    "url": "",
+    "url": "Red-ball",
     "new": false,
     "credits": "Developed by Eugene Fedoseev"
   },
   {
     "name": "Red Ball 2",
     "image": "red-ball-2.jpg",
-    "url": "",
+    "url": "Red-ball-2",
     "new": false,
     "credits": "Developed by Eugene Fedoseev"
   },
   {
     "name": "Red Ball 3",
     "image": "red-ball-3.jpg",
-    "url": "",
+    "url": "Red-ball-3",
     "new": false,
     "credits": "Developed by Eugene Fedoseev"
   },
       {
         "name": "Red Ball 4",
-        "image": "red-ball-4.jpg",
-        "url": "Red-Ball-4",
+        "image": "red-ball-4.png",
+        "url": "Red-ball-4",
         "new": false,
         "credits": "Developed by Eugene Fedoseev"
       },
       {
         "name": "Road of the Dead",
         "image": "road-of-the-dead.jpg",
-        "url": "Road-of-the-Dead",
+        "url": "Road-of-the-dead",
         "new": false,
         "credits": "Developed by Evil Dog Games"
       },
       {
         "name": "Road of the Dead 2",
         "image": "road-of-the-dead-2.png",
-        "url": "Road-of-the-Dead-2",
+        "url": "Road-of-the-dead-2",
         "new": false,
         "credits": "Developed by Evil Dog Games"
       },
@@ -1338,7 +1324,7 @@
       },
       {
         "name": "Run 3",
-        "image": "run-3.jpg",
+        "image": "run3.png",
         "url": "Run-3",
         "new": false,
         "credits": "Developed by Player 03"
@@ -1353,55 +1339,55 @@
       {
         "name": "Sniper Assassin 2",
         "image": "sniper-assassin-2.png",
-        "url": "Sniper-Assassin-2",
+        "url": "Sniper-assassin-2",
         "new": false,
         "credits": "Developed by Ultimate Flash Archive"
       },
       {
         "name": "Sniper Assassin 3",
-        "image": "sniper-assassin.jpg",
-        "url": "Sniper-Assassin-3",
+        "image": "sniper-assassin-3.jpg",
+        "url": "Sniper-assassin-3",
         "new": false,
         "credits": "Developed by Ultimate Flash Archive"
       },
       {
         "name": "Sniper Assassin 4",
-        "image": "sniper-assassin-5.jpg",
-        "url": "Sniper-Assassin-4",
+        "image": "sniper-assassin-4.jpg",
+        "url": "Sniper-assassin-4",
         "new": false,
         "credits": "Developed by Ultimate Flash Archive"
       },
       {
         "name": "Sniper Assassin 5",
-        "image": "sniper-assassin-5.jpg",
-        "url": "Sniper-Assassin-5",
+        "image": "sniper-asssassin-5.jpg",
+        "url": "Sniper-assassin-5",
         "new": false,
         "credits": "Developed by Ultimate Flash Archive"
       },
       {
         "name": "Toss the Turtle",
         "image": "toss-the-turtle.jpg",
-        "url": "Toss-the-Turtle",
+        "url": "Toss-the-turtle",
         "new": false,
         "credits": "Developed by GonzoSSM"
       },
       {
         "name": "Unfair Mario",
         "image": "unfair-mario.jpg",
-        "url": "Unfair-Mario",
+        "url": "Unfair-mario",
         "new": false,
         "credits": "Developed by Unknown"
       },
       {
         "name": "Jacksmith",
-        "image": "jacksmith.jpg",
+        "image": "jacksmith.png",
         "url": "Jacksmith",
         "new": false,
         "credits": "Developed by Flipline Studios"
       },
       {
         "name": "Achievement Unlocked 3",
-        "image": "achievement-unlocked-3.jpg",
+        "image": "achievementunlocked3.png",
         "url": "Achievement-Unlocked-3",
         "new": false,
         "credits": "Developed by John Cooney"
