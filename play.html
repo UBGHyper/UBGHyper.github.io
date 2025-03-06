@@ -17,18 +17,18 @@
   <!-- Ads -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452" crossorigin="anonymous"></script>  
 
-  <style>
-         :root {
-         --bg-color: #000000;
-         --text-color: #1f1f1f;
-         --link-color: #ff6600;
-         --navbar-bg: #272727;
-         --navbar-link-color: #ffffff;
-         --carousel-bg: #fff;
-         --button-bg: #ff6600;
-         --background-image: url('../assets/background/background.png');
-         --font-family: 'Poppins', sans-serif;
-         }
+<style>
+    :root {
+      --bg-color: #000000;
+      --text-color: #1f1f1f;
+      --link-color: #ff6600;
+      --navbar-bg: #272727;
+      --navbar-link-color: #ffffff;
+      --carousel-bg: #fff;
+      --button-bg: #ff6600;
+      --background-image: url('../assets/background/background.png');
+      --font-family: 'Poppins', sans-serif;
+    }
     
     body {
       display: flex;
@@ -259,34 +259,6 @@
       color: #666;
     }
 
-    #arrowButton {
-      position: fixed;
-      bottom: 20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 50px;
-      height: 50px;
-      background-color: #ff7b00;
-      border-radius: 25px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      cursor: pointer;
-      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    #arrowButton:hover {
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-      transform: translateX(-50%) translateY(-5px);
-    }
-
-    #arrowButton::after {
-      content: '';
-      border-style: solid;
-      border-width: 0 10px 10px 10px;
-      border-color: transparent transparent #fff transparent;
-    }
 
   </style>
 </head>
@@ -295,26 +267,17 @@
   
   <div style="display: flex; flex-direction: column; align-items: center;">
     <iframe id="gameFrame" src="" frameborder="0"></iframe>
-    <div id="controls">
+    <div id="controls" style="background-image: url('../assets/background/developer-bg.jpg'); background-size: cover; background-position: center;">
       <a href="index.html" class="styled-button">Back</a>
-      <div id="gameTitle">Game Title Here</div>
-      <div id="gameCredits">Developer Name Here</div>
+      <div id="gameTitle" style="font-family: 'Space Grotesk', sans-serif;">Game Title Here</div>
+      <div id="gameCredits" style="font-family: 'Space Grotesk', sans-serif;">Developer Name Here</div>
       <button id="fullscreenBtn">Go Fullscreen</button>
       <label class="toggle" aria-label="Toggle theme">
-        <input type="checkbox" id="themeToggle">
-        <span class="toggle-slider"></span>
-      </label>
     </div>
   </div>
 
-  <div id="arrowButton"></div>
-
-  <div id="overlay">
-    <div id="recommendedGames">
-        <h3>Recommended Games</h3> <!-- Title for the recommended games section -->
-        <div id="recommendedContainer"></div>
-    </div>
-  </div>
+<div id="arrowButton"></div>
+<div>
 
   <script>
   document.addEventListener('DOMContentLoaded', () => {
@@ -438,107 +401,11 @@
     }
   });
   document.addEventListener('DOMContentLoaded', () => {
-    // Common DOM elements
-    const backgroundImageInput = document.getElementById('backgroundImage');
-    const fontFamilySelect = document.getElementById('fontFamily');
-    const themeColorPicker = document.getElementById('themeColor');
-    const textColorPicker = document.getElementById('textColor');
-    const navbarColorPicker = document.getElementById('navbarColor');
-    const saveButton = document.getElementById('saveButton');
-    const resetButton = document.getElementById('resetButton');
-    const navbar = document.querySelector('.navbar');
-    const body = document.body;
+    
 
-    const defaultValues = {
-        backgroundImage: '',
-        fontFamily: 'Poppins',
-        themeColor: '#ff6600',
-        textColor: '#333333',
-        navbarColor: '#333333'
-    };
 
-    // Load settings from local storage and apply them
-    const loadSettings = () => {
-        const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
-        
-        if (savedSettings) {
-            // Update inputs if they exist
-            if (backgroundImageInput) backgroundImageInput.value = savedSettings.backgroundImage || '';
-            if (fontFamilySelect) fontFamilySelect.value = savedSettings.fontFamily || 'Poppins';
-            if (themeColorPicker) themeColorPicker.value = savedSettings.themeColor || '#ff6600';
-            if (textColorPicker) textColorPicker.value = savedSettings.textColor || '#333333';
-            if (navbarColorPicker) navbarColorPicker.value = savedSettings.navbarColor || '#333333';
-            applyCustomizations(savedSettings);
-        } else {
-            applyCustomizations(defaultValues);
-        }
-    };
 
-    // Apply the customization settings to the page
-    const applyCustomizations = (customizations) => {
-        document.documentElement.style.setProperty('--font-family', customizations.fontFamily || 'Poppins, sans-serif');
-        document.documentElement.style.setProperty('--text-color', customizations.textColor || '#fff');
-        document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor || '#111');
 
-        body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
-        body.style.fontFamily = customizations.fontFamily || 'Poppins, sans-serif';
-        body.style.color = customizations.textColor || '#fff';
-        navbar.style.backgroundColor = customizations.navbarColor || '#111';
-
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.style.color = customizations.themeColor || '#ff8500';
-        });
-        document.querySelectorAll('.button-container button').forEach(button => {
-            button.style.backgroundColor = customizations.themeColor || '#ff5e00';
-        });
-    };
-
-    const updatePreview = () => {
-        if (backgroundImageInput) {
-            document.getElementById('backgroundPreview').style.backgroundImage = backgroundImageInput.value ? `url(${backgroundImageInput.value})` : '';
-        }
-        document.getElementById('textPreview').style.fontFamily = fontFamilySelect.value;
-        document.getElementById('textPreview').style.color = textColorPicker.value;
-        document.getElementById('backgroundPreview').style.backgroundColor = themeColorPicker.value;
-    };
-
-    const saveSettings = () => {
-        const customizations = {
-            backgroundImage: backgroundImageInput?.value || '',
-            fontFamily: fontFamilySelect?.value || 'Poppins',
-            themeColor: themeColorPicker?.value || '#ff6600',
-            textColor: textColorPicker?.value || '#333333',
-            navbarColor: navbarColorPicker?.value || '#333333'
-        };
-        localStorage.setItem('ubgCustomizations', JSON.stringify(customizations));
-        applyCustomizations(customizations);
-    };
-
-    const resetSettings = () => {
-        if (backgroundImageInput) backgroundImageInput.value = defaultValues.backgroundImage;
-        if (fontFamilySelect) fontFamilySelect.value = defaultValues.fontFamily;
-        if (themeColorPicker) themeColorPicker.value = defaultValues.themeColor;
-        if (textColorPicker) textColorPicker.value = defaultValues.textColor;
-        if (navbarColorPicker) navbarColorPicker.value = defaultValues.navbarColor;
-        updatePreview();
-        applyCustomizations(defaultValues);
-        localStorage.removeItem('ubgCustomizations');
-    };
-
-    // Event listeners for interactive elements (if they exist)
-    saveButton?.addEventListener('click', (event) => {
-        event.preventDefault();
-        saveSettings();
-    });
-
-    resetButton?.addEventListener('click', resetSettings);
-    backgroundImageInput?.addEventListener('input', updatePreview);
-    fontFamilySelect?.addEventListener('change', updatePreview);
-    themeColorPicker?.addEventListener('input', updatePreview);
-    textColorPicker?.addEventListener('input', updatePreview);
-    navbarColorPicker?.addEventListener('input', updatePreview);
-
-    // Load and apply settings initially
     loadSettings();
 });
   </script>
