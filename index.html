@@ -133,7 +133,11 @@
    padding: 0; /* Remove any button padding */
    margin: 0;
 }
-
+.developer-profile:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 .nav-links a:hover,
 #randomGameBtn:hover {
    color: var(--navbar-link-color);
@@ -178,81 +182,88 @@
          input:checked + .toggle-slider:before {
          transform: translateX(30px);
          }
-         /* Carousel Styles */
-         .carousel {
-         padding: 20px 10px; /* Reduced padding */
-         text-align: center;
-         }
          .carousel-container {
-         position: relative;
-         display: flex;
-         overflow: hidden;
-         border-radius: 15px;
-         background-color: var(--carousel-bg);
-         margin-top: 30px;
-         width: 80%; /* Set a smaller width for the carousel */
-         max-width: 900px; /* Optional: Limit max width */
-         margin-left: auto;
-         margin-right: auto; /* Centering the carousel */
-         }
-         .carousel-slide {
-         display: flex;
-         transition: transform 0.5s ease;
-         width: 300%; /* Three items shown at once (100% per item) */
-         }
-         .carousel-item {
-         flex: 0 0 100%; /* Ensures each item takes 100% of the container width */
-         text-align: center;
-         padding: 20px;
-         box-sizing: border-box;
-         }
-         .carousel-item img {
-         width: 100%;
-         height: auto;
-         object-fit: cover;
-         border-radius: 10px;
-         }
-         .carousel-text {
-         margin-top: 20px;
-         color: var(--text-color);
-         background-color: rgba(0, 0, 0, 0.5);
-         padding: 10px;
-         border-radius: 10px;
-         }
-         .carousel-text h3 {
-         font-size: 24px;
-         font-weight: 600;
-         margin-bottom: 10px;
-         color: var(--link-color);
-         }
-         .carousel-text p {
-         font-size: 16px;
-         margin-bottom: 20px;
-         max-width: 80%;
-         margin-left: auto;
-         margin-right: auto;
-         color: #fff;
-         }
-         .carousel-controls {
-         position: absolute;
-         top: 50%;
-         left: 10px;
-         transform: translateY(-50%);
-         font-size: 30px;
-         color: #fff;
-         cursor: pointer;
-         background-color: rgba(0, 0, 0, 0.5);
-         padding: 10px;
-         border-radius: 50%;
-         transition: background-color 0.3s ease;
-         }
-         .carousel-controls:hover {
-         background-color: rgba(0, 0, 0, 0.7);
-         }
-         .carousel-controls.right {
-         left: auto;
-         right: 10px;
-         }
+   position: relative;
+   display: flex;
+   overflow: hidden;
+   border-radius: 15px;
+   background-color: var(--carousel-bg);
+   margin-top: 30px;
+   width: 80%;
+   max-width: 900px;
+   margin-left: auto;
+   margin-right: auto;
+   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-slide {
+   display: flex;
+   transition: transform 0.5s ease;
+   width: 300%;
+}
+
+.carousel-item {
+   flex: 0 0 100%;
+   text-align: center;
+   padding: 20px;
+   box-sizing: border-box;
+   position: relative;
+}
+
+.carousel-item img {
+   width: 100%;
+   height: auto;
+   object-fit: cover;
+   border-radius: 10px;
+   border: 5px solid #ff6600; /* Cool graphics around the edge */
+}
+
+.carousel-text {
+   margin-top: 20px;
+   color: var(--text-color);
+   background-color: rgba(0, 0, 0, 0.5);
+   padding: 10px;
+   border-radius: 10px;
+}
+
+.carousel-text h3 {
+   font-size: 24px;
+   font-weight: 600;
+   margin-bottom: 10px;
+   color: var(--link-color);
+}
+
+.carousel-text p {
+   font-size: 16px;
+   margin-bottom: 20px;
+   max-width: 80%;
+   margin-left: auto;
+   margin-right: auto;
+   color: #fff;
+}
+
+.carousel-controls {
+   position: absolute;
+   top: 50%;
+   left: 10px;
+   transform: translateY(-50%);
+   font-size: 30px;
+   color: #fff;
+   cursor: pointer;
+   background-color: rgba(0, 0, 0, 0.5);
+   padding: 10px;
+   border-radius: 50%;
+   transition: background-color 0.3s ease;
+}
+
+.carousel-controls:hover {
+   background-color: rgba(0, 0, 0, 0.7);
+}
+
+.carousel-controls.right {
+   left: auto;
+   right: 10px;
+}
          /* Responsive Styles */
          @media screen and (max-width: 768px) {
          .carousel-container {
@@ -459,36 +470,36 @@
          <h1>Welcome to <span style="color: #ff6600;">UBG</span>Hyper</h1>
          <p>Discover the best free online games in one place!</p>
       </header>
-      <!-- Game Carousel Section -->
-      <section id="carousel" class="carousel">
-         <div class="carousel-container">
-            <div class="carousel-slide">
-               <div class="carousel-item">
-                  <img src="../assets/images/carousel/drivemad.jpg" alt="Drive Mad">
-                  <div class="carousel-text">
-                     <h3>Drive Mad</h3>
-                     <p>Drive Mad is a physics-based driving game where players control a quirky vehicle through increasingly difficult courses filled with obstacles, ramps, and jumps. With simple controls and unpredictable mechanics, it challenges players to navigate wild terrains while avoiding crashes while trying to reach the finish line.</p>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <img src="../assets/images/carousel/burritobison.jpg" alt="Burrito Bison">
-                  <div class="carousel-text">
-                     <h3>Burrito Bison</h3>
-                     <p>Burrito Bison is an action-packed, quirky game where you play as a luchador bear, launching yourself through candy-filled landscapes to smash through enemies and collect upgrades. With fast-paced gameplay, epic combos, and hilarious visuals, you’ll battle your way through levels to defeat the evil gummies and escape the candy world.</p>
-                  </div>
-               </div>
-               <div class="carousel-item">
-                  <img src="../assets/images/carousel/dontescape3.jpg" alt="Dont Escape 3">
-                  <div class="carousel-text">
-                     <h3>Dont Escape 3</h3>
-                     <p>Don’t Escape 3 is a tense, point-and-click adventure where you must solve puzzles and make crucial decisions to survive an impending doom. Set in a ruined spaceship, you must carefully plan your actions to avoid disaster and escape the terrifying consequences of your choices.</p>
-                  </div>
-               </div>
+ <!-- Carousel Section -->
+<section id="carousel">
+   <div class="carousel-container">
+      <div class="carousel-slide">
+         <div class="carousel-item">
+            <img src="../assets/images/carousel/drivemad.jpg" alt="Game 1">
+            <div class="carousel-text">
+               <h3>Drive Mad</h3>
+               <p>An exiting unblocked game where you drive a car and try to survive.</p>
             </div>
-            <span class="carousel-controls left">&#10094;</span>
-            <span class="carousel-controls right">&#10095;</span>
          </div>
-      </section>
+         <div class="carousel-item">
+            <img src="../assets/images/carousel/cookieclicker.jpg" alt="Game 2">
+            <div class="carousel-text">
+               <h3>Polytrack Modded</h3>
+               <p>Another fantastic driving unblocked game where you compete against yourself for faster and faster times.</p>
+            </div>
+         </div>
+         <div class="carousel-item">
+            <img src="../assets/images/carousel/polytrack.jpg" alt="Game 3">
+            <div class="carousel-text">
+               <h3>Cookie Clicker</h3>
+               <p>The OG unblocked game now with the latest version and much more.</p>
+            </div>
+         </div>
+      </div>
+      <div class="carousel-controls left">&#10094;</div>
+      <div class="carousel-controls right">&#10095;</div>
+   </div>
+</section>
       <!-- Changelog Section -->
       <section id="changelog">
          <h2>Changelog v1.3</h2>
@@ -539,6 +550,53 @@
          </div>
       </section>
       <script>
+         document.addEventListener('DOMContentLoaded', () => {
+   const carouselSlide = document.querySelector('.carousel-slide');
+   const carouselItems = document.querySelectorAll('.carousel-item');
+   const prevBtn = document.querySelector('.carousel-controls.left');
+   const nextBtn = document.querySelector('.carousel-controls.right');
+   let counter = 0;
+   const size = carouselItems[0].clientWidth;
+
+   function moveCarousel() {
+      carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+   }
+
+   nextBtn.addEventListener('click', () => {
+      if (counter >= carouselItems.length - 1) return;
+      carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+      counter++;
+      moveCarousel();
+   });
+
+   prevBtn.addEventListener('click', () => {
+      if (counter <= 0) return;
+      carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+      counter--;
+      moveCarousel();
+   });
+
+   carouselSlide.addEventListener('transitionend', () => {
+      if (carouselItems[counter].id === 'lastClone') {
+         carouselSlide.style.transition = 'none';
+         counter = carouselItems.length - 2;
+         moveCarousel();
+      }
+      if (carouselItems[counter].id === 'firstClone') {
+         carouselSlide.style.transition = 'none';
+         counter = carouselItems.length - counter;
+         moveCarousel();
+      }
+   });
+
+   // Auto slide
+   setInterval(() => {
+      if (counter >= carouselItems.length - 1) {
+         counter = -1;
+      }
+      nextBtn.click();
+   }, 3000); // Change slide every 3 seconds
+});
          document.getElementById('randomGameBtn').addEventListener('click', () => {
          fetch('./config/games.json')
          .then(response => response.json())
@@ -640,33 +698,6 @@
              document.body.classList.remove('dark-mode');
              localStorage.setItem('theme', 'light');
          }
-         });
-         
-         // Carousel functionality
-         const carouselSlide = document.querySelector('.carousel-slide');
-         const prevBtn = document.querySelector('.carousel-controls.left');
-         const nextBtn = document.querySelector('.carousel-controls.right');
-         
-         let counter = 0;
-         const items = document.querySelectorAll('.carousel-item');
-         const totalItems = items.length;
-         
-         prevBtn.addEventListener('click', () => {
-         if (counter === 0) {
-             counter = totalItems - 1;
-         } else {
-             counter--;
-         }
-         carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
-         });
-         
-         nextBtn.addEventListener('click', () => {
-         if (counter === totalItems - 1) {
-             counter = 0;
-         } else {
-             counter++;
-         }
-         carouselSlide.style.transform = `translateX(${-counter * 100}%)`;
          });
          });
          

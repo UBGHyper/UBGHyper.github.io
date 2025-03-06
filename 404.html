@@ -141,39 +141,39 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-    function applyCustomizations(customizations) {
-        document.documentElement.style.setProperty('--font-family', customizations.fontFamily);
-        document.documentElement.style.setProperty('--text-color', customizations.textColor);
-        document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor);
-
-        document.body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
-        document.body.style.fontFamily = customizations.fontFamily;
-        document.body.style.color = customizations.textColor;
-        document.querySelector('.navbar').style.backgroundColor = customizations.navbarColor;
-
-        document.querySelectorAll('.navbar a').forEach(link => {
-            link.style.color = customizations.themeColor;
+            function applyCustomizations(customizations) {
+                document.documentElement.style.setProperty('--font-family', customizations.fontFamily);
+                document.documentElement.style.setProperty('--text-color', customizations.textColor);
+                document.documentElement.style.setProperty('--navbar-bg', customizations.navbarColor);
+    
+                document.body.style.backgroundImage = `url(${customizations.backgroundImage || ''})`;
+                document.body.style.fontFamily = customizations.fontFamily;
+                document.body.style.color = customizations.textColor;
+                document.querySelector('.navbar').style.backgroundColor = customizations.navbarColor;
+    
+                document.querySelectorAll('.navbar a').forEach(link => {
+                    link.style.color = customizations.themeColor;
+                });
+                document.querySelectorAll('.button-container button').forEach(button => {
+                    button.style.backgroundColor = customizations.themeColor;
+                });
+            }
+    
+            function loadSettings() {
+                const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
+                if (savedSettings) {
+                    applyCustomizations(savedSettings);
+                }
+            }
+    
+            loadSettings();
         });
-        document.querySelectorAll('.button-container button').forEach(button => {
-            button.style.backgroundColor = customizations.themeColor;
-        });
-    }
-
-    function loadSettings() {
-        const savedSettings = JSON.parse(localStorage.getItem('ubgCustomizations'));
-        if (savedSettings) {
-            applyCustomizations(savedSettings);
-        }
-    }
-
-    loadSettings();
-});
-        const words = ["FOUROFOUR", "LOST", "HYPER", "GAMES", "WOBILLIAM"];
+    
+        const words = ["GAMES", "UBGHYPER", "FOUROFOUR", "LOST", "NEVERGONNAGUESS", "GAMES", "UNBLOCKED", "GAMING", "FLASHGAMES"];
         let mysteryWord, guessedLetters, attempts, correctGuesses;
-
+    
         function initGame() {
             mysteryWord = words[Math.floor(Math.random() * words.length)];
             guessedLetters = [];
@@ -184,20 +184,20 @@
             updateWordDisplay();
             generateLetterButtons();
         }
-
+    
         function updateWordDisplay() {
             const wordDisplay = mysteryWord.split('').map(letter => 
                 guessedLetters.includes(letter) ? letter : '_'
             ).join(' ');
-
+    
             document.getElementById('wordDisplay').textContent = wordDisplay;
         }
-
+    
         function generateLetterButtons() {
             const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
             const lettersContainer = document.getElementById('lettersContainer');
             lettersContainer.innerHTML = '';
-
+    
             letters.forEach(letter => {
                 const button = document.createElement('button');
                 button.textContent = letter;
@@ -206,14 +206,15 @@
                 lettersContainer.appendChild(button);
             });
         }
-
+    
         function handleGuess(letter) {
             if (guessedLetters.includes(letter) || attempts <= 0) return;
-
+    
             guessedLetters.push(letter);
-
+    
             if (mysteryWord.includes(letter)) {
-                correctGuesses++;
+                const occurrences = mysteryWord.split(letter).length - 1;
+                correctGuesses += occurrences;
                 updateWordDisplay();
                 animateCorrectGuess(letter);
                 checkWin();
@@ -226,12 +227,12 @@
                     endGame();
                 }
             }
-
+    
             // Disable the clicked button
             const button = document.querySelector(`button:contains(${letter})`);
             button.disabled = true;
         }
-
+    
         function animateCorrectGuess(letter) {
             const letterElements = document.getElementsByClassName('letter-button');
             for (const button of letterElements) {
@@ -243,7 +244,7 @@
                 }
             }
         }
-
+    
         function animateWrongGuess() {
             const wordElement = document.getElementById('wordDisplay');
             wordElement.classList.add('shake');
@@ -251,11 +252,11 @@
                 wordElement.classList.remove('shake');
             }, 500);
         }
-
+    
         function showGameResult(resultText) {
             document.getElementById('gameResult').textContent = resultText;
         }
-
+    
         function triggerConfetti() {
             confetti({
                 particleCount: 100,
@@ -264,7 +265,7 @@
                 colors: ['#e74c3c', '#1abc9c', '#f39c12']
             });
         }
-
+    
         function checkWin() {
             if (correctGuesses === mysteryWord.length) {
                 showGameResult('You found your way back!');
@@ -272,21 +273,21 @@
                 endGame();
             }
         }
-
+    
         function endGame() {
             document.querySelectorAll('.letter-button').forEach(button => button.disabled = true);
             document.getElementById('restartButton').style.display = 'inline-block';
         }
-
+    
         function restartGame() {
             initGame();
         }
-
+    
         window.onload = initGame;
-
+    
         document.getElementById('spinZero').addEventListener('click', function() {
             this.classList.add('spin');
         });
     </script>
-</body>
+    </body>
 </html>
