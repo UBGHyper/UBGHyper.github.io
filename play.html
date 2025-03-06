@@ -280,29 +280,33 @@
 <div>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-    const queryParams = new URLSearchParams(window.location.search);
-    let gameUrl = queryParams.get("gameurl");
+document.addEventListener('DOMContentLoaded', () => {
+  const queryParams = new URLSearchParams(window.location.search);
+  let gameUrl = queryParams.get("gameurl");
 
-    const arrowButton = document.getElementById('arrowButton');
-    const overlay = document.getElementById('overlay');
-    const recommendedGamesDiv = document.getElementById('recommendedGames');
+  const arrowButton = document.getElementById('arrowButton');
+  const overlay = document.getElementById('overlay');
+  const recommendedGamesDiv = document.getElementById('recommendedGames');
+  const gameFrame = document.getElementById("gameFrame");
 
-    // Function to display recommended games
-    function displayRecommendedGames(games) {
-      const container = document.getElementById('recommendedContainer');
-      container.innerHTML = '';
+  // Show the game frame immediately to display the loading animation
+  gameFrame.style.display = "block";
 
-      games.forEach(game => {
-        const div = document.createElement('div');
-        div.className = 'recommended-game';
-        div.innerHTML = `<h4>${game.name}</h4><p>Developer: ${game.credits}</p>`;
-        container.appendChild(div);
-      });
+  // Function to display recommended games
+  function displayRecommendedGames(games) {
+    const container = document.getElementById('recommendedContainer');
+    container.innerHTML = '';
 
-      // Show the overlay with recommended games
-      overlay.classList.add('show');
-    }
+    games.forEach(game => {
+      const div = document.createElement('div');
+      div.className = 'recommended-game';
+      div.innerHTML = `<h4>${game.name}</h4><p>Developer: ${game.credits}</p>`;
+      container.appendChild(div);
+    });
+
+    // Show the overlay with recommended games
+    overlay.classList.add('show');
+  }
 
     // Update game title and credits without preloading recommendations
     function loadGameData(url) {
