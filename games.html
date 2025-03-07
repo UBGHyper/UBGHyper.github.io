@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UBG Hyper</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <script src="../config/customize.js"></script>
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
      crossorigin="anonymous"></script>
@@ -46,6 +45,24 @@
             --game-backround-colour: #4b4b4b;
         }
 
+        /* Dark Mode */
+        .dark-mode {
+            --bg-color: #333;
+            --text-colour: #d4d4d4;
+            --link-color: #ff8500;
+            --navbar-bg: #111;
+            --navbar-link-color: #fff;
+            --carousel-bg: #222;
+            --button-bg: #ff5e00;
+            --background-image: url('../assets/background/background.png');
+            --card-bg-color: #444; /* Dark mode card background */
+            --card-text-color: #fff; /* Dark mode card text */
+            --sb-track-color: #232E33;
+            --sb-thumb-color: #ff8500;
+            --sb-size: 14px;
+            --game-colour: #ffffff;
+            --game-backround-colour: #222222;
+        }
 
         .game {
             color: var(--game-colour);
@@ -53,18 +70,20 @@
         }
 
         body {
-        font-family: var(--font-family);
-        margin: 0;
-        padding: 0;
-        background: url('../assets/background/new-background.jpg') no-repeat center center fixed;
-        background-size: cover;
-        color: var(--text-color);
-        transition: all 0.3s ease;
-    }
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            background-image: var(--background-image);
+            background-size: cover;
+            background-attachment: fixed;
+            transition: all 0.3s ease;
+        }
 
         /* Global Header Styling */
         h1, h2 {
-            color: var(--text-color);
+            color: var(--text-colour);
         }
 
         a {
@@ -273,6 +292,8 @@
            <li><a href="https://ubghyper.github.io/savedata.html">Save Editor</a></li>
            <button id="randomGameBtn">Random</button>
         </ul>
+        <!-- Theme Toggle -->
+
         </div>
      </nav>
 
@@ -351,30 +372,6 @@
                 }
             });
         });    
-
-        document.getElementById('randomGameBtn').addEventListener('click', () => {
-         fetch('./config/games.json')
-         .then(response => response.json())
-         .then(games => {
-             if (games.length > 0) {
-                 // Select a random game
-                 const randomIndex = Math.floor(Math.random() * games.length);
-                 const randomGame = games[randomIndex];
-         
-                 // Construct URL based on the selected random game
-                 const gameUrl = randomGame.url;
-                 
-                 // Redirect to the game page with the selected random game URL
-                 window.location.href = `./play.html?gameurl=${encodeURIComponent(gameUrl)}`;
-             } else {
-                 alert('No games available');
-             }
-         })
-         .catch(error => {
-             console.error('Error fetching games:', error);
-             alert('Error loading games');
-         });
-         });
     </script>
 </body>
 </html>

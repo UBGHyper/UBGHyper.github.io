@@ -358,29 +358,7 @@
             const cookies = document.cookie;
             document.getElementById("cookiesData").textContent = cookies || 'No cookies found.';
         }
-        document.getElementById('randomGameBtn').addEventListener('click', () => {
-         fetch('./config/games.json')
-         .then(response => response.json())
-         .then(games => {
-             if (games.length > 0) {
-                 // Select a random game
-                 const randomIndex = Math.floor(Math.random() * games.length);
-                 const randomGame = games[randomIndex];
-         
-                 // Construct URL based on the selected random game
-                 const gameUrl = randomGame.url;
-                 
-                 // Redirect to the game page with the selected random game URL
-                 window.location.href = `./play.html?gameurl=${encodeURIComponent(gameUrl)}`;
-             } else {
-                 alert('No games available');
-             }
-         })
-         .catch(error => {
-             console.error('Error fetching games:', error);
-             alert('Error loading games');
-         });
-         });
+
         // Function to display game data saved in localStorage
         function displayGameData() {
             const gameDataContainer = document.getElementById("gameDataContainer");
