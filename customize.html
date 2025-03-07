@@ -349,11 +349,12 @@
 
             // Default values to reset to
             const defaultValues = {
-                backgroundImage: '',
+                backgroundImage: '../assets/background/background.png',
                 fontFamily: 'Poppins',
                 themeColor: '#ff6600',
-                textColor: '#333333',
-                navbarColor: '#333333'
+                textColor: '#1f1f1f',
+                navbarColor: '#272727',
+                navbarLinkColor: '#2c2c2c'
             };
 
             // Load saved settings from localStorage
@@ -467,7 +468,29 @@
                     updatePreview(); // Update preview immediately
                 });
             });
-
+            document.getElementById('randomGameBtn').addEventListener('click', () => {
+         fetch('./config/games.json')
+         .then(response => response.json())
+         .then(games => {
+             if (games.length > 0) {
+                 // Select a random game
+                 const randomIndex = Math.floor(Math.random() * games.length);
+                 const randomGame = games[randomIndex];
+         
+                 // Construct URL based on the selected random game
+                 const gameUrl = randomGame.url;
+                 
+                 // Redirect to the game page with the selected random game URL
+                 window.location.href = `./play.html?gameurl=${encodeURIComponent(gameUrl)}`;
+             } else {
+                 alert('No games available');
+             }
+         })
+         .catch(error => {
+             console.error('Error fetching games:', error);
+             alert('Error loading games');
+         });
+         });
             // Get preset theme settings
             const getPresetThemeSettings = (theme) => {
                 const themes = {
