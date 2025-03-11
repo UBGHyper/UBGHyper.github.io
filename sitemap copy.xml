@@ -28,30 +28,34 @@
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ubghyper.github.io/GameList.github.io/Cookie-Clicker/</loc>
+  <loc>https://ubghyper.github.io/play.html?gameurl=Cookie-Clicker/</loc>
   <lastmod>2025-03-10T23:48:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ubghyper.github.io/GameList.github.io/Drive-Mad/</loc>
+  <loc>https://ubghyper.github.io/play.html?gameurl=Block-Blast/</loc>
   <lastmod>2025-03-10T23:48:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ubghyper.github.io/GameList.github.io/Polytrack-New/</loc>
+  <loc>https://ubghyper.github.io/play.html?gameurl=Basket-Random/</loc>
   <lastmod>2025-03-10T23:48:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ubghyper.github.io/GameList.github.io/Polytrack-Modded/</loc>
+  <loc>https://ubghyper.github.io/play.html?gameurl=Polytrack-New/</loc>
   <lastmod>2025-03-10T23:48:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://ubghyper.github.io/GameList.github.io/Tanuki-Sunset/</loc>
+  <loc>https://ubghyper.github.io/play.html?gameurl=Tanuki-Sunset/</loc>
   <lastmod>2025-03-10T23:48:14+00:00</lastmod>
   <priority>0.80</priority>
 </url>
-
+<url>
+  <loc>https://ubghyper.github.io/play.html?gameurl=2048/</loc>
+  <lastmod>2025-03-10T23:48:14+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
 
 </urlset>
