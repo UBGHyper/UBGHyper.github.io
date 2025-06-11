@@ -19,8 +19,7 @@
     "credits": "Developed by Kewlbox",
     "tags": [
       "multiplayer",
-      "shooter",
-      "aviation"
+      "shooter"
     ]
   },
   {
@@ -31,9 +30,8 @@
     "credits": "Developed by Kewlbox",
     "tags": [
       "multiplayer",
-      "shooter",
-      "vehicles"
-    ]
+      "shooter"
+      ]
   },
   {
     "name": "Super Smash Flash 2",
@@ -43,8 +41,7 @@
     "credits": "Developed by Kewlbox",
     "tags": [
       "multiplayer",
-      "fighting",
-      "action"
+      "arcade"
     ]
   },
   {
@@ -67,8 +64,7 @@
     "credits": "Developed by Candywriter, LLC",
     "tags": [
       "simulation",
-      "singleplayer",
-      "life"
+      "singleplayer"
     ]
   },
   {
@@ -79,8 +75,7 @@
     "credits": "Developed by various game developers",
     "tags": [
       "card",
-      "singleplayer",
-      "casino"
+      "singleplayer"
     ]
   },
   {
@@ -103,9 +98,8 @@
     "credits": "Developed by Boštjan Čadež",
     "tags": [
       "simulation",
-      "puzzle",
-      "physics"
-    ]
+      "puzzle"
+        ]
   },
   {
     "name": "Bob The Robber",
@@ -114,7 +108,6 @@
     "new": false,
     "credits": "Developed by T. M. Games",
     "tags": [
-      "stealth",
       "action",
       "singleplayer"
     ]
@@ -127,7 +120,6 @@
     "credits": "Developed by Wawa Games",
     "tags": [
       "clicker",
-      "casual",
       "singleplayer"
     ]
   },
@@ -151,9 +143,8 @@
     "credits": "Developed by id Software",
     "tags": [
       "shooter",
-      "singleplayer",
-      "action"
-    ]
+      "singleplayer"
+        ]
   },
 {
   "name": "Drive Mad",
@@ -163,7 +154,6 @@
   "credits": "Developed by S. J. Entertainment",
   "tags": [
     "driving",
-    "racing",
     "singleplayer"
   ]
 },
@@ -175,7 +165,6 @@
   "credits": "Developed by MoFunZone",
   "tags": [
     "simulation",
-    "animal",
     "adventure",
     "singleplayer"
   ]
@@ -188,7 +177,6 @@
   "credits": "Developed by M. S. Studio",
   "tags": [
     "driving",
-    "physics",
     "arcade",
     "singleplayer"
   ]
@@ -213,7 +201,6 @@
   "credits": "Developed by M. S. Studio",
   "tags": [
     "sports",
-    "basketball",
     "arcade",
     "singleplayer"
   ]
@@ -227,7 +214,6 @@
   "tags": [
     "tower defense",
     "strategy",
-    "fantasy",
     "singleplayer"
   ]
 },
@@ -240,7 +226,6 @@
   "tags": [
     "tower defense",
     "strategy",
-    "fantasy",
     "singleplayer"
   ]
 },
@@ -251,7 +236,6 @@
   "new": false,
   "credits": "Developed by PuffBallsUnited",
   "tags": [
-    "platformer",
     "adventure",
     "singleplayer"
   ]
@@ -277,7 +261,6 @@
   "tags": [
     "tower defense",
     "strategy",
-    "action",
     "singleplayer"
   ]
 },
@@ -290,7 +273,6 @@
   "tags": [
     "tower defense",
     "strategy",
-    "action",
     "singleplayer"
   ]
 },
@@ -301,7 +283,6 @@
   "new": false,
   "credits": "Developed by Hero Interactive",
   "tags": [
-    "action",
     "multiplayer",
     "arena",
     "battle"
@@ -314,9 +295,8 @@
   "new": false,
   "credits": "Developed by J. A. Games",
   "tags": [
-    "action",
-    "platformer",
     "shooter",
+    "multiplayer",
     "singleplayer"
   ]
 },
@@ -327,9 +307,8 @@
   "new": false,
   "credits": "Developed by J. A. Games",
   "tags": [
-    "action",
-    "platformer",
     "shooter",
+    "multiplayer",
     "singleplayer"
   ]
 },
@@ -340,8 +319,6 @@
   "new": false,
   "credits": "Developed by Jim Bonacci",
   "tags": [
-    "ragdoll",
-    "physics",
     "platformer",
     "singleplayer"
   ]
@@ -355,7 +332,6 @@
   "tags": [
     "idle",
     "simulation",
-    "management",
     "singleplayer"
   ]
 },
@@ -367,9 +343,7 @@
   "credits": "Developed by TimMcool",
   "tags": [
     "multiplayer",
-    "social",
-    "strategy",
-    "party"
+    "strategy"
   ]
 },
 {
@@ -379,8 +353,7 @@
   "new": false,
   "credits": "Developed by SnoutUp",
   "tags": [
-    "action",
-    "fighter",
+    "fighting",
     "arcade",
     "singleplayer"
   ]
@@ -392,7 +365,6 @@
   "new": false,
   "credits": "Developed by Gametornado",
   "tags": [
-    "physics",
     "driving",
     "puzzle",
     "singleplayer"
@@ -407,7 +379,6 @@
   "tags": [
     "tower defense",
     "strategy",
-    "fantasy",
     "singleplayer"
   ]
 },
@@ -420,7 +391,6 @@
   "tags": [
     "arcade",
     "flying",
-    "physics",
     "singleplayer"
   ]
 },
@@ -433,7 +403,6 @@
   "tags": [
     "arcade",
     "flying",
-    "physics",
     "singleplayer"
   ]
 },
@@ -444,7 +413,6 @@
   "new": false,
   "credits": "Developed by XGen Studios",
   "tags": [
-    "mining",
     "adventure",
     "arcade",
     "singleplayer"
@@ -457,9 +425,7 @@
   "new": false,
   "credits": "Developed by Madpuffers",
   "tags": [
-    "motorbike",
     "racing",
-    "platformer",
     "singleplayer"
   ]
 },{
