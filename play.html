@@ -36,17 +36,22 @@
         '<option>Error loading games list :(</option>';
     });
 
-  function loadGame() {
-    const selector = document.getElementById('gameSelector');
-    const frame = document.getElementById('gameFrame');
-    if (selector.value) {
-      frame.src = selector.value;
-      frame.style.display = "block";
-    } else {
-      frame.src = "";
-      frame.style.display = "none";
-    }
+function loadGame() {
+  const selector = document.getElementById('gameSelector');
+  const frame = document.getElementById('gameFrame');
+  if (selector.value) {
+    // Make sure the path starts with your GitHub Pages repo name!
+    const repoName = "GamesList.github.io"; // CHANGE if your repo is different!
+    let url = selector.value;
+    // Remove any leading slashes just in case
+    if (url.startsWith("/")) url = url.slice(1);
+    frame.src = `/${repoName}/${url}`;
+    frame.style.display = "block";
+  } else {
+    frame.src = "";
+    frame.style.display = "none";
   }
+}
 </script>
 </body>
 </html>
