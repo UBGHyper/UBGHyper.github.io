@@ -4,1406 +4,2483 @@
     "image": "2048.jpg",
     "url": "2048",
     "new": false,
-    "credits": "Developed by Gabriele Cirulli"
+    "credits": "Developed by Gabriele Cirulli",
+    "tags": [
+      "puzzle",
+      "singleplayer",
+      "strategy"
+    ]
   },
   {
     "name": "Awesome Planes",
     "image": "awesomeplanes.png",
     "url": "Awesome-Planes",
     "new": false,
-    "credits": "Developed by Kewlbox"
+    "credits": "Developed by Kewlbox",
+    "tags": [
+      "multiplayer",
+      "shooter",
+      "aviation"
+    ]
   },
   {
     "name": "Awesome Tanks",
     "image": "awesometanks.jpg",
     "url": "Awesome-Tanks",
     "new": false,
-    "credits": "Developed by Kewlbox"
+    "credits": "Developed by Kewlbox",
+    "tags": [
+      "multiplayer",
+      "shooter",
+      "vehicles"
+    ]
   },
-   {
+  {
     "name": "Super Smash Flash 2",
     "image": "supersmashflash2.png",
     "url": "Super-Smash-Flash-2",
     "new": false,
-    "credits": "Developed by Kewlbox"
+    "credits": "Developed by Kewlbox",
+    "tags": [
+      "multiplayer",
+      "fighting",
+      "action"
+    ]
   },
   {
     "name": "Bloons TD 4",
     "image": "btd4.png",
     "url": "BTD-4",
     "new": false,
-    "credits": "Developed by Ninja Kiwi"
+    "credits": "Developed by Ninja Kiwi",
+    "tags": [
+      "tower defense",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Bitlife",
     "image": "bitlife.png",
     "url": "Bitlife",
     "new": false,
-    "credits": "Developed by Candywriter, LLC"
+    "credits": "Developed by Candywriter, LLC",
+    "tags": [
+      "simulation",
+      "singleplayer",
+      "life"
+    ]
   },
   {
     "name": "Blackjack",
     "image": "blackjack.png",
     "url": "Blackjack",
     "new": false,
-    "credits": "Developed by various game developers"
+    "credits": "Developed by various game developers",
+    "tags": [
+      "card",
+      "singleplayer",
+      "casino"
+    ]
   },
   {
     "name": "Bloons TD 5",
     "image": "btd5.png",
     "url": "Bloons-TD-5",
     "new": false,
-    "credits": "Developed by Ninja Kiwi"
+    "credits": "Developed by Ninja Kiwi",
+    "tags": [
+      "tower defense",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Line Rider 2",
     "image": "linerider2.png",
     "url": "Line-Rider-2",
     "new": false,
-    "credits": "Developed by Boštjan Čadež"
+    "credits": "Developed by Boštjan Čadež",
+    "tags": [
+      "simulation",
+      "puzzle",
+      "physics"
+    ]
   },
   {
     "name": "Bob The Robber",
     "image": "bobtherobber.png",
     "url": "Bob-The-Robber",
     "new": false,
-    "credits": "Developed by T. M. Games"
+    "credits": "Developed by T. M. Games",
+    "tags": [
+      "stealth",
+      "action",
+      "singleplayer"
+    ]
   },
   {
     "name": "Click The Wawas",
     "image": "wawa.png",
     "url": "Click-The-Wawas",
     "new": false,
-    "credits": "Developed by Wawa Games"
+    "credits": "Developed by Wawa Games",
+    "tags": [
+      "clicker",
+      "casual",
+      "singleplayer"
+    ]
   },
   {
     "name": "Cookie Clicker",
     "image": "cookieclicker.jpg",
     "url": "Cookie-Clicker",
     "new": false,
-    "credits": "Developed by Julien Thiennot"
+    "credits": "Developed by Julien Thiennot",
+    "tags": [
+      "idle",
+      "clicker",
+      "singleplayer"
+    ]
   },
   {
     "name": "Doom",
     "image": "doom.png",
     "url": "Doom",
     "new": false,
-    "credits": "Developed by id Software"
-  },
-  {
-    "name": "Drive Mad",
-    "image": "logo.png",
-    "url": "Drive-Mad",
-    "new": false,
-    "credits": "Developed by S. J. Entertainment"
-  },
-  {
-    "name": "Duck Life 4",
-    "image": "ducklife4.png",
-    "url": "Duck-Life-4",
-    "new": false,
-    "credits": "Developed by MoFunZone"
-  },
-  {
-    "name": "Eggy Car",
-    "image": "eggycar.png",
-    "url": "Eggy-Car",
-    "new": false,
-    "credits": "Developed by M. S. Studio"
-  },
-  {
-    "name": "Block Blast",
-    "image": "block-blast.png",
-    "url": "Block-Blast",
-    "new": false,
-    "credits": "Developed by M. S. Studio"
-  },
-  {
-    "name": "Basket Random",
-    "image": "basketrandom.png",
-    "url": "Basket-Random",
-    "new": false,
-    "credits": "Developed by M. S. Studio"
-  },
-  {
-    "name": "Cursed Treasure 1",
-    "image": "cursedtreasure1.png",
-    "url": "Cursed-Treasure",
-    "new": false,
-    "credits": "Developed by IriySoft"
-  },
-  {
-    "name": "Cursed Treasure 2",
-    "image": "cursedtreasure2.png",
-    "url": "Cursed-Treasure-2",
-    "new": false,
-    "credits": "Developed by IriySoft"
-  },
-  {
-    "name": "Crossing the Pit",
-    "image": "crossingthepit.png",
-    "url": "Crossing-The-Pit",
-    "new": false,
-    "credits": "Developed by PuffBallsUnited"
-  },
-  {
-    "name": "Breaking The Bank",
-    "image": "breakingthebank.png",
-    "url": "Breaking-The-Bank",
-    "new": false,
-    "credits": "Developed by PuffBallsUnited"
-  },
-  {
-    "name": "Bubble Tanks TD 1",
-    "image": "bubbletanks1.png",
-    "url": "Bubble-Tanks-TD-1",
-    "new": false,
-    "credits": "Developed by Hero Interactive"
-  },
-  {
-    "name": "Bubble Tanks TD 2",
-    "image": "bubble-tanks-2.jpg",
-    "url": "Bubble-Tanks-TD-2",
-    "new": false,
-    "credits": "Developed by Hero Interactive"
-  },
-  {
-    "name": "Bubble Tanks TD Arena",
-    "image": "bubbletanksarena.png",
-    "url": "Bubble-Tanks-Arena",
-    "new": false,
-    "credits": "Developed by Hero Interactive"
-  },
-  {
-    "name": "Gun Mayham 2",
-    "image": "gunmayham2.png",
-    "url": "Gun-Mayham-2",
-    "new": false,
-    "credits": "Developed by J. A. Games"
-  },
-  {
-    "name": "Gun Mayham Redux",
-    "image": "gunmayhamredux.png",
-    "url": "Gun-Mayham-Redux",
-    "new": false,
-    "credits": "Developed by J. A. Games"
-  },
-  {
-    "name": "Happy Wheels",
-    "image": "happywheels.png",
-    "url": "Happy-Wheels",
-    "new": false,
-    "credits": "Developed by Jim Bonacci"
-  },
-  {
-    "name": "Idle Mining Empire",
-    "image": "idleminingempire.png",
-    "url": "Idle-Mining-Empire",
-    "new": false,
-    "credits": "Developed by Dark Blue Games"
-  },
-  {
-    "name": "Among Us Online",
-    "image": "Sus.jpg",
-    "url": "AmongUs-Online",
-    "new": false,
-    "credits": "Developed by TimMcool"
-  },
-  {
-    "name": "Iron Snout",
-    "image": "ironsnout.png",
-    "url": "Iron-Snout",
-    "new": false,
-    "credits": "Developed by SnoutUp"
-  },
-  {
-    "name": "Jelly Truck",
-    "image": "jellytruck.jpg",
-    "url": "Jelly-Truck",
-    "new": false,
-    "credits": "Developed by Gametornado"
-  },
-  {
-    "name": "Kingdom Rush",
-    "image": "kingdomrush.png",
-    "url": "Kingdom-Rush",
-    "new": false,
-    "credits": "Developed by Ironhide Game Studio"
-  },
-  {
-    "name": "Learn to Fly 2",
-    "image": "learntofly2.jpg",
-    "url": "Learn-To-Fly-2",
-    "new": false,
-    "credits": "Developed by Light Bringer Games"
-  },
-  {
-    "name": "Learn to Fly 3",
-    "image": "Learntofly3.jpg",
-    "url": "Learn-To-Fly-3",
-    "new": false,
-    "credits": "Developed by Light Bringer Games"
-  },
-  {
-    "name": "Motherload",
-    "image": "motherload.jpg",
-    "url": "Motherload",
-    "new": false,
-    "credits": "Developed by XGen Studios"
-  },
-  {
-    "name": "MotoX2M 2",
-    "image": "moto3xm2.png",
-    "url": "Moto3XM-2",
-    "new": false,
-    "credits": "Developed by Madpuffers"
-  },
-  {
-    "name": "MotoX3M 3",
-    "image": "moto3xm3.png",
-    "url": "Moto3XM-3",
-    "new": false,
-    "credits": "Developed by Madpuffers"
-  },
-  {
-    "name": "MotoX3M",
-    "image": "moto3xm.png",
-    "url": "Moto3XM",
-    "new": false,
-    "credits": "Developed by Madpuffers"
-  },
-  {
-    "name": "Poly Track New",
-    "image": "polytrack.jpg",
-    "url": "Polytrack-New",
-    "new": false,
-    "credits": "Developed by Kodub"
-  },
-  {
-    "name": "Poly Track Modded",
-    "image": "polytrackmodded.png",
-    "url": "Polytrack-Modded",
-    "new": false,
-    "credits": "Developed by Kodub"
-  },
-  {
-    "name": "Poly Track Old",
-    "image": "polytrack-old.jpg",
-    "url": "Polytrack-Old",
-    "new": false,
-    "credits": "Developed by Kodub"
-  },
-  {
-    "name": "Portal Flash",
-    "image": "portalflash.jpg",
-    "url": "Portal-Flash",
-    "new": false,
-    "credits": "Developed by We Create Stuff"
-  },
-  {
-    "name": "Raft Wars",
-    "image": "raftwars.png",
-    "url": "Raft-Wars",
-    "new": false,
-    "credits": "Developed by Martijn Kunst"
-  },
-  {
-    "name": "Raft Wars 2",
-    "image": "raftwars2.png",
-    "url": "Raft-Wars-2",
-    "new": false,
-    "credits": "Developed by Martijn Kunst"
-  },
-  {
-    "name": "Retro Bowl",
-    "image": "retrobowl.jpg",
-    "url": "Retro-Bowl",
-    "new": false,
-    "credits": "Developed by New Star Games"
-  },
-  {
-    "name": "Run 3",
-    "image": "run3.png",
-    "url": "Run-3",
-    "new": false,
-    "credits": "Developed by Player_03"
-  },
-  {
-    "name": "Slope",
-    "image": "slope.jpg",
-    "url": "Slope",
-    "new": false,
-    "credits": "Developed by Rob Kay"
-  },
-  {
-    "name": "Snow Rider 3D",
-    "image": "snow-rider-3d.jpg",
-    "url": "Snow-Rider-3D",
-    "new": false,
-    "credits": "Developed by Ashima Prabhakar"
-  },
-  {
-    "name": "Submersible",
-    "image": "submersible.png",
-    "url": "Submersible",
-    "new": false,
-    "credits": "Developed by unknown"
-  },
-  {
-    "name": "Super Smash Flash",
-    "image": "super-smash-flash.jpg",
-    "url": "Super-Smash-Flash",
-    "new": false,
-    "credits": "Developed by McLeodGaming"
-  },
-  {
-    "name": "Swords & Souls",
-    "image": "swordsandsouls.jpg",
-    "url": "Swords-And-Souls",
-    "new": false,
-    "credits": "Developed by SoulGame Studio"
-  },
-  {
-    "name": "Tanuki Sunset",
-    "image": "tanukisunset.jpg",
-    "url": "Tanuki-Sunset",
-    "new": false,
-    "credits": "Developed by Squid Squad"
-  },
-  {
-    "name": "There Is No Game",
-    "image": "thereisnogame.jpg",
-    "url": "There-Is-No-Game",
-    "new": false,
-    "credits": "Developed by Pascal Cammisotto"
-  },
-  {
-    "name": "Minecraft Classic Online",
-    "image": "minecraft.jpg",
-    "url": "Minecraft-Online",
-    "new": false,
-    "credits": "Developed by Mojang"
-  },
-  {
-    "name": "Eaglercraft",
-    "image": "eaglercraft.jpg",
-    "url": "Eaglercraft",
-    "new": false,
-    "credits": "Developed by Mojang"
-  },
-  {
-    "name": "Chatroom",
-    "image": "chatroom.png",
-    "url": "Chat-Room",
-    "new": false,
-    "credits": "Developed by unknown"
-  },
-  {
-    "name": "Hobo 1",
-    "image": "hobo1.png",
-    "url": "Hobo-1",
-    "new": false,
-    "credits": "Developed by ArmorGames"
-  },
-  {
-    "name": "Hobo 2",
-    "image": "hobo2.png",
-    "url": "Hobo-2",
-    "new": false,
-    "credits": "Developed by ArmorGames"
-  },
-  {
-    "name": "Hobo 3",
-    "image": "hobo3.png",
-    "url": "Hobo-3",
-    "new": false,
-    "credits": "Developed by ArmorGames"
-  },
-  {
-    "name": "Hobo 4",
-    "image": "hobo4.png",
-    "url": "Hobo-4",
-    "new": false,
-    "credits": "Developed by ArmorGames"
-  },
-  {
-    "name": "Hobo 5",
-    "image": "hobo5.png",
-    "url": "Hobo-5",
-    "new": false,
-    "credits": "Developed by ArmorGames"
-  },
-  {
-    "name": "Hobo 6",
-    "image": "hobo6.png",
-    "url": "Hobo-6",
-    "new": false,
-    "credits": "Developed by ArmorGames"
-  },
-  {
-    "name": "Hobo 7",
-    "image": "hobo7.png",
-    "url": "Hobo-7",
-    "new": false,
-    "credits": "Developed by ArmorGames"
-  },
-  {
-    "name": "Riddle School 1",
-    "image": "riddleschool1.png",
-    "url": "Riddle-School-1",
-    "new": false,
-    "credits": "Developed by Jonochrome"
-  },
-  {
-    "name": "Riddle School 2",
-    "image": "riddleschool2.png",
-    "url": "Riddle-School-2",
-    "new": false,
-    "credits": "Developed by Jonochrome"
-  },
-  {
-    "name": "Riddle School 3",
-    "image": "riddleschool3.png",
-    "url": "Riddle-School-3",
-    "new": false,
-    "credits": "Developed by Jonochrome"
-  },
-  {
-    "name": "Riddle School 4",
-    "image": "riddleschool4.png",
-    "url": "Riddle-School-4",
-    "new": false,
-    "credits": "Developed by Jonochrome"
-  },
-  {
-    "name": "Riddle School 5",
-    "image": "riddleschool5.png",
-    "url": "Riddle-School-5",
-    "new": false,
-    "credits": "Developed by Jonochrome"
-  },
-  {
-    "name": "Riddle School Transfer",
-    "image": "riddleschooltransfer.png",
-    "url": "Riddle-School-Transfer",
-    "new": false,
-    "credits": "Developed by Jonochrome"
-  },
-  {
-    "name": "Riddle School Transfer 2",
-    "image": "riddleschooltransfer2.png",
-    "url": "Riddle-School-Transfer-2",
-    "new": false,
-    "credits": "Developed by Jonochrome"
-  },
-  {
-    "name": "Sift Heads 1",
-    "image": "siftheads1.png",
-    "url": "Sift-Heads-1",
-    "new": false,
-    "credits": "Developed by Pyrozen"
-  },
-  {
-    "name": "Sift Heads 2",
-    "image": "siftheads2.png",
-    "url": "Sift-Heads-2",
-    "new": false,
-    "credits": "Developed by Pyrozen"
-  },
-  {
-    "name": "Sift Heads 3",
-    "image": "siftheads3.png",
-    "url": "Sift-Heads-3",
-    "new": false,
-    "credits": "Developed by Pyrozen"
-  },
-  {
-    "name": "Sift Heads 4",
-    "image": "siftheads4.png",
-    "url": "Sift-Heads-4",
-    "new": false,
-    "credits": "Developed by Pyrozen"
-  },
-  {
-    "name": "Sift Heads 5",
-    "image": "siftheads5.png",
-    "url": "Sift-Heads-5",
-    "new": false,
-    "credits": "Developed by Pyrozen"
-  },
-  {
-    "name": "Deep Sleep 1",
-    "image": "deepsleep1.png",
-    "url": "Deep-Sleep-1",
-    "new": false,
-    "credits": "Developed by Armour Games"
-  },
-  {
-    "name": "Deep Sleep 2",
-    "image": "deepsleep2.png",
-    "url": "Deep-Sleep-2",
-    "new": false,
-    "credits": "Developed by Armour Games"
-  },
-  {
-    "name": "Deep Sleep 3",
-    "image": "deepsleep3.png",
-    "url": "Deep-Sleep-3",
-    "new": false,
-    "credits": "Developed by Armour Games"
-  },
-  {
-    "name": "Dont Escape 1",
-    "image": "dontescape1.png",
-    "url": "Dont-Escape-1",
-    "new": false,
-    "credits": "Developed by Armour Games"
-  },
+    "credits": "Developed by id Software",
+    "tags": [
+      "shooter",
+      "singleplayer",
+      "action"
+    ]
+  },
+{
+  "name": "Drive Mad",
+  "image": "logo.png",
+  "url": "Drive-Mad",
+  "new": false,
+  "credits": "Developed by S. J. Entertainment",
+  "tags": [
+    "driving",
+    "racing",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Duck Life 4",
+  "image": "ducklife4.png",
+  "url": "Duck-Life-4",
+  "new": false,
+  "credits": "Developed by MoFunZone",
+  "tags": [
+    "simulation",
+    "animal",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Eggy Car",
+  "image": "eggycar.png",
+  "url": "Eggy-Car",
+  "new": false,
+  "credits": "Developed by M. S. Studio",
+  "tags": [
+    "driving",
+    "physics",
+    "arcade",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Block Blast",
+  "image": "block-blast.png",
+  "url": "Block-Blast",
+  "new": false,
+  "credits": "Developed by M. S. Studio",
+  "tags": [
+    "puzzle",
+    "arcade",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Basket Random",
+  "image": "basketrandom.png",
+  "url": "Basket-Random",
+  "new": false,
+  "credits": "Developed by M. S. Studio",
+  "tags": [
+    "sports",
+    "basketball",
+    "arcade",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Cursed Treasure 1",
+  "image": "cursedtreasure1.png",
+  "url": "Cursed-Treasure",
+  "new": false,
+  "credits": "Developed by IriySoft",
+  "tags": [
+    "tower defense",
+    "strategy",
+    "fantasy",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Cursed Treasure 2",
+  "image": "cursedtreasure2.png",
+  "url": "Cursed-Treasure-2",
+  "new": false,
+  "credits": "Developed by IriySoft",
+  "tags": [
+    "tower defense",
+    "strategy",
+    "fantasy",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Crossing the Pit",
+  "image": "crossingthepit.png",
+  "url": "Crossing-The-Pit",
+  "new": false,
+  "credits": "Developed by PuffBallsUnited",
+  "tags": [
+    "platformer",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Breaking The Bank",
+  "image": "breakingthebank.png",
+  "url": "Breaking-The-Bank",
+  "new": false,
+  "credits": "Developed by PuffBallsUnited",
+  "tags": [
+    "puzzle",
+    "strategy",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Bubble Tanks TD 1",
+  "image": "bubbletanks1.png",
+  "url": "Bubble-Tanks-TD-1",
+  "new": false,
+  "credits": "Developed by Hero Interactive",
+  "tags": [
+    "tower defense",
+    "strategy",
+    "action",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Bubble Tanks TD 2",
+  "image": "bubble-tanks-2.jpg",
+  "url": "Bubble-Tanks-TD-2",
+  "new": false,
+  "credits": "Developed by Hero Interactive",
+  "tags": [
+    "tower defense",
+    "strategy",
+    "action",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Bubble Tanks TD Arena",
+  "image": "bubbletanksarena.png",
+  "url": "Bubble-Tanks-Arena",
+  "new": false,
+  "credits": "Developed by Hero Interactive",
+  "tags": [
+    "action",
+    "multiplayer",
+    "arena",
+    "battle"
+  ]
+},
+{
+  "name": "Gun Mayham 2",
+  "image": "gunmayham2.png",
+  "url": "Gun-Mayham-2",
+  "new": false,
+  "credits": "Developed by J. A. Games",
+  "tags": [
+    "action",
+    "platformer",
+    "shooter",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Gun Mayham Redux",
+  "image": "gunmayhamredux.png",
+  "url": "Gun-Mayham-Redux",
+  "new": false,
+  "credits": "Developed by J. A. Games",
+  "tags": [
+    "action",
+    "platformer",
+    "shooter",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Happy Wheels",
+  "image": "happywheels.png",
+  "url": "Happy-Wheels",
+  "new": false,
+  "credits": "Developed by Jim Bonacci",
+  "tags": [
+    "ragdoll",
+    "physics",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Idle Mining Empire",
+  "image": "idleminingempire.png",
+  "url": "Idle-Mining-Empire",
+  "new": false,
+  "credits": "Developed by Dark Blue Games",
+  "tags": [
+    "idle",
+    "simulation",
+    "management",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Among Us Online",
+  "image": "Sus.jpg",
+  "url": "AmongUs-Online",
+  "new": false,
+  "credits": "Developed by TimMcool",
+  "tags": [
+    "multiplayer",
+    "social",
+    "strategy",
+    "party"
+  ]
+},
+{
+  "name": "Iron Snout",
+  "image": "ironsnout.png",
+  "url": "Iron-Snout",
+  "new": false,
+  "credits": "Developed by SnoutUp",
+  "tags": [
+    "action",
+    "fighter",
+    "arcade",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Jelly Truck",
+  "image": "jellytruck.jpg",
+  "url": "Jelly-Truck",
+  "new": false,
+  "credits": "Developed by Gametornado",
+  "tags": [
+    "physics",
+    "driving",
+    "puzzle",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Kingdom Rush",
+  "image": "kingdomrush.png",
+  "url": "Kingdom-Rush",
+  "new": false,
+  "credits": "Developed by Ironhide Game Studio",
+  "tags": [
+    "tower defense",
+    "strategy",
+    "fantasy",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Learn to Fly 2",
+  "image": "learntofly2.jpg",
+  "url": "Learn-To-Fly-2",
+  "new": false,
+  "credits": "Developed by Light Bringer Games",
+  "tags": [
+    "arcade",
+    "flying",
+    "physics",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Learn to Fly 3",
+  "image": "Learntofly3.jpg",
+  "url": "Learn-To-Fly-3",
+  "new": false,
+  "credits": "Developed by Light Bringer Games",
+  "tags": [
+    "arcade",
+    "flying",
+    "physics",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Motherload",
+  "image": "motherload.jpg",
+  "url": "Motherload",
+  "new": false,
+  "credits": "Developed by XGen Studios",
+  "tags": [
+    "mining",
+    "adventure",
+    "arcade",
+    "singleplayer"
+  ]
+},
+{
+  "name": "MotoX2M 2",
+  "image": "moto3xm2.png",
+  "url": "Moto3XM-2",
+  "new": false,
+  "credits": "Developed by Madpuffers",
+  "tags": [
+    "motorbike",
+    "racing",
+    "platformer",
+    "singleplayer"
+  ]
+},{
+  "name": "MotoX3M 3",
+  "image": "moto3xm3.png",
+  "url": "Moto3XM-3",
+  "new": false,
+  "credits": "Developed by Madpuffers",
+  "tags": [
+    "motorbike",
+    "racing",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "MotoX3M",
+  "image": "moto3xm.png",
+  "url": "Moto3XM",
+  "new": false,
+  "credits": "Developed by Madpuffers",
+  "tags": [
+    "motorbike",
+    "racing",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Poly Track New",
+  "image": "polytrack.jpg",
+  "url": "Polytrack-New",
+  "new": false,
+  "credits": "Developed by Kodub",
+  "tags": [
+    "racing",
+    "car",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Poly Track Modded",
+  "image": "polytrackmodded.png",
+  "url": "Polytrack-Modded",
+  "new": false,
+  "credits": "Developed by Kodub",
+  "tags": [
+    "racing",
+    "car",
+    "singleplayer",
+    "mods"
+  ]
+},
+{
+  "name": "Poly Track Old",
+  "image": "polytrack-old.jpg",
+  "url": "Polytrack-Old",
+  "new": false,
+  "credits": "Developed by Kodub",
+  "tags": [
+    "racing",
+    "car",
+    "singleplayer",
+    "classic"
+  ]
+},
+{
+  "name": "Portal Flash",
+  "image": "portalflash.jpg",
+  "url": "Portal-Flash",
+  "new": false,
+  "credits": "Developed by We Create Stuff",
+  "tags": [
+    "puzzle",
+    "portal",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Raft Wars",
+  "image": "raftwars.png",
+  "url": "Raft-Wars",
+  "new": false,
+  "credits": "Developed by Martijn Kunst",
+  "tags": [
+    "strategy",
+    "action",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Raft Wars 2",
+  "image": "raftwars2.png",
+  "url": "Raft-Wars-2",
+  "new": false,
+  "credits": "Developed by Martijn Kunst",
+  "tags": [
+    "strategy",
+    "action",
+    "singleplayer",
+    "sequel"
+  ]
+},
+{
+  "name": "Retro Bowl",
+  "image": "retrobowl.jpg",
+  "url": "Retro-Bowl",
+  "new": false,
+  "credits": "Developed by New Star Games",
+  "tags": [
+    "sports",
+    "american football",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Run 3",
+  "image": "run3.png",
+  "url": "Run-3",
+  "new": false,
+  "credits": "Developed by Player_03",
+  "tags": [
+    "platformer",
+    "endless runner",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Slope",
+  "image": "slope.jpg",
+  "url": "Slope",
+  "new": false,
+  "credits": "Developed by Rob Kay",
+  "tags": [
+    "arcade",
+    "runner",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Snow Rider 3D",
+  "image": "snow-rider-3d.jpg",
+  "url": "Snow-Rider-3D",
+  "new": false,
+  "credits": "Developed by Ashima Prabhakar",
+  "tags": [
+    "racing",
+    "3d",
+    "motorbike",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Submersible",
+  "image": "submersible.png",
+  "url": "Submersible",
+  "new": false,
+  "credits": "Developed by unknown",
+  "tags": [
+    "underwater",
+    "exploration",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Super Smash Flash",
+  "image": "super-smash-flash.jpg",
+  "url": "Super-Smash-Flash",
+  "new": false,
+  "credits": "Developed by McLeodGaming",
+  "tags": [
+    "fighting",
+    "multiplayer",
+    "action"
+  ]
+},
+{
+  "name": "Swords & Souls",
+  "image": "swordsandsouls.jpg",
+  "url": "Swords-And-Souls",
+  "new": false,
+  "credits": "Developed by SoulGame Studio",
+  "tags": [
+    "rpg",
+    "action",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Tanuki Sunset",
+  "image": "tanukisunset.jpg",
+  "url": "Tanuki-Sunset",
+  "new": false,
+  "credits": "Developed by Squid Squad",
+  "tags": [
+    "action",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "There Is No Game",
+  "image": "thereisnogame.jpg",
+  "url": "There-Is-No-Game",
+  "new": false,
+  "credits": "Developed by Pascal Cammisotto",
+  "tags": [
+    "puzzle",
+    "meta",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Minecraft Classic Online",
+  "image": "minecraft.jpg",
+  "url": "Minecraft-Online",
+  "new": false,
+  "credits": "Developed by Mojang",
+  "tags": [
+    "sandbox",
+    "multiplayer",
+    "creative",
+    "building"
+  ]
+},
+{
+  "name": "Eaglercraft",
+  "image": "eaglercraft.jpg",
+  "url": "Eaglercraft",
+  "new": false,
+  "credits": "Developed by Mojang",
+  "tags": [
+    "sandbox",
+    "multiplayer",
+    "building",
+    "survival"
+  ]
+},
+{
+  "name": "Chatroom",
+  "image": "chatroom.png",
+  "url": "Chat-Room",
+  "new": false,
+  "credits": "Developed by unknown",
+  "tags": [
+    "social",
+    "multiplayer",
+    "chat"
+  ]
+},
+{
+  "name": "Hobo 1",
+  "image": "hobo1.png",
+  "url": "Hobo-1",
+  "new": false,
+  "credits": "Developed by ArmorGames",
+  "tags": [
+    "action",
+    "fighting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Hobo 2",
+  "image": "hobo2.png",
+  "url": "Hobo-2",
+  "new": false,
+  "credits": "Developed by ArmorGames",
+  "tags": [
+    "action",
+    "fighting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Hobo 3",
+  "image": "hobo3.png",
+  "url": "Hobo-3",
+  "new": false,
+  "credits": "Developed by ArmorGames",
+  "tags": [
+    "action",
+    "fighting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Hobo 4",
+  "image": "hobo4.png",
+  "url": "Hobo-4",
+  "new": false,
+  "credits": "Developed by ArmorGames",
+  "tags": [
+    "action",
+    "fighting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Hobo 5",
+  "image": "hobo5.png",
+  "url": "Hobo-5",
+  "new": false,
+  "credits": "Developed by ArmorGames",
+  "tags": [
+    "action",
+    "fighting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Hobo 6",
+  "image": "hobo6.png",
+  "url": "Hobo-6",
+  "new": false,
+  "credits": "Developed by ArmorGames",
+  "tags": [
+    "action",
+    "fighting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Hobo 7",
+  "image": "hobo7.png",
+  "url": "Hobo-7",
+  "new": false,
+  "credits": "Developed by ArmorGames",
+  "tags": [
+    "action",
+    "fighting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Riddle School 1",
+  "image": "riddleschool1.png",
+  "url": "Riddle-School-1",
+  "new": false,
+  "credits": "Developed by Jonochrome",
+  "tags": [
+    "point and click",
+    "puzzle",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Riddle School 2",
+  "image": "riddleschool2.png",
+  "url": "Riddle-School-2",
+  "new": false,
+  "credits": "Developed by Jonochrome",
+  "tags": [
+    "point and click",
+    "puzzle",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Riddle School 3",
+  "image": "riddleschool3.png",
+  "url": "Riddle-School-3",
+  "new": false,
+  "credits": "Developed by Jonochrome",
+  "tags": [
+    "point and click",
+    "puzzle",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Riddle School 4",
+  "image": "riddleschool4.png",
+  "url": "Riddle-School-4",
+  "new": false,
+  "credits": "Developed by Jonochrome",
+  "tags": [
+    "point and click",
+    "puzzle",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Riddle School 5",
+  "image": "riddleschool5.png",
+  "url": "Riddle-School-5",
+  "new": false,
+  "credits": "Developed by Jonochrome",
+  "tags": [
+    "point and click",
+    "puzzle",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Riddle School Transfer",
+  "image": "riddleschooltransfer.png",
+  "url": "Riddle-School-Transfer",
+  "new": false,
+  "credits": "Developed by Jonochrome",
+  "tags": [
+    "point and click",
+    "puzzle",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Riddle School Transfer 2",
+  "image": "riddleschooltransfer2.png",
+  "url": "Riddle-School-Transfer-2",
+  "new": false,
+  "credits": "Developed by Jonochrome",
+  "tags": [
+    "point and click",
+    "puzzle",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Sift Heads 1",
+  "image": "siftheads1.png",
+  "url": "Sift-Heads-1",
+  "new": false,
+  "credits": "Developed by Pyrozen",
+  "tags": [
+    "action",
+    "shooting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Sift Heads 2",
+  "image": "siftheads2.png",
+  "url": "Sift-Heads-2",
+  "new": false,
+  "credits": "Developed by Pyrozen",
+  "tags": [
+    "action",
+    "shooting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Sift Heads 3",
+  "image": "siftheads3.png",
+  "url": "Sift-Heads-3",
+  "new": false,
+  "credits": "Developed by Pyrozen",
+  "tags": [
+    "action",
+    "shooting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Sift Heads 4",
+  "image": "siftheads4.png",
+  "url": "Sift-Heads-4",
+  "new": false,
+  "credits": "Developed by Pyrozen",
+  "tags": [
+    "action",
+    "shooting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Sift Heads 5",
+  "image": "siftheads5.png",
+  "url": "Sift-Heads-5",
+  "new": false,
+  "credits": "Developed by Pyrozen",
+  "tags": [
+    "action",
+    "shooting",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Deep Sleep 1",
+  "image": "deepsleep1.png",
+  "url": "Deep-Sleep-1",
+  "new": false,
+  "credits": "Developed by Armour Games",
+  "tags": [
+    "horror",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Deep Sleep 2",
+  "image": "deepsleep2.png",
+  "url": "Deep-Sleep-2",
+  "new": false,
+  "credits": "Developed by Armour Games",
+  "tags": [
+    "horror",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Deep Sleep 3",
+  "image": "deepsleep3.png",
+  "url": "Deep-Sleep-3",
+  "new": false,
+  "credits": "Developed by Armour Games",
+  "tags": [
+    "horror",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Dont Escape 1",
+  "image": "dontescape1.png",
+  "url": "Dont-Escape-1",
+  "new": false,
+  "credits": "Developed by Armour Games",
+  "tags": [
+    "adventure",
+    "puzzle",
+    "horror",
+    "singleplayer"
+  ]
+},[
   {
     "name": "Dont Escape 2",
     "image": "dontescape2.png",
     "url": "Dont-Escape-2",
     "new": false,
-    "credits": "Developed by Armour Games"
+    "credits": "Developed by Armour Games",
+    "tags": [
+      "adventure",
+      "puzzle",
+      "horror",
+      "singleplayer"
+    ]
   },
   {
     "name": "Dont Escape 3",
     "image": "dontescape3.png",
     "url": "Dont-Escape-3",
     "new": false,
-    "credits": "Developed by Armour Games"
+    "credits": "Developed by Armour Games",
+    "tags": [
+      "adventure",
+      "puzzle",
+      "horror",
+      "singleplayer"
+    ]
   },
   {
     "name": "Burrito Bison",
     "image": "burritobison.png",
     "url": "Burrito-Bison",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "arcade",
+      "action",
+      "physics",
+      "singleplayer"
+    ]
   },
   {
     "name": "Burrito Bison Revenge",
     "image": "burritobisonrevenge.png",
     "url": "Burrito-Bison-Revenge",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "arcade",
+      "action",
+      "physics",
+      "singleplayer"
+    ]
   },
   {
     "name": "Burrito Bison 3",
     "image": "burrito-bison-3.png",
     "url": "Burrito-Bison-3",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "arcade",
+      "action",
+      "physics",
+      "singleplayer"
+    ]
   },
   {
     "name": "Zombotron",
     "image": "zombotron.png",
     "url": "Zombotron",
     "new": false,
-    "credits": "Developed by Ant Karlov"
+    "credits": "Developed by Ant Karlov",
+    "tags": [
+      "action",
+      "shooter",
+      "platformer",
+      "singleplayer"
+    ]
   },
   {
     "name": "Zombotron 2",
     "image": "zombotron2.png",
     "url": "Zombotron-2",
     "new": false,
-    "credits": "Developed by Ant Karlov"
+    "credits": "Developed by Ant Karlov",
+    "tags": [
+      "action",
+      "shooter",
+      "platformer",
+      "singleplayer"
+    ]
   },
   {
     "name": "The Impossible Quiz",
     "image": "theimpossiblequiz.png",
     "url": "The-Impossible-Quiz-Deluxe",
     "new": false,
-    "credits": "Developed by Slap-me-do"
+    "credits": "Developed by Slap-me-do",
+    "tags": [
+      "quiz",
+      "puzzle",
+      "trivia",
+      "singleplayer"
+    ]
   },
   {
     "name": "The Impossible Quiz 2",
     "image": "theimpossiblequiz2.png",
     "url": "The-Impossible-Quiz-2",
     "new": false,
-    "credits": "Developed by Slap-me-do"
+    "credits": "Developed by Slap-me-do",
+    "tags": [
+      "quiz",
+      "puzzle",
+      "trivia",
+      "singleplayer"
+    ]
   },
   {
     "name": "Strikeforce Kitty 2",
     "image": "strikeforcekitty2.png",
     "url": "Strikeforce-Kitty-2",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "action",
+      "platformer",
+      "shooter",
+      "singleplayer"
+    ]
   },
   {
     "name": "Strikeforce Kitty",
     "image": "strikeforcekitty.png",
     "url": "Strikeforce-Kitty",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "action",
+      "platformer",
+      "shooter",
+      "singleplayer"
+    ]
   },
   {
     "name": "Strikeforce Heroes",
     "image": "strikeforceheroes.png",
     "url": "Strikeforce-Heroes",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "action",
+      "shooter",
+      "platformer",
+      "multiplayer"
+    ]
   },
   {
     "name": "Stealing the Diamond",
     "image": "stealingthediamond.png",
     "url": "Stealing-The-Diamond",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "puzzle",
+      "stealth",
+      "singleplayer"
+    ]
   },
   {
     "name": "Papas Wingeria",
     "image": "papaswingeria.png",
     "url": "Papas-Wing",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "time-management",
+      "restaurant",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Papas Pancakeria",
     "image": "papaspancakeria.png",
     "url": "Papas-PnCk",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "time-management",
+      "restaurant",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Papas Pasteria",
     "image": "papaspasteria.png",
     "url": "Papas-Pasta",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "time-management",
+      "restaurant",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Papa Louie 1",
     "image": "papalouie1.png",
     "url": "Papas-Louie-1",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "platformer",
+      "action",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Papa Louie 2",
     "image": "papalouie2.png",
     "url": "Papas-Louie-2",
     "new": false,
-    "credits": "Developed by Juicy Beast"
+    "credits": "Developed by Juicy Beast",
+    "tags": [
+      "platformer",
+      "action",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "The Binding of Isaac",
     "image": "thebindingofissac.png",
     "url": "The-Binding-Of-Isaac",
     "new": false,
-    "credits": "Developed by Edmund McMillen"
+    "credits": "Developed by Edmund McMillen",
+    "tags": [
+      "roguelike",
+      "action",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Papas Scooperia",
     "image": "papasscooperia.png",
     "url": "Papa-Scoop",
     "new": false,
-    "credits": "Developed by Flipline Studios"
+    "credits": "Developed by Flipline Studios",
+    "tags": [
+      "time-management",
+      "restaurant",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Bloons Tower Defence 2",
     "image": "bloons-tower-defence-2.jpg",
     "url": "Bloons-Tower-Defence-2",
     "new": false,
-    "credits": "Developed by Ninja Kiwi"
+    "credits": "Developed by Ninja Kiwi",
+    "tags": [
+      "tower-defense",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Bloons Tower Defence 3",
     "image": "bloons-tower-defence-3.jpg",
     "url": "Bloons-Tower-Defence-3",
     "new": false,
-    "credits": "Developed by Ninja Kiwi"
+    "credits": "Developed by Ninja Kiwi",
+    "tags": [
+      "tower-defense",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Bloons Tower Defence",
     "image": "bloons-tower-defence.jpg",
     "url": "Bloons-Tower-Defence",
     "new": false,
-    "credits": "Developed by Ninja Kiwi"
+    "credits": "Developed by Ninja Kiwi",
+    "tags": [
+      "tower-defense",
+      "strategy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Troll Face Quest",
     "image": "trollface-quest.jpg",
     "url": "Troll-Face-Quest",
     "new": false,
-    "credits": "Developed by PPLLAAYY"
+    "credits": "Developed by PPLLAAYY",
+    "tags": [
+      "puzzle",
+      "comedy",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Troll Face Quest 2",
     "image": "trollface-quest-2.jpg",
     "url": "Troll-Face-Quest-2",
     "new": false,
-    "credits": "Developed by PPLLAAYY"
+    "credits": "Developed by PPLLAAYY",
+    "tags": [
+      "puzzle",
+      "comedy",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Troll Face Quest 3",
     "image": "trollface-quest-3.jpg",
     "url": "Troll-Face-Quest-3",
     "new": false,
-    "credits": "Developed by PPLLAAYY"
-  },
-  {
-    "name": "Troll Face Quest 4",
-    "image": "trollface-quest-4.jpg",
-    "url": "Troll-Face-Quest-4",
-    "new": false,
-    "credits": "Developed by PPLLAAYY"
-  },
-  {
-    "name": "Troll Face Quest 5",
-    "image": "trollface-quest-5.jpg",
-    "url": "Troll-Face-Quest-5",
-    "new": false,
-    "credits": "Developed by PPLLAAYY"
-  },
-  {
-    "name": "This Is The Only Level",
-    "image": "this-is-the-only-level.png",
-    "url": "This-Is-The-Only-Level",
-    "new": false,
-    "credits": "Developed by John Cooney"
-  },
-  {
-    "name": "Territory War",
-    "image": "territory-war.jpg",
-    "url": "Territory-War",
-    "new": false,
-    "credits": "Developed by Afro Ninja"
-  },
-  {
-    "name": "Super Meat Boy",
-    "image": "super-meat-boy.png",
-    "url": "Super-Meat-Boy",
-    "new": false,
-    "credits": "Developed by Team Meat"
-  },
-  {
-    "name": "Storm The House",
-    "image": "storm-the-house.jpg",
-    "url": "Storm-The-House",
-    "new": false,
-    "credits": "Developed by IvoryDrive"
-  },
-  {
-    "name": "Storm The House 2",
-    "image": "storm-the-house-2.jpg",
-    "url": "Storm-The-House-2",
-    "new": false,
-    "credits": "Developed by IvoryDrive"
-  },
-  {
-    "name": "Stick War 1",
-    "image": "stick-war.jpg",
-    "url": "Stick-War-1",
-    "new": false,
-    "credits": "Developed by Jason Whitham"
-  },
-  {
-    "name": "Stick War 2",
-    "image": "stick-war-2.png",
-    "url": "Stick-War-2",
-    "new": false,
-    "credits": "Developed by Jason Whitham"
-  },
-  {
-    "name": "Stick RPG",
-    "image": "stick-rpg.jpg",
-    "url": "Stick-RPG",
-    "new": false,
-    "credits": "Developed by XGen Studios"
-  },
-  {
-    "name": "Stick Madness",
-    "image": "stickmadness.png",
-    "url": "Stick-Madness",
-    "new": false,
-    "credits": "Developed by Jason Whitman"
-  },
-  {
-    "name": "Stick Madness 2",
-    "image": "stickmadness2.png",
-    "url": "Stick-Madness-2",
-    "new": false,
-    "credits": "Developed by Jason Whitman"
-  },
-  {
-    "name": "Stick Empires",
-    "image": "stick-empires.png",
-    "url": "Stick-Empires",
-    "new": false,
-    "credits": "Developed by Jason Whitman"
-  },
-  {
-    "name": "Shopping Cart Hero",
-    "image": "shopping-cart-hero.jpg",
-    "url": "Shopping-Cart-Hero",
-    "new": false,
-    "credits": "Developed by MonkeyWantBanana"
-  },
-  {
-    "name": "Shopping Cart Hero 2",
-    "image": "shopping-cart-hero-2.jpg",
-    "url": "Shopping-Cart-Hero-2",
-    "new": false,
-    "credits": "Developed by MonkeyWantBanana"
-  },
-  {
-    "name": "Shopping Cart Hero 3",
-    "image": "shopping-cart-hero-3.jpg",
-    "url": "Shopping-Cart-Hero-3",
-    "new": false,
-    "credits": "Developed by MonkeyWantBanana"
-  },
-  {
-    "name": "Sentry Knight",
-    "image": "sentryknight.png",
-    "url": "Sentry-Knight",
-    "new": false,
-    "credits": "Developed by TylerNG"
-  },
-  {
-    "name": "Into Space 1",
-    "image": "intospace1.png",
-    "url": "Into-Space-1",
-    "new": false,
-    "credits": "Developed by Barbarian Games"
-  },
+    "credits": "Developed by PPLLAAYY",
+    "tags": [
+      "puzzle",
+      "comedy",
+      "adventure",
+      "singleplayer"
+    ]
+  },{
+  "name": "Troll Face Quest 4",
+  "image": "trollface-quest-4.jpg",
+  "url": "Troll-Face-Quest-4",
+  "new": false,
+  "credits": "Developed by PPLLAAYY",
+  "tags": [
+    "puzzle",
+    "comedy",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Troll Face Quest 5",
+  "image": "trollface-quest-5.jpg",
+  "url": "Troll-Face-Quest-5",
+  "new": false,
+  "credits": "Developed by PPLLAAYY",
+  "tags": [
+    "puzzle",
+    "comedy",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "This Is The Only Level",
+  "image": "this-is-the-only-level.png",
+  "url": "This-Is-The-Only-Level",
+  "new": false,
+  "credits": "Developed by John Cooney",
+  "tags": [
+    "puzzle",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Territory War",
+  "image": "territory-war.jpg",
+  "url": "Territory-War",
+  "new": false,
+  "credits": "Developed by Afro Ninja",
+  "tags": [
+    "strategy",
+    "multiplayer",
+    "war"
+  ]
+},
+{
+  "name": "Super Meat Boy",
+  "image": "super-meat-boy.png",
+  "url": "Super-Meat-Boy",
+  "new": false,
+  "credits": "Developed by Team Meat",
+  "tags": [
+    "platformer",
+    "action",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Storm The House",
+  "image": "storm-the-house.jpg",
+  "url": "Storm-The-House",
+  "new": false,
+  "credits": "Developed by IvoryDrive",
+  "tags": [
+    "tower-defense",
+    "strategy",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Storm The House 2",
+  "image": "storm-the-house-2.jpg",
+  "url": "Storm-The-House-2",
+  "new": false,
+  "credits": "Developed by IvoryDrive",
+  "tags": [
+    "tower-defense",
+    "strategy",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Stick War 1",
+  "image": "stick-war.jpg",
+  "url": "Stick-War-1",
+  "new": false,
+  "credits": "Developed by Jason Whitham",
+  "tags": [
+    "strategy",
+    "war",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Stick War 2",
+  "image": "stick-war-2.png",
+  "url": "Stick-War-2",
+  "new": false,
+  "credits": "Developed by Jason Whitham",
+  "tags": [
+    "strategy",
+    "war",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Stick RPG",
+  "image": "stick-rpg.jpg",
+  "url": "Stick-RPG",
+  "new": false,
+  "credits": "Developed by XGen Studios",
+  "tags": [
+    "rpg",
+    "adventure",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Stick Madness",
+  "image": "stickmadness.png",
+  "url": "Stick-Madness",
+  "new": false,
+  "credits": "Developed by Jason Whitman",
+  "tags": [
+    "action",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Stick Madness 2",
+  "image": "stickmadness2.png",
+  "url": "Stick-Madness-2",
+  "new": false,
+  "credits": "Developed by Jason Whitman",
+  "tags": [
+    "action",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Stick Empires",
+  "image": "stick-empires.png",
+  "url": "Stick-Empires",
+  "new": false,
+  "credits": "Developed by Jason Whitman",
+  "tags": [
+    "strategy",
+    "war",
+    "multiplayer"
+  ]
+},
+{
+  "name": "Shopping Cart Hero",
+  "image": "shopping-cart-hero.jpg",
+  "url": "Shopping-Cart-Hero",
+  "new": false,
+  "credits": "Developed by MonkeyWantBanana",
+  "tags": [
+    "adventure",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Shopping Cart Hero 2",
+  "image": "shopping-cart-hero-2.jpg",
+  "url": "Shopping-Cart-Hero-2",
+  "new": false,
+  "credits": "Developed by MonkeyWantBanana",
+  "tags": [
+    "adventure",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Shopping Cart Hero 3",
+  "image": "shopping-cart-hero-3.jpg",
+  "url": "Shopping-Cart-Hero-3",
+  "new": false,
+  "credits": "Developed by MonkeyWantBanana",
+  "tags": [
+    "adventure",
+    "platformer",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Sentry Knight",
+  "image": "sentryknight.png",
+  "url": "Sentry-Knight",
+  "new": false,
+  "credits": "Developed by TylerNG",
+  "tags": [
+    "tower-defense",
+    "strategy",
+    "singleplayer"
+  ]
+},
+{
+  "name": "Into Space 1",
+  "image": "intospace1.png",
+  "url": "Into-Space-1",
+  "new": false,
+  "credits": "Developed by Barbarian Games",
+  "tags": [
+    "action",
+    "adventure",
+    "singleplayer"
+  ]
+},[
   {
     "name": "Into Space 2",
     "image": "intospace2.png",
     "url": "Into-Space-2",
     "new": false,
-    "credits": "Developed by Barbarian Games"
+    "credits": "Developed by Barbarian Games",
+    "tags": [
+      "action",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Into Space 3",
     "image": "intospace3.png",
     "url": "Into-Space-3",
     "new": false,
-    "credits": "Developed by Barbarian Games"
+    "credits": "Developed by Barbarian Games",
+    "tags": [
+      "action",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "qwop",
     "image": "qwop.jpg",
     "url": "qwop",
     "new": false,
-    "credits": "Developed by Bennett Foddy"
+    "credits": "Developed by Bennett Foddy",
+    "tags": [
+      "sports",
+      "physics",
+      "singleplayer",
+      "indie"
+    ]
   },
   {
     "name": "Pandemic",
     "image": "pandemic.jpg",
     "url": "Pandemic",
     "new": false,
-    "credits": "Developed by Dark Realm Studios"
+    "credits": "Developed by Dark Realm Studios",
+    "tags": [
+      "strategy",
+      "simulation",
+      "singleplayer"
+    ]
   },
   {
     "name": "Pandemic 2",
     "image": "pandemic-2.jpg",
     "url": "Pandemic-2",
     "new": false,
-    "credits": "Developed by Dark Realm Studios"
+    "credits": "Developed by Dark Realm Studios",
+    "tags": [
+      "strategy",
+      "simulation",
+      "singleplayer"
+    ]
   },
   {
     "name": "Madness Project Nexus",
     "image": "madness-project-nexus.jpg",
     "url": "Madness-Project-Nexus",
     "new": false,
-    "credits": "Developed by Krinkels"
+    "credits": "Developed by Krinkels",
+    "tags": [
+      "action",
+      "shooting",
+      "beat-em-up",
+      "singleplayer"
+    ]
   },
   {
     "name": "Interactive Buddy",
     "image": "interactive-buddy.png",
     "url": "Interactive-Buddy",
     "new": false,
-    "credits": "Developed by shock-value"
+    "credits": "Developed by shock-value",
+    "tags": [
+      "sandbox",
+      "simulation",
+      "singleplayer"
+    ]
   },
   {
     "name": "Infiltrating The Airship",
     "image": "infiltratingtheairship.png",
     "url": "Infiltrating-The-Airship",
     "new": false,
-    "credits": "Developed by Puffballs United"
+    "credits": "Developed by Puffballs United",
+    "tags": [
+      "action",
+      "stealth",
+      "platformer",
+      "singleplayer"
+    ]
   },
   {
     "name": "Hedgehog Launch",
     "image": "hedgehoglaunch.png",
     "url": "Hedgehog-Launch",
     "new": false,
-    "credits": "Developed by Armor Games"
+    "credits": "Developed by Armor Games",
+    "tags": [
+      "arcade",
+      "physics",
+      "singleplayer"
+    ]
   },
   {
     "name": "Fleeing The Complex",
     "image": "fleeingthecomplex.png",
     "url": "Fleeing-The-Complex",
     "new": false,
-    "credits": "Developed by Puffballs United"
+    "credits": "Developed by Puffballs United",
+    "tags": [
+      "action",
+      "stealth",
+      "singleplayer"
+    ]
   },
   {
     "name": "Fat Cat",
     "image": "fat-cat.png",
     "url": "Fat-Cat",
     "new": false,
-    "credits": "Developed by Nitrome"
+    "credits": "Developed by Nitrome",
+    "tags": [
+      "puzzle",
+      "platformer",
+      "singleplayer"
+    ]
   },
   {
     "name": "Ducklife",
     "image": "ducklife.jpg",
     "url": "Duck-Life",
     "new": false,
-    "credits": "Developed by Wix Games"
+    "credits": "Developed by Wix Games",
+    "tags": [
+      "simulation",
+      "rpg",
+      "singleplayer"
+    ]
   },
   {
     "name": "Ducklife 2",
     "image": "ducklife-2.jpg",
     "url": "Duck-Life-2",
     "new": false,
-    "credits": "Developed by Wix Games"
+    "credits": "Developed by Wix Games",
+    "tags": [
+      "simulation",
+      "rpg",
+      "singleplayer"
+    ]
   },
   {
     "name": "Ducklife 3",
     "image": "ducklife-3.png",
     "url": "Duck-Life-3",
     "new": false,
-    "credits": "Developed by Wix Games"
+    "credits": "Developed by Wix Games",
+    "tags": [
+      "simulation",
+      "rpg",
+      "singleplayer"
+    ]
   },
   {
     "name": "Ducklife 4",
     "image": "ducklife4.png",
     "url": "Duck-Life-4",
     "new": false,
-    "credits": "Developed by Wix Games"
+    "credits": "Developed by Wix Games",
+    "tags": [
+      "simulation",
+      "rpg",
+      "singleplayer"
+    ]
   },
   {
     "name": "Dont Whack Your Boss",
     "image": "dontwackyourboss.png",
     "url": "Dont-Whack-Your-Boss",
     "new": false,
-    "credits": "Developed by Doodie"
+    "credits": "Developed by Doodie",
+    "tags": [
+      "casual",
+      "comedy",
+      "singleplayer"
+    ]
   },
   {
     "name": "Dig To China",
     "image": "digtochina.png",
     "url": "Dig-To-China",
     "new": false,
-    "credits": "Developed by Armor Games"
+    "credits": "Developed by Armor Games",
+    "tags": [
+      "action",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Crush The Castle",
     "image": "crushthecastle.png",
     "url": "Crush-The-Castle",
     "new": false,
-    "credits": "Developed by Armor Games"
+    "credits": "Developed by Armor Games",
+    "tags": [
+      "strategy",
+      "physics",
+      "singleplayer"
+    ]
   },
   {
     "name": "Crush The Castle 2",
     "image": "crushthecastle2.png",
     "url": "Crush-The-Castle-2",
     "new": false,
-    "credits": "Developed by Armor Games"
-  },
+    "credits": "Developed by Armor Games",
+    "tags": [
+      "strategy",
+      "physics",
+      "singleplayer"
+    ]
+  },[
   {
     "name": "Clicker Heroes",
     "image": "clickerheroes.png",
     "url": "Clicker-Heroes",
     "new": false,
-    "credits": "Developed by Playsaurus"
+    "credits": "Developed by Playsaurus",
+    "tags": [
+      "idle",
+      "rpg",
+      "singleplayer"
+    ]
   },
   {
     "name": "Canabalt",
     "image": "canabalt.png",
     "url": "Canabalt",
     "new": false,
-    "credits": "Developed by Adam Saltsman"
+    "credits": "Developed by Adam Saltsman",
+    "tags": [
+      "endless runner",
+      "arcade",
+      "singleplayer"
+    ]
   },
   {
     "name": "Cactus McCoy 2",
     "image": "cactusmccoy2.png",
     "url": "Cactus-McCoy-2",
     "new": false,
-    "credits": "Developed by Flipline"
+    "credits": "Developed by Flipline",
+    "tags": [
+      "platformer",
+      "action",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Age Of War",
     "image": "ageofwar.png",
     "url": "Age-Of-War",
     "new": false,
-    "credits": "Developed by Louissi"
+    "credits": "Developed by Louissi",
+    "tags": [
+      "strategy",
+      "tower defense",
+      "singleplayer"
+    ]
   },
   {
     "name": "Age Of War 2",
     "image": "age-of-war-2.jpg",
     "url": "Age-Of-War-2",
     "new": false,
-    "credits": "Developed by Louissi"
+    "credits": "Developed by Louissi",
+    "tags": [
+      "strategy",
+      "tower defense",
+      "singleplayer"
+    ]
   },
   {
     "name": "Achievement Unlocked",
     "image": "achievementunlocked.png",
     "url": "Achievement-Unlocked",
     "new": false,
-    "credits": "Developed by John Cooney"
+    "credits": "Developed by John Cooney",
+    "tags": [
+      "platformer",
+      "puzzle",
+      "singleplayer"
+    ]
   },
   {
     "name": "Achievement Unlocked 2",
     "image": "achievementunlocked2.png",
     "url": "Achievement-Unlocked-2",
     "new": false,
-    "credits": "Developed by John Cooney"
+    "credits": "Developed by John Cooney",
+    "tags": [
+      "platformer",
+      "puzzle",
+      "singleplayer"
+    ]
   },
   {
     "name": "Achievement Unlocked 3",
     "image": "achievementunlocked3.png",
     "url": "Achievement-Unlocked-3",
     "new": false,
-    "credits": "Developed by John Cooney"
+    "credits": "Developed by John Cooney",
+    "tags": [
+      "platformer",
+      "puzzle",
+      "singleplayer"
+    ]
   },
   {
     "name": "Mini Metro",
     "image": "minimetro.png",
     "url": "Mini-Metro",
     "new": false,
-    "credits": "Developed by unkown"
+    "credits": "Developed by unkown",
+    "tags": [
+      "strategy",
+      "simulation",
+      "puzzle",
+      "singleplayer"
+    ]
   },
   {
     "name": "Awesome Cars",
     "image": "awesome-cars.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Gametornado"
+    "credits": "Developed by Gametornado",
+    "tags": [
+      "racing",
+      "arcade",
+      "multiplayer"
+    ]
   },
   {
     "name": "Bartender The Right Mix",
     "image": "bartender-the-right-mix.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Liquid Night"
+    "credits": "Developed by Liquid Night",
+    "tags": [
+      "simulation",
+      "time management",
+      "singleplayer"
+    ]
   },
   {
     "name": "Bejeweled",
     "image": "bejeweled.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Popcap Games"
+    "credits": "Developed by Popcap Games",
+    "tags": [
+      "puzzle",
+      "match-3",
+      "singleplayer"
+    ]
   },
   {
     "name": "Bejeweled 2",
     "image": "bejeweled-2.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Popcap Games"
+    "credits": "Developed by Popcap Games",
+    "tags": [
+      "puzzle",
+      "match-3",
+      "singleplayer"
+    ]
   },
   {
     "name": "Billards",
     "image": "billards.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Unknown developer"
+    "credits": "Developed by Unknown developer",
+    "tags": [
+      "sports",
+      "simulation",
+      "multiplayer"
+    ]
   },
   {
     "name": "Bloxorz",
     "image": "bloxorz.jpg",
     "url": "Bloxorz",
     "new": false,
-    "credits": "Developed by Damien Clarke"
+    "credits": "Developed by Damien Clarke",
+    "tags": [
+      "puzzle",
+      "singleplayer"
+    ]
   },
   {
     "name": "Cooking Mama",
     "image": "cooking.mama.png",
     "url": "",
     "new": false,
-    "credits": "Developed by PETA"
+    "credits": "Developed by PETA",
+    "tags": [
+      "simulation",
+      "cooking",
+      "singleplayer"
+    ]
   },
   {
     "name": "Crash Bandicoot Flash",
     "image": "crash-bandicoot.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by gembut and hutcoa7"
-  },
+    "credits": "Developed by gembut and hutcoa7",
+    "tags": [
+      "platformer",
+      "action",
+      "singleplayer"
+    ]
+  },[
   {
     "name": "Doodle Jump",
     "image": "doodle-jump.png",
     "url": "",
     "new": false,
-    "credits": "Developed by gembut and hutcoa7"
+    "credits": "Developed by gembut and hutcoa7",
+    "tags": [
+      "arcade",
+      "endless jumper",
+      "singleplayer"
+    ]
   },
   {
     "name": "Crash Bandicoot Flash",
     "image": "crash-bandicoot.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by gembut and hutcoa7"
+    "credits": "Developed by gembut and hutcoa7",
+    "tags": [
+      "platformer",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Earn to Die",
     "image": "earn-to-die.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Toffee Games"
+    "credits": "Developed by Toffee Games",
+    "tags": [
+      "driving",
+      "action",
+      "singleplayer"
+    ]
   },
   {
     "name": "Earn to Die 2",
     "image": "earn-to-die-2.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Toffee Games"
+    "credits": "Developed by Toffee Games",
+    "tags": [
+      "driving",
+      "action",
+      "singleplayer"
+    ]
   },
   {
     "name": "Earn to Die 2 Exodus",
     "image": "earn-to-die-2-exodus.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Toffee Games"
+    "credits": "Developed by Toffee Games",
+    "tags": [
+      "driving",
+      "action",
+      "singleplayer"
+    ]
   },
   {
     "name": "Factory Balls",
     "image": "factory-balls.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Bart Bonte"
+    "credits": "Developed by Bart Bonte",
+    "tags": [
+      "puzzle",
+      "brain teaser",
+      "singleplayer"
+    ]
   },
   {
     "name": "Factory Balls 2",
     "image": "factory-balls-2.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Bart Bonte"
+    "credits": "Developed by Bart Bonte",
+    "tags": [
+      "puzzle",
+      "brain teaser",
+      "singleplayer"
+    ]
   },
   {
     "name": "Factory Balls 3",
     "image": "factory-balls-3.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Bart Bonte"
+    "credits": "Developed by Bart Bonte",
+    "tags": [
+      "puzzle",
+      "brain teaser",
+      "singleplayer"
+    ]
   },
   {
     "name": "Factory Balls 4",
     "image": "factory-balls-4.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Bart Bonte"
+    "credits": "Developed by Bart Bonte",
+    "tags": [
+      "puzzle",
+      "brain teaser",
+      "singleplayer"
+    ]
   },
   {
     "name": "Fancy Pants Adventures",
     "image": "fancy-pants-adventures.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Brad Borne"
+    "credits": "Developed by Brad Borne",
+    "tags": [
+      "platformer",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Fancy Pants Adventures 2",
     "image": "fancy-pants-adventures.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Brad Borne"
+    "credits": "Developed by Brad Borne",
+    "tags": [
+      "platformer",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Fancy Pants Adventures 3",
     "image": "fancy-pants-adventures-3.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Brad Borne"
+    "credits": "Developed by Brad Borne",
+    "tags": [
+      "platformer",
+      "adventure",
+      "singleplayer"
+    ]
   },
   {
     "name": "Fireboy and Watergirl ",
     "image": "fireboy-and-watergirl-1.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Oslo Albet"
+    "credits": "Developed by Oslo Albet",
+    "tags": [
+      "puzzle",
+      "co-op",
+      "platformer",
+      "multiplayer"
+    ]
   },
   {
     "name": "Fireboy and Watergirl 2",
     "image": "fireboy-and-watergirl-2.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Oslo Albet"
+    "credits": "Developed by Oslo Albet",
+    "tags": [
+      "puzzle",
+      "co-op",
+      "platformer",
+      "multiplayer"
+    ]
   },
   {
     "name": "Fireboy and Watergirl 3",
     "image": "fireboy-and-watergirl-3.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Oslo Albet"
+    "credits": "Developed by Oslo Albet",
+    "tags": [
+      "puzzle",
+      "co-op",
+      "platformer",
+      "multiplayer"
+    ]
   },
   {
     "name": "Flash Flight Simulator",
     "image": "flash-flight-simulator.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Oslo Albet"
+    "credits": "Developed by Oslo Albet",
+    "tags": [
+      "simulation",
+      "flight",
+      "singleplayer"
+    ]
   },
   {
     "name": "Gunblood",
     "image": "gunblood.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Wolf Games"
+    "credits": "Developed by Wolf Games",
+    "tags": [
+      "shooter",
+      "arcade",
+      "singleplayer"
+    ]
   },
   {
     "name": "Johnny Upgrade",
     "image": "johnny-upgrade.png",
     "url": "",
     "new": false,
-    "credits": "Developed by Gameshot"
+    "credits": "Developed by Gameshot",
+    "tags": [
+      "arcade",
+      "upgrade",
+      "singleplayer"
+    ]
   },
   {
     "name": "Mutilate a Doll 2",
     "image": "mutilate-a-doll-2.jpg",
     "url": "",
     "new": false,
-    "credits": "Developed by Rava Games"
-  },
-  {
-    "name": "Pico vs Uberkids",
-    "image": "pico-vs-uberkids.jpg",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Tom Fulp"
-  },
-  {
-    "name": "Picos School",
-    "image": "picos-school.jpg",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Tom Fulp"
-  },
-  {
-    "name": "Picos School 2",
-    "image": "picos-school-2.png",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Tom Fulp"
-  },
-  {
-    "name": "Plants vs Zombies",
-    "image": "pvz.png",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Popcap Games"
-  },
-  {
-    "name": "Red Ball",
-    "image": "red-ball.png",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Eugene Fedoseev"
-  },
-  {
-    "name": "Red Ball 2",
-    "image": "red-ball-2.jpg",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Eugene Fedoseev"
-  },
-  {
-    "name": "Red Ball 3",
-    "image": "red-ball-3.jpg",
-    "url": "",
-    "new": false,
-    "credits": "Developed by Eugene Fedoseev"
-  },
-      {
-        "name": "Red Ball 4",
-        "image": "red-ball-4.jpg",
-        "url": "Red-Ball-4",
-        "new": false,
-        "credits": "Developed by Eugene Fedoseev"
-      },
-      {
-        "name": "Road of the Dead",
-        "image": "road-of-the-dead.jpg",
-        "url": "Road-of-the-Dead",
-        "new": false,
-        "credits": "Developed by Evil Dog Games"
-      },
-      {
-        "name": "Road of the Dead 2",
-        "image": "road-of-the-dead-2.png",
-        "url": "Road-of-the-Dead-2",
-        "new": false,
-        "credits": "Developed by Evil Dog Games"
-      },
-      {
-        "name": "Run",
-        "image": "run.png",
-        "url": "Run",
-        "new": false,
-        "credits": "Developed by Player 03"
-      },
-      {
-        "name": "Run 2",
-        "image": "run-2.jpg",
-        "url": "Run-2",
-        "new": false,
-        "credits": "Developed by Player 03"
-      },
-      {
-        "name": "Run 3",
-        "image": "run-3.jpg",
-        "url": "Run-3",
-        "new": false,
-        "credits": "Developed by Player 03"
-      },
-      {
-        "name": "Sniper Assassin",
-        "image": "sniper-assassin.jpg",
-        "url": "Sniper-Assassin",
-        "new": false,
-        "credits": "Developed by Ultimate Flash Archive"
-      },
-      {
-        "name": "Sniper Assassin 2",
-        "image": "sniper-assassin-2.png",
-        "url": "Sniper-Assassin-2",
-        "new": false,
-        "credits": "Developed by Ultimate Flash Archive"
-      },
-      {
-        "name": "Sniper Assassin 3",
-        "image": "sniper-assassin.jpg",
-        "url": "Sniper-Assassin-3",
-        "new": false,
-        "credits": "Developed by Ultimate Flash Archive"
-      },
-      {
-        "name": "Sniper Assassin 4",
-        "image": "sniper-assassin-5.jpg",
-        "url": "Sniper-Assassin-4",
-        "new": false,
-        "credits": "Developed by Ultimate Flash Archive"
-      },
-      {
-        "name": "Sniper Assassin 5",
-        "image": "sniper-assassin-5.jpg",
-        "url": "Sniper-Assassin-5",
-        "new": false,
-        "credits": "Developed by Ultimate Flash Archive"
-      },
-      {
-        "name": "Toss the Turtle",
-        "image": "toss-the-turtle.jpg",
-        "url": "Toss-the-Turtle",
-        "new": false,
-        "credits": "Developed by GonzoSSM"
-      },
-      {
-        "name": "Unfair Mario",
-        "image": "unfair-mario.jpg",
-        "url": "Unfair-Mario",
-        "new": false,
-        "credits": "Developed by Unknown"
-      },
-      {
-        "name": "Jacksmith",
-        "image": "jacksmith.jpg",
-        "url": "Jacksmith",
-        "new": false,
-        "credits": "Developed by Flipline Studios"
-      },
-      {
-        "name": "Achievement Unlocked 3",
-        "image": "achievement-unlocked-3.jpg",
-        "url": "Achievement-Unlocked-3",
-        "new": false,
-        "credits": "Developed by John Cooney"
-      }
+    "credits": "Developed by Rava Games",
+    "tags": [
+      "sandbox",
+      "simulation",
+      "singleplayer"
     ]
+  },{
+  "games": [
+    {
+      "name": "Pico vs Uberkids",
+      "image": "pico-vs-uberkids.jpg",
+      "url": "",
+      "new": false,
+      "credits": "Developed by Tom Fulp",
+      "tags": [
+        "action",
+        "beat em up",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Picos School",
+      "image": "picos-school.jpg",
+      "url": "",
+      "new": false,
+      "credits": "Developed by Tom Fulp",
+      "tags": [
+        "adventure",
+        "rpg",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Picos School 2",
+      "image": "picos-school-2.png",
+      "url": "",
+      "new": false,
+      "credits": "Developed by Tom Fulp",
+      "tags": [
+        "adventure",
+        "rpg",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Plants vs Zombies",
+      "image": "pvz.png",
+      "url": "",
+      "new": false,
+      "credits": "Developed by Popcap Games",
+      "tags": [
+        "strategy",
+        "tower defense",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Red Ball",
+      "image": "red-ball.png",
+      "url": "",
+      "new": false,
+      "credits": "Developed by Eugene Fedoseev",
+      "tags": [
+        "platformer",
+        "singleplayer",
+        "puzzle"
+      ]
+    },
+    {
+      "name": "Red Ball 2",
+      "image": "red-ball-2.jpg",
+      "url": "",
+      "new": false,
+      "credits": "Developed by Eugene Fedoseev",
+      "tags": [
+        "platformer",
+        "singleplayer",
+        "puzzle"
+      ]
+    },
+    {
+      "name": "Red Ball 3",
+      "image": "red-ball-3.jpg",
+      "url": "",
+      "new": false,
+      "credits": "Developed by Eugene Fedoseev",
+      "tags": [
+        "platformer",
+        "singleplayer",
+        "puzzle"
+      ]
+    },
+    {
+      "name": "Red Ball 4",
+      "image": "red-ball-4.jpg",
+      "url": "Red-Ball-4",
+      "new": false,
+      "credits": "Developed by Eugene Fedoseev",
+      "tags": [
+        "platformer",
+        "singleplayer",
+        "puzzle"
+      ]
+    },
+    {
+      "name": "Road of the Dead",
+      "image": "road-of-the-dead.jpg",
+      "url": "Road-of-the-Dead",
+      "new": false,
+      "credits": "Developed by Evil Dog Games",
+      "tags": [
+        "action",
+        "zombie",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Road of the Dead 2",
+      "image": "road-of-the-dead-2.png",
+      "url": "Road-of-the-Dead-2",
+      "new": false,
+      "credits": "Developed by Evil Dog Games",
+      "tags": [
+        "action",
+        "zombie",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Run",
+      "image": "run.png",
+      "url": "Run",
+      "new": false,
+      "credits": "Developed by Player 03",
+      "tags": [
+        "platformer",
+        "runner",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Run 2",
+      "image": "run-2.jpg",
+      "url": "Run-2",
+      "new": false,
+      "credits": "Developed by Player 03",
+      "tags": [
+        "platformer",
+        "runner",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Run 3",
+      "image": "run-3.jpg",
+      "url": "Run-3",
+      "new": false,
+      "credits": "Developed by Player 03",
+      "tags": [
+        "platformer",
+        "runner",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Sniper Assassin",
+      "image": "sniper-assassin.jpg",
+      "url": "Sniper-Assassin",
+      "new": false,
+      "credits": "Developed by Ultimate Flash Archive",
+      "tags": [
+        "stealth",
+        "shooter",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Sniper Assassin 2",
+      "image": "sniper-assassin-2.png",
+      "url": "Sniper-Assassin-2",
+      "new": false,
+      "credits": "Developed by Ultimate Flash Archive",
+      "tags": [
+        "stealth",
+        "shooter",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Sniper Assassin 3",
+      "image": "sniper-assassin.jpg",
+      "url": "Sniper-Assassin-3",
+      "new": false,
+      "credits": "Developed by Ultimate Flash Archive",
+      "tags": [
+        "stealth",
+        "shooter",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Sniper Assassin 4",
+      "image": "sniper-assassin-5.jpg",
+      "url": "Sniper-Assassin-4",
+      "new": false,
+      "credits": "Developed by Ultimate Flash Archive",
+      "tags": [
+        "stealth",
+        "shooter",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Sniper Assassin 5",
+      "image": "sniper-assassin-5.jpg",
+      "url": "Sniper-Assassin-5",
+      "new": false,
+      "credits": "Developed by Ultimate Flash Archive",
+      "tags": [
+        "stealth",
+        "shooter",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Toss the Turtle",
+      "image": "toss-the-turtle.jpg",
+      "url": "Toss-the-Turtle",
+      "new": false,
+      "credits": "Developed by GonzoSSM",
+      "tags": [
+        "arcade",
+        "physics",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Unfair Mario",
+      "image": "unfair-mario.jpg",
+      "url": "Unfair-Mario",
+      "new": false,
+      "credits": "Developed by Unknown",
+      "tags": [
+        "platformer",
+        "puzzle",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Jacksmith",
+      "image": "jacksmith.jpg",
+      "url": "Jacksmith",
+      "new": false,
+      "credits": "Developed by Flipline Studios",
+      "tags": [
+        "strategy",
+        "rpg",
+        "singleplayer"
+      ]
+    },
+    {
+      "name": "Achievement Unlocked 3",
+      "image": "achievement-unlocked-3.jpg",
+      "url": "Achievement-Unlocked-3",
+      "new": false,
+      "credits": "Developed by John Cooney",
+      "tags": [
+        "puzzle",
+        "achievement",
+        "singleplayer"
+      ]
+    }
+  ]
+}
+]
+  ]
+]
+]
+]
