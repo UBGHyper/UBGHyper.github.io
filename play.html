@@ -18,7 +18,9 @@
       max-width: 1200px;
       margin: 40px auto 0 auto;
       overflow: hidden;
-      border: 3px solid #ffd09c;
+      border-style: solid;
+      border-color: #ffd09c;
+      border-width: 2px 2px 8px 2px;
       position: relative;
     }
 
@@ -46,7 +48,6 @@
       max-height: 80vh;
     }
 
-    /* Fullscreen button styles */
     .fullscreen-btn {
       position: absolute;
       bottom: 14px;
@@ -56,7 +57,7 @@
       color: #ffd09c;
       border: none;
       border-radius: 6px;
-      padding: 7px 14px 7px 14px;
+      padding: 7px 14px;
       box-shadow: 0 2px 8px #0006;
       cursor: pointer;
       font-size: 1.1em;
@@ -78,9 +79,43 @@
       fill: currentColor;
     }
 
+    /* ADD THESE FOR GAME INFO */
+    .game-info-container {
+      padding: 26px 28px 20px 28px;
+      background: #191a22;
+      text-align: center;
+      border-radius: 0 0 16px 16px;
+      margin-top: 0;
+    }
+    .game-title {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 700;
+      font-size: 2.2em;
+      color: #ffd09c;
+      line-height: 1.1;
+      letter-spacing: .5px;
+      margin-bottom: 10px;
+      margin-top: 0;
+    }
+    .game-desc {
+      font-family: 'Rubik', sans-serif;
+      font-weight: 400;
+      font-size: 1.1em;
+      color: #f9d29f;
+      margin-bottom: 8px;
+    }
+    .game-author {
+      font-size: 1em;
+      margin-top: 4px;
+      color: #bda893;
+      font-style: italic;
+      letter-spacing: .1em;
+    }
+
     @media (max-width:900px){
       .game-frame { border-radius: 10px; }
       .game-iframe { height: 62vw; }
+      .game-info-container { padding: 14px 6px 10px 6px;}
     }
   </style>
 </head>
@@ -97,12 +132,16 @@
   <div class="game-frame">
     <iframe class="game-iframe" id="frame" allowfullscreen></iframe>
     <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
-      <!-- SVG icon for fullscreen -->
       <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-7v5h2V7h3V5H5v2zm12 10h-3v2h5v-5h-2v3zm0-10v3h2V5h-5v2h3z"/></svg>
       Fullscreen
     </button>
+    <!-- Add this container for game info -->
+    <div class="game-info-container">
+      <div class="game-title" id="gameTitle"></div>
+      <div class="game-desc" id="gameDesc"></div>
+      <div class="game-author" id="gameAuthor"></div>
+    </div>
   </div>
-  <div class="game-title" id="gameTitle"></div>
 
   <script>
     // Fullscreen button JavaScript
@@ -121,12 +160,16 @@
     function showNotFound() {
       document.getElementById("gameTitle").textContent = "Game Not Found";
       document.getElementById("frame").style.display = "none";
+      document.getElementById("gameDesc").textContent = "";
+      document.getElementById("gameAuthor").textContent = "";
     }
     fetch(gamesUrl).then(r=>r.json()).then(games=>{
       const game = games.find(g=>g.url === slug);
       if(!game) return showNotFound();
 
       document.getElementById("gameTitle").textContent = game.name;
+      document.getElementById("gameDesc").textContent = game.gamedesc || ""; // Should exist in your json
+      document.getElementById("gameAuthor").textContent = game.author ? "By " + game.author : "";
       document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
       // or use: `/GameList.github.io/${game.url}/${game.playfile}`;
     }).catch(showNotFound);
