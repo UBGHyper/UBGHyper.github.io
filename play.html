@@ -9,40 +9,112 @@
   <style>
     body { margin:0; background: #181a20; color:#fff;}
     .back-link { position:absolute; left:20px;top:17px;font-size:1.1em;}
-    .game-iframe {
-      width: 100vw;
-      height: 95vh;
-      border: none;
-      display: block;
-      margin: 37px auto 0 auto;
-      background: #121212;
+
+    .game-frame {
+      background: #22242a;
+      border-radius: 18px;
       box-shadow: 0 6px 32px #001a4150;
-      border-radius: 16px;
+      padding: 0;
       max-width: 1200px;
-      max-height: calc(95vh - 50px);
+      margin: 40px auto 0 auto;
+      overflow: hidden;
+      border: 3px solid #ffd09c;
+      position: relative;
     }
-    .game-title {
-      text-align:center;
-      font-family:'Rubik',sans-serif;
-      font-size:1.5rem;
-      font-weight:700;
-      margin-top:13px;
-      margin-bottom:7px;
-      color:#ffd09c;
-      letter-spacing:.25px;
-      text-shadow:0 1px 0 #000,0 0 8px #0002;
+
+    .game-frame-title {
+      font-family: 'Rubik', sans-serif;
+      font-size: 1.25rem;
+      font-weight: 700;
+      padding: 14px 0 10px 0;
+      text-align: center;
+      color: #ffd09c;
+      background: #16171c;
+      letter-spacing: .25px;
+      border-bottom: 1px solid #1a1b22;
+      text-shadow: 0 1px 0 #000, 0 0 8px #0002;
     }
+
+    .game-iframe {
+      width: 100%;
+      height: 75vh;
+      border: none;
+      background: #121212;
+      border-radius: 0 0 16px 16px;
+      display: block;
+      margin: 0;
+      max-height: 80vh;
+    }
+
+    /* Fullscreen button styles */
+    .fullscreen-btn {
+      position: absolute;
+      bottom: 14px;
+      right: 18px;
+      z-index: 10;
+      background: #16171c;
+      color: #ffd09c;
+      border: none;
+      border-radius: 6px;
+      padding: 7px 14px 7px 14px;
+      box-shadow: 0 2px 8px #0006;
+      cursor: pointer;
+      font-size: 1.1em;
+      opacity: 0.95;
+      transition: background 0.1s, opacity 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .fullscreen-btn:hover, .fullscreen-btn:focus {
+      background: #ffd09c;
+      color: #16171c;
+      opacity: 1;
+    }
+    .fullscreen-btn svg {
+      width: 18px;
+      height: 18px;
+      vertical-align: middle;
+      fill: currentColor;
+    }
+
     @media (max-width:900px){
-      .game-iframe { width: 98vw; height: 76vh; border-radius: 9px;}
+      .game-frame { border-radius: 10px; }
+      .game-iframe { height: 62vw; }
     }
   </style>
 </head>
 <body>
-  <a href="games.html" class="back-link">&#8592; All Games</a>
+  <div class="logo-bar"><span class="logo">UBGHyper</span></div>
+  <nav>
+    <a href="#" class="active">Home</a>
+    <a href="games.html">All Games</a>
+    <a href="#">Categories</a>
+    <a href="#">Popular</a>
+    <a href="#">About</a>
+  </nav>
+
+  <div class="game-frame">
+    <iframe class="game-iframe" id="frame" allowfullscreen></iframe>
+    <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
+      <!-- SVG icon for fullscreen -->
+      <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-7v5h2V7h3V5H5v2zm12 10h-3v2h5v-5h-2v3zm0-10v3h2V5h-5v2h3z"/></svg>
+      Fullscreen
+    </button>
+  </div>
   <div class="game-title" id="gameTitle"></div>
-  <iframe class="game-iframe" id="frame" allowfullscreen></iframe>
+
   <script>
-    // Load game data (same as on games.html)
+    // Fullscreen button JavaScript
+    document.getElementById('fullscreenBtn').addEventListener('click', function() {
+      const iframe = document.getElementById('frame');
+      if      (iframe.requestFullscreen)        iframe.requestFullscreen();
+      else if (iframe.webkitRequestFullscreen)  iframe.webkitRequestFullscreen();
+      else if (iframe.mozRequestFullScreen)     iframe.mozRequestFullScreen();
+      else if (iframe.msRequestFullscreen)      iframe.msRequestFullscreen();
+    });
+
+    // Game loading logic
     const gamesUrl = "../assets/games.json";
     const params = new URLSearchParams(location.search);
     const slug = params.get("game");
@@ -55,11 +127,8 @@
       if(!game) return showNotFound();
 
       document.getElementById("gameTitle").textContent = game.name;
-      // If your game's playable file is always "index.html", keep this line:
       document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
-      // If the playable file is not always index.html, 
-      // add a new property like "playfile":"game.html" in your games.json, and use:
-      // document.getElementById("frame").src = `/GameList.github.io/${game.url}/${game.playfile}`;
+      // or use: `/GameList.github.io/${game.url}/${game.playfile}`;
     }).catch(showNotFound);
   </script>
 </body>
