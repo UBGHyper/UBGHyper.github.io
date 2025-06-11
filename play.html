@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>UBGHyper - Play a Game</title>
+  <style>
+    body { font-family: Arial, sans-serif; }
+    #gameFrame { border: 1px solid #888; width: 800px; height: 500px; display: block; margin: 20px 0; }
+    select { font-size: 16px; padding: 5px; }
+    button { font-size: 16px; padding: 5px 10px; }
+  </style>
+</head>
+<body>
+  <h1>Select a Game to Play</h1>
+  <select id="gameSelector">
+    <option value="">-- Loading games... --</option>
+  </select>
+  <button onclick="loadGame()">Play</button>
+  <iframe id="gameFrame" src="" style="display:none;"></iframe>
+
+<script>
+  fetch('games.json')
+    .then(res => res.json())
+    .then(games => {
+      const selector = document.getElementById('gameSelector');
+      selector.innerHTML = '<option value="">-- Choose a game --</option>';
+      games.forEach(game => {
+        const opt = document.createElement('option');
+        opt.value = game.url; // <-- fixed here!
+        opt.textContent = game.name;
+        selector.appendChild(opt);
+      });
+    })
+    .catch(() => {
+      document.getElementById('gameSelector').innerHTML =
+        '<option>Error loading games list :(</option>';
+    });
+
+  function loadGame() {
+    const selector = document.getElementById('gameSelector');
+    const frame = document.getElementById('gameFrame');
+    if (selector.value) {
+      frame.src = selector.value;
+      frame.style.display = "block";
+    } else {
+      frame.src = "";
+      frame.style.display = "none";
+    }
+  }
+</script>
+</body>
+</html>
