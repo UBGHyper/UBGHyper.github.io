@@ -2,56 +2,65 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>UBGHyper - Play a Game</title>
+  <title>Play Game - UBGHyper</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
   <style>
-    body { font-family: Arial, sans-serif; }
-    #gameFrame { border: 1px solid #888; width: 800px; height: 500px; display: block; margin: 20px 0; }
-    select { font-size: 16px; padding: 5px; }
-    button { font-size: 16px; padding: 5px 10px; }
+    body { margin:0; background: #181a20; color:#fff;}
+    .back-link { position:absolute; left:20px;top:17px;font-size:1.1em;}
+    .game-iframe {
+      width: 100vw;
+      height: 95vh;
+      border: none;
+      display: block;
+      margin: 37px auto 0 auto;
+      background: #121212;
+      box-shadow: 0 6px 32px #001a4150;
+      border-radius: 16px;
+      max-width: 1200px;
+      max-height: calc(95vh - 50px);
+    }
+    .game-title {
+      text-align:center;
+      font-family:'Rubik',sans-serif;
+      font-size:1.5rem;
+      font-weight:700;
+      margin-top:13px;
+      margin-bottom:7px;
+      color:#ffd09c;
+      letter-spacing:.25px;
+      text-shadow:0 1px 0 #000,0 0 8px #0002;
+    }
+    @media (max-width:900px){
+      .game-iframe { width: 98vw; height: 76vh; border-radius: 9px;}
+    }
   </style>
 </head>
 <body>
-  <h1>Select a Game to Play</h1>
-  <select id="gameSelector">
-    <option value="">-- Loading games... --</option>
-  </select>
-  <button onclick="loadGame()">Play</button>
-  <iframe id="gameFrame" src="" style="display:none;"></iframe>
+  <a href="games.html" class="back-link">&#8592; All Games</a>
+  <div class="game-title" id="gameTitle"></div>
+  <iframe class="game-iframe" id="frame" allowfullscreen></iframe>
+  <script>
+    // Load game data (same as on games.html)
+    const gamesUrl = "../assets/games.json";
+    const params = new URLSearchParams(location.search);
+    const slug = params.get("game");
+    function showNotFound() {
+      document.getElementById("gameTitle").textContent = "Game Not Found";
+      document.getElementById("frame").style.display = "none";
+    }
+    fetch(gamesUrl).then(r=>r.json()).then(games=>{
+      const game = games.find(g=>g.url === slug);
+      if(!game) return showNotFound();
 
-<script>
-  fetch('games.json')
-    .then(res => res.json())
-    .then(games => {
-      const selector = document.getElementById('gameSelector');
-      selector.innerHTML = '<option value="">-- Choose a game --</option>';
-      games.forEach(game => {
-        const opt = document.createElement('option');
-        opt.value = game.url; // <-- fixed here!
-        opt.textContent = game.name;
-        selector.appendChild(opt);
-      });
-    })
-    .catch(() => {
-      document.getElementById('gameSelector').innerHTML =
-        '<option>Error loading games list :(</option>';
-    });
-
-function loadGame() {
-  const selector = document.getElementById('gameSelector');
-  const frame = document.getElementById('gameFrame');
-  if (selector.value) {
-    // Make sure the path starts with your GitHub Pages repo name!
-    const repoName = "GameList.github.io"; // CHANGE if your repo is different!
-    let url = selector.value;
-    // Remove any leading slashes just in case
-    if (url.startsWith("/")) url = url.slice(1);
-    frame.src = `/${repoName}/${url}`;
-    frame.style.display = "block";
-  } else {
-    frame.src = "";
-    frame.style.display = "none";
-  }
-}
-</script>
+      document.getElementById("gameTitle").textContent = game.name;
+      // If your game's playable file is always "index.html", keep this line:
+      document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
+      // If the playable file is not always index.html, 
+      // add a new property like "playfile":"game.html" in your games.json, and use:
+      // document.getElementById("frame").src = `/GameList.github.io/${game.url}/${game.playfile}`;
+    }).catch(showNotFound);
+  </script>
 </body>
 </html>
