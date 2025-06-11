@@ -98,7 +98,7 @@
 
 function gameCard(game) {
   return `<a class="game-card" href="/GameList/${game.url}/" title="${game.name}">
-    <img src="/assets/${game.image}" alt="${game.name} thumbnail" loading="lazy">
+    <img src="/GameList/${game.url}/${game.image}" alt="${game.name} thumbnail" loading="lazy">
     <div class="game-card-title">${game.name}</div>
     <div class="game-card-desc">${game.credits || ''}</div>
     <div class="game-card-cat"></div>
