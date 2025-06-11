@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>All Games - UBGHyper</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" type="image/x-icon" href="../assets/img/icon/main.png">
+  <style>
+    .games-section { max-width: 1200px; margin: 26px auto 0 auto; }
+    .games-bar-title { font-size:2rem;margin-bottom:8px;font-weight:700;text-align:left;letter-spacing:.5px;}
+    .games-list { display: flex; flex-wrap: wrap; gap: 30px 21px; margin:30px 0 0 0; justify-content: flex-start;}
+    .game-card {
+      background: var(--gamecard-bg,#17181cdd);
+      border-radius: 11px;
+      box-shadow: 0 2px 16px #13142018;
+      width: 210px; 
+      transition: box-shadow 0.18s,transform .12s;
+      padding: 0 0 13px 0;
+      will-change: transform;
+      display: flex;
+      flex-direction: column;
+      cursor:pointer;
+      border:1.4px solid #23243017;
+      perspective: 600px;
+      transform: perspective(600px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));
+    }
+    .game-card:hover {
+      box-shadow:0 0 32px #4f92ff21;
+      border:1.6px solid #6ba2ff31;
+    }
+    .game-card img {
+      width: 100%;height: 130px;object-fit:cover;
+      border-radius: 10px 10px 0 0;
+      background: #22242b;
+      margin-bottom: 7px;
+      display:block;
+    }
+    .game-card-title {
+      font-weight: 700;
+      font-size: 1.12rem;
+      margin: 7px 10px 2px 14px;
+      color: var(--color-page-heading,#f5a97f);
+      line-height:1.2;
+      letter-spacing:.3px;
+    }
+    .game-card-desc {
+      font-size: .97rem;color: #e6e6ebc7; margin-left:14px;margin-right:12px;
+      min-height:40px;
+    }
+    .game-card-cat {
+      background: #f5a97f1a;
+      color:#f5a97f;font-size:.85em;display:inline-block;
+      border-radius:4px;padding:1px 7px;margin-left:14px;margin-top:4px;
+    }
+    .no-games-found {padding:45px 0;color:#f66;font-size:1.25rem;text-align:center;}
+    .games-filter-bar { margin:0 0 15px 0;display:flex;gap:18px;align-items:center;}
+    .games-filter-bar input[type=text] { font-size:1.05rem;padding:8px 12px;max-width:340px;background:#fff1;border-radius:6px;border:1px solid #23243019;}
+    @media (max-width:800px) { 
+      .games-list {justify-content:center;}
+      .game-card {width: 95vw;max-width:250px;}
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-bar"><span class="logo">UBGHyper</span></div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="#" class="active">All Games</a>
+    <a href="#">Categories</a>
+    <a href="#">Popular</a>
+    <a href="#">About</a>
+  </nav>
+  <section class="games-section">
+    <div class="games-bar-title">All Games</div>
+    <div class="games-filter-bar">
+      <input type="text" placeholder="🔍 Search games..." id="gamesSearch">
+      <!-- <select> for categories, etc, can go here -->
+    </div>
+    <div class="games-list" id="gamesList">
+      <!-- Games loaded here -->
+    </div>
+    <div class="no-games-found" id="noGames" style="display:none;">
+      No games found. Try another search!
+    </div>
+  </section>
+  <footer>
+    &copy; 2024 UBGHyper &mdash; Unblocked Games for Everyone!
+  </footer>
+  <script>
+     const gamesUrl = "/GameList.github.io/assets/games.json";
+    let allGames = [];
+    const gamesList = document.getElementById('gamesList');
+    const searchInput = document.getElementById('gamesSearch');
+    const noGames = document.getElementById('noGames');
+
+    function gameCard(game) {
+      return `<a class="game-card" href="/GameList/${game.slug}/" title="${game.title}">
+        <img src="/GameList.github.io/assets/${game.image}" alt="${game.title} thumbnail" loading="lazy">
+        <div class="game-card-title">${game.title}</div>
+        <div class="game-card-desc">${game.description||''}</div>
+        <div class="game-card-cat">${game.category||''}</div>
+      </a>`;
+    }
+
+    function renderGames(games) {
+      if(!games.length) {
+        gamesList.innerHTML = "";
+        noGames.style.display = "";
+      } else {
+        noGames.style.display = "none";
+        gamesList.innerHTML = games.map(gameCard).join('');
+        addTiltListeners();
+      }
+    }
+
+    function filterGames() {
+      const q = searchInput.value.trim().toLowerCase();
+      const filtered = allGames.filter(game =>
+        game.title.toLowerCase().includes(q) ||
+        (game.description && game.description.toLowerCase().includes(q)) ||
+        (game.category && game.category.toLowerCase().includes(q))
+      );
+      renderGames(filtered);
+    }
+
+    function addTiltListeners() {
+      const tiltAll = document.querySelectorAll('.game-card');
+      tiltAll.forEach(card=>{
+        card.addEventListener('mousemove', function(e){
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.setProperty('--tilt-x', `${-y*17}deg`);
+          card.style.setProperty('--tilt-y', `${x*17}deg`);
+          card.style.transition = 'transform .1s';
+        });
+        card.addEventListener('mouseleave', function(){
+          card.style.setProperty('--tilt-x', `0deg`);
+          card.style.setProperty('--tilt-y', `0deg`);
+          card.style.transition = 'transform .39s cubic-bezier(.77,0,.18,1)';
+        });
+      });
+    }
+
+    fetch(gamesUrl)
+      .then(x=>x.json())
+      .then(json=>{
+        allGames = json;
+        renderGames(allGames);
+      });
+
+    searchInput.addEventListener('input', filterGames);
+    searchInput.addEventListener('keydown', function(e) { if(e.key === 'Enter') e.preventDefault(); });
+  </script>
+</body>
+</html>
