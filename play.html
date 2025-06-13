@@ -93,23 +93,31 @@
     }
 
     /* ADD THESE FOR GAME INFO */
-    .game-info-container {
-      padding: 26px 28px 20px 28px;
-      background: #191a22;
-      text-align: center;
-      border-radius: 0 0 16px 16px;
-      margin-top: 0;
-    }
-    .game-title {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 700;
-      font-size: 2.2em;
-      color: #ffd09c;
-      line-height: 1.1;
-      letter-spacing: .5px;
-      margin-bottom: 10px;
-      margin-top: 0;
-    }
+.game-info-container {
+  padding: 26px 28px 20px 28px;
+  background: #191a22;
+  border-radius: 0 0 16px 16px;
+  margin-top: 0;
+  text-align: left;
+}
+
+.game-title {
+  font-family: 'Rubik', sans-serif;
+  font-weight: 700;
+  font-size: 2.2em;
+  color: #ffd09c;
+  line-height: 1.1;
+  letter-spacing: .5px;
+  margin: 0;
+  flex: 1 1 auto;
+}
+.game-title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-bottom: 7px;
+}
     .game-desc {
       font-family: 'Rubik', sans-serif;
       font-weight: 400;
@@ -130,7 +138,119 @@
       .game-iframe { height: 62vw; }
       .game-info-container { padding: 14px 6px 10px 6px;}
     }
+.game-desc-recommend-row {
+  width: 100%;
+  display: flex;
+  gap: 32px;
+  justify-content: space-between;
+  align-items: flex-start;
+  background: #18181e;
+  padding: 30px 28px 32px 28px;
+  box-sizing: border-box;
+}
+.game-desc-panel, .game-recommend-panel {
+  flex: 1 1 0;
+  background: #21212a;
+  border-radius: 13px;
+  box-shadow: 0 1px 6px #1b151675;
+  padding: 20px 22px 16px 22px;
+  min-width: 0;
+}
+.desc-title {
+  font-family: 'Rubik', sans-serif;
+  color: #ffd09c;
+  font-weight: 700;
+  font-size: 1.06em;
+  margin-bottom: 10px;
+  letter-spacing: .1em;
+}
+#descDetails {
+  color: #ffe3bd;
+  font-family: Rubik, sans-serif;
+  font-size: 1.08em;
+  line-height: 1.65;
+  white-space: pre-line;
+  margin-bottom: 0;
+}
 
+/* Recommendations */
+#recommendedList {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.recommend-game-link {
+  display: flex;
+  align-items: center;
+  background: #18181d;
+  border-radius: 8px;
+  color: #ffd09c;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.01em;
+  font-weight: 600;
+  padding: 10px 12px;
+  text-decoration: none;
+  gap: 10px;
+  transition: background 0.11s, box-shadow 0.15s  ;
+  border: 1.2px solid #261e19;
+}
+.recommend-game-link:hover {
+  background: #ffd09c;
+  color: #271306;
+  box-shadow: 0 4px 20px #ffd09c2a;
+}
+.recommend-thumb {
+  width: 40px; min-width: 40px;
+  height: 40px;
+  border-radius: 7px;
+  box-shadow: 0 0 2px #000c;
+  background: #242430;
+  object-fit: cover;
+  margin-right: 5px;
+}
+
+@media (max-width: 700px) {
+  .game-title-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+.fullscreen-btn {
+  position: static;
+  margin-left: 8px;
+  background: #181a1e;
+  color: #ffd09c;
+  border: 2px solid #ffd09c;
+  border-radius: 8px;
+  padding: 8px 18px 8px 12px;
+  box-shadow: 0 2px 10px #0002;
+  font-size: 1.1em;
+  font-family: 'Rubik',sans-serif;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  transition: background .13s, color .13s, box-shadow .2s;
+  opacity: 0.97;
+}
+
+  .fullscreen-btn:hover, .fullscreen-btn:focus {
+  background: #ffd09c;
+  color: #181a1e;
+  box-shadow: 0 4px 24px #ffd09c55;
+  outline: none;
+  opacity: 1;
+}
+  .fullscreen-btn svg {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+}
   </style>
 </head>
 <body>
@@ -150,18 +270,33 @@
     </button>
     <!-- Add this container for game info -->
 <div class="game-info-container">
-  <div class="game-title" id="gameTitle"></div>
+  <div class="game-title-bar">
+    <div class="game-title" id="gameTitle"></div>
+    <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
+      <svg viewBox="0 0 24 24"><path d="M7 14H5v5h5v-2H7v-3zm-2-7v5h2V7h3V5H5v2zm12 10h-3v2h5v-5h-2v3zm0-10v3h2V5h-5v2h3z"/></svg>
+      Fullscreen
+    </button>
+  </div>
   <div class="game-desc" id="gameDesc"></div>
   <div class="game-author" id="gameAuthor"></div>
   <div class="game-playtime" id="gamePlaytime" style="margin-top:8px;font-family:Rubik, sans-serif; color:#ffd09c; font-size:1.1em"></div>
 </div>
-
+<!-- GAME DETAILS SPLIT SECTION -->
+<div class="game-desc-recommend-row">
+  <div class="game-desc-panel">
+    <div class="desc-title">About this game</div>
+    <div id="descDetails"></div>
+  </div>
+  <div class="game-recommend-panel">
+    <div class="desc-title">Recommended Games</div>
+    <div id="recommendedList"></div>
+  </div>
+</div>
 <div style="padding:28px;">
   <h2 style="color:#ffd09c; font-family:Rubik,sans-serif; text-align:center;margin-bottom:10px;font-size:1.15em;">
     Playtime per Day
   </h2>
-  <canvas id="playtimeChart" width="800" height="260" style="background:#171818; border-radius:12px"></canvas>
-</div>
+<canvas id="playtimeChart" style="background:#171818; border-radius:12px; width:100%; max-width:850px; height:260px; margin:auto; display:block;"></canvas></div>
   <script>
     
     // Fullscreen button JavaScript
@@ -183,16 +318,23 @@
       document.getElementById("gameDesc").textContent = "";
       document.getElementById("gameAuthor").textContent = "";
     }
-    fetch(gamesUrl).then(r=>r.json()).then(games=>{
-      const game = games.find(g=>g.url === slug);
-      if(!game) return showNotFound();
 
-      document.getElementById("gameTitle").textContent = game.name;
-      document.getElementById("gameDesc").textContent = game.gamedesc || ""; // Should exist in your json
-      document.getElementById("gameAuthor").textContent = game.author ? "By " + game.author : "";
-      document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
-      // or use: `/GameList.github.io/${game.url}/${game.playfile}`;
-    }).catch(showNotFound);
+fetch(gamesUrl).then(r=>r.json()).then(games=>{
+  const game = games.find(g=>g.url === slug);
+  if(!game) return showNotFound();
+
+  document.getElementById("gameTitle").textContent = game.name;
+  document.getElementById("gameDesc").textContent = game.gamedesc || "";
+  document.getElementById("gameAuthor").textContent = game.author ? "By " + game.author : "";
+  document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
+
+  // Show playtime info as before
+  loadAndShowPlaytime(slug);
+
+  // --- Only Draw Chart Once on Load! ---
+  getPlaytimeDays(slug).then(drawPlaytimeChart);
+
+}).catch(showNotFound);
     
     let playtimeInterval = null;
 
@@ -307,12 +449,13 @@ function getPlaytimeDays(slug) {
   });
 }
 
-// --- Chart Drawing ---
+// --- Chart Drawing with better style ---
 let playChart = null;
 function drawPlaytimeChart(playArr) {
   const ctx = document.getElementById('playtimeChart').getContext('2d');
   const labels = playArr.map(x=>x.date);
   const data = playArr.map(x=>Math.round(x.seconds/60*100)/100); // Minutes
+
   if (playChart) playChart.destroy();
   playChart = new Chart(ctx, {
     type: 'bar',
@@ -320,31 +463,61 @@ function drawPlaytimeChart(playArr) {
       labels,
       datasets: [{
         label: 'Minutes Played',
-        backgroundColor: '#ffd09c88',
+        backgroundColor: (ctx) => {
+          const gradient = ctx.chart.ctx.createLinearGradient(0,0,0,260);
+          gradient.addColorStop(0, "#ffd09c");
+          gradient.addColorStop(1, "#f4b135");
+          return gradient;
+        },
         borderColor: '#ffd09c',
-        borderWidth: 2,
+        borderWidth: 3,
+        borderRadius: 10,
         data,
+        maxBarThickness: 38,
+        minBarLength: 2,
       }]
     },
     options: {
+      responsive: true,
       plugins: {
-        legend: {display:false}
+        legend: {display:false},
+        tooltip: {
+          backgroundColor: '#23232e',
+          bodyColor: '#ffd09c',
+          titleColor: '#fff',
+          borderColor: "#ffd09c",
+          borderWidth: 1.5,
+          padding: 14,
+          cornerRadius: 8
+        },
+        title: {
+          display: false
+        }
+      },
+      layout: {
+        padding: 12
       },
       scales: {
         x: {
           ticks: {
-            color: '#ffd09c'
+            color: '#ffd09c',
+            font: { family: 'Rubik', weight: 'bold', size: 15 }
           },
           grid: {
-            color: '#474547',
-            borderColor:'#ffd09c'
+            color: 'rgba(255,208,156,0.19)',
+            borderColor: '#ffd09c'
           }
         },
         y: {
           beginAtZero: true,
-          grace: "10%",
-          ticks: { color: '#ffd09c' },
-          grid: { color:'#3a393a' }
+          grace: "35%",
+          ticks: {
+            color: '#ffd09c',
+            font: { family: 'Rubik', size: 14 }
+          },
+          grid: {
+            color:'#2d2231'
+          }
         }
       }
     }
@@ -380,6 +553,70 @@ function loadAndShowPlaytime(slug) {
   // Chart on return/focus
   window.addEventListener('focus', refreshChart);
 }
+// Fetch and render game info, description, and recommendations:
+fetch(gamesUrl)
+  .then(r => r.json())
+  .then(games => {
+    const game = games.find(g => g.url === slug);
+    if (!game) return showNotFound();
+
+    document.getElementById("gameTitle").textContent = game.name;
+    document.getElementById("gameDesc").textContent = game.gamedesc || "";
+    document.getElementById("gameAuthor").textContent = game.author ? "By " + game.author : "";
+    document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
+
+    // DESCRIPTION (from 'gamedesc' or fallback)
+    document.getElementById("descDetails").textContent = game.gamedesc || "No description provided.";
+
+    // -------- RECOMMENDED GAMES BY TAGS ----------
+    let recTags = (game.tags || []).map(x => x.toLowerCase());
+
+    // Find up to 4 games sharing at least one tag, but not itself:
+    let recommendations = games.filter(g2 =>
+      g2.url !== game.url &&
+      Array.isArray(g2.tags) &&
+      g2.tags.some(tag =>
+        recTags.includes((tag || '').toLowerCase())
+      )
+    );
+
+    // Make sure no duplicates, best matches on top:
+    // Sort by number of matching tags, descending:
+    recommendations = recommendations
+      .map(g2=>({
+        ...g2,
+        matchCount: g2.tags.filter(t=>recTags.includes(t.toLowerCase())).length
+      }))
+      .sort((a,b)=>b.matchCount - a.matchCount)
+      .slice(0, 4);
+
+    // Render recommendations:
+    const recList = document.getElementById('recommendedList');
+    recList.innerHTML = "";
+
+    if (recommendations.length === 0) {
+      recList.innerHTML = `<span style='color:#f4b690;font-style:italic;font-size:1em;'>No related games found.</span>`;
+    } else {
+      recommendations.forEach(g2 => {
+        // Placeholder: use g2.thumb or set custom thumbnail key in your json if available
+        const thumbUrl = g2.thumb || "../assets/img/icon/main.png";
+        const el = document.createElement("a");
+        el.className = "recommend-game-link";
+        el.href = `play.html?game=${encodeURIComponent(g2.url)}`;
+        el.innerHTML = `
+          <img class="recommend-thumb" src="${thumbUrl}" alt="${g2.name} icon" loading="lazy">
+          <span>${g2.name}</span>
+        `;
+        recList.appendChild(el);
+      });
+    }
+
+    // PLAYTIME & chart etc:
+    loadAndShowPlaytime(slug);
+    getPlaytimeDays(slug).then(drawPlaytimeChart);
+
+  })
+  .catch(showNotFound);
   </script>
 </body>
 </html>
