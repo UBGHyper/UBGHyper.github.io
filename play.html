@@ -148,14 +148,16 @@
       Fullscreen
     </button>
     <!-- Add this container for game info -->
-    <div class="game-info-container">
-      <div class="game-title" id="gameTitle"></div>
-      <div class="game-desc" id="gameDesc"></div>
-      <div class="game-author" id="gameAuthor"></div>
-    </div>
-  </div>
+<div class="game-info-container">
+  <div class="game-title" id="gameTitle"></div>
+  <div class="game-desc" id="gameDesc"></div>
+  <div class="game-author" id="gameAuthor"></div>
+  <div class="game-playtime" id="gamePlaytime" style="margin-top:8px;font-family:Rubik, sans-serif; color:#ffd09c; font-size:1.1em"></div>
+</div>
+
 
   <script>
+    
     // Fullscreen button JavaScript
     document.getElementById('fullscreenBtn').addEventListener('click', function() {
       const iframe = document.getElementById('frame');
@@ -185,6 +187,65 @@
       document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
       // or use: `/GameList.github.io/${game.url}/${game.playfile}`;
     }).catch(showNotFound);
+    
+    let playtimeInterval = null;
+
+function formatSeconds(sec) {
+  if (sec < 60) return `${sec} second${sec===1?'':'s'}`;
+  if (sec < 3600) {
+    const m = Math.floor(sec/60), s = sec%60;
+    return `${m} minute${m===1?'':'s'}${s?` ${s} second${s===1?'':'s'}`:''}`;
+  }
+  const h = Math.floor(sec/3600), m = Math.floor((sec%3600)/60), s = sec%60;
+  return `${h} hour${h===1?'':'s'}${m?` ${m} minute${m===1?'':'s'}`:''}${s?` ${s} second${s===1?'':'s'}`:''}`;
+}
+
+function loadAndShowPlaytime(slug) {
+  const saved = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
+  document.getElementById('gamePlaytime').textContent = 'Playtime: ' + formatSeconds(saved);
+
+  // Clear previous interval if any
+  if (playtimeInterval) clearInterval(playtimeInterval);
+
+  // Only count up time when the tab is focused
+  let lastFocused = document.hasFocus();
+
+  playtimeInterval = setInterval(() => {
+    if (document.hasFocus()) {
+      let playtime = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
+      playtime++;
+      localStorage.setItem('playtime_' + slug, playtime);
+      document.getElementById('gamePlaytime').textContent = 'Playtime: ' + formatSeconds(playtime);
+      lastFocused = true;
+    } else {
+      lastFocused = false;
+    }
+  }, 1000);
+
+  // Extra: handle tab coming back to focus (optional)
+  window.addEventListener('focus', function(){
+    lastFocused = true;
+  });
+  window.addEventListener('blur', function(){
+    lastFocused = false;
+  });
+}
+
+// Insert this after game is loaded successfully
+fetch(gamesUrl).then(r=>r.json()).then(games=>{
+  const game = games.find(g=>g.url === slug);
+  if(!game) return showNotFound();
+
+  document.getElementById("gameTitle").textContent = game.name;
+  document.getElementById("gameDesc").textContent = game.gamedesc || "";
+  document.getElementById("gameAuthor").textContent = game.author ? "By " + game.author : "";
+  document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
+
+  // LOAD PLAYTIME HERE:
+  loadAndShowPlaytime(slug);
+
+}).catch(showNotFound);
+
   </script>
 </body>
 </html>
