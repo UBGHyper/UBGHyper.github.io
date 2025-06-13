@@ -11,6 +11,7 @@
      crossorigin="anonymous"></script>
      <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -155,7 +156,12 @@
   <div class="game-playtime" id="gamePlaytime" style="margin-top:8px;font-family:Rubik, sans-serif; color:#ffd09c; font-size:1.1em"></div>
 </div>
 
-
+<div style="padding:28px;">
+  <h2 style="color:#ffd09c; font-family:Rubik,sans-serif; text-align:center;margin-bottom:10px;font-size:1.15em;">
+    Playtime per Day
+  </h2>
+  <canvas id="playtimeChart" width="800" height="260" style="background:#171818; border-radius:12px"></canvas>
+</div>
   <script>
     
     // Fullscreen button JavaScript
@@ -246,6 +252,134 @@ fetch(gamesUrl).then(r=>r.json()).then(games=>{
 
 }).catch(showNotFound);
 
+// --- IndexedDB Helper ---
+function openPlaytimeDB() {
+  return new Promise((resolve, reject) => {
+    const req = indexedDB.open("GamePlaytimeDB", 1);
+    req.onupgradeneeded = function(e) {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains("playtimes")) {
+        db.createObjectStore("playtimes", { keyPath: ["slug", "date"] });
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = e => reject(e.target.error);
+  });
+}
+
+// Save playtime for specific day+slug
+function updatePlaytimeToday(slug) {
+  const today = new Date().toISOString().slice(0,10);
+  openPlaytimeDB().then(db => {
+    const tx = db.transaction("playtimes", "readwrite");
+    const store = tx.objectStore("playtimes");
+    const key = [slug, today];
+    store.get(key).onsuccess = function (e) {
+      let data = e.target.result;
+      if (!data) data = { slug, date: today, seconds: 0 };
+      data.seconds++;
+      store.put(data);
+      db.close();
+    };
+  });
+}
+
+// Get all playtimes for slug
+function getPlaytimeDays(slug) {
+  return new Promise(resolve => {
+    openPlaytimeDB().then(db => {
+      const tx = db.transaction("playtimes", "readonly");
+      const store = tx.objectStore("playtimes");
+      const req = store.openCursor();
+      const days = [];
+      req.onsuccess = function(event) {
+        const cursor = event.target.result;
+        if(cursor) {
+          if(cursor.key[0] === slug) days.push(cursor.value);
+          cursor.continue();
+        } else {
+          db.close();
+          days.sort((a,b) => a.date.localeCompare(b.date));
+          resolve(days);
+        }
+      };
+    });
+  });
+}
+
+// --- Chart Drawing ---
+let playChart = null;
+function drawPlaytimeChart(playArr) {
+  const ctx = document.getElementById('playtimeChart').getContext('2d');
+  const labels = playArr.map(x=>x.date);
+  const data = playArr.map(x=>Math.round(x.seconds/60*100)/100); // Minutes
+  if (playChart) playChart.destroy();
+  playChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+      labels,
+      datasets: [{
+        label: 'Minutes Played',
+        backgroundColor: '#ffd09c88',
+        borderColor: '#ffd09c',
+        borderWidth: 2,
+        data,
+      }]
+    },
+    options: {
+      plugins: {
+        legend: {display:false}
+      },
+      scales: {
+        x: {
+          ticks: {
+            color: '#ffd09c'
+          },
+          grid: {
+            color: '#474547',
+            borderColor:'#ffd09c'
+          }
+        },
+        y: {
+          beginAtZero: true,
+          grace: "10%",
+          ticks: { color: '#ffd09c' },
+          grid: { color:'#3a393a' }
+        }
+      }
+    }
+  });
+}
+
+// --- Enhance your interval to save to IndexedDB each second ---
+function loadAndShowPlaytime(slug) {
+  const saved = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
+  document.getElementById('gamePlaytime').textContent = 'Playtime: ' + formatSeconds(saved);
+
+  if (playtimeInterval) clearInterval(playtimeInterval);
+
+  // Sync chart on load and every interval tick
+  function refreshChart() {
+    getPlaytimeDays(slug).then(drawPlaytimeChart);
+  }
+  refreshChart();
+
+  playtimeInterval = setInterval(() => {
+    if (document.hasFocus()) {
+      let playtime = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
+      playtime++;
+      localStorage.setItem('playtime_' + slug, playtime);
+      document.getElementById('gamePlaytime').textContent = 'Playtime: ' + formatSeconds(playtime);
+
+      updatePlaytimeToday(slug);
+      // Update chart every 10s or first time
+      if (playtime % 10 === 1) refreshChart();
+    }
+  }, 1000);
+
+  // Chart on return/focus
+  window.addEventListener('focus', refreshChart);
+}
   </script>
 </body>
 </html>
