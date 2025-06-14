@@ -8,18 +8,11 @@
   <link rel="stylesheet" href="../assets/css/main.css">
   <link rel="icon" type="image/x-icon" href="assets/img/icon/main.png">
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
      crossorigin="anonymous"></script>
-     <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VE9J0CCHWZ');
-</script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     body { margin:0; background: #181a20; color:#fff;}
     nav {
@@ -56,6 +49,27 @@ nav a {
       position: relative;
     }
 
+    /* --- playtime graph new style --- */
+    .chart-container {
+      max-width: 900px;
+      margin: 32px auto 32px auto;
+      background: linear-gradient(135deg,#23232e 65%,#24243b 100%);
+      border-radius: 17px;
+      padding: 18px 18px 40px 18px;
+      box-shadow: 0 6px 20px #000c, 0 1px 2px #f1ba9030 inset;
+      border: 2px solid #ffd09c55;
+    }
+    #playtimeChart {
+      background: #171818;
+      border-radius: 11px;
+      width: 100%;
+      max-width: 850px;
+      height: 260px;
+      margin: auto;
+      display: block;
+      box-shadow: 0 3px 24px #ffd09c24;
+      border: 1.2px solid #ffd09c30;
+    }
     .game-iframe {
       width: 100%;
       height: 75vh;
@@ -125,13 +139,6 @@ nav a {
       gap: 16px;
       padding-bottom: 7px;
     }
-    .game-desc {
-      font-family: 'Rubik', sans-serif;
-      font-weight: 400;
-      font-size: 1.1em;
-      color: #f9d29f;
-      margin-bottom: 8px;
-    }
     .game-author {
       font-size: 1em;
       margin-top: 4px;
@@ -139,10 +146,34 @@ nav a {
       font-style: italic;
       letter-spacing: .1em;
     }
-    .game-playtime {
-      margin-top:8px;font-family:Rubik, sans-serif; color:#ffd09c; font-size:1.1em
-    }
 
+    .game-playtime {
+      margin-top: 16px;
+      font-family: Rubik, sans-serif;
+      color: #ffd09c;
+      font-size: 1.15em;
+      background: #23232a;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 17px 7px 13px;
+      font-weight: 700;
+      box-shadow: 0 2px 16px #ffd09c22;
+      position: relative;
+      transition: background 0.14s;
+      letter-spacing: 0.05em;
+    }
+    
+    .playtime-clock-icon {
+      display: inline-block;
+      margin-right: 0px;
+      width: 22px;
+      height: 22px;
+      vertical-align: -5px;
+      fill: #ffd09c;
+      filter: drop-shadow(0 2px 4px #9f613c49);
+    }
     /* Details & Recommendations Row */
     .game-desc-recommend-row {
       max-width: 1200px;
@@ -214,6 +245,81 @@ nav a {
       margin-right: 5px;
     }
 
+    /* --- Recently Played Section --- */
+    .recently-played-section {
+      max-width: 1200px;
+      margin: 54px auto 32px auto;
+      background: #191a22;
+      border-radius: 17px;
+      padding: 20px 26px 10px 26px;
+      box-shadow: 0 3px 18px #0009;
+    }
+    .recently-title {
+      color: #ffd09c;
+      font-family: Rubik,sans-serif;
+      font-size: 1.12em;
+      margin-bottom: 14px;
+      font-weight: bold;
+      letter-spacing: 0.11em;
+    }
+    .recently-games {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 17px;
+      padding-bottom: 8px;
+    }
+    .recent-game-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #23232a;
+      border-radius: 12px;
+      padding: 10px 16px 13px 16px;
+      box-shadow: 0 2px 12px #16121b35;
+      border: 1.4px solid #ffd09c24;
+      transition: box-shadow 0.15s, background 0.16s;
+      text-decoration: none;
+      color: #ffd09c;
+      min-width: 110px;
+      max-width: 128px;
+      flex: 1 1 0;
+    }
+    .recent-game-card:hover {
+      background: #ffd09c;
+      color: #21100c;
+      box-shadow: 0 2px 22px #ffd09c47;
+      border-color: #ffd09c75;
+    }
+    .recent-thumb {
+      width: 60px;
+      height: 60px;
+      border-radius: 10px;
+      margin-bottom: 8px;
+      background: #18181e;
+      object-fit: cover;
+      box-shadow: 0 1px 7px #0009;
+      border: 1.2px solid #e6be96;
+    }
+    .recent-game-name {
+      text-align: center;
+      font-family: Rubik,sans-serif;
+      font-size: 0.98em;
+      max-width: 92px;
+      font-weight: 600;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      margin-bottom: 2px;
+    }
+    .recent-game-author {
+      font-size: 0.82em;
+      color: #987947;
+      text-align: center;
+      max-width: 94px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
     @media (max-width:900px){
       .game-frame { border-radius: 10px; }
       .game-iframe { height: 62vw; }
@@ -223,6 +329,13 @@ nav a {
     @media (max-width: 700px) {
       .game-title-bar { flex-direction: column; align-items: flex-start; gap: 8px; }
       .game-desc-recommend-row { flex-direction: column; gap:20px; }
+    }
+        @media (max-width: 750px) {
+      .recently-games {gap: 9px;}
+      .recent-game-card {min-width:85px;max-width:102px;padding:6px 4px;}
+      .recent-thumb {width:35px;height:35px;}
+      .recent-game-name {max-width:64px;}
+      .recent-game-author {max-width:64px;}
     }
   </style>
 </head>
@@ -235,7 +348,6 @@ nav a {
     <a href="about.html">About</a>
   </nav>
 
-  <!-- Only the iframe and fullscreen button here -->
   <div class="game-frame">
     <iframe class="game-iframe" id="frame" allowfullscreen></iframe>
     <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
@@ -244,14 +356,13 @@ nav a {
     </button>
   </div>
 
-  <!-- All game info below, in a new block -->
   <div class="game-info-container">
     <div class="game-title-bar">
       <div class="game-title" id="gameTitle"></div>
     </div>
-    <div class="game-desc" id="gameDesc"></div>
     <div class="game-author" id="gameAuthor"></div>
-    <div class="game-playtime" id="gamePlaytime"></div>
+    <div class="game-playtime" id="gamePlaytime">
+    </div>
   </div>
 
   <div class="game-desc-recommend-row">
@@ -265,11 +376,18 @@ nav a {
     </div>
   </div>
 
-  <div style="max-width:1200px;margin:28px auto;">
-    <h2 style="color:#ffd09c; font-family:Rubik,sans-serif; text-align:center;margin-bottom:10px;font-size:1.15em;">
+  <!-- UPDATED: Playtime Graph gets style container -->
+  <div class="chart-container">
+    <h2 class="chart-heading">
       Playtime per Day
     </h2>
-    <canvas id="playtimeChart" style="background:#171818; border-radius:12px; width:100%; max-width:850px; height:260px; margin:auto; display:block;"></canvas>
+    <canvas id="playtimeChart"></canvas>
+  </div>
+  
+  <!-- NEW: Recently Played Games section -->
+  <div class="recently-played-section" id="recentlyPlayedSection" style="display:none;">
+    <div class="recently-title"><span style="font-size:1.1em;">&#x1F4DA;</span> Recently Played</div>
+    <div class="recently-games" id="recentlyPlayedGames"></div>
   </div>
   <script>
     document.getElementById('fullscreenBtn').addEventListener('click', function() {
@@ -298,7 +416,6 @@ nav a {
     function showNotFound() {
       document.getElementById("gameTitle").textContent = "Game Not Found";
       document.getElementById("frame").style.display = "none";
-      document.getElementById("gameDesc").textContent = "";
       document.getElementById("gameAuthor").textContent = "";
     }
 
@@ -361,7 +478,7 @@ nav a {
     function drawPlaytimeChart(playArr) {
       const ctx = document.getElementById('playtimeChart').getContext('2d');
       const labels = playArr.map(x=>x.date);
-      const data = playArr.map(x=>Math.round(x.seconds/60*100)/100); // Minutes
+      const data = playArr.map(x=>Math.round(x.seconds/60*100)/100);
 
       if (playChart) playChart.destroy();
       playChart = new Chart(ctx, {
@@ -382,6 +499,7 @@ nav a {
             data,
             maxBarThickness: 38,
             minBarLength: 2,
+            hoverBackgroundColor: "#fff0d5",
           }]
         },
         options: {
@@ -399,16 +517,19 @@ nav a {
             },
             title: {display: false}
           },
-          layout: {padding: 12},
+          layout: {padding: {left: 16, right: 15, top: 10, bottom: 14}},
           scales: {
             x: {
               ticks: {
                 color: '#ffd09c',
-                font: { family: 'Rubik', weight: 'bold', size: 15 }
+                font: { family: 'Rubik', weight: 'bold', size: 15 },
+                maxRotation: 0,
+                minRotation: 0
               },
               grid: {
-                color: 'rgba(255,208,156,0.19)',
-                borderColor: '#ffd09c'
+                color: 'rgba(255,208,156,0.09)',
+                borderColor: '#ffd09c77',
+                borderWidth: 1.7
               }
             },
             y: {
@@ -418,16 +539,77 @@ nav a {
                 color: '#ffd09c',
                 font: { family: 'Rubik', size: 14 }
               },
-              grid: {color:'#2d2231'}
+              grid: {color:'#2d2231', borderColor:"#ffd09c44"}
             }
           }
         }
       });
     }
 
+    // --- Recently Played Games LocalStorage Logic ---
+    function addRecentlyPlayed(game) {
+      let arr;
+      try {
+        arr = JSON.parse(localStorage.getItem("recentlyPlayed") || '[]');
+        if (!Array.isArray(arr)) arr = [];
+      } catch(e){arr=[];}
+      // Remove any previous entry of this game
+      arr = arr.filter(g => g.url !== game.url);
+      arr.unshift({
+        name: game.name,
+        url: game.url,
+        thumb: game.thumb,
+        author: game.author,
+        time: Date.now()
+      });
+      // Keep only last 6
+      arr = arr.slice(0,6);
+      localStorage.setItem("recentlyPlayed", JSON.stringify(arr));
+    }
+
+    function loadRecentlyPlayed(currentSlug, gamesData) {
+      let arr;
+      try {
+        arr = JSON.parse(localStorage.getItem("recentlyPlayed") || '[]');
+      } catch(e){arr=[];}
+      if (!Array.isArray(arr) || arr.length === 0) {
+        document.getElementById('recentlyPlayedSection').style.display = "none";
+        return;
+      }
+      // Filter out current game, show others
+      const showArr = arr.filter(g => g.url !== currentSlug);
+
+      if (!showArr.length) {
+        document.getElementById('recentlyPlayedSection').style.display = "none";
+        return;
+      }
+      document.getElementById('recentlyPlayedSection').style.display = "";
+      const box = document.getElementById('recentlyPlayedGames');
+      box.innerHTML = "";
+      for (const g of showArr) {
+        // Try to get latest thumb & title from gamesData for consistency (use fallback if outdated)
+        let meta = gamesData.find(item => item.url === g.url) || g;
+        const a = document.createElement("a");
+        a.className = "recent-game-card";
+        a.href = `play.html?game=${encodeURIComponent(meta.url)}`;
+        a.innerHTML = `
+          <img class="recent-thumb" src="${meta.thumb || '../assets/img/icon/main.png'}" alt="${meta.name} icon" loading="lazy">
+          <span class="recent-game-name">${meta.name||'Unknown'}</span>
+          <span class="recent-game-author">${meta.author||''}</span>
+        `;
+        box.appendChild(a);
+      }
+    }
+
+    function updatePlaytimeCounter(val) {
+      // Update with icon!
+      const counter = document.getElementById('gamePlaytime');
+      counter.innerHTML = `<svg class="playtime-clock-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#f2b967" stroke-width="2.5" fill="#191a22"/><path d="M12 7v5l3.5 2" stroke="#ffd09c" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg> <span>Playtime: </span>${val}`;
+    }
+
     function loadAndShowPlaytime(slug) {
       const saved = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
-      document.getElementById('gamePlaytime').textContent = 'Playtime: ' + formatSeconds(saved);
+      updatePlaytimeCounter(formatSeconds(saved));
 
       if (playtimeInterval) clearInterval(playtimeInterval);
 
@@ -439,8 +621,7 @@ nav a {
           let playtime = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
           playtime++;
           localStorage.setItem('playtime_' + slug, playtime);
-          document.getElementById('gamePlaytime').textContent = 'Playtime: ' + formatSeconds(playtime);
-
+          updatePlaytimeCounter(formatSeconds(playtime));
           updatePlaytimeToday(slug);
           if (playtime % 10 === 1) refreshChart();
         }
@@ -449,6 +630,7 @@ nav a {
       window.addEventListener('focus', refreshChart);
     }
 
+    // --- MAIN LOADING ---
     fetch(gamesUrl)
       .then(r => r.json())
       .then(games => {
@@ -456,12 +638,15 @@ nav a {
         if (!game) return showNotFound();
 
         document.getElementById("gameTitle").textContent = game.name;
-        document.getElementById("gameDesc").textContent = game.gamedesc || "";
         document.getElementById("gameAuthor").textContent = game.author ? "By " + game.author : "";
         document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
-
         document.getElementById("descDetails").textContent = game.gamedesc || "No description provided.";
 
+        // Update Recently Played
+        addRecentlyPlayed(game);
+        loadRecentlyPlayed(slug, games);
+
+        // ... recommendations as before ...
         let recTags = (game.tags || []).map(x => x.toLowerCase());
         let recommendations = games.filter(g2 =>
           g2.url !== game.url &&
@@ -495,11 +680,12 @@ nav a {
             recList.appendChild(el);
           });
         }
-
+        // Playtime
         loadAndShowPlaytime(slug);
         getPlaytimeDays(slug).then(drawPlaytimeChart);
       })
       .catch(showNotFound);
+
   </script>
 </body>
 </html>

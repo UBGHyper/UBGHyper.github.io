@@ -9,7 +9,8 @@
       "puzzle",
       "singleplayer",
       "strategy"
-    ]
+    ],
+    "gamedesc": "2048 is an addictive and easy-to-learn puzzle game that challenges you to swipe and combine numbered tiles on a 4x4 grid. Merge matching tiles to reach higher numbers, with the ultimate goal of creating the elusive 2048 tile! With simple controls, clean visuals, and endlessly replayable gameplay, 2048 offers a satisfying brain teaser for players of all ages. How high can you score before you run out of moves? Play now and test your puzzle-solving skills!"
   },
   {
     "name": "Awesome Planes",
@@ -32,17 +33,6 @@
       "multiplayer",
       "shooter"
       ]
-  },
-  {
-    "name": "Super Smash Flash 2",
-    "image": "supersmashflash2.png",
-    "url": "Super-Smash-Flash-2",
-    "new": false,
-    "credits": "Developed by Kewlbox",
-    "tags": [
-      "multiplayer",
-      "arcade"
-    ]
   },
   {
     "name": "Bloons TD 4",
