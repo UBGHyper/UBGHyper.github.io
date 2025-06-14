@@ -959,8 +959,9 @@
     "horror",
     "singleplayer"
   ]
-},[
-  {
+},
+{
+  
     "name": "Dont Escape 2",
     "image": "dontescape2.png",
     "url": "Dont-Escape-2",
@@ -1135,8 +1136,6 @@
     "new": false,
     "credits": "Developed by Juicy Beast",
     "tags": [
-      "time-management",
-      "restaurant",
       "strategy",
       "singleplayer"
     ]
@@ -1148,8 +1147,6 @@
     "new": false,
     "credits": "Developed by Juicy Beast",
     "tags": [
-      "time-management",
-      "restaurant",
       "strategy",
       "singleplayer"
     ]
@@ -1161,8 +1158,6 @@
     "new": false,
     "credits": "Developed by Juicy Beast",
     "tags": [
-      "time-management",
-      "restaurant",
       "strategy",
       "singleplayer"
     ]
@@ -1174,8 +1169,6 @@
     "new": false,
     "credits": "Developed by Juicy Beast",
     "tags": [
-      "platformer",
-      "action",
       "adventure",
       "singleplayer"
     ]
@@ -1187,8 +1180,6 @@
     "new": false,
     "credits": "Developed by Juicy Beast",
     "tags": [
-      "platformer",
-      "action",
       "adventure",
       "singleplayer"
     ]
@@ -1201,7 +1192,6 @@
     "credits": "Developed by Edmund McMillen",
     "tags": [
       "roguelike",
-      "action",
       "adventure",
       "singleplayer"
     ]
@@ -1213,7 +1203,6 @@
     "new": false,
     "credits": "Developed by Flipline Studios",
     "tags": [
-      "time-management",
       "restaurant",
       "strategy",
       "singleplayer"
@@ -1263,7 +1252,6 @@
     "credits": "Developed by PPLLAAYY",
     "tags": [
       "puzzle",
-      "comedy",
       "adventure",
       "singleplayer"
     ]
@@ -1276,7 +1264,6 @@
     "credits": "Developed by PPLLAAYY",
     "tags": [
       "puzzle",
-      "comedy",
       "adventure",
       "singleplayer"
     ]
@@ -1289,7 +1276,6 @@
     "credits": "Developed by PPLLAAYY",
     "tags": [
       "puzzle",
-      "comedy",
       "adventure",
       "singleplayer"
     ]
@@ -1301,7 +1287,6 @@
   "credits": "Developed by PPLLAAYY",
   "tags": [
     "puzzle",
-    "comedy",
     "adventure",
     "singleplayer"
   ]
@@ -1314,7 +1299,6 @@
   "credits": "Developed by PPLLAAYY",
   "tags": [
     "puzzle",
-    "comedy",
     "adventure",
     "singleplayer"
   ]
@@ -1339,8 +1323,7 @@
   "credits": "Developed by Afro Ninja",
   "tags": [
     "strategy",
-    "multiplayer",
-    "war"
+    "multiplayer"
   ]
 },
 {
@@ -2447,6 +2430,5 @@
 }
 ]
   ]
-]
 ]
 ]
