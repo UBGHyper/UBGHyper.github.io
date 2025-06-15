@@ -10,8 +10,7 @@
       "singleplayer",
       "strategy"
     ],
-    "gamedesc": "2048 is an addictive and easy-to-learn puzzle game that challenges you to swipe and combine numbered tiles on a 4x4 grid. Merge matching tiles to reach higher numbers, with the ultimate goal of creating the elusive 2048 tile! With simple controls, clean visuals, and endlessly replayable gameplay, 2048 offers a satisfying brain teaser for players of all ages. How high can you score before you run out of moves? Play now and test your puzzle-solving skills!",
-    "status": "recently fixed"
+    "gamedesc": "2048 is an addictive and easy-to-learn puzzle game that challenges you to swipe and combine numbered tiles on a 4x4 grid. Merge matching tiles to reach higher numbers, with the ultimate goal of creating the elusive 2048 tile! With simple controls, clean visuals, and endlessly replayable gameplay, 2048 offers a satisfying brain teaser for players of all ages. How high can you score before you run out of moves? Play now and test your puzzle-solving skills!"
   },
   {
     "name": "Awesome Planes",
@@ -33,7 +32,8 @@
     "tags": [
       "multiplayer",
       "shooter"
-      ]
+      ],
+    "status": "buggy"
   },
   {
     "name": "Bloons TD 4",
@@ -79,7 +79,8 @@
       "tower defense",
       "strategy",
       "singleplayer"
-    ]
+    ],
+    "status": "buggy"
   },
   {
     "name": "Line Rider 2",
@@ -124,7 +125,8 @@
       "idle",
       "clicker",
       "singleplayer"
-    ]
+    ],
+    "status": "buggy"
   },
   {
     "name": "Doom",
@@ -135,7 +137,8 @@
     "tags": [
       "shooter",
       "singleplayer"
-        ]
+        ],
+    "status": "broken"
   },
 {
   "name": "Drive Mad",
@@ -591,7 +594,8 @@
     "fighting",
     "multiplayer",
     "action"
-  ]
+  ],
+  "status": "buggy"
 },
 {
   "name": "Swords & Souls",
@@ -640,7 +644,8 @@
     "multiplayer",
     "creative",
     "building"
-  ]
+  ],
+  "status": "buggy"
 },
 {
   "name": "Eaglercraft",
@@ -1185,7 +1190,8 @@
       "roguelike",
       "adventure",
       "singleplayer"
-    ]
+    ],
+    "status": "buggy"
   },
   {
     "name": "Papas Scooperia",
@@ -1690,7 +1696,8 @@
       "action",
       "adventure",
       "singleplayer"
-    ]
+    ],
+    "status": "buggy"
   },
   {
     "name": "Crush The Castle",
@@ -1829,7 +1836,7 @@
   {
     "name": "Awesome Cars",
     "image": "awesome-cars.png",
-    "url": "",
+    "url": "Awesome-Cars",
     "new": false,
     "credits": "Developed by Gametornado",
     "tags": [
@@ -1841,7 +1848,7 @@
   {
     "name": "Bartender The Right Mix",
     "image": "bartender-the-right-mix.jpg",
-    "url": "",
+    "url": "Bartender-The-Right-Mix",
     "new": false,
     "credits": "Developed by Liquid Night",
     "tags": [
@@ -1853,7 +1860,7 @@
   {
     "name": "Bejeweled",
     "image": "bejeweled.jpg",
-    "url": "",
+    "url": "Bejeweled",
     "new": false,
     "credits": "Developed by Popcap Games",
     "tags": [
@@ -1865,7 +1872,7 @@
   {
     "name": "Bejeweled 2",
     "image": "bejeweled-2.png",
-    "url": "",
+    "url": "Bejeweled-2",
     "new": false,
     "credits": "Developed by Popcap Games",
     "tags": [
@@ -1877,7 +1884,7 @@
   {
     "name": "Billards",
     "image": "billards.png",
-    "url": "",
+    "url": "Billards",
     "new": false,
     "credits": "Developed by Unknown developer",
     "tags": [
@@ -1900,7 +1907,7 @@
   {
     "name": "Cooking Mama",
     "image": "cooking.mama.png",
-    "url": "",
+    "url": "Cooking-Mama",
     "new": false,
     "credits": "Developed by PETA",
     "tags": [
@@ -1912,7 +1919,7 @@
   {
     "name": "Crash Bandicoot Flash",
     "image": "crash-bandicoot.jpg",
-    "url": "",
+    "url": "Crash-Bandicoot",
     "new": false,
     "credits": "Developed by gembut and hutcoa7",
     "tags": [
@@ -1924,7 +1931,7 @@
   {
     "name": "Doodle Jump",
     "image": "doodle-jump.png",
-    "url": "",
+    "url": "Doodle-Jump",
     "new": false,
     "credits": "Developed by gembut and hutcoa7",
     "tags": [
@@ -1934,21 +1941,9 @@
     ]
   },
   {
-    "name": "Crash Bandicoot Flash",
-    "image": "crash-bandicoot.jpg",
-    "url": "",
-    "new": false,
-    "credits": "Developed by gembut and hutcoa7",
-    "tags": [
-      "platformer",
-      "adventure",
-      "singleplayer"
-    ]
-  },
-  {
     "name": "Earn to Die",
     "image": "earn-to-die.png",
-    "url": "",
+    "url": "Earn-to-Die",
     "new": false,
     "credits": "Developed by Toffee Games",
     "tags": [
@@ -1960,7 +1955,7 @@
   {
     "name": "Earn to Die 2",
     "image": "earn-to-die-2.jpg",
-    "url": "",
+    "url": "Earn-to-Die-2",
     "new": false,
     "credits": "Developed by Toffee Games",
     "tags": [
@@ -1972,7 +1967,7 @@
   {
     "name": "Earn to Die 2 Exodus",
     "image": "earn-to-die-2-exodus.jpg",
-    "url": "",
+    "url": "Earn-to-Die-2-Exodus",
     "new": false,
     "credits": "Developed by Toffee Games",
     "tags": [
@@ -1984,7 +1979,7 @@
   {
     "name": "Factory Balls",
     "image": "factory-balls.jpg",
-    "url": "",
+    "url": "Factory-Balls",
     "new": false,
     "credits": "Developed by Bart Bonte",
     "tags": [
@@ -1996,7 +1991,7 @@
   {
     "name": "Factory Balls 2",
     "image": "factory-balls-2.png",
-    "url": "",
+    "url": "Factory-Balls-2",
     "new": false,
     "credits": "Developed by Bart Bonte",
     "tags": [
@@ -2008,7 +2003,7 @@
   {
     "name": "Factory Balls 3",
     "image": "factory-balls-3.png",
-    "url": "",
+    "url": "Factory-Balls-3",
     "new": false,
     "credits": "Developed by Bart Bonte",
     "tags": [
@@ -2020,7 +2015,7 @@
   {
     "name": "Factory Balls 4",
     "image": "factory-balls-4.png",
-    "url": "",
+    "url": "Factory-Balls-4",
     "new": false,
     "credits": "Developed by Bart Bonte",
     "tags": [
@@ -2032,7 +2027,7 @@
   {
     "name": "Fancy Pants Adventures",
     "image": "fancy-pants-adventures.jpg",
-    "url": "",
+    "url": "Fancy-Pants-Adventures",
     "new": false,
     "credits": "Developed by Brad Borne",
     "tags": [
@@ -2044,7 +2039,7 @@
   {
     "name": "Fancy Pants Adventures 2",
     "image": "fancy-pants-adventures.png",
-    "url": "",
+    "url": "Fancy-Pants-Adventures",
     "new": false,
     "credits": "Developed by Brad Borne",
     "tags": [
@@ -2056,7 +2051,7 @@
   {
     "name": "Fancy Pants Adventures 3",
     "image": "fancy-pants-adventures-3.jpg",
-    "url": "",
+    "url": "Fancy-Pants-Adventures-3",
     "new": false,
     "credits": "Developed by Brad Borne",
     "tags": [
@@ -2066,9 +2061,9 @@
     ]
   },
   {
-    "name": "Fireboy and Watergirl ",
+    "name": "Fireboy and Watergirl",
     "image": "fireboy-and-watergirl-1.jpg",
-    "url": "",
+    "url": "Fireboy-and-Watergirl",
     "new": false,
     "credits": "Developed by Oslo Albet",
     "tags": [
@@ -2081,7 +2076,7 @@
   {
     "name": "Fireboy and Watergirl 2",
     "image": "fireboy-and-watergirl-2.jpg",
-    "url": "",
+    "url": "Fireboy-and-Watergirl-2",
     "new": false,
     "credits": "Developed by Oslo Albet",
     "tags": [
@@ -2094,7 +2089,7 @@
   {
     "name": "Fireboy and Watergirl 3",
     "image": "fireboy-and-watergirl-3.jpg",
-    "url": "",
+    "url": "Fireboy-and-Watergirl-3",
     "new": false,
     "credits": "Developed by Oslo Albet",
     "tags": [
@@ -2107,7 +2102,7 @@
   {
     "name": "Flash Flight Simulator",
     "image": "flash-flight-simulator.jpg",
-    "url": "",
+    "url": "Flash-Flight-Simulator-1",
     "new": false,
     "credits": "Developed by Oslo Albet",
     "tags": [
@@ -2119,7 +2114,7 @@
   {
     "name": "Gunblood",
     "image": "gunblood.png",
-    "url": "",
+    "url": "Gunblood",
     "new": false,
     "credits": "Developed by Wolf Games",
     "tags": [
@@ -2131,7 +2126,7 @@
   {
     "name": "Johnny Upgrade",
     "image": "johnny-upgrade.png",
-    "url": "",
+    "url": "Johnny-Upgrade",
     "new": false,
     "credits": "Developed by Gameshot",
     "tags": [
@@ -2143,7 +2138,7 @@
   {
     "name": "Mutilate a Doll 2",
     "image": "mutilate-a-doll-2.jpg",
-    "url": "",
+    "url": "Mutilate-a-Doll-Two",
     "new": false,
     "credits": "Developed by Rava Games",
     "tags": [
@@ -2156,7 +2151,7 @@
     {
       "name": "Pico vs Uberkids",
       "image": "pico-vs-uberkids.jpg",
-      "url": "",
+      "url": "Pico-vs-uberkids",
       "new": false,
       "credits": "Developed by Tom Fulp",
       "tags": [
@@ -2168,7 +2163,7 @@
     {
       "name": "Picos School",
       "image": "picos-school.jpg",
-      "url": "",
+      "url": "Picos-school",
       "new": false,
       "credits": "Developed by Tom Fulp",
       "tags": [
@@ -2180,7 +2175,7 @@
     {
       "name": "Picos School 2",
       "image": "picos-school-2.png",
-      "url": "",
+      "url": "Picos-school-2",
       "new": false,
       "credits": "Developed by Tom Fulp",
       "tags": [
@@ -2190,21 +2185,9 @@
       ]
     },
     {
-      "name": "Plants vs Zombies",
-      "image": "pvz.png",
-      "url": "",
-      "new": false,
-      "credits": "Developed by Popcap Games",
-      "tags": [
-        "strategy",
-        "tower defense",
-        "singleplayer"
-      ]
-    },
-    {
       "name": "Red Ball",
       "image": "red-ball.png",
-      "url": "",
+      "url": "Red-ball",
       "new": false,
       "credits": "Developed by Eugene Fedoseev",
       "tags": [
@@ -2216,7 +2199,7 @@
     {
       "name": "Red Ball 2",
       "image": "red-ball-2.jpg",
-      "url": "",
+      "url": "Red-ball-2",
       "new": false,
       "credits": "Developed by Eugene Fedoseev",
       "tags": [
@@ -2228,7 +2211,7 @@
     {
       "name": "Red Ball 3",
       "image": "red-ball-3.jpg",
-      "url": "",
+      "url": "Red-ball-3",
       "new": false,
       "credits": "Developed by Eugene Fedoseev",
       "tags": [
@@ -2240,7 +2223,7 @@
     {
       "name": "Red Ball 4",
       "image": "red-ball-4.jpg",
-      "url": "Red-Ball-4",
+      "url": "Red-ball-4",
       "new": false,
       "credits": "Developed by Eugene Fedoseev",
       "tags": [
@@ -2252,7 +2235,7 @@
     {
       "name": "Road of the Dead",
       "image": "road-of-the-dead.jpg",
-      "url": "Road-of-the-Dead",
+      "url": "Road-of-the-dead",
       "new": false,
       "credits": "Developed by Evil Dog Games",
       "tags": [
@@ -2324,7 +2307,7 @@
     {
       "name": "Sniper Assassin 2",
       "image": "sniper-assassin-2.png",
-      "url": "Sniper-Assassin-2",
+      "url": "Sniper-assassin-2",
       "new": false,
       "credits": "Developed by Ultimate Flash Archive",
       "tags": [
@@ -2336,7 +2319,7 @@
     {
       "name": "Sniper Assassin 3",
       "image": "sniper-assassin.jpg",
-      "url": "Sniper-Assassin-3",
+      "url": "Sniper-assassin-3",
       "new": false,
       "credits": "Developed by Ultimate Flash Archive",
       "tags": [
@@ -2372,7 +2355,7 @@
     {
       "name": "Toss the Turtle",
       "image": "toss-the-turtle.jpg",
-      "url": "Toss-the-Turtle",
+      "url": "Toss-the-turtle",
       "new": false,
       "credits": "Developed by GonzoSSM",
       "tags": [
@@ -2384,7 +2367,7 @@
     {
       "name": "Unfair Mario",
       "image": "unfair-mario.jpg",
-      "url": "Unfair-Mario",
+      "url": "Unfair-mario",
       "new": false,
       "credits": "Developed by Unknown",
       "tags": [
@@ -2404,22 +2387,10 @@
         "rpg",
         "singleplayer"
       ]
-    },
-    {
-      "name": "Achievement Unlocked 3",
-      "image": "achievement-unlocked-3.jpg",
-      "url": "Achievement-Unlocked-3",
-      "new": false,
-      "credits": "Developed by John Cooney",
-      "tags": [
-        "puzzle",
-        "achievement",
-        "singleplayer"
-      ]
     }
   ]
 }
 ]
-  ]
+]
 ]
 ]

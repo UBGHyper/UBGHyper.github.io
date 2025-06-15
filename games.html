@@ -424,9 +424,9 @@
     function getStatusBadge(status) {
   if (!status) return '';
   const statusMap = {
-    "recently fixed": { text: "Recently Fixed", emoji: "🛠️", cls: "status-fixed" },
-    "buggy":          { text:  "Buggy",        emoji: "🐞",  cls: "status-buggy" },
-    "broken":         { text:  "Broken",       emoji: "❌",  cls: "status-broken" },
+    "recently fixed": { text: "Recently Fixed", emoji: "✅", cls: "status-fixed" },
+    "buggy":          { text:  "Buggy",        emoji: "🐛",  cls: "status-buggy" },
+    "broken":         { text:  "Broken",       emoji: "🛠️",  cls: "status-broken" },
   };
   const info = statusMap[String(status).toLowerCase()];
   if (!info) return '';
