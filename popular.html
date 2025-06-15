@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Popular Games - UBGHyper</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" type="image/x-icon" href="../assets/img/icon/main.png">
+  <style>
+    /* (You can reuse styles from games.html!) */
+    .games-list { display:flex; flex-wrap:wrap; gap:30px 21px; justify-content:center; margin:30px 0 0 0;}
+    .game-card { background: linear-gradient(150deg, #23243a 70%, #2a2e40 100%); border-radius: 16px; box-shadow: 0 8px 32px #002b661a, 0 2px 16px #23243029; width: 300px; transition: box-shadow 0.18s, transform .12s, border 0.2s; padding: 0 0 2px 0; display: flex; flex-direction: column; cursor:pointer; border:2.5px solid #151a2650; perspective: 600px; text-decoration: none !important; overflow: hidden; position: relative;}
+    .game-card img { width: 100%; aspect-ratio: 1 / 1; height: auto; object-fit: cover; border-radius: 16px 16px 0 0; background: #22242b; margin-bottom: 8px; display: block;}
+    .game-card-title { font-weight: 800; font-size: 1.09rem; margin: 3px 10px 2px 12px; color: #ffd09c;}
+    .game-card-cat { background: #f5a97f33; color:#ffd09c; font-size:.83em; display:inline-block; border-radius:6px; padding:2px 8px; margin-left:12px; margin-top:2px; margin-bottom: 7px; font-weight:600; letter-spacing:.8px;}
+    h2 { text-align:center; margin-top:30px;}
+    .details {color:#696; font-size:0.98rem; margin-left:12px; margin-bottom:7px;}
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">All Games</a>
+    <a href="categories.html">Categories</a>
+    <a href="popular.html" class="active">Popular</a>
+    <a href="about.html">About</a>
+  </nav>
+  <h2>🔥 Your Popular Games</h2>
+  <div class="games-list" id="gamesList"></div>
+  <script>
+    const gamesUrl = "../assets/games.json";
+    fetch(gamesUrl)
+      .then(x=>x.json())
+      .then(games=>{
+        let stats = {};
+        try { stats = JSON.parse(localStorage.getItem('gameStats') || '{}'); } catch{}
+        // add popularityScore: more clicks/time = more popular
+        games.forEach(g=>{
+          let s = stats[g.url] || { clicks:0, time:0 };
+          g.popularityScore = s.clicks*2 + Math.floor(s.time/30000); // 1pt per 30 sec, each click = 2pts
+          g._clicks = s.clicks; g._time = s.time;
+        });
+        games = games.filter(g=>g.popularityScore > 0);
+        games.sort((a,b)=> b.popularityScore - a.popularityScore);
+        const top = games.slice(0, 30);
+        document.getElementById('gamesList').innerHTML = top.map(g=>`
+          <a class="game-card" href="play.html?game=${encodeURIComponent(g.url)}">
+            <img src="/GameList.github.io/${g.url}/${g.image}" alt="${g.name}">
+            <div class="game-card-title">${g.name}</div>
+            <div class="game-card-cat">${g.category||''}</div>
+            <div class="details">👀 ${g._clicks} clicks &middot; ⏰ ${(g._time/60000).toFixed(1)} min</div>
+          </a>
+        `).join('');
+        if (top.length === 0)
+          document.getElementById('gamesList').innerHTML = "<div style='color:#f66;font-size:1.2em;text-align:center;width:100%;'>No popular games yet! Play some games to generate stats.</div>";
+      });
+  </script>
+</body>
+</html>

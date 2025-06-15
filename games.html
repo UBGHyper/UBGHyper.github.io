@@ -440,6 +440,25 @@ function gameCard(game) {
     <div class="game-card-cat">${game.category || ''}</div>
   </a>`;
 }
+
+// Add click handler for .game-card anchors for tracking
+gamesList.addEventListener('click', function(e) {
+  // Find the closest .game-card anchor
+  let card = e.target.closest('.game-card');
+  if (!card) return;
+  // Extract game URL param from href
+  let href = card.getAttribute('href');
+  let urlParams = new URLSearchParams(href.split('?')[1]);
+  let gameKey = urlParams.get('game');
+  if (!gameKey) return;
+  // Track click count in localStorage
+  let stats = JSON.parse(localStorage.getItem('gameStats') || '{}');
+  stats[gameKey] = stats[gameKey] || { clicks: 0, time: 0 };
+  stats[gameKey].clicks += 1;
+  localStorage.setItem('gameStats', JSON.stringify(stats));
+  // do not preventDefault, let navigation proceed
+});
+
   </script>
 </body>
 </html>

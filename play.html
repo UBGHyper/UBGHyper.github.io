@@ -391,6 +391,19 @@
          }
       </style>
    </head>
+<script>
+const gameKey = new URLSearchParams(location.search).get('game');
+let t0 = Date.now();
+window.addEventListener('beforeunload', function() {
+  if (!gameKey) return;
+  let t1 = Date.now();
+  let dt = Math.max(0, t1 - t0);
+  let stats = JSON.parse(localStorage.getItem('gameStats') || '{}');
+  stats[gameKey] = stats[gameKey] || { clicks: 0, time: 0 };
+  stats[gameKey].time += dt;
+  localStorage.setItem('gameStats', JSON.stringify(stats));
+});
+</script>
    <body>
       <nav>
          <a href="index.html" class="active">Home</a>
