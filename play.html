@@ -421,13 +421,13 @@ window.addEventListener('beforeunload', function() {
             Fullscreen
          </button>
       </div>
-      <div class="game-info-container">
-         <div class="game-title-bar">
-            <div class="game-title" id="gameTitle"></div>
-         </div>
-         <div class="game-author" id="gameAuthor"></div>
-         <div class="game-playtime" id="gamePlaytime">
-         </div>
+    <div class="game-info-container">
+      <div class="game-title-bar">
+         <div class="game-title" id="gameTitle"></div>
+       </div>
+       <div class="game-author" id="gameAuthor"></div>
+       <div class="game-playtime" id="gamePlaytime"></div>
+     </div>
       </div>
       <div class="game-desc-recommend-row">
          <div class="game-desc-panel">
@@ -446,6 +446,7 @@ window.addEventListener('beforeunload', function() {
          </h2>
          <canvas id="playtimeChart"></canvas>
       </div>
+      
       <!-- NEW: Recently Played Games section -->
       <div class="recently-played-section" id="recentlyPlayedSection" style="display:none;">
          <div class="recently-title"><span style="font-size:1.1em;">&#x1F4DA;</span> Recently Played</div>
@@ -621,7 +622,7 @@ window.addEventListener('beforeunload', function() {
              name: game.name,
              url: game.url,
              thumb: game.thumb,
-             author: game.author,
+             author: game.credits,
              time: Date.now()
            });
            // Keep only last 6
@@ -700,9 +701,10 @@ window.addEventListener('beforeunload', function() {
              if (!game) return showNotFound();
          
              document.getElementById("gameTitle").textContent = game.name;
-             document.getElementById("gameAuthor").textContent = game.author ? "By " + game.author : "";
+             document.getElementById("gameAuthor").textContent = game.credits ? "" + game.credits : "";
              document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
              document.getElementById("descDetails").textContent = game.gamedesc || "No description provided.";
+             
          
              // Update Recently Played
              addRecentlyPlayed(game);
@@ -751,6 +753,8 @@ window.addEventListener('beforeunload', function() {
          const minsAgo = Math.floor((Date.now() - g.time)/60000);
          const lastPlayed = minsAgo < 1 ? "Just now" : (minsAgo < 60 ? `${minsAgo}m ago` : `${Math.floor(minsAgo/60)}h ago`);
          a.innerHTML += `<div class="recent-last-played">${lastPlayed}</div>`;
+
+         
       </script>
    </body>
 </html>
