@@ -545,7 +545,9 @@
     "platformer",
     "endless runner",
     "singleplayer"
-  ]
+  ],
+  "status": "broken"
+
 },
 {
   "name": "Slope",

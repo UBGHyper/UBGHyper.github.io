@@ -10,10 +10,10 @@
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
          crossorigin="anonymous"></script>
-      <link rel="stylesheet" href="../assets/css/play.css"> </head>
+      <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-        <link rel="stylesheet" href="../assets/css/main.css"> </head>
+      <link rel="stylesheet" href="../assets/css/play.css"> </head>
    </head>
 <script>
 const gameKey = new URLSearchParams(location.search).get('game');
@@ -94,21 +94,18 @@ window.addEventListener('beforeunload', function() {
             <div id="recommendedList"></div>
          </div>
       </div>
-      <!-- UPDATED: Playtime Graph gets style container -->
+      <div id="gameAchievements"></div>
       <div class="chart-container">
          <h2 class="chart-heading">
             Playtime per Day
          </h2>
          <canvas id="playtimeChart"></canvas>
       </div>
-      
-      <!-- NEW: Recently Played Games section -->
       <div class="recently-played-section" id="recentlyPlayedSection" style="display:none;">
          <div class="recently-title"><span style="font-size:1.1em;">&#x1F4DA;</span> Recently Played</div>
          <div class="recently-games" id="recentlyPlayedGames"></div>
       </div>
       <script>
-        // ------ EDIT SAVE POPUP FUNCTIONALITY -----
 (function() {
   const editBtn = document.getElementById('editSaveBtn');
   const modal = document.getElementById('editSaveModal');

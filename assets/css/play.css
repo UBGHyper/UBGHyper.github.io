@@ -1,5 +1,26 @@
 
+         body { margin:0; background: #181a20; color:#fff;}
+         nav {
+         display:flex;
+         gap:18px;
+         background:#23232a;
+         padding: 16px 0 8px 20px;
+         }
 
+         nav a.active,nav a:hover { background:#ffd09c; color:#23232a;}
+         .game-frame {
+         background: #22242a;
+         border-radius: 18px;
+         box-shadow: 0 6px 32px #001a4150;
+         padding: 0;
+         max-width: 1200px;
+         margin: 40px auto 0 auto;
+         overflow: hidden;
+         border-style: solid;
+         border-color: #ffd09c;
+         border-width: 2px 2px 8px 2px;
+         position: relative;
+         }
          /* --- playtime graph new style --- */
          .chart-container {
          max-width: 900px;
@@ -73,7 +94,7 @@
          .game-title {
          font-family: 'Rubik', sans-serif;
          font-weight: 700;
-         font-size: 4.16rem;
+         font-size: 2.2em;
          color: #ffd09c;
          line-height: 1.1;
          letter-spacing: .5px;
@@ -458,6 +479,18 @@
     padding: 18px 7vw 16px 7vw;
   }
   .save-editor-title { font-size: 1.14em; }
+}
+
+.playtime-achievement {
+  margin: 2px 0 0 2px;
+  background: #54351140;
+  border-radius: 7px;
+  padding: 3px 13px 4px 10px;
+  display:inline-block;
+  font-size:1em;
+  box-shadow: 0 2px 14px 0 #ffd09c22;
+  letter-spacing:0.5px;
+  margin-bottom:2.8px;
 }
          @media (max-width:900px){
          .recent-game-card {min-width:110px;max-width:120px;padding:7px 6px;}
