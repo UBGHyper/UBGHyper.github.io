@@ -404,11 +404,11 @@ window.addEventListener('beforeunload', function() {
   localStorage.setItem('gameStats', JSON.stringify(stats));
 });
 </script>
+
    <body>
       <nav>
          <a href="index.html" class="active">Home</a>
          <a href="games.html">All Games</a>
-         <a href="categories.html">Categories</a>
          <a href="popular.html">Popular</a>
          <a href="about.html">About</a>
       </nav>
@@ -422,11 +422,42 @@ window.addEventListener('beforeunload', function() {
          </button>
       </div>
     <div class="game-info-container">
-      <div class="game-title-bar">
-         <div class="game-title" id="gameTitle"></div>
-       </div>
-       <div class="game-author" id="gameAuthor"></div>
-       <div class="game-playtime" id="gamePlaytime"></div>
+<div class="game-title-bar" style="align-items:center;">
+  <div class="game-title" id="gameTitle"></div>
+  <button id="editSaveBtn" style="margin-left:auto;background:#262736;color:#ffd09c;border:none;padding:8px 19px;font-family:Rubik,sans-serif;font-weight:700;font-size:1em;border-radius:16px;box-shadow:0 2px 8px #ffd09c18;cursor:pointer;transition:.13s;margin-right:5px;">
+    &#9874; Edit Save
+  </button>
+</div>
+<div class="game-author" id="gameAuthor"></div>
+<div style="display: flex;align-items:center;gap:8px;">
+  <div class="game-playtime" id="gamePlaytime"></div>
+</div>
+<div id="editSaveModal" style="display:none;position:fixed;z-index:99999;left:0;top:0;width:100vw;height:100vh;background:#222d4280;backdrop-filter:blur(1.5px);align-items:center;justify-content:center;">
+  <div style="background:#191b20;color:#fff;padding:24px;min-width:300px;max-width:90vw;border-radius:12px;box-shadow:0 3px 30px #000a;position:relative;">
+    <button id="closeEditSaveModal" style="position:absolute;top:13px;right:14px;font-size:1.2em;background:none;border:none;color:#f4b135;cursor:pointer;">&times;</button>
+    <h2 style="margin-top:0;font-family:Rubik,sans-serif;font-weight:800;color:#ffd09c;">Edit Save Data</h2>
+    <div style="margin-bottom:8px;font-size:.97em;color:#ffe3bd;">
+      Edit the <b>localStorage</b> and <b>playtime</b> for this game.<br>
+      Advanced: Edit <b>IndexedDB - Playtime per Day</b>.
+    </div>
+    <fieldset style="border:1.2px solid #ffd09c55;border-radius:7px;padding:11px 17px;margin-bottom:14px;">
+      <legend style="color:#ffd09c;font-size:0.95em;font-family:Rubik;">localStorage <span style="color:#828b32;">(playtime/Game stats)</span></legend>
+      <label for="localStoragePlaytime">playtime_<span style="font-family:monospace">${slug || ''}</span>:</label>
+      <input type="number" id="localStoragePlaytime" min="0" style="width:90px;font-size:1em;padding:2px 7px;margin-bottom: 7px;"> seconds
+      <br>
+      <label for="gameStats">gameStats:</label>
+      <textarea id="gameStats" style="width:98%;height:54px;font-size:0.95em;margin-bottom:7px;"></textarea>
+      <br>
+      <button id="saveLocalStorageBtn" style="background:#ffd09c;color:#21212a;border:none;padding:5px 14px;border-radius:7px;font-weight:700;cursor:pointer;">Save localStorage</button>
+    </fieldset>
+    <fieldset style="border:1.2px solid #bcd15b89;border-radius:7px;padding:10px 14px;">
+      <legend style="color:#cee971;font-size:0.95em;font-family:Rubik;">IndexedDB "GamePlaytimeDB"</legend>
+      <div style="font-size:.95em;">Edit any date's playtime (minutes):</div>
+      <div id="idbPlayData" style="margin-top:7px"></div>
+      <button id="saveIDBPlaytimeBtn" style="margin-top:9px;background:#cee971;color:#2f3905;border:none;padding:5px 14px;border-radius:7px;font-weight:700;cursor:pointer;">Save IndexedDB</button>
+    </fieldset>
+  </div>
+</div>
      </div>
       </div>
       <div class="game-desc-recommend-row">
@@ -453,6 +484,87 @@ window.addEventListener('beforeunload', function() {
          <div class="recently-games" id="recentlyPlayedGames"></div>
       </div>
       <script>
+        // ------ EDIT SAVE POPUP FUNCTIONALITY -----
+(function() {
+  const editBtn = document.getElementById('editSaveBtn');
+  const modal = document.getElementById('editSaveModal');
+  const closeBtn = document.getElementById('closeEditSaveModal');
+  const playtimeInput = document.getElementById('localStoragePlaytime');
+  const gameStatsTA = document.getElementById('gameStats');
+  const saveLocalBtn = document.getElementById('saveLocalStorageBtn');
+  const idbPlayDataBox = document.getElementById('idbPlayData');
+  const saveIDBBtn = document.getElementById('saveIDBPlaytimeBtn');
+  let idbRows = [];
+  function openModal() {
+    // localStorage: load values
+    playtimeInput.value = localStorage.getItem("playtime_" + slug) || 0;
+    gameStatsTA.value = JSON.stringify(JSON.parse(localStorage.getItem('gameStats')||'{}'),null,2);
+
+    // IndexedDB: load values
+    idbPlayDataBox.innerHTML = "<div style='font-size:.94em;color:#fff1cd;'>Loading...</div>";
+    getPlaytimeDays(slug).then(arr => {
+      if(!arr.length){
+        idbPlayDataBox.innerHTML = "<span style='color:#efa750;font-size:1em;'>No IndexedDB data for this game yet.</span>";
+        idbRows = [];
+        return;
+      }
+      idbPlayDataBox.innerHTML = arr.map((row,i)=>`
+        <div style="margin-bottom:5px;">
+          <span style="display:inline-block;width:88px;font-family:monospace;color:#ffd09c">${row.date}</span> 
+          <input class="idbSeconds" type="number" min="0" data-i="${i}" style="width:64px;padding:1px 6px;" value="${Math.round(row.seconds/60)}"> minutes
+        </div>
+      `).join('');
+      idbRows = arr;
+    });
+
+    modal.style.display = "flex";
+  }
+  editBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', ()=>{modal.style.display='none';});
+
+  // localStorage Save
+  saveLocalBtn.addEventListener('click',()=>{
+    localStorage.setItem("playtime_" + slug, Number(playtimeInput.value));
+    try {
+      const val = JSON.parse(gameStatsTA.value);
+      localStorage.setItem('gameStats', JSON.stringify(val));
+      alert("localStorage updated!");
+    } catch(e) {
+      alert("Invalid JSON in gameStats.");
+    }
+    // update onscreen playtime counter
+    updatePlaytimeCounter(formatSeconds(Number(playtimeInput.value)));
+  });
+
+  // IndexedDB Save
+  saveIDBBtn.addEventListener('click',()=>{
+    // For each .idbSeconds, update corresponding row
+    const fields = idbPlayDataBox.querySelectorAll('.idbSeconds');
+    // Open DB only once, run all updates
+    openPlaytimeDB().then(db=>{
+      const tx = db.transaction('playtimes','readwrite');
+      const store = tx.objectStore('playtimes');
+      fields.forEach(f=>{
+        let i = Number(f.dataset.i);
+        let minutes = Number(f.value);
+        let d = {...idbRows[i]};
+        d.seconds = Math.max(0, Math.round(minutes*60));
+        store.put(d);
+      });
+      tx.oncomplete = () => {
+        db.close();
+        alert("IndexedDB saved!");
+        getPlaytimeDays(slug).then(drawPlaytimeChart);
+      };
+    });
+  });
+
+  // Modal close on backdrop click
+  modal.addEventListener('mousedown',e=>{
+    if(e.target===modal) modal.style.display='none';
+  });
+})();
+
          document.getElementById('fullscreenBtn').addEventListener('click', function() {
            const iframe = document.getElementById('frame');
            if      (iframe.requestFullscreen)        iframe.requestFullscreen();

@@ -240,7 +240,6 @@
   <nav>
     <a href="index.html">Home</a>
     <a href="games.html" class="active">All Games</a>
-    <a href="categories.html">Categories</a>
     <a href="popular.html">Popular</a>
     <a href="about.html">About</a>
   </nav>
@@ -282,7 +281,6 @@
       return `<a class="game-card" href="play.html?game=${encodeURIComponent(game.url)}" title="${game.name}">
         <img src="/GameList.github.io/${game.url}/${game.image}" alt="${game.name} thumbnail" loading="lazy">
         <div class="game-card-title">${game.name}</div>
-        <div class="game-card-cat">${game.category || ''}</div>
       </a>`;
     }
 
