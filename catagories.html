@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Categories - UBGHyper</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+  <link rel="stylesheet" href="../assets/css/main.css">
+  <link rel="icon" type="image/x-icon" href="../assets/img/icon/main.png">
+  <style>
+    .cats-section { max-width: 1100px; margin: 34px auto; padding:0 10px;}
+    .cats-title {
+      text-align:center;
+      font-size:2.1rem;
+      margin-bottom:24px;
+      font-weight:700;
+      letter-spacing:.6px;
+    }
+    .category-block {
+      margin-bottom:50px;
+      border-radius: 19px;
+      background:linear-gradient(108deg, #23243a 70%, #282a3e 100%);
+      box-shadow:0 4px 20px #23243028;
+      padding:20px 16px 20px 20px;
+    }
+    .category-card2 {
+      display:flex;
+      align-items:center;
+      gap:14px;
+      margin-bottom: 13px;
+    }
+    .category-icon {
+      font-size:2.7rem;
+      color:#74d7ff;
+      text-shadow:0 2px 6px #1f1f2c70;
+      width: 55px;
+      text-align:center;
+    }
+    .category-title-wrap {
+      flex:1;
+    }
+    .category-name {
+      font-size:1.26rem;
+      font-weight:700;
+      color:#ffd09c;
+      margin-bottom:2px;
+      letter-spacing:.04em; 
+      text-shadow:0 1px 0 #0004,0 0 9px #0002;
+    }
+    .category-desc {
+      font-size:.99rem;
+      color:#eee9;
+      text-align:left;
+      line-height:1.45;
+      margin-bottom:0;
+      min-height:20px;
+    }
+    .games-under-cat {
+      display:flex;
+      flex-wrap: wrap;
+      gap:21px 18px;
+      margin: 18px 0 0 0;
+      justify-content: flex-start;
+    }
+    .cat-seeall {
+      display:inline-block;
+      margin-top:13px;
+      font-size:.97em;
+      color:#5896ff;
+      font-weight:600;
+      text-decoration: underline;
+      margin-left:2px;
+      transition:color .16s;
+    }
+    .cat-seeall:hover { color:#ffd09c; }
+    @media (max-width: 700px) {
+      .cats-section { margin:16px auto;}
+      .category-icon { font-size:2.1rem; width:38px;}
+    }
+    /* style for game-cards, copied from original page's style: */
+    .game-card {
+      background: linear-gradient(150deg, #23243a 70%, #2a2e40 100%);
+      border-radius: 16px;
+      box-shadow: 0 8px 32px #002b661a, 0 2px 16px #23243029;
+      width: 240px;
+      max-width:95vw;
+      margin-bottom: 1px;
+      transition: box-shadow 0.18s, transform .12s, border 0.2s;
+      padding: 0 0 2px 0;
+      display: flex;
+      flex-direction: column;
+      cursor:pointer;
+      border:2.5px solid #151a2650;
+      perspective: 600px;
+      transform: perspective(600px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));
+      text-decoration: none !important;
+      overflow: hidden;
+      position: relative;
+    }
+    .game-card:hover {
+      box-shadow:0 0 64px #53b6ff48, 0 0 0 #23470000;
+      border:2.5px solid #53aaff80;
+      transform: scale(1.025) perspective(600px) rotateX(var(--tilt-x,0deg)) rotateY(var(--tilt-y,0deg));
+      z-index: 2;
+    }
+    .game-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      height: auto;
+      object-fit: cover;
+      border-radius: 16px 16px 0 0;
+      background: #22242b;
+      margin-bottom: 8px;
+      display: block;
+      box-shadow: 0 8px 24px #3cabff42;
+      transition: box-shadow 0.2s, filter .17s, transform 0.17s;
+      filter: contrast(1.12) saturate(1.16);
+      min-height: 0;
+      max-height: 200px;
+    }
+    .game-card-title {
+      font-weight:800;
+      font-size: 1.03rem;
+      margin: 3px 10px 2px 12px;
+      color: #ffd09c;
+      line-height:1.14;
+      letter-spacing:.3px;
+      text-shadow:0 1px 0 #0005,0 0 9px #0002;
+      text-decoration: none !important;
+      font-family: 'Rubik',sans-serif;
+      padding-bottom: 0;
+    }
+    .game-card-cat {
+      background: #f5a97f33;
+      color:#ffd09c;
+      font-size:.83em;
+      display:inline-block;
+      border-radius:6px;
+      padding:2px 8px;
+      margin-left:12px;
+      margin-top:2px;
+      margin-bottom: 7px;
+      font-weight:600;
+      letter-spacing:.8px;
+    }
+    .game-card,
+    .game-card:link,
+    .game-card:visited,
+    .game-card:hover,
+    .game-card:active {
+      text-decoration: none !important;
+      color: inherit !important;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="games.html">All Games</a>
+    <a href="categories.html" class="active">Categories</a>
+    <a href="popular.html">Popular</a>
+    <a href="about.html">About</a>
+  </nav>
+  <section class="cats-section" id="catsSection">
+    <div class="cats-title">Game Categories</div>
+    <!-- JS will fill content here -->
+  </section>
+  <footer>
+    &copy; 2025 UBGHyper &mdash; Unblocked Games for Everyone!
+  </footer>
+  <script>
+    // 1. List your main 10 categories (adjust slugs/icons as needed)
+    const CATEGORIES = [
+      {
+        name: 'Action',
+        icon: 'fa-bolt',
+        desc: 'Fast-paced games where reflexes and skill matter the most.'
+      },
+      {
+        name: 'Adventure',
+        icon: 'fa-hat-wizard',
+        desc: 'Explore new worlds, embark on epic quests and thrilling stories.'
+      },
+      {
+        name: 'Puzzle',
+        icon: 'fa-puzzle-piece',
+        desc: 'Challenge your brain with logic, brain teasers, and clever puzzles!'
+      },
+      {
+        name: 'Sports',
+        icon: 'fa-futbol',
+        desc: 'Play football, basketball, racing, and other sports-based games.'
+      },
+      {
+        name: 'Multiplayer',
+        icon: 'fa-users',
+        desc: 'Compete or cooperate with friends and players around the world.'
+      },
+      {
+        name: 'Arcade',
+        icon: 'fa-gamepad',
+        desc: 'Fun, classic, or quirky pick-up-and-play games for any time.'
+      },
+      {
+        name: 'Platformer',
+        icon: 'fa-shoe-prints',
+        desc: 'Jump, run, and climb your way through platform-style levels.'
+      },
+      {
+        name: 'Strategy',
+        icon: 'fa-chess',
+        desc: 'Plan ahead and outwit your opponents in tactical games.'
+      },
+      {
+        name: 'Racing',
+        icon: 'fa-flag-checkered',
+        desc: 'Speed to the finish in car, bike, and other high-speed races.'
+      },
+      {
+        name: 'Simulation',
+        icon: 'fa-tractor',
+        desc: 'Experience and manage real-world scenarios—farming, driving, and more.'
+      }
+    ];
+
+    // 2. Helper: HTML for each game card
+    function gameCard(game) {
+      return `<a class="game-card" href="play.html?game=${encodeURIComponent(game.url)}" title="${game.name}">
+        <img src="/GameList.github.io/${game.url}/${game.image}" alt="${game.name} thumbnail" loading="lazy">
+        <div class="game-card-title">${game.name}</div>
+        <div class="game-card-cat">${game.category || ''}</div>
+      </a>`;
+    }
+
+    // 3. Helper: Groups games by lowercased category name
+    function groupGamesByCategory(games) {
+      const catMap = {};
+      games.forEach(game => {
+        if (!game.category) return;
+        // for consistent matching:
+        const catKey = game.category.trim().toLowerCase();
+        (catMap[catKey] = catMap[catKey] || []).push(game);
+      });
+      return catMap;
+    }
+
+    // 4. Render the category blocks, each with their games
+    function renderCategoryBlocks(catGamesMap, categories) {
+      const cs = document.getElementById('catsSection');
+      // Remove everything except title:
+      cs.innerHTML = '<div class="cats-title">Game Categories</div>';
+      categories.forEach(category => {
+        const key = category.name.trim().toLowerCase();
+        const games = catGamesMap[key] || [];
+        let html = `
+          <div class="category-block">
+            <div class="category-card2">
+              <div class="category-icon"><i class="fa-solid ${category.icon}"></i></div>
+              <div class="category-title-wrap">
+                <div class="category-name">${category.name}</div>
+                <div class="category-desc">${category.desc}</div>
+              </div>
+            </div>
+            <div class="games-under-cat">
+        `;
+        // Show up to 5 games, or a note if none
+        if (games.length === 0) {
+          html += `<div style="padding:14px 0 9px 3px; color:#dbb;">No games in this category yet.</div>`
+        } else {
+          games.slice(0,5).forEach(g => html += gameCard(g));
+        }
+        html += `</div>`;
+        if (games.length > 5) {
+          html += `<a class="cat-seeall" href="games.html?category=${encodeURIComponent(category.name)}">See all ${category.name} games →</a>`;
+        }
+        html += `</div>`;
+        cs.insertAdjacentHTML('beforeend', html);
+      });
+    }
+
+    // --- Fetch games and build the page ---
+    fetch("../assets/games.json")
+      .then(r => r.json())
+      .then(allGames => {
+        const catMap = groupGamesByCategory(allGames);
+        renderCategoryBlocks(catMap, CATEGORIES);
+        addTiltListeners();
+      });
+
+    // Optional: Card tilt effect
+    function addTiltListeners() {
+      const tiltAll = document.querySelectorAll('.game-card');
+      tiltAll.forEach(card=>{
+        card.addEventListener('mousemove', function(e){
+          const rect = card.getBoundingClientRect();
+          const x = (e.clientX - rect.left) / rect.width - 0.5;
+          const y = (e.clientY - rect.top) / rect.height - 0.5;
+          card.style.setProperty('--tilt-x', `${-y*17}deg`);
+          card.style.setProperty('--tilt-y', `${x*17}deg`);
+          card.style.transition = 'transform .1s';
+        });
+        card.addEventListener('mouseleave', function(){
+          card.style.setProperty('--tilt-x', `0deg`);
+          card.style.setProperty('--tilt-y', `0deg`);
+          card.style.transition = 'transform .39s cubic-bezier(.77,0,.18,1)';
+        });
+      });
+    }
+  </script>
+</body>
+</html>
