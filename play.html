@@ -13,40 +13,10 @@
       <!-- Google tag (gtag.js) -->
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <link rel="stylesheet" href="../assets/css/main.css"> </head>
       <style>
-         body { margin:0; background: #181a20; color:#fff;}
-         nav {
-         display:flex;
-         gap:18px;
-         background:#23232a;
-         padding: 16px 0 8px 20px;
-         }
-         nav a {
-         color: var(--color-page-heading);
-         text-decoration: none;
-         padding: 9px 20px;
-         border-radius: 18px;
-         background: none;
-         display: inline-block;
-         transition: color 0.18s, 
-         box-shadow 0.3s;
-         position: relative;
-         z-index: 1;
-         }
-         nav a.active,nav a:hover { background:#ffd09c; color:#23232a;}
-         .game-frame {
-         background: #22242a;
-         border-radius: 18px;
-         box-shadow: 0 6px 32px #001a4150;
-         padding: 0;
-         max-width: 1200px;
-         margin: 40px auto 0 auto;
-         overflow: hidden;
-         border-style: solid;
-         border-color: #ffd09c;
-         border-width: 2px 2px 8px 2px;
-         position: relative;
-         }
+
+
          /* --- playtime graph new style --- */
          .chart-container {
          max-width: 900px;
@@ -360,6 +330,152 @@
          opacity: .92;
          font-family: Rubik,sans-serif;
          }
+
+         .save-editor-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(22,19,12, 0.78);
+  backdrop-filter: blur(3.5px) saturate(130%);
+  z-index: 9000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: overlayFadeIn 0.22s ease;
+}
+@keyframes overlayFadeIn {
+  from { opacity: 0;}
+  to { opacity: 1;}
+}
+.save-editor-popup {
+  background: linear-gradient(135deg, #1f1812 65%, #2e1e16 100%);
+  border-radius: 20px;
+  max-width: 420px;
+  width: 94vw;
+  box-shadow: 0 7px 34px #000C, 0 0px 2px #ffd09c38 inset;
+  border: 2.5px solid #ffd09c99;
+  padding: 36px 30px 28px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 23px;
+  position: relative;
+  animation: popupSpring 0.30s cubic-bezier(.23,1.23,.30,1);
+}
+@keyframes popupSpring {
+  from { opacity: 0; transform: scale(.82) translateY(24px);}
+  67%  { transform: scale(1.04);}
+  to   { opacity: 1; transform: scale(1) translateY(0);}
+}
+.save-editor-title {
+  font-family: 'Rubik', sans-serif;
+  color: #ffd09c;
+  font-size: 1.42em;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: .09em;
+  margin-bottom: 5px;
+  text-shadow: 0 2px 11px #d2a1692a, 0 .5px 0 #0005;
+}
+.save-editor-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 7px;
+}
+.save-editor-label {
+  color: #ffe6c5;
+  font-weight: 600;
+  font-size: 1.08em;
+  margin-bottom: 7px;
+  letter-spacing: .11em;
+  font-family: Rubik,sans-serif;
+}
+.save-editor-input, .save-editor-textarea {
+  width: 100%;
+  padding: 10px 14px;
+  font-size: 1.07em;
+  color: #ffd09c;
+  background: #23232b;
+  border: 1.7px solid #facc9930;
+  border-radius: 8px;
+  font-family: 'Fira Mono', 'Rubik', monospace, sans-serif;
+  resize: vertical;
+  min-height: 40px;
+  outline: none;
+  box-shadow: 0 1.5px 10px #ffd09c0a inset;
+  transition: border 0.15s, box-shadow 0.15s;
+}
+.save-editor-input:focus, .save-editor-textarea:focus {
+  border: 1.8px solid #ffd09c;
+  box-shadow: 0 2px 18px #ffd09c22;
+  background: #241e10;
+}
+.save-editor-btns {
+  display: flex;
+  gap: 18px;
+  margin-top: 4px;
+  justify-content: flex-end;
+}
+.save-editor-btn {
+  background: #ffd09c;
+  color: #2a180b;
+  border: none;
+  border-radius: 8px;
+  font-family: Rubik, sans-serif;
+  font-size: 1.08em;
+  font-weight: 700;
+  padding: 8px 26px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px #ffd09c22, 0 .5px 1.5px #000a inset;
+  transition: background .14s, color .13s, transform .12s, box-shadow .16s;
+  letter-spacing: .06em;
+}
+.save-editor-btn:hover,
+.save-editor-btn:focus {
+  background: #2a180b;
+  color: #ffd09c;
+  box-shadow: 0 7px 20px #ffd09c4a;
+  transform: translateY(-1px) scale(1.04);
+}
+.save-editor-btn.cancel {
+  background: #23232b;
+  color: #ffd09c;
+  border: 1.2px solid #ffd09cab;
+  box-shadow: 0 2.5px 7px #ffd09c11;
+}
+.save-editor-btn.cancel:hover,
+.save-editor-btn.cancel:focus {
+  background: #ffd09c44;
+  color: #231b11;
+}
+
+.save-editor-close {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: #ffd09c;
+  font-size: 1.8em;
+  cursor: pointer;
+  opacity: 0.80;
+  z-index: 10;
+  transition: opacity 0.13s;
+  line-height: 1;
+}
+.save-editor-close:hover,
+.save-editor-close:focus {
+  opacity: 1;
+  color: #ffe0a3;
+}
+
+@media (max-width: 540px) {
+  .save-editor-popup {
+    border-radius: 13px;
+    padding: 18px 7vw 16px 7vw;
+  }
+  .save-editor-title { font-size: 1.14em; }
+}
          @media (max-width:900px){
          .recent-game-card {min-width:110px;max-width:120px;padding:7px 6px;}
          .recent-thumb {width:48px;height:48px;}
@@ -409,7 +525,7 @@ window.addEventListener('beforeunload', function() {
       <nav>
          <a href="index.html" class="active">Home</a>
          <a href="games.html">All Games</a>
-         <a href="popular.html">Popular</a>
+         <a href="favourites.html">Favourites</a>
          <a href="about.html">About</a>
       </nav>
       <div class="game-frame">
