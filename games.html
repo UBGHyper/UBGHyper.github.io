@@ -210,6 +210,30 @@
       .game-card img{aspect-ratio: 1/1; max-height: 340px;}
     }
     footer { display: none !important;}
+
+      .game-status-badge {
+    position: absolute;
+    left: 9px;
+    top: 8px;
+    z-index: 5;
+    font-size: 1em;
+    padding: 2px 8px 2px 6px;
+    border-radius: 7px 11px 11px 7px;
+    font-weight: bold;
+    background: #111c;
+    color: #fff;
+    box-shadow: 0 2px 10px #2223;
+    letter-spacing:0.1em;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    pointer-events: none;
+    user-select: none;
+  }
+  .game-status-badge.status-fixed    { background: #2cb891fa; color: #fff; }
+  .game-status-badge.status-buggy    { background: #ffd43bfa; color: #333;}
+  .game-status-badge.status-broken   { background: #f44336fa; color: #fff; }
   </style>
 </head>
 <body>
@@ -396,6 +420,26 @@
     tagsButton.addEventListener('click', toggleTagsMenu);
     tagsButton.addEventListener('keydown', onTagsButtonKeydown);
     document.addEventListener('click', onClickOutside);
+
+    function getStatusBadge(status) {
+  if (!status) return '';
+  const statusMap = {
+    "recently fixed": { text: "Recently Fixed", emoji: "🛠️", cls: "status-fixed" },
+    "buggy":          { text:  "Buggy",        emoji: "🐞",  cls: "status-buggy" },
+    "broken":         { text:  "Broken",       emoji: "❌",  cls: "status-broken" },
+  };
+  const info = statusMap[String(status).toLowerCase()];
+  if (!info) return '';
+  return `<span class="game-status-badge ${info.cls}">${info.emoji} ${info.text}</span>`;
+}
+function gameCard(game) {
+  return `<a class="game-card" href="play.html?game=${encodeURIComponent(game.url)}" title="${game.name}">
+    ${getStatusBadge(game.status)}
+    <img src="/GameList.github.io/${game.url}/${game.image}" alt="${game.name} thumbnail" loading="lazy">
+    <div class="game-card-title">${game.name}</div>
+    <div class="game-card-cat">${game.category || ''}</div>
+  </a>`;
+}
   </script>
 </body>
 </html>
