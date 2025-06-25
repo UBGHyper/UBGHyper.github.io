@@ -11,10 +11,6 @@
       <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
          crossorigin="anonymous"></script>
       <!-- Google tag (gtag.js) -->
-       <style>
-        /* in your CSS file, or <style> */
-.game-frame { position:relative; }
-       </style>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
       <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
       <link rel="stylesheet" href="../assets/css/play.css">
@@ -41,17 +37,7 @@
          <a href="about.html">About</a>
       </nav>
       <div class="game-frame">
-        <div id="gameLoaderOverlay" style="
-  position:absolute;left:0;top:0;width:100%;height:100%;background:#18161c;display:flex;flex-direction:column;align-items:center;justify-content:center;z-index:99;transition:opacity .3s;pointer-events:all;">
-  <div style="padding:26px 31px 19px 31px;background:#272135b7;border-radius:15px;box-shadow:0 2px 32px #000a;text-align:center;">
-    <div style="font-family:Rubik;font-size:1.5em;color:#ffd09c;font-weight:800;">Loading Game…</div>
-    <div id="loaderProgressText" style="margin:17px 0 2px 0;color:#ffd09c;font-size:1em;font-weight:600;">0%</div>
-    <div style="width:220px;height:16px;border-radius:9px;background:#302033;overflow:hidden;">
-      <div id="progressBar"
-           style="height:16px;border-radius:9px;background:linear-gradient(90deg,#ffd09c,#f4b135,#fff1cd);width:0%"></div>
-    </div>
-  </div>
-</div>
+        
          <iframe class="game-iframe" id="frame" allowfullscreen></iframe>
          <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
             <svg viewBox="0 0 24 24">
@@ -121,68 +107,6 @@
          <div class="recently-games" id="recentlyPlayedGames"></div>
       </div>
       <script>
-        function showIframeLoader() {
-  document.getElementById("gameLoaderOverlay").style.opacity = '1';
-  document.getElementById("gameLoaderOverlay").style.pointerEvents = 'all';
-}
-function hideIframeLoader() {
-  document.getElementById("gameLoaderOverlay").style.opacity = '0';
-  document.getElementById("gameLoaderOverlay").style.pointerEvents = 'none';
-  setTimeout(()=>document.getElementById("gameLoaderOverlay").style.display="none", 370);
-}
-
-function loadGameWithProgress(gameUrl) {
-  showIframeLoader();
-  const loaderText = document.getElementById("loaderProgressText");
-  const progressBar = document.getElementById("progressBar");
-  loaderText.textContent = "0%";
-  progressBar.style.width = "0%";
-
-  // Start fetching the game content to measure progress
-  fetch(gameUrl)
-  .then(response => {
-    if (!response.ok) throw new Error("Network error");
-    const contentLength = +(response.headers.get('Content-Length')||0);
-    if (!response.body || !window.ReadableStream) throw new Error("No stream support");
-
-    let loaded = 0;
-    const reader = response.body.getReader();
-    const chunks = [];
-
-    function read() {
-      return reader.read().then(({done, value}) => {
-        if (done) {
-          // Build blob and load iframe
-          const blob = new Blob(chunks, {type:"text/html"});
-          const blobUrl = URL.createObjectURL(blob);
-          document.getElementById('frame').src = blobUrl;
-
-          // Remove loader when iframe fires load event (in case of errors, fallback with setTimeout)
-          document.getElementById('frame').addEventListener('load', hideIframeLoader, {once:true});
-          setTimeout(hideIframeLoader, 7000);
-          return;
-        }
-        chunks.push(value);
-        loaded += value.length;
-        if (contentLength) {
-          const percent = Math.floor(100*loaded/contentLength);
-          loaderText.textContent = percent+"%";
-          progressBar.style.width = percent+"%";
-        } else {
-          loaderText.textContent = (Math.floor(loaded/1000))+" KB";
-          progressBar.style.width = (Math.min(loaded/500000,1)*100)+"%";
-        }
-        return read();
-      });
-    }
-    return read();
-  })
-  .catch(err=>{
-    document.getElementById("loaderProgressText").textContent = "Click to try again";
-    progressBar.style.width = "0%";
-    document.getElementById("gameLoaderOverlay").onclick = ()=>loadGameWithProgress(gameUrl);
-  });
-}
          (function() {
            const editBtn = document.getElementById('editSaveBtn');
            const modal = document.getElementById('editSaveModal');
