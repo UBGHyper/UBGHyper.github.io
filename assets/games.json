@@ -2379,6 +2379,18 @@
       ]
     },
     {
+      "name": "Bitlife 2",
+      "image": "unfair-mario.jpg",
+      "url": "Bitlife-2",
+      "new": false,
+      "credits": "Developed by good question",
+      "tags": [
+        "platformer",
+        "puzzle",
+        "singleplayer"
+      ]
+    },
+    {
       "name": "Jacksmith",
       "image": "jacksmith.jpg",
       "url": "Jacksmith",
