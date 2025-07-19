@@ -383,12 +383,28 @@
          const tagsMenu = document.getElementById('tagsMenu');
          
          // Generate game card HTML
-         function gameCard(game) {
-           return `<a class="game-card" href="play.html?game=${encodeURIComponent(game.url)}" title="${game.name}">
-             <img src="/GameList.github.io/${game.url}/${game.image}" alt="${game.name} thumbnail" loading="lazy">
-             <div class="game-card-title">${game.name}</div>
-           </a>`;
-         }
+function gameCard(game) {
+  // Path for thumbnail (edit as needed if your thumbnail naming is different)
+  // If you don't have thumbs, just use game.image as before!
+  const thumb = `/GameList.github.io/${game.url}/${game.image}`;
+
+  // Optionally, you could have: const thumb128 = ..., thumb256 = ...
+  // and use srcset for 1x/2x devices
+
+  return `<a class="game-card" href="play.html?game=${encodeURIComponent(game.url)}" title="${game.name}">
+    ${getStatusBadge(game.status)}
+    <img
+      src="${thumb}"
+      loading="lazy"
+      decoding="async"
+      alt="${game.name} thumbnail"
+      width="256" height="256"
+      style="background:#f5f5f5"
+    >
+    <div class="game-card-title">${game.name}</div>
+    <div class="game-card-cat">${game.category || ''}</div>
+  </a>`;
+}
          
          // Render filtered/complete games list
          function renderGames(games) {

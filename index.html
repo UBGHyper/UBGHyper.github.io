@@ -192,25 +192,6 @@
            staticTvAnimRaf = null;
          }
          
-         
-         // ========== HIGH QUALITY TILT EFFECT ON GAME CARDS (like coolubg) ==========
-         const tiltAll = document.querySelectorAll('.game-card');
-         tiltAll.forEach(card=>{
-           card.addEventListener('mousemove', function(e){
-             const rect = card.getBoundingClientRect();
-             const x = (e.clientX - rect.left) / rect.width - 0.5;
-             const y = (e.clientY - rect.top) / rect.height - 0.5;
-             card.style.setProperty('--tilt-x', `${-y*17}deg`);
-             card.style.setProperty('--tilt-y', `${x*17}deg`);
-             card.style.transition = 'transform .1s';
-           });
-           card.addEventListener('mouseleave', function(){
-             card.style.setProperty('--tilt-x', `0deg`);
-             card.style.setProperty('--tilt-y', `0deg`);
-             card.style.transition = 'transform .39s cubic-bezier(.77,0,.18,1)';
-           });
-         });
-         
       </script>
    </body>
 </html>
