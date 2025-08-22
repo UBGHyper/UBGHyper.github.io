@@ -1,216 +1,122 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html> 
+<html lang="en" data-theme="default">
    <head>
-      <meta charset="UTF-8">
-      <title>UBGHyper - Unblocked Games Hub</title>
-      <meta name="viewport" content="width=device-width,initial-scale=1.0">
-      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;400&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-      <link rel="stylesheet" href="../assets/css/main.css">
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <meta name="description" content="A fast, accessible, mobile-friendly unblocked games homepage with a sleek dark + pastel orange theme." />
+      <meta name="theme-color" content="#0F1216" />
+      <title>Orange Arcade — Unblocked Games</title>
+      <link rel="stylesheet" href="style.css" />
+      <!-- No external fonts or libraries for speed and privacy --> 
    </head>
-   <link rel="icon" type="image/x-icon" href="assets/img/icon/main.png">
-   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
-      crossorigin="anonymous"></script>
-   <!-- Google tag (gtag.js) -->
-   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
-   <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      
-      gtag('config', 'G-VE9J0CCHWZ');
-   </script>
-   </head>  
-   <style>
-      /* === CHANGELOG STYLES === */
-      .changelog-section {
-      background:var(--changelog-bg);color:var(--changelog-text);max-width:700px;margin:32px auto 0 auto;
-      padding:22px 26px 19px 26px;border-radius:13px;font-size:1rem;box-shadow:0 4px 20px #23243019;
-      animation:popIn .7s 0.2s both;
-      border:1.5px solid #f5a97f14;
-      }
-      .changelog-section h3 {color:var(--color-page-heading);font-size:1.11rem;margin-top:0;margin-bottom:8px;letter-spacing:.9px;}
-      .changelog-section ul {padding-left:20px;margin:0;}
-      .changelog-section li {margin-bottom:7px;}
-   </style>
    <body>
-      <nav>
-         <a href="#" class="active">Home</a>
-         <a href="games.html">All Games</a>
-         <a href="favourites.html">Favourites</a>
-         <a href="about.html">About</a>
-      </nav>
-      <section class="hero">
-         <div class="hero-title">Welcome to UBGHyper</div>
-                  <div class="hero-title">NEW POLYTRACK</div>
-         <div class="hero-desc">The Best Unblocked Games Website<br>
-            Action, Puzzle, Racing, Arcade and more. Unlimited fun, zero restrictions!
+      <!-- Skip link for keyboard and screen-reader users --> <a class="skip-link" href="#content">Skip to content</a> 
+      <header class="site-header" role="banner">
+         <div class="container header-inner">
+            <button id="logo" class="brand" aria-label="Home">
+               <!-- Simple inline SVG for a fast, crisp logo --> 
+               <svg aria-hidden="true" viewBox="0 0 64 64" class="brand__mark" width="28" height="28">
+                  <defs>
+                     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+                        <stop offset="0%" stop-color="#F4A261" />
+                        <stop offset="100%" stop-color="#FFBE7B" />
+                     </linearGradient>
+                  </defs>
+                  <circle cx="32" cy="32" r="28" fill="url(#g)"/>
+                  <path d="M18 34c6 0 8-4 14-4s8 4 14 4" fill="none" stroke="#0F1216" stroke-width="3" stroke-linecap="round"/>
+               </svg>
+               <span class="brand__name">Orange Arcade</span> 
+            </button>
+            Code
+            <nav class="site-actions" aria-label="Site actions">
+               <button id="themeToggle" class="btn btn--ghost" aria-pressed="false" aria-label="Toggle theme">Theme</button>
+               <a class="btn btn--primary" href="#dev-bio">About Dev</a>
+            </nav>
          </div>
-         </form>
-      </section>
-      <!-- Changelog Example -->
-      <div class="changelog-section">
-         <h3>Changelog</h3>
-         <ul>
-            <li><span style="color:var(--color-tick)">✅</span> New design launched!</li>
-            <li><span style="color:var(--color-tick)">✅</span> Added popular games to homepage.</li>
-            <li><span style="color:var(--color-cross)">❌</span> Fixed issue with broken game links.</li>
-            <li><span style="color:var(--color-tick)">✅</span> Added a 404 page.</li>
-            <li><span style="color:var(--color-tick)">✅</span> Fixed some games.</li>
-         </ul>
-      </div>
-      <!-- ==== DEV SECTION ==== -->
-      <section class="dev-section" id="dev-page">
-         <div class="dev-avatar">
-            <img src="../assets/img/pfp/fibble.png" alt="Dev Avatar"/>
+         <div class="container search-bar">
+            <label class="sr-only" for="search">Search games</label>
+            <input id="search" type="search" inputmode="search" autocomplete="off" placeholder="Search games… (try typing “pumpkin”)" aria-describedby="search-help" />
+            <div id="search-help" class="assistive">Type to filter games. Use the category chips below to refine.</div>
          </div>
-         <div class="dev-name">UBGHyper/Fibble</div>
-         <div class="dev-role">Website Maker</div>
-         <div class="dev-bio">
-            I made ts<b>
+         <div class="container category-row" role="navigation" aria-label="Game categories">
+            <div id="categories" class="chips" role="list">
+               <!-- Chips are rendered by JS -->
+            </div>
          </div>
-         <div class="dev-socials">
-            <a href="https://github.com/UBGHyper" title="GitHub" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
-            <a href="mailto:Evest356@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
-            <a href="https://twitter.com/ubghyper" title="Twitter/X" target="_blank" rel="noopener"><i class="fab fa-x-twitter"></i></a>
-            <a href="https://discord.com/UBGHyper" title="Discord" target="_blank" rel="noopener"><i class="fab fa-discord"></i></a>
+      </header>
+      <main id="content" class="site-main" role="main">
+         <section class="container section" aria-labelledby="featured-heading">
+            <div class="section__head">
+               <h2 id="featured-heading" class="section__title">Featured Games</h2>
+               <div class="section__meta"> <span id="resultCount" aria-live="polite" aria-atomic="true">Loading games…</span> </div>
+            </div>
+            Code
+            <div id="game-grid" class="game-grid" role="list">
+               <!-- Cards are rendered by JS -->
+            </div>
+            <!-- Hidden bonus games (easter egg #2 reveals this) -->
+            <section id="hidden-games" class="hidden-area" aria-labelledby="hidden-heading" hidden aria-hidden="true">
+               <h3 id="hidden-heading" class="section__subtitle">Secret Shelf</h3>
+               <p class="muted">You found the secret shelf! Enjoy a few extra picks.</p>
+               <div id="hidden-game-grid" class="game-grid" role="list"></div>
+            </section>
+         </section>
+         <section id="dev-bio" class="container section" aria-labelledby="bio-heading" role="region">
+            <h2 id="bio-heading" class="section__title">Developer</h2>
+            <div class="bio">
+               <div class="bio__avatar" aria-hidden="true" title="Developer avatar">OA</div>
+               <div class="bio__body">
+                  <h3 class="bio__name">OrangeArc Dev</h3>
+                  <p class="bio__text">
+                     Hi! I design fast, accessible game portals with a focus on smooth UX and clean code.
+                     This project is modular, themeable, and optimized for low-bandwidth devices.
+                  </p>
+                  <dl class="bio__meta">
+                     <div>
+                        <dt>Location</dt>
+                        <dd>Remote</dd>
+                     </div>
+                     <div>
+                        <dt>Contact</dt>
+                        <dd><a href="#" rel="noopener">you@example.com</a></dd>
+                     </div>
+                     <div>
+                        <dt>Repo</dt>
+                        <dd><a href="#" rel="noopener">github.com/yourname/orange-arcade</a></dd>
+                     </div>
+                  </dl>
+               </div>
+            </div>
+         </section>
+         <section id="changelog" class="container section" aria-labelledby="changelog-heading" role="region">
+            <h2 id="changelog-heading" class="section__title">Changelog</h2>
+            <!-- Collapsible entries for readability -->
+            <details class="log">
+               <summary><time datetime="2025-08-22">2025-08-22</time> Initial release</summary>
+               <ul>
+                  <li>Dark + pastel orange theme</li>
+                  <li>Accessible search and category filtering</li>
+                  <li>Modular components and CSS variables</li>
+                  <li>Easter eggs added</li>
+               </ul>
+            </details>
+            <details class="log">
+               <summary><time datetime="2025-08-23">2025-08-23</time> Performance polish</summary>
+               <ul>
+                  <li>Reduced motion improvements</li>
+                  <li>Minor contrast tweaks</li>
+               </ul>
+            </details>
+         </section>
+      </main>
+      <footer class="site-footer" role="contentinfo">
+         <div class="container footer-inner">
+            <small> © <span id="year"></span> Orange Arcade. Built for accessibility and speed. </small> 
+            <nav aria-label="Footer links" class="footer-nav"> <a href="#changelog">Changelog</a> <a href="#dev-bio">About</a> <a href="#" rel="noopener">Privacy</a> </nav>
          </div>
-      </section>
-      
-      <footer>
-         &copy; 2024 UBGHyper &mdash; Unblocked Games for Everyone!
       </footer>
-      <script>
-         // ===== KONAMI CODE DEEPFRY+CONFETTI+STATIC (unchanged) =====
-         const KONAMI = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','b','a'];
-         let buffer = [];
-         document.addEventListener('keydown', function(e) {
-           buffer.push(e.key);
-           if (buffer.length > KONAMI.length) buffer.shift();
-           if (buffer.join(',').toLowerCase() === KONAMI.join(',').toLowerCase()) {
-             deepFryEasterEgg();
-             buffer = [];
-           }
-         });
-         function deepFryEasterEgg() {
-           launchConfetti();
-           document.body.classList.add('deepfried');
-           createStaticOverlay();
-           setTimeout(()=> {
-             document.body.classList.remove('deepfried');
-             removeStaticOverlay();
-           }, 4500);
-         }
-         function launchConfetti() {
-           let oldCanvas = document.getElementById('confetti-canvas');
-           if(oldCanvas) oldCanvas.parentNode.removeChild(oldCanvas);
-           let canvas = document.createElement('canvas');
-           canvas.setAttribute('id','confetti-canvas');
-           canvas.style.position = 'fixed';
-           canvas.style.pointerEvents = 'none';
-           canvas.style.left = 0;
-           canvas.style.top = 0;
-           canvas.style.width = '100vw';
-           canvas.style.height = '100vh';
-           canvas.width = window.innerWidth * window.devicePixelRatio;
-           canvas.height = window.innerHeight * window.devicePixelRatio;
-           canvas.style.zIndex = 100020;
-           document.body.appendChild(canvas);
-           const ctx = canvas.getContext('2d');
-           const confettiCount = Math.min(120, Math.floor(window.innerWidth/8));
-           const confetti = [];
-           const colors = ['#fceb02','#f8000c','#36ee04','#1226fa','#ee17b7','#fa9539','#ffffff'];
-           for(let i=0;i<confettiCount;i++) {
-             confetti.push({
-               x: Math.random()*canvas.width,
-               y: Math.random()*-canvas.height*0.5,
-               w: (8 + 12*Math.random()) * window.devicePixelRatio,
-               h: (16 + 12*Math.random()) * window.devicePixelRatio,
-               vx: (Math.random()-0.5)*6*window.devicePixelRatio,
-               vy: (1.5+Math.random()*4)*window.devicePixelRatio,
-               color: colors[Math.floor(Math.random()*colors.length)],
-               angle: Math.random()*Math.PI*2,
-               dAngle: (Math.random()-0.5)*0.35,
-             });
-           }
-           let frame = 0, maxFrames = 75 + Math.random()*40;
-           function draw() {
-             ctx.clearRect(0,0,canvas.width,canvas.height);
-             confetti.forEach(cf=>{
-               ctx.save();
-               ctx.translate(cf.x,cf.y);
-               ctx.rotate(cf.angle);
-               ctx.fillStyle=cf.color;
-               ctx.fillRect(-cf.w/2, -cf.h/2, cf.w, cf.h);
-               ctx.restore();
-               cf.x += cf.vx;
-               cf.y += cf.vy;
-               cf.angle += cf.dAngle;
-             });
-             frame++;
-             if(frame<maxFrames) {
-               requestAnimationFrame(draw);
-             } else {
-               canvas.style.transition = "opacity 0.8s";
-               canvas.style.opacity = 0;
-               setTimeout(()=>canvas.parentNode && canvas.parentNode.removeChild(canvas), 1000);
-             }
-           }
-           draw();
-         }
-         let staticTvAnimRaf = null;
-         function createStaticOverlay() {
-           removeStaticOverlay();
-           const staticCanvas = document.createElement('canvas');
-           staticCanvas.className = 'static-overlay-tv';
-           staticCanvas.style.width = '100vw';
-           staticCanvas.style.height = '100vh';
-           staticCanvas.width = ~~(window.innerWidth * window.devicePixelRatio);
-           staticCanvas.height = ~~(window.innerHeight * window.devicePixelRatio);
-           staticCanvas.id = 'static-overlay-tv';
-           document.body.appendChild(staticCanvas);
-           function animFrame() {
-             const ctx = staticCanvas.getContext('2d');
-             let imgData = ctx.createImageData(staticCanvas.width, staticCanvas.height);
-             let data = imgData.data;
-             for(let i=0;i<data.length;i+=4) {
-               let staticVal = Math.floor(Math.random()*140 + (Math.random()>0.99?120:0));
-               if(Math.random()>0.995) {data[i]=255; data[i+1]=255; data[i+2]=255;}
-               else if(Math.random()>0.996) {data[i]=255; data[i+1]=0; data[i+2]=0;}
-               else { data[i] = data[i+1] = data[i+2] = staticVal; }
-               data[i+3]=180+Math.random()*70;
-             }
-             ctx.putImageData(imgData, 0, 0);
-             staticTvAnimRaf = requestAnimationFrame(animFrame);
-           }
-           animFrame();
-         }
-         function removeStaticOverlay() {
-           let c = document.getElementById('static-overlay-tv');
-           if (c) { c.parentNode.removeChild(c); }
-           if (staticTvAnimRaf) cancelAnimationFrame(staticTvAnimRaf);
-           staticTvAnimRaf = null;
-         }
-         
-         
-         // ========== HIGH QUALITY TILT EFFECT ON GAME CARDS (like coolubg) ==========
-         const tiltAll = document.querySelectorAll('.game-card');
-         tiltAll.forEach(card=>{
-           card.addEventListener('mousemove', function(e){
-             const rect = card.getBoundingClientRect();
-             const x = (e.clientX - rect.left) / rect.width - 0.5;
-             const y = (e.clientY - rect.top) / rect.height - 0.5;
-             card.style.setProperty('--tilt-x', `${-y*17}deg`);
-             card.style.setProperty('--tilt-y', `${x*17}deg`);
-             card.style.transition = 'transform .1s';
-           });
-           card.addEventListener('mouseleave', function(){
-             card.style.setProperty('--tilt-x', `0deg`);
-             card.style.setProperty('--tilt-y', `0deg`);
-             card.style.transition = 'transform .39s cubic-bezier(.77,0,.18,1)';
-           });
-         });
-         
-      </script>
+      <!-- Live region for subtle announcements (theme toggles, filters, easter eggs) --> 
+      <div id="announcer" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></div>
+      <!-- Light-weight JS at end for fast First Contentful Paint --> <script src="script.js" defer></script> 
    </body>
 </html>
