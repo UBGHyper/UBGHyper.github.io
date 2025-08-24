@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>404 Not Found - UBGHyper</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;400&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
+      <link rel="stylesheet" href="../assets/css/main.css">
+      <link rel="icon" type="image/x-icon" href="assets/img/icon/main.png">
+      <style>
+         body {
+         background: var(--main-bg, #181926);
+         color: var(--main-text, #e0def4);
+         font-family: 'Rubik', Helvetica, Arial, sans-serif;
+         margin: 0;
+         min-height: 100vh;
+         display: flex;
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         }
+         .error-container {
+         background: var(--changelog-bg, #1e2030e6);
+         border: 1.5px solid #f5a97f24;
+         box-shadow: 0 4px 32px #23243022;
+         border-radius: 14px;
+         max-width: 400px;
+         margin: 64px auto 24px auto;
+         padding: 36px 34px 32px 34px;
+         text-align: center;
+         animation: popIn 1.75s cubic-bezier(.65,.05,.13,1.17) both;
+         /* ^^^ Slowed from 0.77s to 1.75s */
+         }
+         .error-title {
+         color: var(--color-page-heading, #f5a97f);
+         font-size: 3.4rem;
+         font-weight: bold;
+         letter-spacing: 3px;
+         }
+         .error-msg {
+         color: var(--changelog-text, #a9b1d6);
+         font-size: 1.12rem;
+         margin-top: 8px;
+         margin-bottom: 20px;
+         }
+         .go-home {
+         background: linear-gradient(90deg,#f5a97f,#f79549);
+         color: #181926;
+         border: none;
+         border-radius: 9px;
+         font-size: 1.08em;
+         font-weight: 700;
+         padding: 12px 32px;
+         cursor: pointer;
+         box-shadow: 0 2px 8px #23243019;
+         transition: filter .17s;
+         text-decoration: none;
+         display: inline-block;
+         }
+         .go-home:hover {
+         filter: brightness(1.09) contrast(1.15) saturate(1.11);
+         }
+         .error-icon {
+         font-size: 50px;
+         margin-bottom: 10px;
+         color: #f5a97f;
+         filter: drop-shadow(0 2px 8px #f5a97f38);
+         animation: shake404 2.4s cubic-bezier(.36,.07,.19,.97) infinite;
+         /* ^^ Slowed from 0.9s infinite steps(2,start) to 2.4s + cubic-bezier for smoothness */
+         }
+         @keyframes popIn {
+         0%{opacity:0;transform:scale(.7);}
+         80%{opacity:1;transform:scale(1.08);}
+         100%{opacity:1;transform:scale(1);}
+         }
+         @keyframes shake404 {
+         0%    { transform: rotate(0deg); }
+         5%    { transform: rotate(-8deg);}
+         10%   { transform: rotate(7deg);}
+         15%   { transform: rotate(-7deg);}
+         20%   { transform: rotate(6deg);}
+         25%   { transform: rotate(-6deg);}
+         30%   { transform: rotate(5deg);}
+         35%   { transform: rotate(-5deg);}
+         40%   { transform: rotate(4deg);}
+         45%   { transform: rotate(-4deg);}
+         50%   { transform: rotate(3deg);}
+         55%   { transform: rotate(-3deg);}
+         60%   { transform: rotate(2deg);}
+         65%   { transform: rotate(-2deg);}
+         70%   { transform: rotate(1deg);}
+         75%   { transform: rotate(-1deg);}
+         80%   { transform: rotate(0.6deg);}
+         85%   { transform: rotate(-0.6deg);}
+         90%   { transform: rotate(0.3deg);}
+         95%   { transform: rotate(-0.3deg);}
+         100%  { transform: rotate(0deg); }
+         }
+      </style>
+   </head>
+   <body>
+      <div class="error-container">
+         <div class="error-icon"><i class="fa-solid fa-gamepad"></i></div>
+         <div class="error-title">404</div>
+         <div class="error-msg">
+            Ts not the correct page<br>
+            Ts <span style="color:#fa9539">does not exist</span>🥀🥀🥀<br>
+            Js go back to the homepage vro
+         </div>
+         <a href="/" class="go-home"><i class="fa fa-house"></i> Go Home</a>
+      </div>
+   </body>
+</html>

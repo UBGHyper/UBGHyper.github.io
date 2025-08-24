@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <title>Play Game - UBGHyper</title>
+      <meta name="viewport" content="width=device-width,initial-scale=1.0">
+      <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@700;400&display=swap" rel="stylesheet">
+      <link rel="stylesheet" href="../assets/css/main.css">
+      <link rel="icon" type="image/x-icon" href="assets/img/icon/main.png">
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8895667704497452"
+         crossorigin="anonymous"></script>
+      <!-- Google tag (gtag.js) -->
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-VE9J0CCHWZ"></script>
+      <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+      <link rel="stylesheet" href="../assets/css/play.css">
+   </head>
+   </head>
+   <script>
+      const gameKey = new URLSearchParams(location.search).get('game');
+      let t0 = Date.now();
+      window.addEventListener('beforeunload', function() {
+        if (!gameKey) return;
+        let t1 = Date.now();
+        let dt = Math.max(0, t1 - t0);
+        let stats = JSON.parse(localStorage.getItem('gameStats') || '{}');
+        stats[gameKey] = stats[gameKey] || { clicks: 0, time: 0 };
+        stats[gameKey].time += dt;
+        localStorage.setItem('gameStats', JSON.stringify(stats));
+      });
+   </script>
+   <body>
+      <nav>
+         <a href="index.html" class="active">Home</a>
+         <a href="games.html">All Games</a>
+         <a href="favourites.html">Favourites</a>
+         <a href="about.html">About</a>
+      </nav>
+      <div class="game-frame">
+        
+         <iframe class="game-iframe" id="frame" allowfullscreen></iframe>
+         <button class="fullscreen-btn" id="fullscreenBtn" title="Fullscreen">
+            <svg viewBox="0 0 24 24">
+               <path d="M7 14H5v5h5v-2H7v-3zm-2-7v5h2V7h3V5H5v2zm12 10h-3v2h5v-5h-2v3zm0-10v3h2V5h-5v2h3z"/>
+            </svg>
+            Fullscreen
+         </button>
+      </div>
+      <div class="game-info-container">
+         <div class="game-title-bar" style="align-items:center;">
+            <div class="game-title" id="gameTitle"></div>
+            <button id="editSaveBtn" style="margin-left:auto;background:#262736;color:#ffd09c;border:none;padding:8px 19px;font-family:Rubik,sans-serif;font-weight:700;font-size:1em;border-radius:16px;box-shadow:0 2px 8px #ffd09c18;cursor:pointer;transition:.13s;margin-right:5px;">
+            &#9874; Edit Save
+            </button>
+         </div>
+         <div class="game-author" id="gameAuthor"></div>
+         <div style="display: flex;align-items:center;gap:8px;">
+            <div class="game-playtime" id="gamePlaytime"></div>
+         </div>
+         <div id="editSaveModal" style="display:none;position:fixed;z-index:99999;left:0;top:0;width:100vw;height:100vh;background:#222d4280;backdrop-filter:blur(1.5px);align-items:center;justify-content:center;">
+            <div style="background:#191b20;color:#fff;padding:24px;min-width:300px;max-width:90vw;border-radius:12px;box-shadow:0 3px 30px #000a;position:relative;">
+               <button id="closeEditSaveModal" style="position:absolute;top:13px;right:14px;font-size:1.2em;background:none;border:none;color:#f4b135;cursor:pointer;">&times;</button>
+               <h2 style="margin-top:0;font-family:Rubik,sans-serif;font-weight:800;color:#ffd09c;">Edit Save Data</h2>
+               <div style="margin-bottom:8px;font-size:.97em;color:#ffe3bd;">
+                  Edit the <b>localStorage</b> and <b>playtime</b> for this game.<br>
+                  Advanced: Edit <b>IndexedDB - Playtime per Day</b>.
+               </div>
+               <fieldset style="border:1.2px solid #ffd09c55;border-radius:7px;padding:11px 17px;margin-bottom:14px;">
+                  <legend style="color:#ffd09c;font-size:0.95em;font-family:Rubik;">localStorage <span style="color:#828b32;">(playtime/Game stats)</span></legend>
+                  <label for="localStoragePlaytime">playtime_<span style="font-family:monospace">${slug || ''}</span>:</label>
+                  <input type="number" id="localStoragePlaytime" min="0" style="width:90px;font-size:1em;padding:2px 7px;margin-bottom: 7px;"> seconds
+                  <br>
+                  <label for="gameStats">gameStats:</label>
+                  <textarea id="gameStats" style="width:98%;height:54px;font-size:0.95em;margin-bottom:7px;"></textarea>
+                  <br>
+                  <button id="saveLocalStorageBtn" style="background:#ffd09c;color:#21212a;border:none;padding:5px 14px;border-radius:7px;font-weight:700;cursor:pointer;">Save localStorage</button>
+               </fieldset>
+               <fieldset style="border:1.2px solid #bcd15b89;border-radius:7px;padding:10px 14px;">
+                  <legend style="color:#cee971;font-size:0.95em;font-family:Rubik;">IndexedDB "GamePlaytimeDB"</legend>
+                  <div style="font-size:.95em;">Edit any date's playtime (minutes):</div>
+                  <div id="idbPlayData" style="margin-top:7px"></div>
+                  <button id="saveIDBPlaytimeBtn" style="margin-top:9px;background:#cee971;color:#2f3905;border:none;padding:5px 14px;border-radius:7px;font-weight:700;cursor:pointer;">Save IndexedDB</button>
+               </fieldset>
+            </div>
+         </div>
+      </div>
+      </div>
+      <div class="game-desc-recommend-row">
+         <div class="game-desc-panel">
+            <div class="desc-title">About this game</div>
+            <div id="descDetails"></div>
+         </div>
+         <div class="game-recommend-panel">
+            <div class="desc-title">Recommended Games</div>
+            <div id="recommendedList"></div>
+         </div>
+      </div>
+      <div id="gameAchievements"></div>
+      <div class="chart-container">
+         <h2 class="chart-heading">
+            Playtime per Day
+         </h2>
+         <canvas id="playtimeChart"></canvas>
+      </div>
+      <div class="recently-played-section" id="recentlyPlayedSection" style="display:none;">
+         <div class="recently-title"><span style="font-size:1.1em;">&#x1F4DA;</span> Recently Played</div>
+         <div class="recently-games" id="recentlyPlayedGames"></div>
+      </div>
+      <script>
+         (function() {
+           const editBtn = document.getElementById('editSaveBtn');
+           const modal = document.getElementById('editSaveModal');
+           const closeBtn = document.getElementById('closeEditSaveModal');
+           const playtimeInput = document.getElementById('localStoragePlaytime');
+           const gameStatsTA = document.getElementById('gameStats');
+           const saveLocalBtn = document.getElementById('saveLocalStorageBtn');
+           const idbPlayDataBox = document.getElementById('idbPlayData');
+           const saveIDBBtn = document.getElementById('saveIDBPlaytimeBtn');
+           let idbRows = [];
+           function openModal() {
+             // localStorage: load values
+             playtimeInput.value = localStorage.getItem("playtime_" + slug) || 0;
+             gameStatsTA.value = JSON.stringify(JSON.parse(localStorage.getItem('gameStats')||'{}'),null,2);
+         
+             // IndexedDB: load values
+             idbPlayDataBox.innerHTML = "<div style='font-size:.94em;color:#fff1cd;'>Loading...</div>";
+             getPlaytimeDays(slug).then(arr => {
+               if(!arr.length){
+                 idbPlayDataBox.innerHTML = "<span style='color:#efa750;font-size:1em;'>No IndexedDB data for this game yet.</span>";
+                 idbRows = [];
+                 return;
+               }
+               idbPlayDataBox.innerHTML = arr.map((row,i)=>`
+                 <div style="margin-bottom:5px;">
+                   <span style="display:inline-block;width:88px;font-family:monospace;color:#ffd09c">${row.date}</span> 
+                   <input class="idbSeconds" type="number" min="0" data-i="${i}" style="width:64px;padding:1px 6px;" value="${Math.round(row.seconds/60)}"> minutes
+                 </div>
+               `).join('');
+               idbRows = arr;
+             });
+         
+             modal.style.display = "flex";
+           }
+           editBtn.addEventListener('click', openModal);
+           closeBtn.addEventListener('click', ()=>{modal.style.display='none';});
+         
+           // localStorage Save
+           saveLocalBtn.addEventListener('click',()=>{
+             localStorage.setItem("playtime_" + slug, Number(playtimeInput.value));
+             try {
+               const val = JSON.parse(gameStatsTA.value);
+               localStorage.setItem('gameStats', JSON.stringify(val));
+               alert("localStorage updated!");
+             } catch(e) {
+               alert("Invalid JSON in gameStats.");
+             }
+             // update onscreen playtime counter
+             updatePlaytimeCounter(formatSeconds(Number(playtimeInput.value)));
+           });
+         
+           // IndexedDB Save
+           saveIDBBtn.addEventListener('click',()=>{
+             // For each .idbSeconds, update corresponding row
+             const fields = idbPlayDataBox.querySelectorAll('.idbSeconds');
+             // Open DB only once, run all updates
+             openPlaytimeDB().then(db=>{
+               const tx = db.transaction('playtimes','readwrite');
+               const store = tx.objectStore('playtimes');
+               fields.forEach(f=>{
+                 let i = Number(f.dataset.i);
+                 let minutes = Number(f.value);
+                 let d = {...idbRows[i]};
+                 d.seconds = Math.max(0, Math.round(minutes*60));
+                 store.put(d);
+               });
+               tx.oncomplete = () => {
+                 db.close();
+                 alert("IndexedDB saved!");
+                 getPlaytimeDays(slug).then(drawPlaytimeChart);
+               };
+             });
+           });
+         
+           // Modal close on backdrop click
+           modal.addEventListener('mousedown',e=>{
+             if(e.target===modal) modal.style.display='none';
+           });
+         })();
+         
+                  document.getElementById('fullscreenBtn').addEventListener('click', function() {
+                    const iframe = document.getElementById('frame');
+                    if      (iframe.requestFullscreen)        iframe.requestFullscreen();
+                    else if (iframe.webkitRequestFullscreen)  iframe.webkitRequestFullscreen();
+                    else if (iframe.mozRequestFullScreen)     iframe.mozRequestFullScreen();
+                    else if (iframe.msRequestFullscreen)      iframe.msRequestFullscreen();
+                  });
+                  
+                  // ------ Playtime Format: only show largest time unit -----
+                  function formatSeconds(sec) {
+                    if (sec < 60) return `${sec} second${sec===1?'':'s'}`;
+                    if (sec < 3600) {
+                      const m = Math.floor(sec/60);
+                      return `${m} minute${m===1?'':'s'}`;
+                    }
+                    const h = Math.floor(sec/3600);
+                    return `${h} hour${h===1?'':'s'}`;
+                  }
+                  
+                  const gamesUrl = "../assets/games.json";
+                  const params = new URLSearchParams(location.search);
+                  const slug = params.get("game");
+                  
+                  function showNotFound() {
+                    document.getElementById("gameTitle").textContent = "Game Not Found";
+                    document.getElementById("frame").style.display = "none";
+                    document.getElementById("gameAuthor").textContent = "";
+                  }
+                  
+                  let playtimeInterval = null;
+                  
+                  // --- IndexedDB Helper ---
+                  function openPlaytimeDB() {
+                    return new Promise((resolve, reject) => {
+                      const req = indexedDB.open("GamePlaytimeDB", 1);
+                      req.onupgradeneeded = function(e) {
+                        const db = e.target.result;
+                        if (!db.objectStoreNames.contains("playtimes")) {
+                          db.createObjectStore("playtimes", { keyPath: ["slug", "date"] });
+                        }
+                      };
+                      req.onsuccess = () => resolve(req.result);
+                      req.onerror = e => reject(e.target.error);
+                    });
+                  }
+                  
+                  function updatePlaytimeToday(slug) {
+                    const today = new Date().toISOString().slice(0,10);
+                    openPlaytimeDB().then(db => {
+                      const tx = db.transaction("playtimes", "readwrite");
+                      const store = tx.objectStore("playtimes");
+                      const key = [slug, today];
+                      store.get(key).onsuccess = function (e) {
+                        let data = e.target.result;
+                        if (!data) data = { slug, date: today, seconds: 0 };
+                        data.seconds++;
+                        store.put(data);
+                        db.close();
+                      };
+                    });
+                  }
+                  
+                  function getPlaytimeDays(slug) {
+                    return new Promise(resolve => {
+                      openPlaytimeDB().then(db => {
+                        const tx = db.transaction("playtimes", "readonly");
+                        const store = tx.objectStore("playtimes");
+                        const req = store.openCursor();
+                        const days = [];
+                        req.onsuccess = function(event) {
+                          const cursor = event.target.result;
+                          if(cursor) {
+                            if(cursor.key[0] === slug) days.push(cursor.value);
+                            cursor.continue();
+                          } else {
+                            db.close();
+                            days.sort((a,b) => a.date.localeCompare(b.date));
+                            resolve(days);
+                          }
+                        };
+                      });
+                    });
+                  }
+                  
+                  let playChart = null;
+                  function drawPlaytimeChart(playArr) {
+                    const ctx = document.getElementById('playtimeChart').getContext('2d');
+                    const labels = playArr.map(x=>x.date);
+                    const data = playArr.map(x=>Math.round(x.seconds/60*100)/100);
+                  
+                    if (playChart) playChart.destroy();
+                    playChart = new Chart(ctx, {
+                      type: 'bar',
+                      data: {
+                        labels,
+                        datasets: [{
+                          label: 'Minutes Played',
+                          backgroundColor: (ctx) => {
+                            const gradient = ctx.chart.ctx.createLinearGradient(0,0,0,260);
+                            gradient.addColorStop(0, "#ffd09c");
+                            gradient.addColorStop(1, "#f4b135");
+                            return gradient;
+                          },
+                          borderColor: '#ffd09c',
+                          borderWidth: 3,
+                          borderRadius: 10,
+                          data,
+                          maxBarThickness: 38,
+                          minBarLength: 2,
+                          hoverBackgroundColor: "#fff0d5",
+                        }]
+                      },
+                      options: {
+                        responsive: true,
+                        plugins: {
+                          legend: {display:false},
+                          tooltip: {
+                            backgroundColor: '#23232e',
+                            bodyColor: '#ffd09c',
+                            titleColor: '#fff',
+                            borderColor: "#ffd09c",
+                            borderWidth: 1.5,
+                            padding: 14,
+                            cornerRadius: 8
+                          },
+                          title: {display: false}
+                        },
+                        layout: {padding: {left: 16, right: 15, top: 10, bottom: 14}},
+                        scales: {
+                          x: {
+                            ticks: {
+                              color: '#ffd09c',
+                              font: { family: 'Rubik', weight: 'bold', size: 15 },
+                              maxRotation: 0,
+                              minRotation: 0
+                            },
+                            grid: {
+                              color: 'rgba(255,208,156,0.09)',
+                              borderColor: '#ffd09c77',
+                              borderWidth: 1.7
+                            }
+                          },
+                          y: {
+                            beginAtZero: true,
+                            grace: "35%",
+                            ticks: {
+                              color: '#ffd09c',
+                              font: { family: 'Rubik', size: 14 }
+                            },
+                            grid: {color:'#2d2231', borderColor:"#ffd09c44"}
+                          }
+                        }
+                      }
+                    });
+                  }
+                  
+                  // --- Recently Played Games LocalStorage Logic ---
+                  function addRecentlyPlayed(game) {
+                    let arr;
+                    try {
+                      arr = JSON.parse(localStorage.getItem("recentlyPlayed") || '[]');
+                      if (!Array.isArray(arr)) arr = [];
+                    } catch(e){arr=[];}
+                    // Remove any previous entry of this game
+                    arr = arr.filter(g => g.url !== game.url);
+                    arr.unshift({
+                      name: game.name,
+                      url: game.url,
+                      thumb: game.thumb,
+                      author: game.credits,
+                      time: Date.now()
+                    });
+                    // Keep only last 6
+                    arr = arr.slice(0,6);
+                    localStorage.setItem("recentlyPlayed", JSON.stringify(arr));
+                  }
+                  
+                  function loadRecentlyPlayed(currentSlug, gamesData) {
+                    let arr;
+                    try {
+                      arr = JSON.parse(localStorage.getItem("recentlyPlayed") || '[]');
+                    } catch(e){arr=[];}
+                    if (!Array.isArray(arr) || arr.length === 0) {
+                      document.getElementById('recentlyPlayedSection').style.display = "none";
+                      return;
+                    }
+                    // Filter out current game, show others
+                    const showArr = arr.filter(g => g.url !== currentSlug);
+                  
+                    if (!showArr.length) {
+                      document.getElementById('recentlyPlayedSection').style.display = "none";
+                      return;
+                    }
+                    document.getElementById('recentlyPlayedSection').style.display = "";
+                    const box = document.getElementById('recentlyPlayedGames');
+                    box.innerHTML = "";
+                    for (const g of showArr) {
+                      // Try to get latest thumb & title from gamesData for consistency (use fallback if outdated)
+                      let meta = gamesData.find(item => item.url === g.url) || g;
+                      const a = document.createElement("a");
+                      a.className = "recent-game-card";
+                      a.href = `play.html?game=${encodeURIComponent(meta.url)}`;
+                      a.innerHTML = `
+                        <img class="recent-thumb" src="${meta.thumb || '../assets/img/icon/main.png'}" alt="${meta.name} icon" loading="lazy">
+                        <span class="recent-game-name">${meta.name||'Unknown'}</span>
+                        <span class="recent-game-author">${meta.author||''}</span>
+                      `;
+                      box.appendChild(a);
+                    }
+                  }
+                  
+                  function updatePlaytimeCounter(val) {
+                    // Update with icon!
+                    const counter = document.getElementById('gamePlaytime');
+                    counter.innerHTML = `<svg class="playtime-clock-icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="#f2b967" stroke-width="2.5" fill="#191a22"/><path d="M12 7v5l3.5 2" stroke="#ffd09c" stroke-width="2.2" stroke-linecap="round" fill="none"/></svg> <span>Playtime: </span>${val}`;
+                  }
+                  
+                  function loadAndShowPlaytime(slug) {
+                    const saved = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
+                    updatePlaytimeCounter(formatSeconds(saved));
+                  
+                    if (playtimeInterval) clearInterval(playtimeInterval);
+                  
+                    function refreshChart() { getPlaytimeDays(slug).then(drawPlaytimeChart);}
+                    refreshChart();
+                  
+                    playtimeInterval = setInterval(() => {
+                      if (document.hasFocus()) {
+                        let playtime = parseInt(localStorage.getItem('playtime_' + slug) || '0', 10);
+                        playtime++;
+                        localStorage.setItem('playtime_' + slug, playtime);
+                        updatePlaytimeCounter(formatSeconds(playtime));
+                        updatePlaytimeToday(slug);
+                        if (playtime % 10 === 1) refreshChart();
+                      }
+                    }, 1000);
+                  
+                    window.addEventListener('focus', refreshChart);
+                  }
+                  
+                  // --- MAIN LOADING ---
+                  fetch(gamesUrl)
+                    .then(r => r.json())
+                    .then(games => {
+                      const game = games.find(g => g.url === slug);
+                      if (!game) return showNotFound();
+                  
+                      document.getElementById("gameTitle").textContent = game.name;
+                      document.getElementById("gameAuthor").textContent = game.credits ? "" + game.credits : "";
+                      document.getElementById("frame").src = `/GameList.github.io/${game.url}/index.html`;
+                      document.getElementById("descDetails").textContent = game.gamedesc || "No description provided.";
+                      
+                  
+                      // Update Recently Played
+                      addRecentlyPlayed(game);
+                      loadRecentlyPlayed(slug, games);
+                  
+                      // ... recommendations as before ...
+                      let recTags = (game.tags || []).map(x => x.toLowerCase());
+                      let recommendations = games.filter(g2 =>
+                        g2.url !== game.url &&
+                        Array.isArray(g2.tags) &&
+                        g2.tags.some(tag => recTags.includes((tag || '').toLowerCase()))
+                      );
+                  
+                      recommendations = recommendations
+                        .map(g2=>({
+                          ...g2,
+                          matchCount: g2.tags.filter(t=>recTags.includes(t.toLowerCase())).length
+                        }))
+                        .sort((a,b)=>b.matchCount - a.matchCount)
+                        .slice(0, 4);
+                  
+                      const recList = document.getElementById('recommendedList');
+                      recList.innerHTML = "";
+                  
+                      if (recommendations.length === 0) {
+                        recList.innerHTML = `<span style='color:#f4b690;font-style:italic;font-size:1em;'>No related games found.</span>`;
+                      } else {
+                        recommendations.forEach(g2 => {
+                          const thumbUrl = g2.thumb || "../assets/img/icon/main.png";
+                          const el = document.createElement("a");
+                          el.className = "recommend-game-link";
+                          el.href = `play.html?game=${encodeURIComponent(g2.url)}`;
+                          el.innerHTML = `
+                            <img class="recommend-thumb" src="${thumbUrl}" alt="${g2.name} icon" loading="lazy">
+                            <span>${g2.name}</span>
+                          `;
+                          recList.appendChild(el);
+                        });
+                      }
+                      // Playtime
+                      loadAndShowPlaytime(slug);
+                      getPlaytimeDays(slug).then(drawPlaytimeChart);
+                    })
+                    .catch(showNotFound);
+                  
+                  const minsAgo = Math.floor((Date.now() - g.time)/60000);
+                  const lastPlayed = minsAgo < 1 ? "Just now" : (minsAgo < 60 ? `${minsAgo}m ago` : `${Math.floor(minsAgo/60)}h ago`);
+                  a.innerHTML += `<div class="recent-last-played">${lastPlayed}</div>`;
+         
+                  
+               
+      </script>
+   </body>
+</html>
