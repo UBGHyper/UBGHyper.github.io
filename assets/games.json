@@ -341,6 +341,17 @@
   ]
 },
 {
+  "name": "Among Us Online Sever 2",
+  "image": "Sus.jpg",
+  "url": "AmongUs-Online-2",
+  "new": false,
+  "credits": "Developed by TimMcool",
+  "tags": [
+    "multiplayer",
+    "strategy"
+  ]
+},
+{
   "name": "Iron Snout",
   "image": "ironsnout.png",
   "url": "Iron-Snout",
